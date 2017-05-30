@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
@@ -100,4 +99,3 @@ class Borehole(collections.Iterable, AsDictMixin):
 class CPT(Borehole):
     #
     pass
-    
