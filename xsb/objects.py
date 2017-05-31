@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+from collections import Iterable
 from itertools import groupby
 
+
 class AsDictMixin(object):
+    '''Mixin for mapping class attributes to dictionary'''
     def as_dict(self, keys=None):
         if keys:
             return {k: getattr(self, k) for k in keys}
@@ -12,9 +15,10 @@ class AsDictMixin(object):
                 if not k.startswith('__')}
 
 
-class Segment(object, AsDictMixin):
+class Segment(AsDictMixin):
     '''Class representing borehole segment'''
-    def __init__(self, top, base, lithology, sandmedianclass=None, fields=None):
+    def __init__(self, top, base, lithology,
+            sandmedianclass=None, fields=None):
         self.top = top
         self.base = base
         self.lithology = lithology
@@ -25,21 +29,27 @@ class Segment(object, AsDictMixin):
         return 'Segment(top={:.2f}, base={:.2f}, lithology={!s})'.format(
             self.top,
             self.base,
-            self.lithology)
+            self.lithology,
+            )
 
     def __iadd__(self, other):
         self.top = min(self.top, other.top)
         self.base = max(self.base, other.base)
+        return self
 
     @property
     def thickness(self):
         return self.base - self.top
 
+    def relative_to(self, z):
+        return z - self.top, z - self.base
 
-class Borehole(collections.Iterable, AsDictMixin):
+
+class Borehole(AsDictMixin, Iterable):
     '''Borehole class with iterator method yielding segments'''
     def __init__(self, code, depth,
-        fields=None, x=None, y=None, z=None, segments=None, verticals=None):
+            fields=None, x=None, y=None, z=None,
+            segments=None, verticals=None):
         self.code = code
         self.depth = depth
         self.fields = fields
@@ -54,12 +64,19 @@ class Borehole(collections.Iterable, AsDictMixin):
     def __repr__(self):
         return 'Borehole(code={!s}, depth={:.2f})'.format(
             self.code,
-            self.depth)
+            self.depth,
+            )
+
+    def __len__(self):
+        if hasattr(self.segments, "__len__"):
+            return len(self.segments)
+        else:
+            raise AttributeError('segments generator has no length')
 
     def __iter__(self):
         if self.segments is None:
             pass
-        elif hasattr(self.segments, __len__):
+        elif hasattr(self.segments, "__len__"):
             # already in list
             for segment in self.segments:
                 yield segment
@@ -77,6 +94,7 @@ class Borehole(collections.Iterable, AsDictMixin):
         return {'type': 'Point', 'coordinates': (self.x, self.y)}
 
     def simplify(self, min_thickness=0.):
+        '''combine segments with same lithology and sandmedianclasses'''
         simple_segments = []
         key = lambda s: {
             'lithology': s.lithology,
@@ -85,10 +103,10 @@ class Borehole(collections.Iterable, AsDictMixin):
         for i, (key, grouped) in enumerate(groupby(self.segments, key)):
             grouped_segments = [s for s in grouped]
             simplified = Segment(
-            top=min(s.top for s in grouped_segments),
-            base=max(s.base for s in grouped_segments),
-            **key,
-            )
+                top=min(s.top for s in grouped_segments),
+                base=max(s.base for s in grouped_segments),
+                **key,
+                )
             if (i == 0) or (simplified.thickness > min_thickness):
                 simple_segments.append(simplified)
             else:
@@ -97,5 +115,5 @@ class Borehole(collections.Iterable, AsDictMixin):
 
 
 class CPT(Borehole):
-    #
+    '''CPT class equal to borehole'''
     pass
