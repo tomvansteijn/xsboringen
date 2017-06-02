@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsboringen.objects import Borehole, Segment, CPT
+from xsb.objects import Borehole, Segment, CPT
 
 from xml.etree import ElementTree
 import datetime
@@ -9,17 +9,17 @@ import logging
 import os
 
 
-def safe_int(s, int):
+def safe_int(s):
     try:
         return int(s)
-    else:
+    except TypeError:
         return None
 
 
 def safe_float(s):
     try:
         return float(s)
-    else:
+    except TypeError:
         return None
 
 
@@ -110,7 +110,7 @@ def borehole_from_xml(xmlfile):
         z = None
 
     # segments as generator
-    segments = partial(segments_from_xml, root=root)
+    segments = segments_from_xml(root)
 
     return Borehole(code, depth,
         fields=fields,
