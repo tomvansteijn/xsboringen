@@ -76,10 +76,6 @@ class Borehole(AsDictMixin, Iterable):
             raise AttributeError('segments generator has no length')
 
     def __iter__(self):
-        if self.segments is None:
-            pass
-        if not self.materialized:
-            self.materialize()
         for segment in self.segments:
             yield segment
 
@@ -115,6 +111,7 @@ class Borehole(AsDictMixin, Iterable):
             else:
                 simple_segments[-1] += simplified
         self.segments = simple_segments
+        self.materialized = True
 
 
 class CPT(Borehole):
