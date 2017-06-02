@@ -61,6 +61,8 @@ class Borehole(AsDictMixin, Iterable):
         self.segments = segments
         self.verticals = verticals
 
+        self.materialized = False
+
     def __repr__(self):
         return 'Borehole(code={!s}, depth={:.2f})'.format(
             self.code,
@@ -76,22 +78,23 @@ class Borehole(AsDictMixin, Iterable):
     def __iter__(self):
         if self.segments is None:
             pass
-        elif hasattr(self.segments, "__len__"):
-            # already in list
-            for segment in self.segments:
-                yield segment
-        else:
-            # materialize to list
-            segments_in_list = []
-            for segment in self.segments:
-                yield segment
-                segments_in_list.append(segment)
-            self.segments = segments_in_list
+        if not self.materialized:
+            self.materialize()
+        for segment in self.segments:
+            yield segment
 
     @property
     def geometry(self):
         '''borehole geometry interface'''
         return {'type': 'Point', 'coordinates': (self.x, self.y)}
+
+    def materialize(self):
+        '''read borehole segments and assign as list'''
+        segments_in_list = []
+        for segment in self.segments:
+            segments_in_list.append(segment)
+        self.segments = segments_in_list
+        self.materialized = True
 
     def simplify(self, min_thickness=0.):
         '''combine segments with same lithology and sandmedianclasses'''
