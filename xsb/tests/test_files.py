@@ -24,7 +24,7 @@ class TestBoreholeFromXML(object):
         b = borehole_from_xml(xmlfile)
         b.materialize()
         assert len(b) == 136
-        assert np.isclose(b.segments[0].thickness, 2.)
+        assert np.isclose(b.segments[0].length, 2.)
         assert b.segments[-1].lithology == 'K'
 
     def test_read_simplify(self):
@@ -32,5 +32,5 @@ class TestBoreholeFromXML(object):
         b = borehole_from_xml(xmlfile)
         b.simplify()
         assert len(b) == 82
-        assert np.isclose(b.segments[0].thickness, 2.)
+        assert np.isclose(b.segments[0].length, 2.)
         assert b.segments[-1].lithology == 'K'

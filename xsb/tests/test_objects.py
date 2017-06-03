@@ -10,7 +10,7 @@ class TestSegment(object):
         s = Segment(top=0., base=10., lithology='Z')
         assert s.lithology == 'Z'
 
-    def test_segment_thickness(self):
+    def test_segment_length(self):
         s = Segment(top=0., base=10., lithology='Z')
         assert np.isclose(s.base, 10.)
 
@@ -66,9 +66,9 @@ class TestBorehole(object):
         b.simplify()
         assert len(b) == 3
         assert b.segments[0].lithology == 'Z'
-        assert np.isclose(b.segments[0].thickness, 3.0)
+        assert np.isclose(b.segments[0].length, 3.0)
 
-    def test_simplify_min_thickness(self):
+    def test_simplify_min_length(self):
         segments = [
             Segment(top=0., base=0.5, lithology='Z'),
             Segment(top=0.5, base=3.0, lithology='Z'),
@@ -76,7 +76,7 @@ class TestBorehole(object):
             Segment(top=10.0, base=20., lithology='Z'),
             ]
         b = Borehole(code='b', depth=20., segments=segments)
-        b.simplify(min_thickness=0.5)
+        b.simplify(min_length=0.5)
         assert len(b) == 2
         assert b.segments[0].lithology == 'Z'
-        assert np.isclose(b.segments[0].thickness, 3.1)
+        assert np.isclose(b.segments[0].length, 3.1)
