@@ -38,10 +38,12 @@ class Segment(AsDictMixin):
         return self
 
     @property
-    def thickness(self):
+    def length(self):
+        '''length of segment'''
         return self.base - self.top
 
     def relative_to(self, z):
+        '''return top and base relative to z'''
         return z - self.top, z - self.base
 
 
@@ -92,7 +94,7 @@ class Borehole(AsDictMixin, Iterable):
         self.segments = segments_in_list
         self.materialized = True
 
-    def simplify(self, min_thickness=0.):
+    def simplify(self, min_length=0.):
         '''combine segments with same lithology and sandmedianclasses'''
         simple_segments = []
         key = lambda s: {
@@ -106,7 +108,7 @@ class Borehole(AsDictMixin, Iterable):
                 base=max(s.base for s in grouped_segments),
                 **key,
                 )
-            if (i == 0) or (simplified.thickness > min_thickness):
+            if (i == 0) or (simplified.length > min_length):
                 simple_segments.append(simplified)
             else:
                 simple_segments[-1] += simplified
