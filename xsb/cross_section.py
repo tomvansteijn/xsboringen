@@ -7,18 +7,29 @@ from shapely.geometry import AsShape
 
 
 class Cross_Section(object):
-    def __init__(self, geometry, buffer_distance, label=None):
+    def __init__(self, geometry, buffer_distance, label=''):
         self.geometry = geometry
         self.buffer_distance = buffer_distance
         self.label = label
 
+        # geometric buffer with given distance
         self.buffer = self.shape.buffer(buffer_distance)
 
+        # initialize data atttributes to empty lists
         self.boreholes = []
         self.piezometers = []
         self.points = []
         self.lines = []
         self.solids = []
+
+    def __repr__(self):
+        return ('Cross_Section(length={length:.2f}, '
+                'buffer_distance={buffer_distance:.2f}, '
+                'label={label:})').format(
+            length=self.shape.length,
+            buffer_distance=self.buffer_distance,
+            label=self.label,
+            )
 
     @property
     def shape(self):
