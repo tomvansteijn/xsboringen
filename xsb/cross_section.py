@@ -25,6 +25,7 @@ class Cross_Section(object):
         return AsShape(self.geometry)
 
     def discretize(self, res):
+        '''discretize line to point coords with given distance''''
         d = 0.
         while d < self.shape.length:
             p = self.shape.interpolate(d)
@@ -32,12 +33,15 @@ class Cross_Section(object):
             d += res
 
     def add_boreholes(self, boreholes):
+        '''add boreholes within buffer distance and project to line'''
         self._add_some_objects(boreholes, self.boreholes)
 
     def add_piezometers(self, piezometers):
+        '''add piezometers within buffer distance and project to line'''
         self._add_some_objects(piezometers, self.piezometers)
 
     def add_points(self, points):
+        '''add points within buffer distance and project to line'''
         self._add_some_objects(points, self.points)
 
     def _add_some_objects(self, some_objects, dest):
@@ -51,29 +55,23 @@ class Cross_Section(object):
         self.piezometers = [p for p in sorted(self.piezometers)]
         self.points = [p for p in sorted(self.points)]
 
-    def raster_values(self, rasterfile, res):
-        distance, coords = zip(*self.discretize(res))
-        sampled = sample(rasterfile, coords)
-        return distance, sampled
-
     def add_lines(self, lines):
         for line in lines:
             logging.debug('sampling {}'.format(line['name']))
-            distance, values = self.raster_values(line['file'], line['res'])
+            distance, coords = zip(*self.discretize(line['res']))
             self.lines.append({
                 'name': line['name'],
                 'distance': [d for d in distance],
-                'values': [v for v in values],
+                'values': [v for v in sample(line['file'], coords)],
                 })
 
     def add_solids(self, solids):
         for solid in solids:
             logging.debug('sampling {}'.format(solid['name']))
-            distance, top = self.raster_values(solid['topfile'], solid['res'])
-            _, base = self.raster_values(solid['basefile'], solid['res'])
+            distance, coords = zip(*self.discretize(solid['res']))
             self.solids.append({
                 'name': solid['name'],
                 'distance': [d for d in distance],
-                'top': [t for t in top],
-                'base': [b for b in base],
+                'top': [t for t in sample(solid['topfile'], coords)],
+                'base': [b for b in sample(solid['basefile'], coords)],
                 })
