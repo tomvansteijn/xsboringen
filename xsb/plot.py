@@ -15,7 +15,7 @@ def plot_well(ax, well):
 
 
 def plot_cross_section(cross_section, imagefile,
-    figsize=None, ylim=None, xlabel=None, ylabel=None):
+    styles=None, figsize=None, ylim=None, xlabel=None, ylabel=None):
 
     if figsize is None:
         figsize = defaultconfig['figsize']
