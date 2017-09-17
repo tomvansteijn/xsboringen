@@ -18,12 +18,15 @@ class AsDictMixin(object):
 class Segment(AsDictMixin):
     '''Class representing borehole segment'''
     def __init__(self, top, base, lithology,
-            sandmedianclass=None, fields=None):
+            sandmedianclass=None, **attrs):
         self.top = top
         self.base = base
         self.lithology = lithology
         self.sandmedianclass = sandmedianclass
-        self.fields = fields
+
+        # set other properties
+        for key, value in attrs.items():
+            setattr(self, key, value)
 
     def __repr__(self):
         return 'Segment(top={:.2f}, base={:.2f}, lithology={!s})'.format(
@@ -38,8 +41,8 @@ class Segment(AsDictMixin):
         return self
 
     @property
-    def length(self):
-        '''length of segment'''
+    def thickness(self):
+        '''thickness of segment'''
         return self.base - self.top
 
     def relative_to(self, z):
@@ -50,12 +53,12 @@ class Segment(AsDictMixin):
 class Borehole(AsDictMixin, Iterable):
     '''Borehole class with iterator method yielding segments'''
     def __init__(self, code, depth,
-            fields=None, x=None, y=None, z=None,
+            x=None, y=None, z=None,
             segments=None, verticals=None,
+            **attrs,
             ):
         self.code = code
         self.depth = depth
-        self.fields = fields
 
         self.x = x
         self.y = y
@@ -64,7 +67,16 @@ class Borehole(AsDictMixin, Iterable):
         self.segments = segments
         self.verticals = verticals
 
+        # set other properties
+        for key, value in attrs.items():
+            setattr(self, key, value)
+
         self.materialized = False
+
+        self.key = lambda s: {
+            'lithology': s.lithology,
+            'sandmedianclass': s.sandmedianclass,
+            }
 
     def __repr__(self):
         return 'Borehole(code={!s}, depth={:.2f})'.format(
@@ -106,11 +118,8 @@ class Borehole(AsDictMixin, Iterable):
     def simplify(self, min_thickness=None):
         '''combine segments with same lithology and sandmedianclasses'''
         simple_segments = []
-        key = lambda s: {
-            'lithology': s.lithology,
-            'sandmedianclass': s.sandmedianclass,
-            }
-        for i, (key, grouped) in enumerate(groupby(self.segments, key)):
+
+        for i, (key, grouped) in enumerate(groupby(self.segments, self.key)):
             grouped_segments = [s for s in grouped]
             simplified = Segment(
                 top=min(s.top for s in grouped_segments),
