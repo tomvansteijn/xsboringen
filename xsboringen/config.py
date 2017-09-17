@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-import yaml
-
-with open('defaultconfig.yaml') as f:
-    defaultconfig = yaml.load(f)
+# default figure size (width, height) [inch]
+FIGSIZE = 21, 11.7
