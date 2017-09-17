@@ -2,23 +2,18 @@
 # Tom van Steijn, Royal HaskoningDHV
 
 from matplotlib import pyplot as plt
-from xsb.config import defaultconfig
-
 
 def plot_borehole(ax, borehole):
     for segment in borehole:
-        ax.bar
+        pass
 
 
-def plot_well(ax, well):
-    ax.set
+def plot_solid(ax, solid):
+    pass
 
 
 def plot_cross_section(cross_section, imagefile,
     styles=None, figsize=None, ylim=None, xlabel=None, ylabel=None):
-
-    if figsize is None:
-        figsize = defaultconfig['figsize']
 
     fig, ax = plt.subplots(figsize=figsize)
     bxa = []
@@ -36,7 +31,7 @@ def plot_cross_section(cross_section, imagefile,
     # axis limits
     ax.set_xlim([0., AsShape(cross_section.geometry).length])
     if ylim is not None:
-        ax.set_ylim(ylim
+        ax.set_ylim(ylim)
 
     # grid lines |--|--|--|
     ax.grid()

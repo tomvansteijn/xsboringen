@@ -51,7 +51,8 @@ class Borehole(AsDictMixin, Iterable):
     '''Borehole class with iterator method yielding segments'''
     def __init__(self, code, depth,
             fields=None, x=None, y=None, z=None,
-            segments=None, verticals=None):
+            segments=None, verticals=None,
+            ):
         self.code = code
         self.depth = depth
         self.fields = fields
@@ -86,6 +87,14 @@ class Borehole(AsDictMixin, Iterable):
         '''borehole geometry interface'''
         return {'type': 'Point', 'coordinates': (self.x, self.y)}
 
+    @property
+    def has_xy(self):
+        return (self.x is not None) and (self.y is not None)
+
+    @property
+    def has_z(self):
+        return (self.z is not None)
+
     def materialize(self):
         '''read borehole segments and assign as list'''
         segments_in_list = []
@@ -94,7 +103,7 @@ class Borehole(AsDictMixin, Iterable):
         self.segments = segments_in_list
         self.materialized = True
 
-    def simplify(self, min_length=0.):
+    def simplify(self, min_thickness=None):
         '''combine segments with same lithology and sandmedianclasses'''
         simple_segments = []
         key = lambda s: {
@@ -108,13 +117,45 @@ class Borehole(AsDictMixin, Iterable):
                 base=max(s.base for s in grouped_segments),
                 **key,
                 )
-            if (i == 0) or (simplified.length > min_length):
-                simple_segments.append(simplified)
-            else:
-                simple_segments[-1] += simplified
+            simple_segments.append(simplified)
         self.segments = simple_segments
         self.materialized = True
 
+        if min_thickness is not None:
+            self._apply_min_thickness(min_thickness)
+            self.simplify(min_thickness=None)
+
+    def _get_min_thickness(self):
+        return min((s.thickness, i) for i, s in enumerate(self.segments))
+
+    def _apply_min_thickness(self, min_thickness):
+        smallest_thickness, idx = self._get_min_thickness()
+        while smallest_thickness < min_thickness:
+            if idx > 0:
+                segment_above = self.segments[idx - 1]
+            else:
+                segment_above = None
+            try:
+                segment_below = self.segments[idx + 1]
+            except IndexError:
+                segment_below = None
+            if (segment_above is None) and (segment_below is None):
+                break
+            elif not smallest_thickness > 0.:
+                del self.segments[idx]
+            elif segment_above is None:
+                self.segments[idx + 1].top = self.segments[idx].top
+                del self.segments[idx]
+            elif segment_below is None:
+                self.segments[idx - 1].base = self.segments[idx].base
+                del self.segments[idx]
+            elif segment_above.thickness < segment_below.thickness:
+                self.segments[idx - 1].base = self.segments[idx].base
+                del self.segments[idx]
+            else:
+                self.segments[idx + 1].top = self.segments[idx].top
+                del self.segments[idx]
+        smallest_thickness, idx = self._get_min_thickness()
 
 class CPT(Borehole):
     '''CPT class equal to borehole'''

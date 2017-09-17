@@ -36,7 +36,7 @@ class Cross_Section(object):
         return AsShape(self.geometry)
 
     def discretize(self, res):
-        '''discretize line to point coords with given distance''''
+        '''discretize line to point coords with given distance'''
         d = 0.
         while d < self.shape.length:
             p = self.shape.interpolate(d)

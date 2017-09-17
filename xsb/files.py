@@ -23,7 +23,7 @@ def safe_float(s):
         return None
 
 
-def segments_from_xml(root):
+def segments_from_xml(root, fields=None):
     '''read segments from XML and yield as Segment'''
     intervals = root.findall('pointSurvey/borehole/lithoDescr/lithoInterval')
     for interval in intervals:
@@ -48,22 +48,22 @@ def segments_from_xml(root):
         except AttributeError:
             sandmedian = None
 
-        # organic matter content
-        fields = {}
-        try:
-            fields['organic_matter'] = safe_float(interval.find(
-                'organMatPerc').attrib.get('percentage'))
-        except AttributeError:
-            fields['organic_matter'] = None
+        # remaining fields
+        if fields is not None:
+            segment_fields = {}
+            for key, attr in fields:
+                element = interval.find(key)
+                if element is not None:
+                    segment_fields[key] = element.attrib.get(attr)
 
         # yield segment
         yield Segment(top, base, lithology,
             sandmedianclass=sandmedianclass,
-            fields=fields,
+            fields=segment_fields,
             )
 
 
-def borehole_from_xml(xmlfile):
+def borehole_from_xml(xmlfile, segment_fields=None):
     '''read Dinoloket XML file and return Borehole'''
     logging.debug('reading {file:}'.format(file=os.path.basename(xmlfile)))
     fields = {}
@@ -105,12 +105,16 @@ def borehole_from_xml(xmlfile):
     # elevation in m
     elevation = survey.find('surfaceElevation/elevation')
     if not elevation is None:
-        z = safe_float(elevation.attrib.get('levelValue')) * 1e-2  # to m
+        z = safe_float(elevation.attrib.get('levelValue'))
+        try:
+         z *= 1e-2  # to m
+        except TypeError:
+            z = None
     else:
         z = None
 
     # segments as generator
-    segments = segments_from_xml(root)
+    segments = segments_from_xml(root, segment_fields)
 
     return Borehole(code, depth,
         fields=fields,
