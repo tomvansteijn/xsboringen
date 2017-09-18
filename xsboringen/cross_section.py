@@ -23,17 +23,17 @@ class Cross_Section(object):
         self.solids = []
 
     def __repr__(self):
-        return ('Cross_Section(length={length:.2f}, '
-                'buffer_distance={buffer_distance:.2f}, '
-                'label={label:})').format(
-            length=self.shape.length,
-            buffer_distance=self.buffer_distance,
-            label=self.label,
-            )
+        return ('{s.__class__.__name__:}(length={s.length:.2f}, '
+                'buffer_distance={s.buffer_distance:.2f}, '
+                'label={s.label:})').format(s=self)
 
     @property
     def shape(self):
         return AsShape(self.geometry)
+
+    @property
+    def length(self):
+        return self.shape.length
 
     def discretize(self, res):
         '''discretize line to point coords with given distance'''
@@ -55,13 +55,13 @@ class Cross_Section(object):
         '''add points within buffer distance and project to line'''
         self._add_some_objects(points, self.points)
 
-    def _add_some_objects(self, some_objects, dest):
+    def _add_some_objects(self, some_objects, dst):
         for an_object in some_objects:
             if AsShape(an_object.geometry).within(self.buffer):
                 the_distance = self.shape.project(AsShape(an_object.geometry))
-                self.objects.append((the_distance, an_object))
+                dst.append((the_distance, an_object))
 
-    def sort_objects(self):
+    def sort(self):
         self.boreholes = [b for b in sorted(self.boreholes)]
         self.piezometers = [p for p in sorted(self.piezometers)]
         self.points = [p for p in sorted(self.points)]

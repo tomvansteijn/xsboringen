@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsb import cross_section
-from xsb import files
-from xsb import plot
-from xsb import shapes
+from xsboringen import cross_section
+from xsboringen import files
+from xsboringen import plot
+from xsboringen import shapes
 
 import yaml
 
@@ -16,27 +16,25 @@ LABELS = iter('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 IMAGEFILEFORMAT = 'cross_section_{label:}.png'
 
 def plot(**kwargs):
-    folders = kwargs.get('folders')
-    solids = kwargs.get('solids')
-    lineshapefile = kwargs['lineshapefile']
-    buffer_distance = kwargs.get('buffer_distance', 0.)
+    # args
+    datafolders = kwargs['datafolders']
+    lineshape = kwargs['lineshapefile']
+    results = kwargs['results']
+
+    # optional args
     min_depth = kwargs.get('min_depth', 0.)
-    labelfield = kwargs.get('labelfield')
-    resultfolder = kwargs['resultfolder']
     ylim = kwargs.get('ylim')
     xlabel = kwargs.get('xlabel')
     ylabel = kwargs.get('ylabel')
 
-    if not os.path.exists(resultfolder):
-        os.mkdir(resultfolder)
+    # create output folder
+    if not os.path.exists(results['folder']):
+        os.mkdir(results['folder'])
 
-    folder_kwargs = {
-        'folders': folders,
-        }
-
-    boreholes = files.from_folders(**folder_kwargs)
+    boreholes = files.from_folders(datafolders)
     boreholes = [
-        b for b in boreholes if b.has_xy and b.has_z and
+        b for b in boreholes
+        if (b.x is not None) and (b.y is not None) and (b.z is not None) and
         (b.depth >= min_depth)
         ]
 

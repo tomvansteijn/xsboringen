@@ -29,11 +29,9 @@ class Segment(AsDictMixin):
             setattr(self, key, value)
 
     def __repr__(self):
-        return 'Segment(top={:.2f}, base={:.2f}, lithology={!s})'.format(
-            self.top,
-            self.base,
-            self.lithology,
-            )
+        return ('{s.__class__.__name__:}(top={s.top:.2f}, '
+                'base={s.base:.2f}, '
+                'lithology={s.lithology:})').format(s=self)
 
     def __iadd__(self, other):
         self.top = min(self.top, other.top)
@@ -54,7 +52,7 @@ class Borehole(AsDictMixin, Iterable):
     '''Borehole class with iterator method yielding segments'''
     def __init__(self, code, depth,
             x=None, y=None, z=None,
-            segments=None, verticals=None,
+            segments=None, verticals=None, key=None,
             **attrs,
             ):
         self.code = code
@@ -66,22 +64,19 @@ class Borehole(AsDictMixin, Iterable):
 
         self.segments = segments
         self.verticals = verticals
+        self.key = key or self._default_key
 
         # set other properties
         for key, value in attrs.items():
             setattr(self, key, value)
 
+        # materialized flag (segments as generator = False, in memory = True)
         self.materialized = False
 
-        self.key = lambda s: {
-            'lithology': s.lithology,
-            'sandmedianclass': s.sandmedianclass,
-            }
-
     def __repr__(self):
-        return 'Borehole(code={!s}, depth={:.2f})'.format(
-            self.code,
-            self.depth,
+        return ('{s.__class__.__name__:}(code={s.code:}, '
+                'depth={s.depth:.2f})').format(
+            s=self,
             )
 
     def __len__(self):
@@ -94,18 +89,17 @@ class Borehole(AsDictMixin, Iterable):
         for segment in self.segments:
             yield segment
 
+    @staticmethod
+    def _default_key(segment):
+        return {
+            'lithology': segment.lithology,
+            'sandmedianclass': segment.sandmedianclass,
+            }
+
     @property
     def geometry(self):
         '''borehole geometry interface'''
         return {'type': 'Point', 'coordinates': (self.x, self.y)}
-
-    @property
-    def has_xy(self):
-        return (self.x is not None) and (self.y is not None)
-
-    @property
-    def has_z(self):
-        return (self.z is not None)
 
     def materialize(self):
         '''read borehole segments and assign as list'''
@@ -165,7 +159,3 @@ class Borehole(AsDictMixin, Iterable):
                 self.segments[idx + 1].top = self.segments[idx].top
                 del self.segments[idx]
         smallest_thickness, idx = self._get_min_thickness()
-
-class CPT(Borehole):
-    '''CPT class equal to borehole'''
-    pass

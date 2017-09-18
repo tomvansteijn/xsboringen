@@ -3,10 +3,28 @@
 
 from xsb.objects import Borehole, Segment, CPT
 
+from itertools import chain
 from xml.etree import ElementTree
 import datetime
 import logging
+import glob
 import os
+
+
+def read_boreholes_Dinoloket(folder, version=1.4):
+    xmlfiles = glob.glob(os.path.join(folder, '*{:.1f}.xml'.format(version)))
+    for xmlfile in xmlfiles:
+        yield borehole_from_xml(xmlfile)
+
+
+def from_folders(folders):
+    readers = []
+    for folder in folders:
+        if folder['format'] == 'Dinoloket':
+            readers.append(read_boreholes_Dinoloket(folder['path']))
+        else:
+            pass
+    return chain(readers)
 
 
 def safe_int(s):

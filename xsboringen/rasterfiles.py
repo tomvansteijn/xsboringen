@@ -7,6 +7,7 @@ import rasterio
 import numpy as np
 
 from functools import partial
+import logging
 import os
 
 
