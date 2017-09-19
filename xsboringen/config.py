@@ -9,6 +9,9 @@ FIGSIZE = 21, 11.7
 
 # default plot barwidth factor times cross-section length
 PLOT_BARWIDTH = 1.5e-2
+CODE_POSITION = 1.01
+
+FONT_SIZE = 10
 
 # plotting styles
 STYLES = {

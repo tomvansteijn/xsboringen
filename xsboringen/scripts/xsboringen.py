@@ -5,7 +5,7 @@ from xsboringen import config
 from xsboringen import cross_section
 from xsboringen import files
 from xsboringen import plot as xsplot
-from xsboringen import shape as xshape
+from xsboringen import shapes as xshapes
 from xsboringen import styles as xstyles
 
 import yaml
@@ -44,7 +44,7 @@ def plot(**kwargs):
     # define styles lookup
     styles = xstyles.StylesLookup(**styles)
 
-    for line_geometry, line_properties in shape.read(lineshape['file']):
+    for line_geometry, line_properties in xshapes.read(lineshape['file']):
         # get label
         if lineshape['labelfield'] is not None:
             label = line_properties[lineshape['labelfield']]
