@@ -6,7 +6,7 @@ from xsb.rasterfiles import sample
 from shapely.geometry import AsShape
 
 
-class Cross_Section(object):
+class CrossSection(object):
     def __init__(self, geometry, buffer_distance, label=''):
         self.geometry = geometry
         self.buffer_distance = buffer_distance

@@ -7,13 +7,13 @@ from matplotlib import pyplot as plt
 
 
 class CrossSectionPlot(object):
-    def __init__(self, cross_section, style,
+    def __init__(self, cross_section, styles,
         ylim=None,
         xlabel=None, ylabel=None, label=None,
         figsize=None, pages=None,
         ):
         self.cs = cross_section
-        self.style = style
+        self.styles = styles
 
         self.ylim = ylim
 
@@ -28,7 +28,7 @@ class CrossSectionPlot(object):
         self.bxa = []
 
     def get_style(self, segment):
-        return self.style.lookup(segment)
+        return self.styles.lookup(segment)
 
     def __repr__(self):
         return ('{s.__class__.__name__:}(length={s.length:.2f}, '

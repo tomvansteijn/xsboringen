@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+LABELS = iter('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+IMAGEFILEFORMAT = 'cross_section_{label:}.png'
+
 # default figure size (width, height) [inch]
 FIGSIZE = 21, 11.7
 
 # default plot barwidth factor times cross-section length
 PLOT_BARWIDTH = 1.5e-2
 
-# plotting style
-STYLE = {
+# plotting styles
+STYLES = {
     'attrs': ('lithology', 'sandmedianclass'),
     'records':
         {'key': ('G',), 'label': 'grind', 'color': 'coral', 'hatch': '', 'edgecolor': 'black'},

@@ -68,24 +68,24 @@ def segments_from_xml(root, fields=None):
 
         # remaining fields
         if fields is not None:
-            segment_fields = {}
+            attrs = {}
             for key, attr in fields:
                 element = interval.find(key)
                 if element is not None:
-                    segment_fields[key] = element.attrib.get(attr)
+                    attrs[key] = element.attrib.get(attr)
 
         # yield segment
         yield Segment(top, base, lithology,
             sandmedianclass=sandmedianclass,
-            fields=segment_fields,
+            **attrs,
             )
 
 
 def borehole_from_xml(xmlfile, segment_fields=None):
     '''read Dinoloket XML file and return Borehole'''
     logging.debug('reading {file:}'.format(file=os.path.basename(xmlfile)))
-    fields = {}
-    fields['source'] = xmlfile
+    attrs = {}
+    attrs['source'] = xmlfile
 
     tree = ElementTree.parse(xmlfile)
     root = tree.getroot()
@@ -101,19 +101,23 @@ def borehole_from_xml(xmlfile, segment_fields=None):
         month = safe_int(date.attrib.get('startMonth'))
         day = safe_int(date.attrib.get('startDay'))
         if year and month and day:
-            fields['date'] = datetime.datetime(year, month, day).isoformat()
+            attrs['date'] = datetime.datetime(year, month, day).isoformat()
         elif year and month:
-            fields['date'] = datetime.datetime(year, month, 1).isoformat()
+            attrs['date'] = datetime.datetime(year, month, 1).isoformat()
         elif year:
-            fields['date'] = datetime.datetime(year, 1, 1).isoformat()
+            attrs['date'] = datetime.datetime(year, 1, 1).isoformat()
         else:
-            fields['date'] = None
+            attrs['date'] = None
     except AttributeError:
-        fields['date'] = None
+        attrs['date'] = None
 
     # final depth of borehole in m
     basedepth = survey.find('borehole').attrib.get('baseDepth')
-    depth = safe_float(basedepth) * 1e-2  # to m
+    depth = safe_float(basedepth)
+    try:
+        depth *= 1e-2  # to m
+    except TypeError:
+        depth = None
 
     # x,y coordinates
     coordinates = survey.find('surveyLocation/coordinates')
@@ -125,17 +129,17 @@ def borehole_from_xml(xmlfile, segment_fields=None):
     if not elevation is None:
         z = safe_float(elevation.attrib.get('levelValue'))
         try:
-         z *= 1e-2  # to m
+            z *= 1e-2  # to m
         except TypeError:
             z = None
     else:
         z = None
 
     # segments as generator
-    segments = segments_from_xml(root, segment_fields)
+    segments = segments_from_xml(root, fields)
 
     return Borehole(code, depth,
-        fields=fields,
         x=x, y=y, z=z,
         segments=segments,
+        **attrs,
         )

@@ -1,0 +1,25 @@
+# input data folders (boreholes, CPTs)
+datafolders: [
+  {'format': 'Dinoloket', 'path': '..\data'},
+]
+
+# input geometry
+
+# input line shape for cross-sections
+lineshape: {
+  'file':
+  'labelfield':
+}
+
+# result
+result: {
+  'folder':
+}
+
+# plot options
+min_depth: 0.
+buffer_distance: 10.
+ylim:
+xlabel:
+ylabel:
+

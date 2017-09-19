@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+from xsboringen import config
 from xsboringen import cross_section
 from xsboringen import files
-from xsboringen import plot
-from xsboringen import shapes
+from xsboringen import plot as xsplot
+from xsboringen import shape as xshape
+from xsboringen import styles as xstyles
 
 import yaml
 
@@ -12,25 +14,26 @@ import argparse
 import logging
 import os
 
-LABELS = iter('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-IMAGEFILEFORMAT = 'cross_section_{label:}.png'
 
 def plot(**kwargs):
     # args
     datafolders = kwargs['datafolders']
     lineshape = kwargs['lineshapefile']
-    results = kwargs['results']
+    result = kwargs['result']
 
     # optional args
     min_depth = kwargs.get('min_depth', 0.)
+    buffer_distance = kwargs.get('buffer_distance', 0.)
     ylim = kwargs.get('ylim')
     xlabel = kwargs.get('xlabel')
     ylabel = kwargs.get('ylabel')
+    styles = kwargs.get('styles', config.STYLES)
 
     # create output folder
-    if not os.path.exists(results['folder']):
-        os.mkdir(results['folder'])
+    if not os.path.exists(result['folder']):
+        os.mkdir(result['folder'])
 
+    # read boreholes and CPT's from data folders
     boreholes = files.from_folders(datafolders)
     boreholes = [
         b for b in boreholes
@@ -38,36 +41,44 @@ def plot(**kwargs):
         (b.depth >= min_depth)
         ]
 
-    for line_geometry, line_properties in shape.read(lineshapefile):
-        if labelfield is not None:
-            label = line_properties[labelfield]
-        else:
-            label = next(LABELS)
+    # define styles lookup
+    styles = xstyles.StylesLookup(**styles)
 
+    for line_geometry, line_properties in shape.read(lineshape['file']):
+        # get label
+        if lineshape['labelfield'] is not None:
+            label = line_properties[lineshape['labelfield']]
+        else:
+            label = next(config.LABELS)
+
+        # log message
+        logging.info('cross-section {label:}'.format(label=label))
+
+        # define cross-section
         cs_kwargs = {
             'geometry': line_geometry,
             'label': label,
             'buffer_distance': buffer_distance,
             }
+        cs = cross_section.CrossSection(**cs_kwargs)
 
-        cs = cross_section.Cross_Section(**cs_kwargs)
-
+        # add boreholes to cross-section
         cs.add_boreholes(boreholes)
-        cs.add_solids(solids)
 
-        imagefile = os.path.join(resultfolder,
-            IMAGEFILEFORMAT.format(label=label))
-
+        # define plot
         plot_kwargs = {
             'cross_section': cs,
-            'imagefile': imagefile,
             'styles': styles,
             'ylim': ylim,
             'xlabel': xlabel,
             'ylabel': ylabel,
             }
+        plt = xsplot.CrossSectionPlot(**plot_kwargs)
 
-        plot.plot_cross_section(**plot_kwargs)
+        # plot and save to file
+        imagefile = os.path.join(resultfolder,
+            config.IMAGEFILEFORMAT.format(label=label))
+        plt.save(imagefile)
 
 
 def get_parser():
