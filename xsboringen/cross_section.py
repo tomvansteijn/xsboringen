@@ -1,9 +1,59 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsb.rasterfiles import sample
+from xsboringen.rasterfiles import sample
 
-from shapely.geometry import AsShape
+from shapely.geometry import asShape
+
+
+class Line(object):
+    def __init__(self, name, distance, values):
+        self.name = name
+
+        assert len(distance) == len(values), \
+            'distance and values should have equal length'
+
+        self.distance = distance
+        self.values = values
+
+    def __repr__(self):
+        return ('{s.__class__.__name__:}(length={s.length:.2f}, '
+                'name={s.name:})').format(s=self)
+
+    def __iter__(self):
+        for d, v in zip(self.distance, self.values):
+            yield d, v
+
+    @property
+    def length(self):
+        return max(self.distance)
+
+
+class Solid(object):
+    def __init__(self, name, distance, top, base):
+        self.name = name
+
+        assert len(distance) == len(top) == len(distance), \
+            'distance, top and base should have equal length'
+
+        assert np.all(np.array(top) >= np.array(base)), \
+            'top should be above base'
+
+        self.distance = distance
+        self.top = top
+        self.base = base
+
+    def __repr__(self):
+        return ('{s.__class__.__name__:}(length={s.length:.2f}, '
+                'name={s.name:})').format(s=self)
+
+    def __iter__(self):
+        for d, t, b in zip(self.distance, self.top, self.base):
+            yield d, t, b
+
+    @property
+    def length(self):
+        return max(self.distance)
 
 
 class CrossSection(object):
@@ -29,7 +79,7 @@ class CrossSection(object):
 
     @property
     def shape(self):
-        return AsShape(self.geometry)
+        return asShape(self.geometry)
 
     @property
     def length(self):
@@ -38,7 +88,7 @@ class CrossSection(object):
     def discretize(self, res):
         '''discretize line to point coords with given distance'''
         d = 0.
-        while d < self.shape.length:
+        while d <= self.shape.length:
             p = self.shape.interpolate(d)
             yield d, (p.x, p.y)
             d += res
@@ -47,42 +97,35 @@ class CrossSection(object):
         '''add boreholes within buffer distance and project to line'''
         self._add_some_objects(boreholes, self.boreholes)
 
-    def add_piezometers(self, piezometers):
-        '''add piezometers within buffer distance and project to line'''
-        self._add_some_objects(piezometers, self.piezometers)
-
     def add_points(self, points):
         '''add points within buffer distance and project to line'''
         self._add_some_objects(points, self.points)
 
     def _add_some_objects(self, some_objects, dst):
         for an_object in some_objects:
-            if AsShape(an_object.geometry).within(self.buffer):
-                the_distance = self.shape.project(AsShape(an_object.geometry))
+            if asShape(an_object.geometry).within(self.buffer):
+                the_distance = self.shape.project(asShape(an_object.geometry))
                 dst.append((the_distance, an_object))
 
     def sort(self):
         self.boreholes = [b for b in sorted(self.boreholes)]
-        self.piezometers = [p for p in sorted(self.piezometers)]
         self.points = [p for p in sorted(self.points)]
 
     def add_lines(self, lines):
         for line in lines:
-            logging.debug('sampling {}'.format(line['name']))
             distance, coords = zip(*self.discretize(line['res']))
-            self.lines.append({
-                'name': line['name'],
-                'distance': [d for d in distance],
-                'values': [v for v in sample(line['file'], coords)],
-                })
+            self.lines.append(Line(
+                name=line['name'],
+                distance=[d for d in distance],
+                values=[v for v in sample(line['file'], coords)],
+                ))
 
     def add_solids(self, solids):
         for solid in solids:
-            logging.debug('sampling {}'.format(solid['name']))
             distance, coords = zip(*self.discretize(solid['res']))
-            self.solids.append({
-                'name': solid['name'],
-                'distance': [d for d in distance],
-                'top': [t for t in sample(solid['topfile'], coords)],
-                'base': [b for b in sample(solid['basefile'], coords)],
-                })
+            self.solids.append(Solid(
+                name=solid['name'],
+                distance=[d for d in distance],
+                top=[t for t in sample(solid['topfile'], coords)],
+                base=[b for b in sample(solid['basefile'], coords)],
+                ))
