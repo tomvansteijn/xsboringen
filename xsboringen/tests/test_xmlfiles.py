@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsboringen.files import borehole_from_xml
+from xsboringen.xmlfiles import borehole_from_xml
 
 import numpy as np
 
