@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsb import idfpy
+import idfpy
 
 import rasterio
 import numpy as np
@@ -10,10 +10,12 @@ from functools import partial
 import logging
 import os
 
+log = logging.getLogger(os.path.basename(__file__))
+
 
 def sample_raster(rasterfile, coords, bounds_warning):
     '''sample raster file at coords'''
-    logging.info('reading rasterfile {}'.format(os.path.basename(rasterfile)))
+    log.debug('reading rasterfile {}'.format(os.path.basename(rasterfile)))
     with rasterio.open(rasterfile) as src:
         for value in src.sample(coords, bounds_warning=bounds_warning):
             if value[0] in src.nodatavals:
@@ -24,7 +26,7 @@ def sample_raster(rasterfile, coords, bounds_warning):
 
 def sample_idf(idffile, coords, bounds_warning=True):
     '''sample IDF file at coords'''
-    logging.info('reading idf file {}'.format(os.path.basename(idffile)))
+    log.debug('reading idf file {}'.format(os.path.basename(idffile)))
     with idfpy.open(idffile) as src:
         for value in src.sample(coords, bounds_warning=bounds_warning):
             if value[0] in src.nodatavals:
