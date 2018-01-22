@@ -1,30 +1,43 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from collections import namedtuple
-
-
-class StylesLookup(object):
-    def __init__(self, attrs, records, default):
-        self.attrs = attrs
-        self.records = records
+class SimpleStylesLookup(object):
+    def __init__(self, records, default):
+        self.mapping = {}
+        self.items = []
+        for record in records:
+            key = record.pop('key')
+            label = record.pop('label')
+            self.mapping[key] = record
+            self.items.append((label, record))
         self.default = default
 
     def __repr__(self):
-        return ('{s.__class__.__name__:}(key_attrs={s.key_attrs:}), '
+        return ('{s.__class__.__name__:}(), '
             ).format(s=self)
 
-    def lookup(self, obj, default=None):
-        key_values = []
-        for attr in self.attrs:
-            key_value = getattr(obj, attr, None)
-            if key_value is not None:
-                key_values.append(key_value)
+    def lookup(self, key):
+        return self.mapping.get(key, self.default)
 
-        key = tuple(key_values)
-        while key not in self.records:
+
+class ObjectStylesLookup(object):
+    def __init__(self, attrs, records, default):
+        self.attrs = attrs
+        self.mapping = {}
+        self.items = []
+        for record in records:
+            key = tuple(record.pop('key'))
+            label = record.pop('label')
+            self.mapping[key] = record
+            self.items.append((label, record))
+        self.default = default
+
+    def __repr__(self):
+        return ('{s.__class__.__name__:}(attrs={s.attrs:}), '
+            ).format(s=self)
+
+    def lookup(self, obj):
+        key = tuple(getattr(obj, a, None) for a in self.attrs)
+        while key not in self.mapping and len(key) > 0:
             key = key[:-1]
-            if not len(key) > 0:
-                break
-
-        return self.records.get(key, self.default)
+        return self.mapping.get(key, self.default)
