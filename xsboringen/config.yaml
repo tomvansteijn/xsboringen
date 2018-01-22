@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+# Tom van Steijn, Royal HaskoningDHV
+
+# default labels
+defaultlabels: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+# shapefile writing arguments
+shapefile: {
+  driver: ESRI Shapefile,
+  epsg: 28992, # RD New (see http://spatialreference.org/ref/epsg)
+  }
+
+# config for cross-section plot class
+cross_section_plot: {
+  # default figure size (width, height) [inch]
+  figure_size: [21, 11.7],
+
+  # bars width compared to figure width
+  barwidth_factor: 1.e-2,
+
+  # position of borehole code labels compared to axes (0=bottom, 1=top)
+  codelabel_position: 1.01,
+
+  # fontsize of borehole code labels
+  codelabel_fontsize: 10.,
+
+  # color of borehole code labels
+  codelabel_color: gray,
+
+  # fontsize for legend
+  legend_fontsize: 10.,
+
+  # legend title text
+  legend_title: lithologie+zandmediaan,
+
+  # csv filename format
+  csv_filename_format: 'cross_section_{label:}.csv',
+
+  # image filename format
+  image_filename_format: 'cross_section_{label:}.png',
+  }
+
+# plotting styles
+styles: {
+  segments: {
+    attrs: [lithology, sandmedianclass],
+    records: [
+        {key: [G, null], label: grind, color: coral, edgecolor: black},
+        {key: [K, null], label: klei, color: forestgreen, edgecolor: black},
+        {key: [L, null], label: leem, color: darkkhaki, edgecolor: black},
+        {key: [V, null], label: veen, color: sienna, edgecolor: black},
+        {key: [Z, null], label: zand geen mediaan, color: '#FFFF66', edgecolor: black},
+        {key: [Z, ZMO], label: zand onduidelijke mediaan, color: lightgray, hatch: '...', edgecolor: black},
+        {key: [Z, ZFC], label: zand fijne categorie, color: '#FFFF66', hatch: '...', edgecolor: black},
+        {key: [Z, ZMC], label: zand middencategorie, color: gold, hatch: '...', edgecolor: black},
+        {key: [Z, ZGC], label: zand grove categorie, color: orange, hatch: '...', edgecolor: black},
+        {key: [Z, GCZ], label: glauconietzand, color: mediumseagreen, hatch: '...', edgecolor: black},
+      ],
+    default: {color: white, hatch: , label: onbekend, edgecolor: black},
+    },
+  verticals: {
+    records: [
+      {key: cone_resistance, label: conusweerstand, color: blue},
+      {key: friction_ratio, label: wrijvingsgetal, color: magenta},
+      ],
+      }
+    }
+  },
+
+
+
+
