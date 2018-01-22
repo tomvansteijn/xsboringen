@@ -23,6 +23,7 @@ class TestBoreholeFromGEF(object):
         }
         fieldnames = GefFieldNames(**{
             'columnsep': 'columnseparator',
+            'recordsep': 'recordseparator',
             'code': 'testid',
             'depth': 'einddiepte',
             'xy': 'xyid',
@@ -31,3 +32,4 @@ class TestBoreholeFromGEF(object):
         borehole = borehole_from_gef(geffile, fieldnames, repeatedset)
         assert np.isclose(borehole.z, 14.21)
         borehole.materialize()
+        assert borehole.segments[-2].lithology == 'Zs1g1 GR'
