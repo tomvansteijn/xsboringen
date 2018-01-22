@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from borehole import Borehole
+from xsboringen.borehole import Borehole
 
 
 class CPT(Borehole):
