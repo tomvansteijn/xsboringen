@@ -3,6 +3,7 @@
 
 from collections import Iterable
 from itertools import groupby
+import copy
 
 
 class AsDictMixin(object):
@@ -15,8 +16,21 @@ class AsDictMixin(object):
                 if not k.startswith('__')}
 
 
-class Segment(AsDictMixin):
+class CopyMixin(object):
+    '''Mixin for adding copy method to object'''
+    def copy(self, deep=False):
+        if deep:
+            return copy.deepcopy(self)
+        else:
+            return copy.copy(self)
+
+
+class Segment(AsDictMixin, CopyMixin):
     '''Class representing borehole segment'''
+
+    # class attributes
+    fieldnames = ('top', 'base', 'lithology', 'sandmedianclass')
+
     def __init__(self, top, base, lithology,
             sandmedianclass=None, **attrs):
         self.top = top
@@ -31,7 +45,17 @@ class Segment(AsDictMixin):
     def __repr__(self):
         return ('{s.__class__.__name__:}(top={s.top:.2f}, '
                 'base={s.base:.2f}, '
-                'lithology={s.lithology:})').format(s=self)
+                'lithology={s.lithology:}, '
+                'sandmedianclass={s.sandmedianclass:})').format(s=self)
+
+    def __add__(self, other):
+        clone = self.copy()
+        clone.top = min(self.top, other.top)
+        clone.base = max(self.base, other.base)
+        return clone
+
+    def __radd__(self, other):
+        return self
 
     def __iadd__(self, other):
         self.top = min(self.top, other.top)
@@ -48,11 +72,24 @@ class Segment(AsDictMixin):
         return z - self.top, z - self.base
 
 
-class Borehole(AsDictMixin, Iterable):
+class Borehole(AsDictMixin, CopyMixin, Iterable):
     '''Borehole class with iterator method yielding segments'''
+
+    # class attributes
+    fieldnames = ('code', 'depth', 'x', 'y', 'z')
+    schema = {
+            'geometry': 'Point',
+            'properties': [
+                ('code', 'str'),
+                ('depth', 'float'),
+                ('x', 'float'),
+                ('y', 'float'),
+                ('z', 'float')]
+                }
+
     def __init__(self, code, depth,
             x=None, y=None, z=None,
-            segments=None, verticals=None, key=None,
+            segments=None, verticals=None,
             **attrs,
             ):
         self.code = code
@@ -64,14 +101,10 @@ class Borehole(AsDictMixin, Iterable):
 
         self.segments = segments
         self.verticals = verticals
-        self.key = key or self._default_key
 
         # set other properties
         for key, value in attrs.items():
             setattr(self, key, value)
-
-        # materialized flag (segments as generator = False, in memory = True)
-        self.materialized = False
 
     def __repr__(self):
         return ('{s.__class__.__name__:}(code={s.code:}, '
@@ -89,17 +122,15 @@ class Borehole(AsDictMixin, Iterable):
         for segment in self.segments:
             yield segment
 
-    @staticmethod
-    def _default_key(segment):
-        return {
-            'lithology': segment.lithology,
-            'sandmedianclass': segment.sandmedianclass,
-            }
-
     @property
     def geometry(self):
         '''borehole geometry interface'''
         return {'type': 'Point', 'coordinates': (self.x, self.y)}
+
+    @property
+    def materialized(self):
+        '''segments materialized? (generator = False, list = True)'''
+        return isinstance(self.segments, list)
 
     def materialize(self):
         '''read borehole segments and assign as list'''
@@ -107,31 +138,46 @@ class Borehole(AsDictMixin, Iterable):
         for segment in self.segments:
             segments_in_list.append(segment)
         self.segments = segments_in_list
-        self.materialized = True
 
-    def simplify(self, min_thickness=None):
-        '''combine segments with same lithology and sandmedianclasses'''
+    def simplified(self, min_thickness=None):
+        '''simplify clone and return for generator chaining'''
+        clone = self.copy()
+        clone.simplify(min_thickness=min_thickness)
+        return clone
+
+    def groupby(self, by=None):
+        '''group segments using groupby function or attribute(s)'''
+        if by is not None:
+            if callable(by):
+                pass
+            elif isinstance(arg, str):
+                by = lambda s: {by: getattr(s, by)}
+            else:
+                by = lambda s: {a: getattr(s, a) for a in by}
+        else:
+            by = lambda s: {
+                'lithology': s.lithology,
+                'sandmedianclass': s.sandmedianclass,
+                }
+
+        for key, grouped in groupby(self.segments, by):
+            yield key, grouped
+
+    def simplify(self, min_thickness=None, by=None):
+        '''combine segments according to grouped attributes'''
         simple_segments = []
-
-        for i, (key, grouped) in enumerate(groupby(self.segments, self.key)):
-            grouped_segments = [s for s in grouped]
-            simplified = Segment(
-                top=min(s.top for s in grouped_segments),
-                base=max(s.base for s in grouped_segments),
-                **key,
-                )
-            simple_segments.append(simplified)
+        for key, segments in self.groupby(by=by):
+            simple_segments.append(sum(s for s in segments))
         self.segments = simple_segments
-        self.materialized = True
 
         if min_thickness is not None:
-            self._apply_min_thickness(min_thickness)
+            self.apply_min_thickness(min_thickness)
             self.simplify(min_thickness=None)
 
     def _get_min_thickness(self):
         return min((s.thickness, i) for i, s in enumerate(self.segments))
 
-    def _apply_min_thickness(self, min_thickness):
+    def apply_min_thickness(self, min_thickness):
         smallest_thickness, idx = self._get_min_thickness()
         while smallest_thickness < min_thickness:
             if idx > 0:
@@ -158,4 +204,4 @@ class Borehole(AsDictMixin, Iterable):
             else:
                 self.segments[idx + 1].top = self.segments[idx].top
                 del self.segments[idx]
-        smallest_thickness, idx = self._get_min_thickness()
+            smallest_thickness, idx = self._get_min_thickness()
