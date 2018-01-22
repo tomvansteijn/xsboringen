@@ -1,0 +1,46 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0763
+X-coordinaat (m): 	193269
+Y-coordinaat (m): 	323380
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	86.32
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	15.50
+Datum boring: 	27-10-1972
+Eigenaar: 	RWS
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Bosch, P.W.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    3.10	geel-grijs	zand	---	---	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+    3.10	    4.00	geel	zand	---	---	matig fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    4.00	    5.20	grijs-wit	zand	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    5.20	    5.50	bruin	zand	---	---	matig grof (O)	---	---	---	---	---	---	---	---	---	---	---	
+    5.50	    5.70	donker-bruin-grijs	zand	---	---	---	zwak kleiig	---	---	---	---	---	---	---	sterk humeus	---	---	
+    5.70	    6.20	donker-grijs	klei	---	---	---	---	---	---	---	zandig	---	---	---	sterk humeus	---	---	
+    6.20	    6.40	zwart	bruinkool	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    6.40	    7.00	grijs	zand	---	---	---	---	---	---	---	---	---	---	---	matig humeus	---	---	
+    7.00	    9.50	donker-grijs	zand	---	---	matig grof (O)	---	---	---	---	---	---	---	---	matig humeus	---	---	
+    9.50	    9.80	donker-grijs	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    9.80	   10.20	donker-grijs	klei	---	---	---	---	---	---	---	zwak zandig	---	---	---	---	---	---	
+   10.20	   10.40	onbekend	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   10.40	   11.40	grijs	klei	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	---	
+   11.40	   11.80	grijs	klei	---	---	---	---	---	sterk siltig	---	zwak zandig	---	---	---	---	---	---	
+   11.80	   12.30	licht-grijs	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   12.30	   13.00	licht-groen	zand	---	---	matig grof (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   13.00	   14.00	grijs-wit	zand	---	---	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   14.00	   15.50	grijs-groen	zand	---	---	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	

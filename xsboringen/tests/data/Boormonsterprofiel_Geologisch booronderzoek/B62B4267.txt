@@ -1,0 +1,37 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B4267
+X-coordinaat (m): 	194400
+Y-coordinaat (m): 	320985
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	101.55
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	5.50
+Datum boring: 	01-09-1987
+Eigenaar: 	Onbekend
+Uitvoerder: 	Gruner R.
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.50	---	geen monster	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.50	    0.75	oranje-bruin	zand	---	400	zeer grof	---	---	---	---	---	---	---	---	---	---	---	
+    0.75	    2.75	licht-grijs-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    2.75	    3.00	licht-bruin-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    3.00	    3.25	geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    3.25	    4.25	geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    4.25	    5.00	licht-geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	kalkrijk	
+    5.00	    5.25	geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	sterk grindig	---	---	---	kalkrijk	
+    5.25	    5.50	bruin	grind	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	kalkrijk	

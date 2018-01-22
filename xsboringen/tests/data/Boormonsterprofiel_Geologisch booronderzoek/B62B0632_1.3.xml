@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0632">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>190055</coordinateX>
+			<coordinateY>322905</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<levelMethod code="MH10">MH10</levelMethod>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="10250" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Wijnandsrade</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="1230" >
+		<operatorOrg>RGD</operatorOrg>
+		<ownerOrg>RGD</ownerOrg>
+		<date startYear="1966" startMonth="9" startDay="19"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="C" >
+			<organisation>RGD</organisation>
+		<lithoInterval topDepth="0" baseDepth="40">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="40" baseDepth="150">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="150" baseDepth="300">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGR" >grijs-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="300" baseDepth="450">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="450" baseDepth="680">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="680" baseDepth="760">
+			<lithology code="L" >leem</lithology>
+			<gravelAdmix code="G1" >zwak grindig</gravelAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="760" baseDepth="920">
+			<lithology code="L" >leem</lithology>
+			<gravelAdmix code="G1" >zwak grindig</gravelAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="920" baseDepth="930">
+			<lithology code="Z" >zand</lithology>
+			<gravelAdmix code="G1" >zwak grindig</gravelAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TRO" >rood-</colorSecondary>
+			<sandMedian median="325"/>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="930" baseDepth="940">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="940" baseDepth="950">
+			<lithology code="Z" >zand</lithology>
+			<gravelAdmix code="G1" >zwak grindig</gravelAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TRO" >rood-</colorSecondary>
+			<sandMedian median="325"/>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="950" baseDepth="980">
+			<lithology code="G" >grind</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="980" baseDepth="990">
+			<lithology code="K" >klei</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="990" baseDepth="1050">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedian median="130"/>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1050" baseDepth="1080">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="1080" baseDepth="1100">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K1" >zwak kleiig</clayAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+			<sandMedian median="130"/>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1100" baseDepth="1140">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K3" >sterk kleiig</clayAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+			<sandMedian median="130"/>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1140" baseDepth="1230">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="Z3" >sterk zandig</sandAdmix>
+			<colorMain code="GN" >groen</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code="PUL">Pulsboring</drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

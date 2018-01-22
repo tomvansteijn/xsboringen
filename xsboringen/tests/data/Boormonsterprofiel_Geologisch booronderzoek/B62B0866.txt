@@ -1,0 +1,36 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0866
+X-coordinaat (m): 	195160
+Y-coordinaat (m): 	322700
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	99.38
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	8.00
+Datum boring: 	01-10-1985
+Eigenaar: 	S.S.O. te Heerlen
+Uitvoerder: 	IGF, Maastricht
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Renssen, L.H.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.30	    1.30	donker-bruin	leem	---	---	---	---	---	---	---	zwak zandig	---	---	---	---	---	---	
+    1.30	    3.00	geel-bruin	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    3.00	    4.50	licht-geel-bruin	leem	---	---	uiterst fijn (O)	---	---	---	---	zandig	---	---	---	---	---	kalkarm	
+    4.50	    5.65	wit	grind	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    5.65	    6.00	groen-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	zwak grindig	---	---	---	---	
+    6.00	    6.90	geel-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    6.90	    8.00	geel-grijs	leem	---	---	---	---	---	zwak siltig	---	zandig	---	---	---	---	---	---	

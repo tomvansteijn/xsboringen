@@ -1,0 +1,57 @@
+#GEFID = 1,1,0
+#COLUMNTEXT = 1, aan
+#COLUMNSEPARATOR = ;
+#RECORDSEPARATOR = !
+#FILEOWNER = DINO
+#COMPANYID = Oranje Nassau Mijnen Heerlen
+#FILEDATE = 2017,10,2
+#PROJECTID = DINO-BOR
+#COLUMN = 9
+#COLUMNINFO = 1, m, Diepte bovenkant laag, 1
+#COLUMNINFO = 2, m, Diepte onderkant laag, 2
+#COLUMNINFO = 3, mm, Zandmediaan, 8
+#COLUMNINFO = 4, mm, Grindmediaan, 9
+#COLUMNINFO = 5, %, Lutum percentage, 3
+#COLUMNINFO = 6, %, Silt percentage, 4
+#COLUMNINFO = 7, %, Zand percentage, 5
+#COLUMNINFO = 8, %, Grind percentage, 6
+#COLUMNINFO = 9, %, Organische stof percentage, 7
+#COLUMNVOID = 1, -9999.99
+#COLUMNVOID = 2, -9999.99
+#COLUMNVOID = 3, -9999.99
+#COLUMNVOID = 4, -9999.99
+#COLUMNVOID = 5, -9999.99
+#COLUMNVOID = 6, -9999.99
+#COLUMNVOID = 7, -9999.99
+#COLUMNVOID = 8, -9999.99
+#COLUMNVOID = 9, -9999.99
+#LASTSCAN = 11
+#REPORTCODE = GEF-BORE-Report,1,0,0
+#MEASUREMENTCODE = Onbekend,-,-,-
+#TESTID = B62B0569
+#XYID = 31000,196125,322115
+#ZID = 31000,106.0
+#MEASUREMENTTEXT = 3, Heerlen  Laanderstraat, plaatsnaam
+#MEASUREMENTTEXT = 9, maaiveld, vast horizontaal niveau
+#MEASUREMENTTEXT = 13, Oranje Nassau Mijnen, boorbedrijf
+#MEASUREMENTTEXT = 16, 1961-08-01, datum boring
+#MEASUREMENTTEXT = 11, MMET, maaiveldhoogtebepaling
+#MEASUREMENTTEXT = 12, LMET, plaatsbepalingmethode
+#MEASUREMENTTEXT = 7, Rijksdriehoeksmeting, locaal coÃ¶rdinatensysteem
+#MEASUREMENTTEXT = 8, Normaal Amsterdams Peil, locaal referentiesysteem
+#MEASUREMENTVAR = 16, 11.25, m, einddiepte
+#MEASUREMENTTEXT = 14, Nee, openbaar
+#MEASUREMENTTEXT = 17, Onbekend, vochtigheidstoestand grond
+#MEASUREMENTTEXT = 18, Nee, peilbuis afwezig
+#EOH = 
+0.00;0.65;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'NBE';'ON';'NBE';!
+0.65;1.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'NBE';'ON';'NBE';!
+1.50;2.90;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'TGE BR';'FN1';'CA1';'LSS';!
+2.90;4.35;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'LI TGE BR';'CA2';'LSS';!
+4.35;4.65;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lg';'ON';'FN2';'CA2';'LSS';!
+4.65;5.80;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'LI TGE BR';'CA1';'LSS';!
+5.80;6.20;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'LI TGE BR';'CA1';'LSS';!
+6.20;6.40;130.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zsg';'LI GR';'ZZFO';'GG2';!
+6.40;6.65;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Gz';'BL';'GMG';!
+6.65;8.90;160.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zg1';'LI TGE BR';'ZMFO';'FN2';!
+8.90;11.25;160.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'LI TGE BR';'ZMFO';!

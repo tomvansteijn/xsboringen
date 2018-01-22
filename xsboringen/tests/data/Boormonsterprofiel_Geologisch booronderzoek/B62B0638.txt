@@ -1,0 +1,43 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0638
+X-coordinaat (m): 	198025
+Y-coordinaat (m): 	322770
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Schaesberg
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	116.00
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	25.60
+Datum boring: 	24-08-1967
+Eigenaar: 	RGD
+Uitvoerder: 	RGD-Distrikt Zuid Heerlen
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.30	    1.00	bruin	leem	---	---	---	---	---	---	---	---	---	zwak grindig	---	---	---	---	
+    1.00	    3.00	geel-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.00	    3.80	bruin-geel	leem	---	---	---	---	---	---	---	zandig	---	---	---	matig humeus	---	---	
+    3.80	    4.40	bruin-geel	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkarm	
+    4.40	    6.30	geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    6.30	    7.10	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.10	    8.50	blauw	grind	---	70	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    8.50	    8.60	geel-bruin	zand	---	150	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+    8.60	    9.00	geel-bruin	zand	---	150	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+    9.00	    9.50	geel-bruin	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+    9.50	   10.00	groen-geel	zand	---	130	zeer fijn (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   10.00	   13.50	licht-groen	zand	---	130	zeer fijn (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   13.50	   24.00	licht-grijs	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   24.00	   25.60	bruin	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	

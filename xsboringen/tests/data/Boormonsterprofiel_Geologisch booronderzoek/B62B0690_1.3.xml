@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0690">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>196287</coordinateX>
+			<coordinateY>321517</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="11240" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Heerlen</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="2200" >
+		<operatorOrg>Ruiter, C. de, Halfweg</operatorOrg>
+		<ownerOrg>ABP</ownerOrg>
+		<date startYear="1969" startMonth="6" startDay="1"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="C" >
+			<organisation>RGD - Geol. Bureau</organisation>
+		<lithoInterval topDepth="0" baseDepth="70">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<sandMedianClass code="ZUFO" >uiterst fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="70" baseDepth="230">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="Z3" >sterk zandig</sandAdmix>
+			<colorMain code="WI" >wit</colorMain>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="230" baseDepth="400">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K3" >sterk kleiig</clayAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="400" baseDepth="650">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<sandMedianClass code="ZMO" >zandmediaan onduidelijk</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="650" baseDepth="950">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="950" baseDepth="1150">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1150" baseDepth="1500">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1500" baseDepth="1650">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K1" >zwak kleiig</clayAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1650" baseDepth="1750">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K1" >zwak kleiig</clayAdmix>
+			<colorMain code="GN" >groen</colorMain>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1750" baseDepth="1850">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GN" >groen</colorMain>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1850" baseDepth="1940">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="GN" >groen</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="1940" baseDepth="2150">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<colorMain code="GN" >groen</colorMain>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="2150" baseDepth="2180">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="GN" >groen</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="2180" baseDepth="2200">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GN" >groen</colorMain>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

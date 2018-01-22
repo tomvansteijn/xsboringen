@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0118">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<surveyLocationMethod>LMET</surveyLocationMethod>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>197040</coordinateX>
+			<coordinateY>324260</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<levelMethod code="MMET">MMET</levelMethod>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="9555" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Heerlen</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="2200" >
+		<operatorOrg>Gruner, R., Sittard</operatorOrg>
+		<ownerOrg>NV Oranje Nassau Mijnen</ownerOrg>
+		<date startYear="1940" startMonth="1" startDay="1"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="C" >
+			<organisation>RGD - Geol. Bureau</organisation>
+		<lithoInterval topDepth="0" baseDepth="25">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="25" baseDepth="110">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="110" baseDepth="190">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="190" baseDepth="250">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="250" baseDepth="710">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="710" baseDepth="930">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K1" >zwak kleiig</clayAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="930" baseDepth="940">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="940" baseDepth="1400">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K1" >zwak kleiig</clayAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1400" baseDepth="2200">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K1" >zwak kleiig</clayAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0188">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<surveyLocationMethod>LMET</surveyLocationMethod>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>192835</coordinateX>
+			<coordinateY>322955</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<levelMethod code="MMET">MMET</levelMethod>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="7865" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Voerendaal</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="8000" >
+		<operatorOrg>Gruner, R., Sittard</operatorOrg>
+		<ownerOrg>Oranje Nassau Mijnen</ownerOrg>
+		<date startYear="1957" startMonth="7" startDay="1"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="C" >
+			<describerName>Berge, J.R.J. ten</describerName>
+			<organisation>RGD</organisation>
+		<lithoInterval topDepth="0" baseDepth="30">
+			<lithology code="GM" >geen monster</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="30" baseDepth="160">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<gravelAdmix code="G1" >zwak grindig</gravelAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="160" baseDepth="210">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="210" baseDepth="680">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="680" baseDepth="880">
+			<lithology code="G" >grind</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="880" baseDepth="1300">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1300" baseDepth="1720">
+			<lithology code="Z" >zand</lithology>
+			<gravelAdmix code="G3" >sterk grindig</gravelAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1720" baseDepth="3450">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K1" >zwak kleiig</clayAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="3450" baseDepth="3640">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<colorMain code="GN" >groen</colorMain>
+			<colorSecondary code="TGR" >grijs-</colorSecondary>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="3640" baseDepth="3800">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="3800" baseDepth="4700">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="4700" baseDepth="6200">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="6200" baseDepth="6500">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="6500" baseDepth="6800">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="6800" baseDepth="6900">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="6900" baseDepth="8000">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code="PUL,BEI">Pulsboring,Beitel</drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

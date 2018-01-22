@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B2203">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>191431</coordinateX>
+			<coordinateY>318148</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="16550" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="915" >
+		<date startYear="1962" startMonth="6" startDay="19"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="E" >
+		<lithoInterval topDepth="0" baseDepth="30">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="30" baseDepth="240">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="240" baseDepth="290">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="290" baseDepth="310">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="310" baseDepth="320">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="320" baseDepth="370">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="370" baseDepth="650">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="650" baseDepth="770">
+			<lithology code="K" >klei</lithology>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="770" baseDepth="910">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="910" baseDepth="915">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

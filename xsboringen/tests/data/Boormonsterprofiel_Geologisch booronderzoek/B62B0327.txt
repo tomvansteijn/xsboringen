@@ -1,0 +1,37 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0327
+X-coordinaat (m): 	193370
+Y-coordinaat (m): 	321370
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Landmeting
+Maaiveldhoogte (meter t.o.v. NAP): 	91.91
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	26.15
+Datum boring: 	01-01-1934
+Eigenaar: 	Oranje Nassaumijnen
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Geologisch Bureau
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	bruin-grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    0.30	    3.90	bruin	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    3.90	    4.85	grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    4.85	    4.98	bruin-grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    4.98	    5.25	bruin-grijs	leem	---	---	---	---	---	---	---	zandig	---	grindig	---	---	---	---	
+    5.25	    6.20	grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+    6.20	   22.90	bruin-groen	zand	---	---	---	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   22.90	   23.15	zwart	vuursteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   23.15	   26.15	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

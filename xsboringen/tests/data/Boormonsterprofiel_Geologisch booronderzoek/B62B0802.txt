@@ -1,0 +1,38 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0802
+X-coordinaat (m): 	196160
+Y-coordinaat (m): 	319690
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	116.55
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	28.00
+Datum boring: 	08-10-1973
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Felder, W.M. / Hartering, C.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    3.10	bruin	leem	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	
+    3.10	    5.20	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    5.20	    5.40	rood-bruin	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    5.40	    5.80	rood-bruin	zand	---	---	---	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+    5.80	    7.00	groen-grijs	zand	---	---	fijne categorie (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+    7.00	   10.00	geel-groen	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   10.00	   12.00	licht-groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   12.00	   13.00	licht-groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   13.00	   28.00	licht-groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	

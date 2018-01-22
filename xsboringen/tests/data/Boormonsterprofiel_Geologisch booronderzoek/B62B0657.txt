@@ -1,0 +1,40 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0657
+X-coordinaat (m): 	194160
+Y-coordinaat (m): 	321525
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	95.67
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	13.10
+Datum boring: 	25-03-1968
+Eigenaar: 	NV Staatsmijnen
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	onbekend	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    1.20	geel-bruin	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    1.20	    2.80	geel-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.80	    3.60	bruin-geel	leem	---	---	---	---	---	---	---	---	---	zwak grindig	---	---	---	---	
+    3.60	    3.80	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    3.80	    4.20	grijs-bruin	leem	---	---	---	---	---	---	---	zandig	---	grindig	---	---	---	kalkarm	
+    4.20	    5.40	geel-bruin	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	grindig	---	---	---	kalkrijk	
+    5.40	    5.90	bruin-geel	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	grindig	---	---	---	kalkrijk	
+    5.90	    8.00	licht-bruin-groen	zand	---	130	zeer fijn (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+    8.00	   12.30	groen	zand	---	130	zeer fijn (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   12.30	   12.80	groen	zand	---	130	zeer fijn (O)	---	---	siltig	---	---	---	---	---	---	---	---	
+   12.80	   13.10	wit-geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

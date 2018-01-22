@@ -1,0 +1,43 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0627
+X-coordinaat (m): 	195970
+Y-coordinaat (m): 	321235
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	99.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	17.50
+Datum boring: 	18-07-1966
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.10	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.10	    0.40	bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    1.00	bruin-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.00	    1.60	grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.60	    2.50	grijs-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    2.50	    4.10	grijs	leem	---	---	---	---	---	---	---	---	---	grindig	---	---	---	kalkarm	
+    4.10	    5.00	grijs-blauw	leem	---	---	---	---	---	---	---	---	---	---	---	matig humeus	---	kalkarm	
+    5.00	    7.20	grijs-blauw	leem	---	---	---	---	---	---	---	zandig	---	---	---	matig humeus	---	kalkloos	
+    7.20	    9.00	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    9.00	    9.80	onbekend	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    9.80	   10.80	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+   10.80	   12.00	groen-grijs	zand	---	110	zeer fijn (O)	---	---	siltig	---	---	---	---	---	matig humeus	---	kalkarm	
+   12.00	   13.00	onbekend	zand	---	110	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   13.00	   16.80	licht-bruin	zand	---	110	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   16.80	   17.50	donker-grijs	zand	---	110	zeer fijn (O)	---	---	---	---	---	---	---	---	matig humeus	---	---	

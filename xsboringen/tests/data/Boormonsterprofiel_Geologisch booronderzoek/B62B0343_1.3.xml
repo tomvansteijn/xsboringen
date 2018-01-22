@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0343">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<surveyLocationMethod>LMET</surveyLocationMethod>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>194660</coordinateX>
+			<coordinateY>321540</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<levelMethod code="MMET">MMET</levelMethod>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="9570" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Voerendaal</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="1438" >
+		<operatorOrg>Oranje Nassau Mijnen</operatorOrg>
+		<ownerOrg>Oranje Nassau Mijnen NV</ownerOrg>
+		<date startYear="1936" startMonth="1" startDay="1"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="C" >
+		<lithoInterval topDepth="0" baseDepth="150">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="150" baseDepth="340">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="340" baseDepth="460">
+			<lithology code="G" >grind</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="460" baseDepth="490">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="490" baseDepth="720">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="720" baseDepth="1230">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K1" >zwak kleiig</clayAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1230" baseDepth="1358">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="1358" baseDepth="1438">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

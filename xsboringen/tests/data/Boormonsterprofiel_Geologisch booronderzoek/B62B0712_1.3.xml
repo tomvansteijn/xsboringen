@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0712">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>196320</coordinateX>
+			<coordinateY>318574</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<levelMethod code="MMET">MMET</levelMethod>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="17421" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Heerlen</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="1300" >
+		<operatorOrg>Ruiter, C. de, Halfweg</operatorOrg>
+		<date startYear="1969" startMonth="11" startDay="1"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="C" >
+			<organisation>Ruiter, C. de; Halfweg</organisation>
+		<lithoInterval topDepth="0" baseDepth="40">
+			<lithology code="L" >leem</lithology>
+			<siltAdmix code="SX" >siltig</siltAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="40" baseDepth="60">
+			<lithology code="L" >leem</lithology>
+			<siltAdmix code="SX" >siltig</siltAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="60" baseDepth="120">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="120" baseDepth="150">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="150" baseDepth="300">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="300" baseDepth="400">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="400" baseDepth="500">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="500" baseDepth="530">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="530" baseDepth="570">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="570" baseDepth="630">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="630" baseDepth="680">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="680" baseDepth="725">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="725" baseDepth="1300">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

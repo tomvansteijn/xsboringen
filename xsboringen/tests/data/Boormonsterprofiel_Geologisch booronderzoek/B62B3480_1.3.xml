@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B3480">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>196911</coordinateX>
+			<coordinateY>323473</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="9550" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="245" >
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="E" >
+		<lithoInterval topDepth="0" baseDepth="50">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="50" baseDepth="240">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="240" baseDepth="245">
+			<lithology code="G" >grind</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

@@ -1,0 +1,50 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0886
+X-coordinaat (m): 	191775
+Y-coordinaat (m): 	322290
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	85.00
+Bepaling maaiveldhoogte: 	geschat, Hoogtekaart 1:10.000
+Boormethode: 	Zuigboring, Pulsboring, Beitel
+Einddiepte (meter beneden maaiveld): 	90.00
+Datum boring: 	01-11-1987
+Eigenaar: 	Gem. Bedrijven Heerlen
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Meessen, J. / Renssen, L.H.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.30	    2.50	geel	leem	---	---	uiterst fijn (O)	---	---	---	---	zandig	---	---	---	---	---	kalkrijk	
+    2.50	    8.50	licht-grijs	leem	---	---	uiterst fijn (O)	---	---	---	---	zandig	---	---	---	---	---	kalkrijk	
+    8.50	    9.40	groen-grijs	grind	---	---	---	---	---	siltig	---	---	---	---	---	---	---	kalkarm	
+    9.40	   12.40	licht-grijs	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkrijk	
+   12.40	   15.10	licht-grijs	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkarm	
+   15.10	   18.00	grijs	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkarm	
+   18.00	   18.50	donker-grijs	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+   18.50	   35.00	licht-grijs	zand	---	90	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   35.00	   48.50	groen-grijs	zand	---	90	uiterst fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   48.50	   50.80	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   50.80	   51.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   51.00	   53.50	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   53.50	   57.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   57.00	   59.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   59.00	   61.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   61.00	   62.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   62.00	   66.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   66.00	   67.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   67.00	   77.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   77.00	   79.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   79.00	   90.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

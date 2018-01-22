@@ -1,0 +1,34 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B4139
+X-coordinaat (m): 	196990
+Y-coordinaat (m): 	319735
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen Keulseweg
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	130.15
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	5.50
+Datum boring: 	01-03-1965
+Eigenaar: 	Onbekend
+Uitvoerder: 	Gruner R.
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	---	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.30	    2.10	donker-geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    2.10	    2.60	---	zand	---	---	matig grof	---	---	siltig	---	---	---	grindig	---	---	---	---	
+    2.60	    3.10	bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	zwak grindig	---	---	---	---	
+    3.10	    4.20	geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	zwak grindig	---	---	---	---	
+    4.20	    5.50	geel-bruin	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

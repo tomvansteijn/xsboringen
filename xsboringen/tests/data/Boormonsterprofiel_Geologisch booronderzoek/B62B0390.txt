@@ -1,0 +1,31 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0390
+X-coordinaat (m): 	190140
+Y-coordinaat (m): 	320870
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Klimmen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	130.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Graven
+Einddiepte (meter beneden maaiveld): 	40.00
+Datum boring: 	01-01-1910
+Eigenaar: 	Onbekend
+Uitvoerder: 	Onbekend
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	E
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	   27.50	wit-geel	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   27.50	   28.50	zwart	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   28.50	   40.00	onbekend	mergel	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

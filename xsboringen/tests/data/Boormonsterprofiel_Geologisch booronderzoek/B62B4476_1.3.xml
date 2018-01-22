@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B4476">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<surveyLocationMethod>LONB</surveyLocationMethod>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>193530</coordinateX>
+			<coordinateY>318135</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<levelMethod code="MONB">MONB</levelMethod>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="18250" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>62B Colmont Ubachsberg</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="13650" >
+		<ownerOrg>Provincie Limburg</ownerOrg>
+		<date startYear="1999" startMonth="3" startDay="2"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrYear="1999" lithoDescrMonth="3" lithoDescrDay="2" lithoDescrStandard="GEF" lithoDescrVersion="1" lithoDescrQuality="C" >
+		<lithoInterval topDepth="0" baseDepth="200">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="200" baseDepth="250">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<sandMedianClass code="ZZF" >zeer fijn</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="250" baseDepth="450">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="450" baseDepth="550">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="550" baseDepth="800">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="800" baseDepth="2050">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="2050" baseDepth="2150">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="WI" >wit</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="2150" baseDepth="3250">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="3250" baseDepth="3450">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TWI" >wit-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="3450" baseDepth="3900">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="3900" baseDepth="4450">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="4450" baseDepth="5900">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="5900" baseDepth="6150">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="6150" baseDepth="7500">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S3" >sterk siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZUF" >uiterst fijn</sandMedianClass>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="7500" baseDepth="7700">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="7700" baseDepth="8050">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S3" >sterk siltig</siltAdmix>
+			<sandMedianClass code="ZUF" >uiterst fijn</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="8050" baseDepth="8250">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GN" >groen</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="8250" baseDepth="8550">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GN" >groen</colorMain>
+			<colorSecondary code="TGR" >grijs-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<sandMedianClass code="ZMG" >matig grof</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="8550" baseDepth="10400">
+			<lithology code="L" >leem</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<sandAdmix code="Z3" >sterk zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="10400" baseDepth="12500">
+			<lithology code="K" >klei</lithology>
+			<siltAdmix code="SX" >siltig</siltAdmix>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="12500" baseDepth="13650">
+			<lithology code="K" >klei</lithology>
+			<siltAdmix code="S3" >sterk siltig</siltAdmix>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="GN" >groen</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code="SPO">Spoelboring</drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

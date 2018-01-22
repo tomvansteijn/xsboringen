@@ -1,0 +1,32 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62A2831
+X-coordinaat (m): 	189960
+Y-coordinaat (m): 	324045
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Maastricht
+Provincie: 	Limburg
+Kaartblad: 	62A
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	88.50
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	7.50
+Datum boring: 	29-11-1982
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	29-11-1982
+Kwaliteitcode beschrijving lithologie: 	E
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    1.80	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.80	    3.00	grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    3.00	    5.30	grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    5.30	    7.50	grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	

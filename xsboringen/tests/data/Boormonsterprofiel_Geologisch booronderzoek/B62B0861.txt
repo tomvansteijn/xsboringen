@@ -1,0 +1,44 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0861
+X-coordinaat (m): 	190315
+Y-coordinaat (m): 	320595
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	113.20
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Beitel, Avegaarboring
+Einddiepte (meter beneden maaiveld): 	35.00
+Datum boring: 	01-05-1985
+Eigenaar: 	Prov. Waterstaat
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Meessen, J.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	   10.00	onbekend	geen monster	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   10.00	   11.00	bruin	leem	---	---	---	---	---	siltig	---	zandig	---	---	---	---	---	kalkarm	
+   11.00	   12.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   12.00	   13.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   13.00	   15.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   15.00	   16.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   16.00	   18.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   18.00	   19.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   19.00	   21.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   21.00	   22.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   22.00	   24.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   24.00	   28.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   28.00	   29.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   29.00	   32.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   32.00	   33.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   33.00	   35.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

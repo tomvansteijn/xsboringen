@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B2842">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>192980</coordinateX>
+			<coordinateY>320849</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="9350" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="320" >
+		<date startYear="1964" startMonth="6" startDay="17"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="E" >
+		<lithoInterval topDepth="0" baseDepth="30">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="30" baseDepth="200">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="200" baseDepth="290">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="290" baseDepth="320">
+			<lithology code="KAS" >kalksteen</lithology>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

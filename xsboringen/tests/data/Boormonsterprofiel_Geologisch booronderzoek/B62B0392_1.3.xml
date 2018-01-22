@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0392">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>193490</coordinateX>
+			<coordinateY>320510</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="11900" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Voerendaal</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="946" >
+		<operatorOrg>Hennings, E., Berg aan de Maas</operatorOrg>
+		<date startYear="1920" startMonth="1" startDay="1"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="F" >
+		<lithoInterval topDepth="0" baseDepth="90">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="90" baseDepth="100">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="BL" >blauw</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="100" baseDepth="125">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="125" baseDepth="165">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="165" baseDepth="215">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="215" baseDepth="235">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="235" baseDepth="270">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="270" baseDepth="300">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="300" baseDepth="340">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="340" baseDepth="360">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="360" baseDepth="395">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="395" baseDepth="430">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="430" baseDepth="490">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="490" baseDepth="525">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="525" baseDepth="560">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="560" baseDepth="575">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="575" baseDepth="605">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="605" baseDepth="710">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="710" baseDepth="735">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="735" baseDepth="736">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="736" baseDepth="760">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="760" baseDepth="780">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="780" baseDepth="795">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="795" baseDepth="820">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="820" baseDepth="845">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="845" baseDepth="860">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="860" baseDepth="875">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="875" baseDepth="945">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="945" baseDepth="946">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

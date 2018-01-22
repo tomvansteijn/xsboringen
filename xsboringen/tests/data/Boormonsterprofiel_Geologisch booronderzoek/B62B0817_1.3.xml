@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0817">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>196220</coordinateX>
+			<coordinateY>321600</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="10860" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Heerlen</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="1350" >
+		<operatorOrg>Gruner, R., Sittard</operatorOrg>
+		<ownerOrg>ABP Heerlen</ownerOrg>
+		<date startYear="1976" startMonth="1" startDay="1"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="C" >
+		<lithoInterval topDepth="0" baseDepth="30">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="30" baseDepth="110">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="Z3" >sterk zandig</sandAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="110" baseDepth="200">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="200" baseDepth="300">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="SX" >siltig</siltAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="300" baseDepth="400">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="400" baseDepth="480">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="480" baseDepth="560">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="560" baseDepth="600">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="600" baseDepth="700">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="700" baseDepth="800">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="800" baseDepth="850">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="850" baseDepth="900">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="900" baseDepth="1000">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1000" baseDepth="1100">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1100" baseDepth="1200">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="1200" baseDepth="1350">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code="PUL">Pulsboring</drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

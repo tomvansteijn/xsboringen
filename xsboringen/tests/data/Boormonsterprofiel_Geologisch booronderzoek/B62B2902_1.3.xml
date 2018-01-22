@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B2902">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>194501</coordinateX>
+			<coordinateY>320736</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="10450" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="365" >
+		<date startYear="1964" startMonth="7" startDay="23"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="E" >
+		<lithoInterval topDepth="0" baseDepth="20">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="20" baseDepth="150">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="150" baseDepth="230">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="230" baseDepth="330">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="330" baseDepth="360">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="360" baseDepth="365">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

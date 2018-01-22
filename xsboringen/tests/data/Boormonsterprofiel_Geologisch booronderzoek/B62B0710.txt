@@ -1,0 +1,41 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0710
+X-coordinaat (m): 	196236
+Y-coordinaat (m): 	318756
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	168.64
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	16.50
+Datum boring: 	24-11-1969
+Eigenaar: 	Onbekend
+Uitvoerder: 	Ruiter, C. de, Halfweg
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Ruiter, C. de; Halfweg
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	bruin	leem	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	
+    0.40	    0.90	bruin-geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.90	    1.70	bruin-geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.70	    2.10	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.10	    2.40	bruin-geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.40	    3.10	bruin-geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.10	    3.50	bruin-geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.50	    3.80	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.80	    4.70	bruin-geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    4.70	    7.30	bruin-geel	kalksteen	---	---	---	---	---	siltig	---	---	---	zwak grindig	---	---	---	---	
+    7.30	    8.50	bruin-geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.50	    8.60	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.60	   16.50	onbekend	kalksteen	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	

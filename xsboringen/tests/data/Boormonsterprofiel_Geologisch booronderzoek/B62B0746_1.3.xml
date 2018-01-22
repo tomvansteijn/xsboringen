@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0746">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>194360</coordinateX>
+			<coordinateY>323440</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<levelMethod code="MMET">MMET</levelMethod>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="9101" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Heerlen</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="1000" >
+		<operatorOrg>Fugro</operatorOrg>
+		<date startYear="1970" startMonth="2" startDay="8"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="D" >
+			<organisation>Fugro</organisation>
+		<lithoInterval topDepth="0" baseDepth="40">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<humusAdmix code="H1" >zwak humeus</humusAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="40" baseDepth="570">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="570" baseDepth="630">
+			<lithology code="Z" >zand</lithology>
+			<gravelAdmix code="G3" >sterk grindig</gravelAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="630" baseDepth="1000">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+			<sandMedianClass code="ZMFO" >matig fijn (O)</sandMedianClass>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

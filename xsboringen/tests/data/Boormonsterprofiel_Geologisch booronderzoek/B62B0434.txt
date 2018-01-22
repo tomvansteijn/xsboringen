@@ -1,0 +1,36 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0434
+X-coordinaat (m): 	196070
+Y-coordinaat (m): 	319220
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Landmeting
+Maaiveldhoogte (meter t.o.v. NAP): 	123.29
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	14.25
+Datum boring: 	01-01-1936
+Eigenaar: 	Oranje Nassau Mijnen
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.20	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.20	    0.90	bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    0.90	    1.75	bruin-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    1.75	    2.25	licht-bruin-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    2.25	    4.55	bruin-grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkarm	
+    4.55	    8.28	licht-rood-bruin	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+    8.28	   11.80	geel	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   11.80	   14.25	licht-geel	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	

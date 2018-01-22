@@ -1,0 +1,18 @@
+LOCATIE gegevens
+NITG-nr	X-coord	Y-coord	Coordinaat systeem	Kaartblad	Bepaling locatie	Maaiveldhoogte (m tov NAP)	Bepaling maaiveldhoogte	OLGA-nr	RIVM-nr	Aantal deelmonsters	Aantal metingen	
+B62B0732	190410	318475	Rijksdriehoeksmeting	62B		133.0				??	??	
+
+KWALITEIT gegevens VAST
+
+							TITR_HUMUS_001	
+NITG-nr	Monster datum	Monster-nr	Deelmonster-nr	Meting-nr	Bovenkant monster (m tov MV)	Onderkant monster (m tov MV)	Humus (%)	
+B62B0732		K1976-00-0277	2	1	10.0	11.0	0	
+B62B0732		K1976-00-0279	2	1	18.0	19.0	0	
+B62B0732		K1976-00-0278	2	1	14.0	15.0	0	
+B62B0732		K1976-00-0276	2	1	6.0	7.0	.1	
+B62B0732		K1976-00-0275	2	1	3.0	4.0	0	
+
+KWALITEIT gegevens VLOEIBAAR
+
+							
+NITG-nr	Monster datum	Monster-nr	Deelmonster-nr	Meting-nr	Bovenkant monster (m tov MV)	Onderkant monster (m tov MV)	

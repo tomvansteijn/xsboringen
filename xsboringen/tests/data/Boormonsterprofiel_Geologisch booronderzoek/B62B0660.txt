@@ -1,0 +1,44 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0660
+X-coordinaat (m): 	193860
+Y-coordinaat (m): 	323260
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	84.23
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	33.20
+Datum boring: 	12-03-1968
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.50	onbekend	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.50	    1.50	onbekend	zand	---	160	matig fijn (O)	---	---	zwak siltig	---	---	---	sterk grindig	---	---	---	---	
+    1.50	    2.10	bruin-groen	zand	---	140	zeer fijn (O)	---	---	---	---	---	---	grindig	---	---	---	---	
+    2.10	    6.00	bruin-groen	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+    6.00	   11.00	groen-geel	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   11.00	   12.50	groen-geel	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	zwak grindig	---	---	---	---	
+   12.50	   17.00	donker-grijs	zand	---	140	zeer fijn (O)	---	---	---	---	---	---	zwak grindig	---	---	---	---	
+   17.00	   22.00	donker-grijs	zand	---	140	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   22.00	   22.50	donker-grijs	zand	---	140	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   22.50	   24.20	donker-grijs	zand	---	140	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   24.20	   29.00	donker-grijs	zand	---	140	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   29.00	   30.10	grijs	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   30.10	   31.00	grijs	zand	---	140	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   31.00	   32.00	onbekend	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   32.00	   32.50	grijs	zand	---	140	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   32.50	   33.20	grijs	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	

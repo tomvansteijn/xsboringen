@@ -1,0 +1,36 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0176
+X-coordinaat (m): 	196765
+Y-coordinaat (m): 	323200
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen, Meezenbroek
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Landmeting
+Maaiveldhoogte (meter t.o.v. NAP): 	102.25
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	14.25
+Datum boring: 	01-01-1936
+Eigenaar: 	Oranje Nassau Mijnen
+Uitvoerder: 	Ing.Bureau Ferrum, Heerlen
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.90	onbekend	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.90	    4.00	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    4.00	    8.73	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    8.73	    9.00	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    9.00	    9.15	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    9.15	   10.20	onbekend	zand	---	---	grove  categorie (O)	---	---	---	---	---	---	grindig	---	---	---	---	
+   10.20	   11.40	groen-geel	zand	---	---	fijne categorie (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   11.40	   14.25	geel-bruin	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	

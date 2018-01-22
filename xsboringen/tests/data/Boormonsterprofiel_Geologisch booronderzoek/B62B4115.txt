@@ -1,0 +1,36 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B4115
+X-coordinaat (m): 	194030
+Y-coordinaat (m): 	323090
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	85.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	7.10
+Datum boring: 	15-01-1962
+Eigenaar: 	Geologisch Bureau
+Uitvoerder: 	Oranje Nassau Mijnen
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.70	---	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.70	    1.40	licht-geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	matig grindig	---	---	---	---	
+    1.40	    2.35	licht-geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	grindig	---	---	---	---	
+    2.35	    2.80	licht-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	matig grindig	---	---	---	---	
+    2.80	    4.20	licht-grijs-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    4.20	    5.30	licht-grijs	leem	---	---	---	---	---	---	---	zwak zandig	---	---	---	---	---	---	
+    5.30	    6.60	---	leem	---	---	---	---	---	---	---	sterk zandig	---	matig grindig	---	---	---	kalkhoudend	
+    6.60	    7.10	licht-groen-grijs	zand	---	140	zeer fijn	---	---	---	---	---	---	---	---	---	---	---	

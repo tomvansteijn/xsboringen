@@ -1,0 +1,32 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B4370
+X-coordinaat (m): 	193751
+Y-coordinaat (m): 	323130
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Geleenbeekdal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	78.68
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Edelmanboring
+Einddiepte (meter beneden maaiveld): 	1.55
+Datum boring: 	09-08-2009
+Eigenaar: 	Provincie Limburg
+Uitvoerder: 	Onbekend
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.80	donker-bruin	veen	---	---	---	mineraalarm	---	---	---	---	---	---	---	---	---	---	
+    0.80	    1.00	bruin	veen	---	---	---	mineraalarm	---	---	---	---	---	---	---	---	---	---	
+    1.00	    1.45	donker-bruin	veen	---	---	---	mineraalarm	---	---	---	---	---	---	---	---	---	---	
+    1.45	    1.55	geel-bruin	leem	---	---	---	---	---	---	---	zwak zandig	---	---	---	---	---	---	

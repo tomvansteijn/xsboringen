@@ -1,0 +1,40 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0772
+X-coordinaat (m): 	191205
+Y-coordinaat (m): 	322105
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Klimmen, Retersbeek
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	92.00
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	15.00
+Datum boring: 	18-01-1973
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Bosch, P.W. / Hartering, C.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.30	    1.60	bruin	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    1.60	    3.00	grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.00	    8.00	donker-grijs	leem	---	---	---	---	---	---	---	---	---	zwak grindig	---	---	---	kalkarm	
+    8.00	    9.30	groen-grijs	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    9.30	    9.50	grijs-groen	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    9.50	   10.50	grijs-wit	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   10.50	   12.40	grijs-bruin	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   12.40	   12.50	donker-grijs-bruin	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   12.50	   13.00	donker-grijs	klei	---	---	---	---	---	---	---	zandig	---	---	---	zwak humeus	---	---	
+   13.00	   13.40	zwart	bruinkool	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   13.40	   15.00	bruin-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

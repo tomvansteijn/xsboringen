@@ -1,0 +1,43 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0852
+X-coordinaat (m): 	195120
+Y-coordinaat (m): 	322110
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	86.60
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	28.00
+Datum boring: 	01-04-1965
+Eigenaar: 	Onbekend
+Uitvoerder: 	Dijk, van, De Meern
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    3.00	geel	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.00	    4.00	onbekend	veen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    4.00	    5.00	onbekend	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    5.00	    6.00	onbekend	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    6.00	    6.50	onbekend	zand	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	---	
+    6.50	    7.00	onbekend	zand	---	---	---	---	---	sterk siltig	---	---	---	grindig	---	---	---	---	
+    7.00	    8.00	onbekend	zand	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	---	
+    8.00	   12.00	onbekend	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+   12.00	   13.00	onbekend	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+   13.00	   15.00	onbekend	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+   15.00	   16.00	onbekend	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   16.00	   20.00	onbekend	zand	---	---	fijne categorie (O)	---	---	sterk siltig	---	---	---	---	---	---	---	---	
+   20.00	   23.00	onbekend	zand	---	---	fijne categorie (O)	---	---	siltig	---	---	---	---	---	---	---	---	
+   23.00	   27.00	onbekend	zand	---	---	fijne categorie (O)	---	---	sterk siltig	---	---	---	---	---	---	---	---	
+   27.00	   28.00	onbekend	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

@@ -1,0 +1,39 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0867
+X-coordinaat (m): 	195250
+Y-coordinaat (m): 	323080
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	99.83
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	13.00
+Datum boring: 	01-11-1985
+Eigenaar: 	S.S.O. te Heerlen
+Uitvoerder: 	IGF, Maastricht
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Renssen, L.H.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.10	onbekend	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.10	    1.44	onbekend	stenen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.44	    1.75	donker-grijs	leem	---	---	---	---	---	---	---	zwak zandig	---	zwak grindig	---	matig humeus	---	---	
+    1.75	    4.50	geel-bruin	leem	---	---	---	---	---	---	---	zwak zandig	---	---	---	---	---	---	
+    4.50	    5.20	donker-geel	leem	---	---	uiterst fijn (O)	---	---	---	---	zandig	---	---	---	---	---	---	
+    5.20	    6.05	donker-geel	leem	---	---	uiterst fijn (O)	---	---	---	---	zandig	---	---	---	---	---	---	
+    6.05	    7.40	geel-bruin	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    7.40	    9.60	groen-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    9.60	   10.50	onbekend	grind	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+   10.50	   12.00	donker-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	zwak grindig	---	---	---	---	
+   12.00	   13.00	donker-groen	klei	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	---	

@@ -1,0 +1,37 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B3636
+X-coordinaat (m): 	196653
+Y-coordinaat (m): 	324213
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	93.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	4.35
+Datum boring: 	19-03-1962
+Eigenaar: 	Onbekend
+Uitvoerder: 	Onbekend
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.30	    1.00	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    1.00	    2.00	licht-grijs	leem	---	---	---	---	---	sterk siltig	---	---	---	sterk grindig	---	---	---	---	
+    2.00	    2.10	onbekend	grind	---	---	---	---	---	zwak siltig	---	zandig	---	---	---	---	---	---	
+    2.10	    2.60	onbekend	zand	---	140	zeer fijn (O)	---	---	sterk siltig	20	---	---	---	---	---	---	---	
+    2.60	    2.90	licht-grijs	zand	---	150	matig fijn (O)	---	---	---	---	---	---	grindig	---	---	---	---	
+    2.90	    3.40	donker-bruin-grijs	zand	---	120	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+    3.40	    4.30	licht-grijs	zand	---	140	zeer fijn (O)	---	---	---	---	---	---	---	---	matig humeus	---	---	
+    4.30	    4.35	onbekend	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	

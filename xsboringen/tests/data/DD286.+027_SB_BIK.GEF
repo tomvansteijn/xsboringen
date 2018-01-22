@@ -1,0 +1,198 @@
+#GEFID = 1, 0, 0
+#COLUMNTEXT = 1, 
+#COLUMNSEPARATOR= ;
+#RECORDSEPARATOR= !
+#FILEOWNER= SIMONE
+#FILEDATE= 2017, 02, 22
+#PROJECTID= VN, 65838, 1
+#COMPANYID= Wiertsema & Partners, Tolbert, 31
+#COLUMN= 2
+#COLUMNINFO= 1, m, diepte bovenkant laag, 1
+#COLUMNINFO= 2, m, diepte onderkant laag, 2
+#LASTSCAN= 26
+#REPORTCODE= GEF-BORE-Report, 1, 0, 0, gbr101.doc
+#MEASUREMENTCODE= NEN5104, B301, 0, 0, NNI 1989
+#TESTID= DD286.+027_SB_BIK
+#XYID= 31000, 177156.72, 434220.90, 1.00, 1.00
+#ZID= 31000, 14.21, 0.050
+#MEASUREMENTTEXT= 1, R.I.B. Inpijn-Blokpoel-Son BV, opdrachtgever
+#MEASUREMENTTEXT= 2, Dijkverbetering Waalbandijk Neder-Betuwe, projectnaam
+#MEASUREMENTTEXT= 3, Ochten, plaatsnaam
+#MEASUREMENTTEXT= 4, nee, boring uitgevoerd volgens NEN5119
+#MEASUREMENTTEXT= 5, 2016-10-18, datum boorbeschrijving
+#MEASUREMENTTEXT= 6, John Loonstra; Christiaan Koopman, boorbeschrijver
+#MEASUREMENTTEXT= 9, Maaiveld, vast horizontaal niveau
+#MEASUREMENTTEXT= 11, MDGP, maaiveldhoogtebepaling
+#MEASUREMENTTEXT= 12, LDGZ, plaatsbepalingsmethode
+#MEASUREMENTTEXT= 13, Wiertsema & Partners, boorbedrijf
+#MEASUREMENTTEXT= 14, nee, vertrouwelijk; ja/nee
+#MEASUREMENTTEXT= 16, 2016-10-18, datum boring
+#MEASUREMENTTEXT= 17, nat, vochtigheidstoestand grond
+#MEASUREMENTTEXT= 18, nee, peilbuis aanwezig ja/nee
+#MEASUREMENTTEXT= 19, 2016-10-18, einddatum boring
+#MEASUREMENTTEXT= 21, nee, boor- en steunvloeistof gebruikt
+#MEASUREMENTTEXT= 23, John Loonstra, boormeester
+#MEASUREMENTVAR= 31, 11.00, m, diepte onderkant boring
+#MEASUREMENTVAR= 32, 80, mm, boorbuisdiameter
+#MEASUREMENTTEXT= 31, TRI, boormethode
+#SPECIMENVAR= 1, 11, -, aantal monsters
+#MEASUREMENTVAR= 16, 11.00, m, einddiepte
+#SPECIMENTEXT = 1, Monsters genomen met aqualock 70mm uitgedrukt in PVC-liners van gelijke diameter. NEN-EN-ISO 22475-1:2006 Resonance drilling, opmerking monstername1
+#SPECIMENTEXT = 2, Sampling category cohesive soil: B; max quality class 4, opmerking monstername2
+#SPECIMENTEXT = 3, Sampling category : non-cohesive soil: C;  max quality class 5, opmerking monstername3
+#SPECIMENTEXT = 4, [nr] monster niet ongeroerd t.b.v. laboratorium onderzoek (zoals triaxiaalproeven), opmerking monstername4
+#OS = DOS
+
+#LANGUAGE = NL
+#DATAFORMAT = ASCII
+#CHILD= 1, DD286.+027_SB_BIK_CH01.GEF
+#COLUMNVOID= 1, -9999
+#COLUMNVOID= 2, -9999
+#SPECIMENTEXT =11, [1], monstercode monster 1
+#SPECIMENVAR = 11, 0.00, m, bovenkant monster
+#SPECIMENVAR = 12, 1.00, m, onderkant monster
+#SPECIMENTEXT = 12, 2016-10-18, datum monstername
+#SPECIMENTEXT = 14, O, (on)geroerd monster
+#SPECIMENVAR = 13, 67.0, mm, diameter monster
+#SPECIMENVAR = 14, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 15, AMS, monstersteekapparaat
+#SPECIMENTEXT = 16, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 17, Hameren, drukken of hameren
+
+#SPECIMENTEXT =18, [2], monstercode monster 2
+#SPECIMENVAR = 18, 1.00, m, bovenkant monster
+#SPECIMENVAR = 19, 2.00, m, onderkant monster
+#SPECIMENTEXT = 19, 2016-10-18, datum monstername
+#SPECIMENTEXT = 21, O, (on)geroerd monster
+#SPECIMENVAR = 20, 67.0, mm, diameter monster
+#SPECIMENVAR = 21, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 22, AMS, monstersteekapparaat
+#SPECIMENTEXT = 23, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 24, Hameren, drukken of hameren
+
+#SPECIMENTEXT =25, [3], monstercode monster 3
+#SPECIMENVAR = 25, 2.00, m, bovenkant monster
+#SPECIMENVAR = 26, 3.00, m, onderkant monster
+#SPECIMENTEXT = 26, 2016-10-18, datum monstername
+#SPECIMENTEXT = 28, O, (on)geroerd monster
+#SPECIMENVAR = 27, 67.0, mm, diameter monster
+#SPECIMENVAR = 28, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 29, AMS, monstersteekapparaat
+#SPECIMENTEXT = 30, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 31, Hameren, drukken of hameren
+
+#SPECIMENTEXT =32, [4], monstercode monster 4
+#SPECIMENVAR = 32, 3.00, m, bovenkant monster
+#SPECIMENVAR = 33, 4.00, m, onderkant monster
+#SPECIMENTEXT = 33, 2016-10-18, datum monstername
+#SPECIMENTEXT = 35, O, (on)geroerd monster
+#SPECIMENVAR = 34, 67.0, mm, diameter monster
+#SPECIMENVAR = 35, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 36, AMS, monstersteekapparaat
+#SPECIMENTEXT = 37, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 38, Hameren, drukken of hameren
+
+#SPECIMENTEXT =39, [5], monstercode monster 5
+#SPECIMENVAR = 39, 4.00, m, bovenkant monster
+#SPECIMENVAR = 40, 5.00, m, onderkant monster
+#SPECIMENTEXT = 40, 2016-10-18, datum monstername
+#SPECIMENTEXT = 42, O, (on)geroerd monster
+#SPECIMENVAR = 41, 67.0, mm, diameter monster
+#SPECIMENVAR = 42, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 43, AMS, monstersteekapparaat
+#SPECIMENTEXT = 44, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 45, Hameren, drukken of hameren
+
+#SPECIMENTEXT =46, [6], monstercode monster 6
+#SPECIMENVAR = 46, 5.00, m, bovenkant monster
+#SPECIMENVAR = 47, 6.00, m, onderkant monster
+#SPECIMENTEXT = 47, 2016-10-18, datum monstername
+#SPECIMENTEXT = 49, O, (on)geroerd monster
+#SPECIMENVAR = 48, 67.0, mm, diameter monster
+#SPECIMENVAR = 49, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 50, AMS, monstersteekapparaat
+#SPECIMENTEXT = 51, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 52, Hameren, drukken of hameren
+
+#SPECIMENTEXT =53, [7], monstercode monster 7
+#SPECIMENVAR = 53, 6.00, m, bovenkant monster
+#SPECIMENVAR = 54, 7.00, m, onderkant monster
+#SPECIMENTEXT = 54, 2016-10-18, datum monstername
+#SPECIMENTEXT = 56, O, (on)geroerd monster
+#SPECIMENVAR = 55, 67.0, mm, diameter monster
+#SPECIMENVAR = 56, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 57, AMS, monstersteekapparaat
+#SPECIMENTEXT = 58, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 59, Hameren, drukken of hameren
+
+#SPECIMENTEXT =60, [8], monstercode monster 8
+#SPECIMENVAR = 60, 7.00, m, bovenkant monster
+#SPECIMENVAR = 61, 8.00, m, onderkant monster
+#SPECIMENTEXT = 61, 2016-10-18, datum monstername
+#SPECIMENTEXT = 63, O, (on)geroerd monster
+#SPECIMENVAR = 62, 67.0, mm, diameter monster
+#SPECIMENVAR = 63, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 64, AMS, monstersteekapparaat
+#SPECIMENTEXT = 65, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 66, Hameren, drukken of hameren
+
+#SPECIMENTEXT =67, [9], monstercode monster 9
+#SPECIMENVAR = 67, 8.00, m, bovenkant monster
+#SPECIMENVAR = 68, 9.00, m, onderkant monster
+#SPECIMENTEXT = 68, 2016-10-18, datum monstername
+#SPECIMENTEXT = 70, O, (on)geroerd monster
+#SPECIMENVAR = 69, 67.0, mm, diameter monster
+#SPECIMENVAR = 70, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 71, AMS, monstersteekapparaat
+#SPECIMENTEXT = 72, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 73, Hameren, drukken of hameren
+
+#SPECIMENTEXT =74, [10], monstercode monster 10
+#SPECIMENVAR = 74, 9.00, m, bovenkant monster
+#SPECIMENVAR = 75, 10.00, m, onderkant monster
+#SPECIMENTEXT = 75, 2016-10-18, datum monstername
+#SPECIMENTEXT = 77, O, (on)geroerd monster
+#SPECIMENVAR = 76, 67.0, mm, diameter monster
+#SPECIMENVAR = 77, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 78, AMS, monstersteekapparaat
+#SPECIMENTEXT = 79, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 80, Hameren, drukken of hameren
+
+#SPECIMENTEXT =81, [11], monstercode monster 11
+#SPECIMENVAR = 81, 10.00, m, bovenkant monster
+#SPECIMENVAR = 82, 11.00, m, onderkant monster
+#SPECIMENTEXT = 82, 2016-10-18, datum monstername
+#SPECIMENTEXT = 84, O, (on)geroerd monster
+#SPECIMENVAR = 83, 67.0, mm, diameter monster
+#SPECIMENVAR = 84, 67.0, mm, diameter monstersteekapparaat
+#SPECIMENTEXT = 85, AMS, monstersteekapparaat
+#SPECIMENTEXT = 86, DUN, dik- of dunwandig monstersteekapparaat
+#SPECIMENTEXT = 87, Hameren, drukken of hameren
+
+#EOH=
+0.00;0.70;'NBE'; ;;!
+0.70;0.84;'Zkg2 BR';'ZZG';;!
+0.84;1.19;'Ks3 BR'; ;'zandlensjes, roestsporen';!
+1.19;1.87;'Ks3 BR'; ;'zandlensjes';!
+1.87;1.97;'Zs3g2 BR';'ZMG';;!
+1.97;2.55;'Ks3 BR'; ;'zandlensjes';!
+2.55;3.00;'NBE'; ;;!
+3.00;4.00;'Ks3 BR'; ;'zandlensjes, zandgelaagd';!
+4.00;4.60;'Ks3 BR'; ;'veel zandlensjes';!
+4.60;4.90;'Zs1 BR';'ZMG';;!
+4.90;5.25;'Ks2 BR'; ;'zandlensjes, zandlaagjes';!
+5.25;5.60;'Zs1 BR';'ZMG';;!
+5.60;5.85;'Ks2 BR'; ;'slibsporen';!
+5.85;6.15;'Ks3 BR'; ;'zandlensjes';!
+6.15;6.85;'Zs1 TBR GR';'ZMG';'enkel kleilensje';!
+6.85;7.66;'NBE'; ;;!
+7.66;7.96;'Zs1g1 LI GR';'ZZG';'kleibrokjes, fijn grind';!
+7.96;8.20;'Zs1 GR';'ZZG';'kleibrokjes';!
+8.20;8.42;'Zs1 GR';'ZZG';'nat';!
+8.42;8.68;'Zs1 LI GR';'ZZG';;!
+8.68;9.00;'Zs1g1 BR';'ZZG GFN';'kleiresten, kleibrokjes';!
+9.00;9.77;'Zs1g1 LI GR';'ZZG';'kleibrokjes, fijn tot matig grof grind, zeer grof tot matig grof zand';!
+9.77;10.00;'Zs2 BR';'ZMG';'kleiresten';!
+10.00;10.20;'Zs2 BR';'ZZG';'kleibrokjes, kleilensjes';!
+10.20;10.72;'Zs1g1 GR';'ZZG';'fijn tot matig grof grind, zeer grof tot uiterst grof zand';!
+10.72;11.00;'NBE'; ;;!

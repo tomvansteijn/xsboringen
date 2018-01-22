@@ -1,25 +1,33 @@
-# input data folders (boreholes, CPTs)
-datafolders: [
-  {'format': 'Dinoloket', 'path': '..\data'},
+# input data sources (boreholes, CPTs)
+datasources: [
+  # {format: Dinoloket XML 1.4, folder: ..\data\Boormonsterprofiel_Geologisch booronderzoek},
+  # {format: CSV, file: , fields: {code: , depth: , x: , y: , z:, from: , to: , lithology: , sandmedianclass: }},
+  {format: GEF borehole, file: , fields: {code: , depth: , x: , y: , z:, from: , to: , lithology: , sandmedianclass: }},
 ]
 
 # input geometry
+# line shape for cross-sections
+lines: {
+  file: doorsnede.shp,
+  labelfield:
+}
+points: {
 
-# input line shape for cross-sections
-lineshape: {
-  'file':
-  'labelfield':
 }
 
 # result
 result: {
-  'folder':
+  imagefolder: sample,
+  csvfile: boringen.csv,
+  simplify: True,
+  min_thickness: 1.,
+  shapefile: boringen.shp,
 }
 
-# plot options
-min_depth: 0.
-buffer_distance: 10.
-ylim:
-xlabel:
-ylabel:
+# options
+min_depth: 10.
+buffer_distance: 200.
+ylim: # [-20., 50.]
+xlabel: afstand [m]
+ylabel: niveau [m+NAP]
 

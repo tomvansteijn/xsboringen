@@ -1,0 +1,34 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B3298
+X-coordinaat (m): 	194228
+Y-coordinaat (m): 	322334
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	88.50
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	6.95
+Datum boring: 	14-07-1964
+Eigenaar: 	Onbekend
+Uitvoerder: 	Onbekend
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.20	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.20	    2.50	bruin-geel	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    2.50	    3.90	bruin-geel	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkarm	
+    3.90	    5.00	geel-grijs	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkloos	
+    5.00	    6.90	blauw-grijs	klei	---	---	fijne categorie (O)	kleiig 	---	---	---	zandig	---	---	---	matig humeus	---	kalkloos	
+    6.90	    6.95	onbekend	klei	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	

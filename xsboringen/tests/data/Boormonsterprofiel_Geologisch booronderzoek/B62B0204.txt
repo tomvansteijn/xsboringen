@@ -1,0 +1,35 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0204
+X-coordinaat (m): 	193920
+Y-coordinaat (m): 	322100
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Landmeting
+Maaiveldhoogte (meter t.o.v. NAP): 	90.09
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	21.15
+Datum boring: 	01-01-1934
+Eigenaar: 	Oranje Nassau Mijnen NV
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD - Geol. Bureau
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    4.75	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    4.75	    5.05	onbekend	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    5.05	    5.95	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    5.95	    8.45	bruin-groen	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+    8.45	   18.45	donker-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   18.45	   18.65	zwart	vuursteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   18.65	   21.15	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

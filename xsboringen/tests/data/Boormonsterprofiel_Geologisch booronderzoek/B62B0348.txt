@@ -1,0 +1,43 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0348
+X-coordinaat (m): 	195895
+Y-coordinaat (m): 	321810
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Landmeting
+Maaiveldhoogte (meter t.o.v. NAP): 	92.80
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	12.00
+Datum boring: 	01-01-1953
+Eigenaar: 	Oranje Nassau Mijnen NV
+Uitvoerder: 	Onbekend
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.15	donker-bruin	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.15	    0.50	geel-bruin	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.50	    1.42	licht-grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    1.42	    1.63	donker-grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    1.63	    2.95	donker-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.95	    3.57	donker-grijs	zand	---	---	fijne categorie (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    3.57	    4.25	donker-grijs	leem	---	---	---	---	---	---	---	---	---	grindig	---	---	---	---	
+    4.25	    4.35	donker-grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    4.35	    5.24	onbekend	zand	---	---	---	---	---	---	---	---	---	grindig	---	---	---	---	
+    5.24	    6.70	groen-grijs	zand	---	---	fijne categorie (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+    6.70	   10.40	groen-grijs	zand	---	---	fijne categorie (O)	sterk kleiig	---	---	---	---	---	---	---	---	---	---	
+   10.40	   10.72	groen-grijs	zand	---	---	---	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   10.72	   10.95	donker-grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   10.95	   11.52	groen-grijs	zand	---	---	fijne categorie (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   11.52	   12.00	groen-grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

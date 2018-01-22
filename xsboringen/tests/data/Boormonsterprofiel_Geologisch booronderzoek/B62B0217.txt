@@ -1,0 +1,33 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0217
+X-coordinaat (m): 	195325
+Y-coordinaat (m): 	323005
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	108.50
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	17.80
+Datum boring: 	01-01-1949
+Eigenaar: 	Oranje Nassau Mijnen
+Uitvoerder: 	Oranje Nassau Mijnen
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    7.16	onbekend	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.16	   11.60	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   11.60	   16.00	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   16.00	   17.60	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   17.60	   17.80	bruin-groen	klei	---	---	---	---	---	---	---	sterk zandig	---	zwak grindig	---	---	---	---	

@@ -1,0 +1,69 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0832
+X-coordinaat (m): 	191271
+Y-coordinaat (m): 	320898
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	97.15
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	47.00
+Datum boring: 	01-01-1977
+Eigenaar: 	Gemeentelijk Waterbedrijf Heerlen
+Uitvoerder: 	Gruner, Fa., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	F
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    2.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.00	    4.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    4.00	    6.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    6.00	    8.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.00	   10.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   10.00	   12.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   12.00	   13.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   13.00	   14.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   14.00	   15.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   15.00	   16.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   16.00	   17.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   17.00	   18.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   18.00	   19.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   19.00	   20.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   20.00	   21.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   21.00	   22.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   22.00	   23.00	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   23.00	   24.00	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   24.00	   25.00	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   25.00	   26.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   26.00	   27.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   27.00	   28.00	donker-grijs	kalksteen	---	---	fijne categorie (O)	---	---	---	---	zwak zandig	---	---	---	---	---	---	
+   28.00	   29.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   29.00	   30.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   30.00	   31.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   31.00	   32.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   32.00	   33.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   33.00	   34.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   34.00	   35.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   35.00	   36.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   36.00	   37.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   37.00	   38.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   38.00	   39.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   39.00	   40.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   40.00	   41.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   41.00	   42.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   42.00	   43.00	groen-grijs	kalksteen	---	---	fijne categorie (O)	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   43.00	   44.00	groen-grijs	kalksteen	---	---	fijne categorie (O)	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   44.00	   45.00	groen-grijs	kalksteen	---	---	fijne categorie (O)	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   45.00	   46.00	groen-grijs	kalksteen	---	---	fijne categorie (O)	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   46.00	   47.00	groen-grijs	kalksteen	---	---	fijne categorie (O)	---	---	---	---	sterk zandig	---	---	---	---	---	---	

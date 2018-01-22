@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B4261">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>196205</coordinateX>
+			<coordinateY>320855</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Weltervijver</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="800" >
+		<operatorOrg>Mos J.</operatorOrg>
+		<ownerOrg>Gemeente bedrijven Heerlen</ownerOrg>
+		<date startYear="1977" startMonth="8" startDay="1"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrVersion="1" lithoDescrQuality="C" >
+		<lithoInterval topDepth="0" baseDepth="40">
+			<lithology code="Z" >zand</lithology>
+		</lithoInterval>
+		<lithoInterval topDepth="40" baseDepth="60">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="Z3" >sterk zandig</sandAdmix>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="60" baseDepth="380">
+			<lithology code="L" >leem</lithology>
+			<humusAdmix code="H1" >zwak humeus</humusAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGR" >grijs-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="380" baseDepth="420">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<humusAdmix code="HX" >humeus</humusAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZMF" >matig fijn</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="420" baseDepth="520">
+			<lithology code="G" >grind</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<sandAdmix code="Z2" >matig zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedian median="180"/>
+			<sandMedianClass code="ZMF" >matig fijn</sandMedianClass>
+		</lithoInterval>
+		<lithoInterval topDepth="520" baseDepth="800">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="K3" >sterk kleiig</clayAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedianClass code="ZMF" >matig fijn</sandMedianClass>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

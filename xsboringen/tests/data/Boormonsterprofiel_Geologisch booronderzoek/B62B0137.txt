@@ -1,0 +1,40 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0137
+X-coordinaat (m): 	192190
+Y-coordinaat (m): 	323460
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Klimmen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Landmeting
+Maaiveldhoogte (meter t.o.v. NAP): 	78.86
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Pulsboring, Beitel
+Einddiepte (meter beneden maaiveld): 	39.00
+Datum boring: 	01-01-1957
+Eigenaar: 	Onbekend
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Boorfirma
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.25	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.25	    1.10	oranje-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.10	    3.20	donker-bruin	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    3.20	    3.80	groen-grijs	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    3.80	    6.40	licht-bruin	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    6.40	    6.60	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    6.60	   13.40	licht-groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   13.40	   32.10	grijs-groen	zand	---	---	fijne categorie (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   32.10	   33.40	grijs-groen	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   33.40	   35.10	licht-geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   35.10	   36.80	licht-geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   36.80	   39.00	licht-geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

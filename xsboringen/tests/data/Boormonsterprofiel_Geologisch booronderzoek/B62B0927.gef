@@ -1,0 +1,117 @@
+#GEFID = 1,1,0
+#COLUMNTEXT = 1, aan
+#COLUMNSEPARATOR = ;
+#RECORDSEPARATOR = !
+#FILEOWNER = DINO
+#COMPANYID = SDI
+#FILEDATE = 2017,10,2
+#PROJECTID = DINO-BOR
+#COLUMN = 9
+#COLUMNINFO = 1, m, Diepte bovenkant laag, 1
+#COLUMNINFO = 2, m, Diepte onderkant laag, 2
+#COLUMNINFO = 3, mm, Zandmediaan, 8
+#COLUMNINFO = 4, mm, Grindmediaan, 9
+#COLUMNINFO = 5, %, Lutum percentage, 3
+#COLUMNINFO = 6, %, Silt percentage, 4
+#COLUMNINFO = 7, %, Zand percentage, 5
+#COLUMNINFO = 8, %, Grind percentage, 6
+#COLUMNINFO = 9, %, Organische stof percentage, 7
+#COLUMNVOID = 1, -9999.99
+#COLUMNVOID = 2, -9999.99
+#COLUMNVOID = 3, -9999.99
+#COLUMNVOID = 4, -9999.99
+#COLUMNVOID = 5, -9999.99
+#COLUMNVOID = 6, -9999.99
+#COLUMNVOID = 7, -9999.99
+#COLUMNVOID = 8, -9999.99
+#COLUMNVOID = 9, -9999.99
+#LASTSCAN = 65
+#REPORTCODE = GEF-BORE-Report,1,0,0
+#MEASUREMENTCODE = Onbekend,-,-,-
+#TESTID = B62B0927
+#XYID = 31000,198180,318005
+#ZID = 31000,184.5
+#MEASUREMENTTEXT = 3, Heerlen, plaatsnaam
+#MEASUREMENTTEXT = 5, 1997-05-23, datum boorbeschrijving
+#MEASUREMENTTEXT = 9, maaiveld, vast horizontaal niveau
+#MEASUREMENTTEXT = 13, Gruner  R.  Sittard, boorbedrijf
+#MEASUREMENTTEXT = 16, 1997-05-12, datum boring
+#MEASUREMENTTEXT = 31, ZUI, boormethode
+#MEASUREMENTVAR = 34, 380, mm, boorbuisdiameter
+#MEASUREMENTTEXT = 32, LUC, boormethode
+#MEASUREMENTTEXT = 7, Rijksdriehoeksmeting, locaal coÃ¶rdinatensysteem
+#MEASUREMENTTEXT = 8, Normaal Amsterdams Peil, locaal referentiesysteem
+#MEASUREMENTTEXT = 19, 1997-05-23, einddatum boring
+#MEASUREMENTVAR = 16, 140.25, m, einddiepte
+#MEASUREMENTTEXT = 1, SDI, opdrachtgever
+#MEASUREMENTTEXT = 14, Nee, openbaar
+#MEASUREMENTTEXT = 2, pompput, doel onderzoek
+#MEASUREMENTTEXT = 17, Onbekend, vochtigheidstoestand grond
+#MEASUREMENTTEXT = 18, Ja, peilbuis aanwezig
+#MEASUREMENTVAR = 19, 3, -, aantal peilbuizen
+#EOH = 
+0.00;4.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'BR';!
+4.00;5.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'G';'ON';'GZG';'wat leem';!
+5.50;8.50;110.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs3';'TBR GE';'ZZFO';'SZK';'CA1';'GC1';'geheel groenig';!
+8.50;11.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'TGE BR';'ZUFO';'CA1';'GC1';'geheel groenig van kleur';!
+11.50;15.30;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'TGE GR';'ZUFO';'CA1';'GC1';'geheel bruinig van kleur';!
+15.30;15.80;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'NBE';'TGR WI';'CA3';'GC1';'KZS';'verkitte bank';!
+15.80;16.80;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz2';'LI TGE GR';'CA3';'GC1';!
+16.80;17.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'NBE';'LI TGE GR';'CA3';'GC1';'KZS';'verklitte bank';!
+17.00;19.00;110.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs4';'LI TGE GR';'ZZFO';'CA3';'GC1';'wat matig grof zand';!
+19.00;19.80;275.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs3';'TGE GN';'ZMGO';'SMA';'CA3';'GC1';'verkitte brokjes';!
+19.80;20.50;120.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'TGN GE';'ZZFO';'SMG';'CA3';'GC1';'verkitte brokjesveel gele glauconiet brokjes uiterst fijn tot matig fijn';!
+20.50;22.70;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'NBE';'LI TGR GE';'ZZFO';'CA3';'GC2';'KZS';'vrij zachtmet veel leem';!
+22.70;26.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz2';'LI GE';'ZZFO';'CA3';'GC1';'veel verweerd kalkzandsteen';!
+26.50;29.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz2';'LI GE';'ZZFO';'CA2';'GC1';'veel grijsgele kalkzandsteen brokken met glauconiet';!
+29.50;32.50;100.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'TGE GR';'ZUFO';'CA3';'GC2';!
+32.50;35.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'LI GE';'CA3';'GC2';'verkitte kalk zandsteen brokjesen kalksteen brokjes deels kleiig lichtgeelen uiterst fijn zandig geelgrijs';!
+35.50;36.70;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'LI TGR GE';'CA3';'GC1';'veel verkitte brokken kalkzandsteen/ siltsteen deels kleiig en uiterst fijn zandig';!
+36.70;37.30;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz1';'TGN GR';'ZUFO';'CA3';'GC1';'verkitte brokjes';!
+37.30;37.70;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'TGR GE';'ZUFO';'CA3';'GC2';'groene tint';!
+37.70;41.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz1';'TGR GN';'ZUFO';'CA3';'GC1';'enkele verkittingen';!
+41.50;44.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz1';'GR';'ZUFO';'CA3';'GC1';'brokken verkitte zandsteen/siltsteen';!
+44.50;47.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz1';'GR';'ZUFO';'CA3';'GC1';'brokjes uiterst fijnzandige verkittingen';!
+47.50;53.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz2';'DO TGR GN';'ZUFO';'CA3';'GC2';'enkele harde nivo s';!
+53.00;54.00;100.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs3';'DO GN';'ZUFO';'SMK';'CA3';'GC2';!
+54.00;56.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'DO GR';'ZUFO';'CA3';'kleiige nivo s';!
+56.50;59.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'DO TGN GR';'CA3';'GC2';'afwisseling van kleiige en overwegend fijnzandige nivo s';!
+59.50;62.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'DO TGN GR';'ZUFO';'SCH1';'CA3';'GC2';'met brokken groene zwak siltige klei';!
+62.50;65.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'L';'DO TGN GR';'CA3';'GC3';'meer kleiige nivo s fijn zandige lagen vrij veel glauconiet';!
+65.50;68.50;115.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs2';'DO TGR GN';'ZZFO';'SMK';'ZMA';'CA2';'GC3';'brokken groene klei';!
+68.50;71.50;115.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs2';'DO TGR GN';'ZZFO';'SMK';'ZMA';'CA3';'GC3';'kleiige en lemige nivo s belemnietfragmenten';!
+71.50;74.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'DO TGN GR';'ZZFO';'SZG';'CA3';'GC2';'kleiige nivo s verharde brokjes zwartgroen glauconiet zand zeer fijn tot matig grof';!
+74.50;80.50;90.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs3';'DO TGN GR';'ZUFO';'SZK';'CA3';'GC3';!
+80.50;83.50;75.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs3';'TGR GN';'ZUFO';'SZK';'ZHK';'CA3';'GC2';'glauconietzand verkittingenbrokjes klei kleihoudend';!
+83.50;86.50;80.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GR';'ZUFO';'SZK';'ZHK';'SCH1';'CA2';'GC2';'zeer veel verkitte brokjes';!
+86.50;89.50;100.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GR';'ZUFO';'SZK';'ZHK';'SCH1';'CA2';'GC2';'geheel groene tint grijsgroene kleibrokken';!
+89.50;91.00;100.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GR';'ZUFO';'SZK';'ZHK';'SCH1';'CA2';'GC2';'geheel groenig veel kleige nivo sveel fijnige verkittingen';!
+91.00;92.20;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks2';'GN';'CA2';'enkele verkittigenuiterst fijn zandige nivo s';!
+92.20;95.25;95.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'TGR GN';'ZUFO';'SZK';'ZHK';'CA2';'GC2';'verkittingen bolletjes zandsteen 8mm';!
+95.25;98.25;120.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'TGN ZW';'ZZFO';'SZK';'CA2';'GC4';'enkele verkittigen en groenige klei nivo sglauconiet 170 mu';!
+98.25;101.25;100.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'TGR GN';'ZUFO';'SMK';'ZHK';'CA1';'GC2';'enkele sterk siltige nivo s';!
+101.25;104.25;100.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'DO TGR GN';'ZUFO';'SZK';'ZHK';'CA2';'GC3';'kleiige brokken en ronde verkittigen 4 tot 10mm';!
+104.25;106.00;100.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'LI GR';'ZUFO';'SZK';'ZHK';'CA1';'GC2';!
+106.00;106.80;90.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'GR';'ZUFO';'CA1';'zwak zandige nivo s';!
+106.80;107.25;150.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'DO TGN GR';'ZMFO';'SZG';'ZHK';'CA1';'GC4';'veel kleiige en lemige nivo s';!
+107.25;110.25;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Kz2s3';'DO GN';'CA1';'uiterst fijn zandige nivo s';!
+110.25;113.25;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks3';'GR';'CA1';!
+113.25;116.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'DO GN';'ZZFO';'CA1';'groenige kleiige nivo s';!
+116.00;116.25;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Gz1';'ON';'SZG';'GMG';!
+116.25;117.50;250.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'LI GR';'ZMGO';'SZK';!
+117.50;118.75;500.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zg1';'GR';'ZUGO';'SMA';'GFN';'enkele pyrietstaafjes';!
+118.75;120.60;260.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'ON';'ZMGO';'SMK';'FN1';'wat zeer grof en uiterst grof zand';!
+120.60;122.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz2';'TGR GN';'ZUFO';'enkele pyriet concretiesviolet grijze nivo s';!
+122.00;122.75;100.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GR';'ZUFO';'ZHK';'groene tint verkitte zand laag ?';!
+122.75;123.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'NBE';'TGR GN';'ZNS';'hard verkit fijn zand';!
+123.00;124.75;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Lz3';'DO GR';'ZUFO';'zeer veel brokken hard verkit zand met gepyritiseerde houtresten';!
+124.75;127.00;125.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GR';'ZZFO';'SZK';'ZHK';'zeer veel grove brokken hard verkit zand waarin fijne koolfragmenten';!
+127.00;128.25;140.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GR';'ZZFO';'SZK';'ZHK';'veel brokjes kool';!
+128.25;129.75;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks2';'DO GR';'fijn zandige nivo s en koolbrokjes';!
+129.75;130.80;210.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GR';'ZMGO';'SZG';'ZHK';'FN1';'zeer fijn tot zeer grof zand en zeer veel kool fragmenten fijne brokjes kool brokken fijn gepyritiseerde zandsteen';!
+130.80;131.25;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks2';'LI GR';'KSTV';'enkele dunne groene klei snoertjes';!
+131.25;133.25;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks2';'LI GR';'KSTV';'donkere snoeren en pyrietstukjes';!
+133.25;133.50;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks2';'DO BR';'KSLA';'brokken kool';!
+133.50;134.25;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks2';'TGR WI';'KSTV';!
+134.25;137.25;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks3';'DO TBR GR';'KSTV';'humeuze snoerenuiterst fijnzandige nivo s brokjes kool';!
+137.25;140.25;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Ks2';'DO TBR GR';'klei deels stevig veel brokken kool ook ingesloten in pyriet';!

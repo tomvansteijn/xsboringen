@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B0903">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>190745</coordinateX>
+			<coordinateY>323360</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<levelMethod code="MMET">MMET</levelMethod>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="9262" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<locationName>Nuth</locationName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="18000" >
+		<operatorOrg>Gruner, R., Sittard</operatorOrg>
+		<ownerOrg>WML</ownerOrg>
+		<date startYear="1992" startMonth="4" startDay="13"/>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrWetDry="NDO" lithoDescrVersion="1" lithoDescrQuality="A" >
+			<organisation>RGD</organisation>
+		<lithoInterval topDepth="0" baseDepth="30">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorSecondary code="TGR" >grijs-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="30" baseDepth="190">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="BR" >bruin</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="190" baseDepth="370">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="370" baseDepth="420">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="420" baseDepth="660">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<colorSecondary code="TGR" >grijs-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="660" baseDepth="700">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S3" >sterk siltig</siltAdmix>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="ON" >onbekend</colorMain>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="700" baseDepth="920">
+			<lithology code="K" >klei</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<sandAdmix code="Z3" >sterk zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TBR" >bruin-</colorSecondary>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="920" baseDepth="2430">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="Z3" >sterk zandig</sandAdmix>
+			<colorMain code="GN" >groen</colorMain>
+			<colorSecondary code="TGR" >grijs-</colorSecondary>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="2430" baseDepth="2570">
+			<lithology code="K" >klei</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<sandAdmix code="Z2" >matig zandig</sandAdmix>
+			<humusAdmix code="H2" >matig humeus</humusAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="2570" baseDepth="2835">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<sandMedian median="130"/>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="2835" baseDepth="2940">
+			<lithology code="K" >klei</lithology>
+			<siltAdmix code="S3" >sterk siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="2940" baseDepth="3020">
+			<lithology code="K" >klei</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="GN" >groen</colorMain>
+			<colorSecondary code="TBL" >blauw-</colorSecondary>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="3020" baseDepth="3070">
+			<lithology code="K" >klei</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="WI" >wit</colorMain>
+			<carbonateFracNEN5104 code="CA3" >kalkrijk</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="3070" baseDepth="3090">
+			<lithology code="SHE" >schelpen</lithology>
+			<colorMain code="ON" >onbekend</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="3090" baseDepth="3120">
+			<lithology code="K" >klei</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="3120" baseDepth="3240">
+			<lithology code="K" >klei</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="3240" baseDepth="3425">
+			<lithology code="K" >klei</lithology>
+			<siltAdmix code="S3" >sterk siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="3425" baseDepth="3720">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<sandMedian median="130"/>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="3720" baseDepth="3890">
+			<lithology code="Z" >zand</lithology>
+			<clayAdmix code="KX" >kleiig </clayAdmix>
+			<siltAdmix code="S2" >matig siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<sandMedian median="90"/>
+			<sandMedianClass code="ZUFO" >uiterst fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="3890" baseDepth="4920">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<colorIntensity code="LI" >licht-</colorIntensity>
+			<sandMedian median="115"/>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="4920" baseDepth="5770">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S1" >zwak siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedian median="110"/>
+			<sandMedianClass code="ZZFO" >zeer fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="5770" baseDepth="6630">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S2" >matig siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedian median="100"/>
+			<sandMedianClass code="ZUFO" >uiterst fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="6630" baseDepth="6870">
+			<lithology code="Z" >zand</lithology>
+			<siltAdmix code="S3" >sterk siltig</siltAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGN" >groen-</colorSecondary>
+			<sandMedian median="90"/>
+			<sandMedianClass code="ZUFO" >uiterst fijn (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA1" >kalkloos</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="6870" baseDepth="7000">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+		</lithoInterval>
+		<lithoInterval topDepth="7000" baseDepth="7600">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="7600" baseDepth="7900">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="7900" baseDepth="10000">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="10000" baseDepth="10510">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="10510" baseDepth="12700">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="12700" baseDepth="13900">
+			<lithology code="KAS" >kalksteen</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="13900" baseDepth="14800">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="14800" baseDepth="15100">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="15100" baseDepth="15410">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorIntensity code="DO" >donker-</colorIntensity>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		<lithoInterval topDepth="15410" baseDepth="18000">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="Z3" >sterk zandig</sandAdmix>
+			<colorMain code="GN" >groen</colorMain>
+			<colorSecondary code="TGR" >grijs-</colorSecondary>
+			<sandMedianClass code="ZMGO" >matig grof (O)</sandMedianClass>
+			<carbonateFracNEN5104 code="CA2" >kalkarm</carbonateFracNEN5104>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code="LUC">Luchtliftboring</drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

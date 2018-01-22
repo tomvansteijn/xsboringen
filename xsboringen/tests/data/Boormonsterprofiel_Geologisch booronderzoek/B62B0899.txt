@@ -1,0 +1,64 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0899
+X-coordinaat (m): 	193450
+Y-coordinaat (m): 	324030
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Geschat, Top. Kaart 1:10.000
+Maaiveldhoogte (meter t.o.v. NAP): 	92.50
+Bepaling maaiveldhoogte: 	geschat, Hoogtekaart 1:10.000
+Boormethode: 	Luchtliftboring
+Einddiepte (meter beneden maaiveld): 	129.00
+Datum boring: 	01-01-1991
+Eigenaar: 	Herschi te Hoensbroek
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Glerum, J.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	A
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    5.90	oranje-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    5.90	    6.70	geel	zand	---	90	uiterst fijn (O)	---	---	sterk siltig	---	---	---	---	---	---	---	kalkarm	
+    6.70	    7.70	geel	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	zwak grindig	---	---	---	kalkloos	
+    7.70	    8.65	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.65	   12.70	licht-groen-bruin	zand	---	---	zeer fijn (O)	---	---	siltig	---	---	---	---	---	---	---	---	
+   12.70	   16.70	groen-bruin	zand	---	110	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   16.70	   19.70	oranje-bruin	zand	---	130	zeer fijn (O)	---	---	siltig	---	---	---	---	---	---	---	---	
+   19.70	   24.70	groen-grijs	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   24.70	   28.70	groen-grijs	zand	---	90	uiterst fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+   28.70	   32.70	groen-grijs	klei	---	---	---	---	---	sterk siltig	---	zandig	---	---	---	---	---	kalkloos	
+   32.70	   35.70	donker-groen-grijs	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkarm	
+   35.70	   49.70	donker-groen-grijs	zand	---	130	zeer fijn (O)	---	---	sterk siltig	---	---	---	---	---	---	---	kalkarm	
+   49.70	   52.70	groen-grijs	zand	---	110	zeer fijn (O)	---	---	siltig	---	---	---	---	---	---	---	kalkarm	
+   52.70	   56.00	groen-grijs	klei	---	---	---	---	---	sterk siltig	---	zandig	---	---	---	---	---	kalkarm	
+   56.00	   56.60	grijs	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkarm	
+   56.60	   57.30	wit-grijs	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   57.30	   58.00	zwart	bruinkool	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	kalkloos	
+   58.00	   60.70	donker-groen-grijs	klei	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	kalkrijk	
+   60.70	   61.70	grijs-groen	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkarm	
+   61.70	   62.60	groen-grijs	klei	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	kalkarm	
+   62.60	   64.70	licht-grijs	klei	---	---	---	---	---	sterk siltig	---	zandig	---	---	---	---	---	kalkloos	
+   64.70	   68.70	groen-grijs	zand	---	110	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   68.70	   71.20	licht-grijs	zand	---	120	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	kalkloos	
+   71.20	   75.40	licht-grijs	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   75.40	   80.70	groen-grijs	zand	---	120	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	kalkloos	
+   80.70	   84.70	groen-grijs	zand	---	90	uiterst fijn (O)	sterk kleiig	---	---	---	---	---	---	---	---	---	kalkloos	
+   84.70	  101.10	groen-grijs	zand	---	90	uiterst fijn (O)	sterk kleiig	---	---	---	---	---	---	---	---	---	kalkloos	
+  101.10	  101.50	grijs-groen	klei	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	kalkloos	
+  101.50	  108.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  108.00	  116.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  116.00	  118.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  118.00	  120.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  120.00	  122.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  122.00	  126.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  126.00	  128.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  128.00	  129.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

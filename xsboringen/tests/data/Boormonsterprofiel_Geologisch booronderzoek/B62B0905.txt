@@ -1,0 +1,40 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0905
+X-coordinaat (m): 	192895
+Y-coordinaat (m): 	323225
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	76.48
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	14.00
+Datum boring: 	01-02-1992
+Eigenaar: 	WML
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Rooijen, P. van
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	A
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    1.30	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    1.30	    2.20	bruin-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    2.20	    2.50	rood-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    2.50	    2.90	donker-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    2.90	    3.20	donker-bruin	klei	---	---	---	---	---	sterk siltig	---	---	---	---	---	matig humeus	---	kalkloos	
+    3.20	    3.60	donker-bruin	veen	---	---	---	mineraalarm	---	---	---	---	---	---	---	---	---	kalkloos	
+    3.60	    4.40	bruin-zwart	klei	---	---	---	---	---	---	---	---	---	---	---	sterk humeus	---	kalkloos	
+    4.40	    5.50	licht-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    5.50	    6.30	bruin-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    6.30	    7.60	rood-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    7.60	    8.40	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.40	   14.00	licht-groen-grijs	zand	---	---	uiterst fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	kalkloos	

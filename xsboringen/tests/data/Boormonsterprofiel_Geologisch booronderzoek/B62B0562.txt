@@ -1,0 +1,46 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0562
+X-coordinaat (m): 	192060
+Y-coordinaat (m): 	320930
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal/Kunrade
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	92.59
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	49.30
+Datum boring: 	01-01-1962
+Eigenaar: 	Gemeente Bedrijven Heerlen
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD - Geol. Bureau
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	E
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.30	    1.80	bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.80	    3.40	grijs-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.40	    4.90	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    4.90	    5.30	grijs-bruin	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    5.30	    7.00	geel-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.00	    8.00	grijs-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.00	    8.80	grijs	zand	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	
+    8.80	    9.40	bruin	zand	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	
+    9.40	    9.80	grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    9.80	   10.20	grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   10.20	   14.00	grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   14.00	   15.50	bruin	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   15.50	   25.50	bruin	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   25.50	   35.00	bruin	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   35.00	   37.00	bruin	zand	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	
+   37.00	   39.20	donker-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   39.20	   49.30	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

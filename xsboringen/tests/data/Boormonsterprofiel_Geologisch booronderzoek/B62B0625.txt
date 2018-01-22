@@ -1,0 +1,40 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0625
+X-coordinaat (m): 	194090
+Y-coordinaat (m): 	322660
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	84.50
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	9.50
+Datum boring: 	25-05-1966
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.10	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.10	    2.00	bruin-grijs	leem	---	---	fijne categorie (O)	---	---	---	---	zandig	---	---	---	---	---	kalkarm	
+    2.00	    2.50	grijs	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkarm	
+    2.50	    4.20	bruin-grijs	zand	---	90	zeer fijn (O)	---	---	sterk siltig	---	---	---	zwak grindig	---	---	---	kalkarm	
+    4.20	    5.00	grijs	zand	---	90	zeer fijn (O)	---	---	zwak siltig	---	---	---	zwak grindig	---	---	---	kalkarm	
+    5.00	    5.60	grijs	zand	---	110	zeer fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	kalkarm	
+    5.60	    6.50	wit	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkloos	
+    6.50	    7.30	grijs-groen	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    7.30	    7.50	grijs-groen	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    7.50	    8.20	onbekend	zand	---	120	zeer fijn (O)	sterk kleiig	---	---	---	---	---	---	---	---	---	---	
+    8.20	    8.50	grijs-groen	klei	---	---	---	sterk kleiig	---	---	---	sterk zandig	---	---	---	---	---	---	
+    8.50	    9.50	grijs-groen	klei	---	---	---	---	---	---	---	zwak zandig	---	---	---	---	---	---	

@@ -1,0 +1,34 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B3867
+X-coordinaat (m): 	196510
+Y-coordinaat (m): 	322040
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	111.90
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	7.50
+Datum boring: 	01-01-1952
+Eigenaar: 	Geologisch Bureau
+Uitvoerder: 	Grondmechanica Delft
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.25	donker-bruin	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.25	    0.40	---	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    2.40	bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	kalkhoudend	
+    2.40	    3.85	bruin-geel	leem	---	---	---	---	---	---	---	sterk zandig	---	matig grindig	---	---	---	kalkhoudend	
+    3.85	    6.60	licht-groen-grijs	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkhoudend	
+    6.60	    7.50	bruin	zand	---	---	---	---	---	siltig	---	---	---	grindig	---	---	---	---	

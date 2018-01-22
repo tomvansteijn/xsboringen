@@ -1,0 +1,45 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0366
+X-coordinaat (m): 	197000
+Y-coordinaat (m): 	322000
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Landmeting
+Maaiveldhoogte (meter t.o.v. NAP): 	114.05
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	20.00
+Datum boring: 	01-01-1954
+Eigenaar: 	ranje Nassau Mijnen NV
+Uitvoerder: 	Oranje Nassau Mijnen
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    1.15	donker-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.15	    2.70	oranje-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    2.70	    4.30	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    4.30	    5.46	geel-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    5.46	    5.95	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    5.95	    6.15	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    6.15	    7.86	geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    7.86	    8.10	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    8.10	    8.89	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    8.89	    9.00	groen-grijs	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+    9.00	   10.10	donker-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   10.10	   11.05	donker-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+   11.05	   11.84	bruin-grijs	leem	---	---	---	---	---	---	---	zandig	---	grindig	---	---	---	---	
+   11.84	   12.23	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   12.23	   12.78	geel-bruin	zand	---	---	---	---	---	---	---	---	---	grindig	---	---	---	---	
+   12.78	   15.53	groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   15.53	   20.00	groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	

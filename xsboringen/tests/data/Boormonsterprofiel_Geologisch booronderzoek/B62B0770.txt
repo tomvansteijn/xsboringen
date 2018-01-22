@@ -1,0 +1,39 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0770
+X-coordinaat (m): 	192045
+Y-coordinaat (m): 	320710
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	99.84
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	15.00
+Datum boring: 	16-01-1973
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Felder, W.M. / Hartering, C.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	E
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.30	    3.50	donker-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.50	    5.80	bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    5.80	    6.20	bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    6.20	    7.40	wit-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.40	    7.60	bruin	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.60	    7.80	grijs-bruin	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.80	    8.20	zwart	bruinkool	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+    8.20	   10.00	grijs-groen	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+   10.00	   14.70	onbekend	klei	---	---	---	---	---	zwak siltig	---	zandig	---	---	---	---	---	---	
+   14.70	   15.00	donker-bruin	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

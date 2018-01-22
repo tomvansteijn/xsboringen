@@ -1,0 +1,50 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0902
+X-coordinaat (m): 	192020
+Y-coordinaat (m): 	320770
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	98.37
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Straight-flushboring
+Einddiepte (meter beneden maaiveld): 	83.00
+Datum boring: 	01-02-1992
+Eigenaar: 	WML
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Glerum, J. / Meessen, J.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.20	donker-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    0.20	    0.80	oranje-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.80	    1.90	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.90	    2.90	onbekend	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    2.90	    5.80	licht-geel-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    5.80	    6.70	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    6.70	    7.20	bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    7.20	    9.10	oranje-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    9.10	   10.30	bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+   10.30	   11.80	oranje-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+   11.80	   12.80	oranje	zand	---	160	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   12.80	   15.70	groen	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   15.70	   16.00	licht-groen	klei	---	---	---	---	---	matig siltig	---	---	---	---	---	---	---	kalkloos	
+   16.00	   26.00	licht-bruin	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   26.00	   36.20	onbekend	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	kalkloos	
+   36.20	   48.20	groen	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkloos	
+   48.20	   50.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   50.00	   53.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   53.00	   56.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   56.00	   59.00	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   59.00	   65.30	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   65.30	   83.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

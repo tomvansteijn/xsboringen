@@ -1,0 +1,35 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B4159
+X-coordinaat (m): 	196345
+Y-coordinaat (m): 	320955
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	111.49
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	10.00
+Datum boring: 	01-01-1963
+Eigenaar: 	Onbekend
+Uitvoerder: 	Gruner R.
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.35	---	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.35	    0.90	geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    0.90	    2.20	licht-geel	zand	---	120	zeer fijn	---	---	siltig	---	---	---	---	---	---	---	---	
+    2.20	    3.80	donker-geel	zand	---	160	matig fijn	---	---	siltig	---	---	---	---	---	---	---	---	
+    3.80	    6.20	licht-geel	zand	---	120	zeer fijn	---	---	---	---	---	---	---	---	---	---	---	
+    6.20	    8.00	licht-geel	zand	---	160	matig fijn	---	---	---	---	---	---	---	---	---	---	---	
+    8.00	   10.00	geel	zand	---	125	zeer fijn	---	---	---	---	---	---	---	---	---	---	---	

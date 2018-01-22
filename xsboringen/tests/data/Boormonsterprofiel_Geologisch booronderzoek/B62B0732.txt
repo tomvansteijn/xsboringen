@@ -1,0 +1,50 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0732
+X-coordinaat (m): 	190410
+Y-coordinaat (m): 	318475
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Wijlre
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	133.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	30.00
+Datum boring: 	21-04-1970
+Eigenaar: 	RGD
+Uitvoerder: 	RGD - Afd. Kartering
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Berge, J.R.J. ten / Hartering,
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	onbekend	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    1.00	groen-geel	zand	---	130	zeer fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    1.00	    3.00	grijs-groen	zand	---	130	zeer fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    3.00	    8.00	geel-grijs	zand	---	130	zeer fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    8.00	   10.00	geel	zand	---	150	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   10.00	   11.00	geel-grijs	zand	---	150	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   11.00	   15.00	geel	zand	---	150	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   15.00	   16.00	bruin-geel	zand	---	130	zeer fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+   16.00	   19.30	geel-grijs	zand	---	130	zeer fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+   19.30	   19.70	donker-grijs	klei	---	---	---	---	---	---	---	---	---	---	---	matig humeus	---	---	
+   19.70	   20.10	onbekend	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   20.10	   20.60	onbekend	bruinkool	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   20.60	   21.00	donker-grijs	klei	---	---	---	---	---	---	---	---	---	---	---	matig humeus	---	---	
+   21.00	   21.40	grijs	klei	---	---	---	---	---	---	---	---	---	---	---	matig humeus	---	---	
+   21.40	   21.90	bruin-grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   21.90	   23.00	grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   23.00	   23.20	grijs-groen	zand	---	---	---	sterk kleiig	---	---	---	---	---	---	---	---	---	---	
+   23.20	   23.70	grijs-groen	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+   23.70	   24.20	grijs-groen	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   24.20	   28.00	grijs-groen	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   28.00	   29.00	grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   29.00	   30.00	geel	zand	---	150	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	

@@ -1,0 +1,48 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0877
+X-coordinaat (m): 	196460
+Y-coordinaat (m): 	322300
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	109.25
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	20.10
+Datum boring: 	06-02-1987
+Eigenaar: 	Onbekend
+Uitvoerder: 	Fugro
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Kisters, P., Felder, W.
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+Deze boring bevat sublagen
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    1.60	---	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.60	    2.00	bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    2.00	    5.60	bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	kalkarm	
+    5.60	    6.50	grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	zwak humeus	---	kalkarm	
+    6.50	    8.00	bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	kalkarm	
+    8.00	    8.20	donker-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	humeus	---	kalkarm	
+    8.20	    8.90	blauw-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	zwak humeus	---	---	
+    8.90	   10.60	grijs	grind	---	---	grove  categorie (O)	---	---	---	---	zandig	---	---	---	---	---	---	
+   10.60	   13.25	groen-grijs	zand	1	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   13.25	   13.90	blauw-grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   13.90	   14.60	bruin	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	zwak humeus	---	---	
+   14.60	   19.60	donker-grijs	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   19.60	   20.10	donker-grijs	klei	---	---	fijne categorie (O)	---	---	---	---	zandig	---	---	---	humeus	---	---	
+
+LITHOLOGIE SUBLAGEN														
+Sublaag	Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Beschrijving Sublaag	Dikte (%)	Beschrijving dikte	Kleur	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+
+1	10600	13250	SLKX	---	---	GR	---	---	---	---	---	---	---	---	---	---	---	---	---	

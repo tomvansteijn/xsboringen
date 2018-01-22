@@ -1,0 +1,34 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0682
+X-coordinaat (m): 	193355
+Y-coordinaat (m): 	322725
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	85.10
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	22.70
+Datum boring: 	19-03-1969
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Geologisch Bureau, kartering.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    2.40	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.40	    3.70	bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    3.70	    4.60	donker-bruin	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    4.60	   18.00	groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   18.00	   22.70	donker-groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	

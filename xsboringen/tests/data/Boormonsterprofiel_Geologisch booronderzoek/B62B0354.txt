@@ -1,0 +1,43 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0354
+X-coordinaat (m): 	196220
+Y-coordinaat (m): 	321860
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	102.50
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	15.86
+Datum boring: 	01-01-1934
+Eigenaar: 	Gem. Heerlen
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	onbekend	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    1.20	donker-grijs	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    1.20	    2.50	grijs	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    2.50	    3.12	grijs	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+    3.12	    3.75	licht-grijs	zand	---	---	---	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+    3.75	    4.05	grijs	zand	---	---	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+    4.05	    6.78	grijs	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    6.78	    7.45	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.45	    9.65	licht-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+    9.65	   11.53	bruin-grijs	zand	---	---	fijne categorie (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   11.53	   13.25	groen-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   13.25	   14.95	donker-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   14.95	   15.00	zwart	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   15.00	   15.75	onbekend	klei	---	---	---	---	---	---	---	zandig	---	---	---	sterk humeus	---	---	
+   15.75	   15.86	donker-grijs	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	

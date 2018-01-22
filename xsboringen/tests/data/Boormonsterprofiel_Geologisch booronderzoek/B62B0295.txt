@@ -1,0 +1,40 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0295
+X-coordinaat (m): 	191950
+Y-coordinaat (m): 	323870
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Wijnandsrade
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	76.03
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	101.00
+Datum boring: 	01-01-1958
+Eigenaar: 	Waterleidingmaatschappij Limburg
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Berge, J.R.J. ten
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    2.10	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    2.10	    3.30	oranje-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    3.30	    6.60	licht-bruin-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    6.60	    7.30	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    7.30	    9.20	onbekend	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    9.20	   10.40	grijs-geel	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   10.40	   10.60	zwart	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   10.60	   20.00	geel-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   20.00	   30.00	groen-grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   30.00	   40.80	grijs-groen	klei	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+   40.80	  100.30	licht-geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  100.30	  101.00	licht-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

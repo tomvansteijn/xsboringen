@@ -1,0 +1,36 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B3803
+X-coordinaat (m): 	195780
+Y-coordinaat (m): 	323200
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	100.90
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	5.80
+Datum boring: 	01-01-1954
+Eigenaar: 	Geologisch Bureau
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	E
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	---	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    0.80	bruin	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.80	    2.55	bruin	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    2.55	    4.10	bruin-geel	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkhoudend	
+    4.10	    4.55	geel	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkhoudend	
+    4.55	    5.10	oranje-geel	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    5.10	    5.55	geel-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	grindig	---	---	---	---	
+    5.55	    5.80	---	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

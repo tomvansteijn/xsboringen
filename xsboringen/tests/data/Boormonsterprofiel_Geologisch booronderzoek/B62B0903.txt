@@ -1,0 +1,62 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0903
+X-coordinaat (m): 	190745
+Y-coordinaat (m): 	323360
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Nuth
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	92.62
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Luchtliftboring
+Einddiepte (meter beneden maaiveld): 	180.00
+Datum boring: 	13-04-1992
+Eigenaar: 	WML
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	A
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.30	licht-grijs-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    0.30	    1.90	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    1.90	    3.70	licht-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    3.70	    4.20	licht-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkrijk	
+    4.20	    6.60	licht-grijs-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    6.60	    7.00	onbekend	zand	---	---	---	---	---	sterk siltig	---	---	---	grindig	---	---	---	kalkloos	
+    7.00	    9.20	donker-bruin-grijs	klei	---	---	---	kleiig 	---	zwak siltig	---	sterk zandig	---	---	---	---	---	kalkloos	
+    9.20	   24.30	donker-grijs-groen	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	kalkarm	
+   24.30	   25.70	groen-grijs	klei	---	---	---	kleiig 	---	---	---	matig zandig	---	---	---	matig humeus	---	kalkrijk	
+   25.70	   28.35	grijs	zand	---	130	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	kalkrijk	
+   28.35	   29.40	donker-groen-grijs	klei	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	kalkrijk	
+   29.40	   30.20	blauw-groen	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkarm	
+   30.20	   30.70	wit	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkrijk	
+   30.70	   30.90	onbekend	schelpen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   30.90	   31.20	donker-groen-grijs	klei	---	---	---	kleiig 	---	zwak siltig	---	zwak zandig	---	---	---	---	---	kalkarm	
+   31.20	   32.40	donker-grijs	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkloos	
+   32.40	   34.25	licht-grijs	klei	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	kalkarm	
+   34.25	   37.20	licht-geel-grijs	zand	---	130	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   37.20	   38.90	licht-groen-grijs	zand	---	90	uiterst fijn (O)	kleiig 	---	matig siltig	---	---	---	---	---	---	---	kalkloos	
+   38.90	   49.20	licht-groen-grijs	zand	---	115	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   49.20	   57.70	groen-grijs	zand	---	110	zeer fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	kalkloos	
+   57.70	   66.30	groen-grijs	zand	---	100	uiterst fijn (O)	---	---	matig siltig	---	---	---	---	---	---	---	kalkloos	
+   66.30	   68.70	groen-grijs	zand	---	90	uiterst fijn (O)	---	---	sterk siltig	---	---	---	---	---	---	---	kalkloos	
+   68.70	   70.00	donker-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   70.00	   76.00	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   76.00	   79.00	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   79.00	  100.00	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  100.00	  105.10	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  105.10	  127.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  127.00	  139.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+  139.00	  148.00	donker-grijs	leem	---	---	fijne categorie (O)	---	---	---	---	zwak zandig	---	---	---	---	---	kalkarm	
+  148.00	  151.00	donker-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+  151.00	  154.10	donker-grijs	leem	---	---	fijne categorie (O)	---	---	---	---	zwak zandig	---	---	---	---	---	kalkarm	
+  154.10	  180.00	grijs-groen	leem	---	---	matig grof (O)	---	---	---	---	sterk zandig	---	---	---	---	---	kalkarm	

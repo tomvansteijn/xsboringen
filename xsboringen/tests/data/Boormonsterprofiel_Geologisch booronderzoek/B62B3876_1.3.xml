@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B3876">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>197000</coordinateX>
+			<coordinateY>322390</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="10540" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="507" >
+		<operatorOrg>Maatschappij tot Exploratie van Spoorwegen</operatorOrg>
+		<ownerOrg>Geologisch Bureau</ownerOrg>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrVersion="1" lithoDescrQuality="C" >
+		<lithoInterval topDepth="0" baseDepth="264">
+			<lithology code="NBE" >niet benoemd</lithology>
+		</lithoInterval>
+		<lithoInterval topDepth="264" baseDepth="277">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="277" baseDepth="350">
+			<lithology code="NBE" >niet benoemd</lithology>
+		</lithoInterval>
+		<lithoInterval topDepth="350" baseDepth="363">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="363" baseDepth="501">
+			<lithology code="NBE" >niet benoemd</lithology>
+		</lithoInterval>
+		<lithoInterval topDepth="501" baseDepth="507">
+			<lithology code="G" >grind</lithology>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

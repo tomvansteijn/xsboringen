@@ -1,0 +1,57 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0855
+X-coordinaat (m): 	191545
+Y-coordinaat (m): 	321005
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	95.13
+Bepaling maaiveldhoogte: 	Landmeting
+Boormethode: 	Zuigboring
+Einddiepte (meter beneden maaiveld): 	62.50
+Datum boring: 	01-12-1981
+Eigenaar: 	Gem. Bedrijven Heerlen
+Uitvoerder: 	Gruner, R., Sittard
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Meessen, J. / Renssen, L.H.
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	B
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    1.20	onbekend	leem	---	---	---	---	---	siltig	---	---	---	---	---	---	---	kalkarm	
+    1.20	    8.70	bruin-geel	leem	---	---	---	---	---	siltig	---	zwak zandig	---	---	---	---	---	---	
+    8.70	    9.20	licht-grijs	leem	---	---	---	---	---	siltig	---	---	---	---	---	---	---	kalkarm	
+    9.20	   10.00	groen-grijs	leem	---	---	---	---	---	siltig	---	zwak zandig	---	---	---	---	---	kalkarm	
+   10.00	   12.50	groen-grijs	leem	---	---	---	---	---	siltig	---	zwak zandig	---	---	---	---	---	kalkloos	
+   12.50	   13.20	licht-grijs	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+   13.20	   13.60	licht-grijs	grind	---	---	---	---	---	sterk siltig	---	---	---	---	---	---	---	kalkarm	
+   13.60	   14.00	onbekend	bruinkool	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+   14.00	   14.90	licht-grijs	klei	---	---	---	---	---	matig siltig	---	---	---	---	---	---	---	kalkarm	
+   14.90	   16.10	licht-grijs	klei	---	---	---	---	---	matig siltig	---	---	---	---	---	---	---	kalkrijk	
+   16.10	   17.30	donker-groen	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	kalkrijk	
+   17.30	   20.00	grijs-groen	klei	---	---	---	---	---	siltig	---	---	---	---	---	---	---	kalkrijk	
+   20.00	   22.50	donker-grijs	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   22.50	   25.00	donker-grijs	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   25.00	   27.50	geel-grijs	zand	---	75	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   27.50	   30.00	geel-grijs	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   30.00	   32.50	geel-grijs	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   32.50	   36.20	geel-grijs	zand	---	90	uiterst fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   36.20	   37.80	groen-grijs	zand	---	125	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   37.80	   40.00	groen-grijs	zand	---	125	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   40.00	   42.50	groen-grijs	zand	---	140	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkarm	
+   42.50	   45.00	groen-grijs	zand	---	140	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	kalkarm	
+   45.00	   47.50	groen-grijs	zand	---	140	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	kalkarm	
+   47.50	   50.00	groen-grijs	zand	---	140	zeer fijn (O)	kleiig 	---	---	---	---	---	---	---	---	---	kalkarm	
+   50.00	   51.20	geel-grijs	grind	---	500	---	kleiig 	---	---	---	zandig	---	---	---	---	---	kalkarm	
+   51.20	   51.70	donker-groen	zand	---	140	zeer fijn (O)	sterk kleiig	---	---	---	---	---	---	---	---	---	kalkarm	
+   51.70	   52.50	donker-groen	zand	---	140	zeer fijn (O)	sterk kleiig	---	---	---	---	---	---	---	---	---	kalkarm	
+   52.50	   57.50	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   57.50	   62.50	geel-grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

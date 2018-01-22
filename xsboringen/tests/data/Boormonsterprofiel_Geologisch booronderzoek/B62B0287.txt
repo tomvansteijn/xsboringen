@@ -1,0 +1,40 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0287
+X-coordinaat (m): 	196430
+Y-coordinaat (m): 	322240
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	108.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	15.15
+Datum boring: 	01-01-1933
+Eigenaar: 	P.T.T.
+Uitvoerder: 	Hennings, E., Berg aan de Maas
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	E
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    3.70	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    3.70	    3.95	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    3.95	    5.80	onbekend	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkloos	
+    5.80	    6.22	onbekend	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+    6.22	    6.72	grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+    6.72	    7.34	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.34	   11.25	geel	zand	---	---	fijne categorie (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   11.25	   11.85	grijs	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   11.85	   14.47	grijs	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   14.47	   14.74	grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   14.74	   15.05	grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   15.05	   15.15	grijs	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	

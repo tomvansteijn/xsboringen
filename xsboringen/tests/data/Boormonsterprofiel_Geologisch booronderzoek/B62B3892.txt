@@ -1,0 +1,36 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B3892
+X-coordinaat (m): 	193510
+Y-coordinaat (m): 	321725
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	86.20
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	7.95
+Datum boring: 	01-01-1950
+Eigenaar: 	Geologisch Bureau
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.65	---	zand	---	---	---	---	---	---	---	---	---	---	---	humeus	---	---	
+    0.65	    1.75	---	veen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.75	    2.10	zwart	veen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.10	    2.90	grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkhoudend	
+    2.90	    6.50	licht-grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkhoudend	
+    6.50	    7.36	wit	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkhoudend	
+    7.36	    7.81	---	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.81	    7.95	grijs-groen	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	

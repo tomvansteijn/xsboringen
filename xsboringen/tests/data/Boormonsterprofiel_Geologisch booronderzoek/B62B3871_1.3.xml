@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE set SYSTEM "location.dtd">
+<set version="1.3">
+<pointSurvey version="1.3" embargo="OPENBAAR" >
+	<identification id="B62B3871">
+		<organisation>TNO-NITG</organisation>
+		<remark>unieke identificatie</remark>
+	</identification>
+	<surveyLocation>
+		<coordinates originalMeasurement="JA" UoM="METER" coordSystem="RD">
+			<coordinateX>197055</coordinateX>
+			<coordinateY>322400</coordinateY>
+		</coordinates>
+	</surveyLocation>
+	<surfaceElevation>
+		<elevation originalMeasurement="JA" levelReference="NAP" levelValue="10520" UoM="CENTIMETER"></elevation>
+	</surfaceElevation>
+	<geoPoliticalLocation>
+		<countryName>Nederland</countryName>
+		<stateOrProvinceName>Limburg</stateOrProvinceName>
+		<map maptype="TOPO1961">62B</map>
+	</geoPoliticalLocation>
+	<borehole  version="1.3" baseDepthUoM="CENTIMETER" baseDepth="600" >
+		<operatorOrg>Maatschappij tot Exploratie van Spoorwegen</operatorOrg>
+		<ownerOrg>Geologisch Bureau</ownerOrg>
+		<lithoDescr version="1.3" layerDepthUoM="CENTIMETER" layerDepthReference="MV" lithoDescrStandard="ONB" lithoDescrVersion="1" lithoDescrQuality="E" >
+		<lithoInterval topDepth="0" baseDepth="30">
+			<lithology code="Z" >zand</lithology>
+		</lithoInterval>
+		<lithoInterval topDepth="30" baseDepth="60">
+			<lithology code="L" >leem</lithology>
+		</lithoInterval>
+		<lithoInterval topDepth="60" baseDepth="70">
+			<lithology code="K" >klei</lithology>
+			<colorMain code="BL" >blauw</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="70" baseDepth="90">
+			<lithology code="L" >leem</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+		</lithoInterval>
+		<lithoInterval topDepth="90" baseDepth="132">
+			<lithology code="K" >klei</lithology>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="BL" >blauw</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="132" baseDepth="165">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="BL" >blauw</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="165" baseDepth="183">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="BL" >blauw</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="183" baseDepth="226">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+		</lithoInterval>
+		<lithoInterval topDepth="226" baseDepth="254">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+		</lithoInterval>
+		<lithoInterval topDepth="254" baseDepth="277">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="BR" >bruin</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="277" baseDepth="297">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+		</lithoInterval>
+		<lithoInterval topDepth="297" baseDepth="404">
+			<lithology code="K" >klei</lithology>
+			<sandAdmix code="Z1" >zwak zandig</sandAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="404" baseDepth="430">
+			<lithology code="K" >klei</lithology>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="430" baseDepth="446">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="446" baseDepth="453">
+			<lithology code="L" >leem</lithology>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="453" baseDepth="480">
+			<lithology code="L" >leem</lithology>
+			<gravelAdmix code="G1" >zwak grindig</gravelAdmix>
+			<colorMain code="GR" >grijs</colorMain>
+			<colorSecondary code="TGE" >geel-</colorSecondary>
+		</lithoInterval>
+		<lithoInterval topDepth="480" baseDepth="495">
+			<lithology code="G" >grind</lithology>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="495" baseDepth="507">
+			<lithology code="Z" >zand</lithology>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="507" baseDepth="577">
+			<lithology code="G" >grind</lithology>
+			<sandAdmix code="ZX" >zandig</sandAdmix>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="577" baseDepth="591">
+			<lithology code="Z" >zand</lithology>
+			<gravelAdmix code="GX" >grindig</gravelAdmix>
+			<colorMain code="GE" >geel</colorMain>
+		</lithoInterval>
+		<lithoInterval topDepth="591" baseDepth="600">
+			<lithology code="Z" >zand</lithology>
+			<colorMain code="GE" >geel</colorMain>
+			<sandMedianClass code="ZFC" >fijne categorie (O)</sandMedianClass>
+		</lithoInterval>
+		</lithoDescr>
+		<drillMethod>
+			<drillMethodInterval code=""></drillMethodInterval>
+		</drillMethod>
+	</borehole>
+</pointSurvey>
+</set>

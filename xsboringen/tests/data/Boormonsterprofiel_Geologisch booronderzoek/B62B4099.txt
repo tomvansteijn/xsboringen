@@ -1,0 +1,37 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B4099
+X-coordinaat (m): 	196825
+Y-coordinaat (m): 	321370
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	87.31
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	5.10
+Datum boring: 	01-05-1941
+Eigenaar: 	Onbekend
+Uitvoerder: 	Gruner R.
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	bruin-grijs	leem	---	---	fijne categorie (O)	---	---	---	---	zandig	---	---	---	---	---	---	
+    0.40	    1.50	licht-zwart-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.50	    2.20	donker-bruin-grijs	leem	---	---	fijne categorie (O)	---	---	---	---	zandig	---	grindig	---	---	---	---	
+    2.20	    2.50	licht-bruin-grijs	leem	---	---	fijne categorie (O)	---	---	---	---	zandig	---	grindig	---	---	---	---	
+    2.50	    3.50	donker-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    3.50	    3.60	donker-grijs	zand	---	---	zeer fijn	---	---	sterk siltig	---	---	---	---	---	matig humeus	---	---	
+    3.60	    4.10	donker-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    4.10	    4.80	donker-grijs	leem	---	---	fijne categorie (O)	---	---	---	---	zandig	---	---	---	---	---	---	
+    4.80	    5.10	donker-grijs	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	sterk humeus	---	---	

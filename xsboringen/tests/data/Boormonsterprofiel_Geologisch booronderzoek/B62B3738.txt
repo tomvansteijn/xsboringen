@@ -1,0 +1,38 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B3738
+X-coordinaat (m): 	193850
+Y-coordinaat (m): 	323610
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	93.50
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	8.60
+Datum boring: 	01-01-1957
+Eigenaar: 	Geologisch Bureau
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.15	licht-bruin	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    0.15	    2.70	bruin-geel	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    2.70	    4.55	geel	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkloos	
+    4.55	    5.50	bruin-geel	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    5.50	    6.00	groen-geel	zand	---	---	fijne categorie (O)	sterk kleiig	---	---	---	---	---	---	---	---	---	---	
+    6.00	    6.94	oranje-geel	klei	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    6.94	    7.08	licht-geel	zand	---	---	fijne categorie (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+    7.08	    7.58	licht-geel	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	matig grindig	---	---	---	---	
+    7.58	    8.56	---	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.56	    8.60	grijs-groen	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	grindig	---	---	---	---	

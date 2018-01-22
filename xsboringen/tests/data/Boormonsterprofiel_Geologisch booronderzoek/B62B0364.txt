@@ -1,0 +1,52 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0364
+X-coordinaat (m): 	196720
+Y-coordinaat (m): 	321800
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	117.50
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	71.10
+Datum boring: 	01-01-1922
+Eigenaar: 	Onbekend
+Uitvoerder: 	Hennings, E., Berg aan de Maas
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    1.00	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.00	    4.00	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    4.00	    5.00	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    5.00	    9.85	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    9.85	   10.00	onbekend	zand	---	---	---	---	---	---	---	---	---	grindig	---	---	---	---	
+   10.00	   11.90	onbekend	zand	---	---	---	---	---	---	---	---	---	grindig	---	---	---	---	
+   11.90	   14.00	bruin	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   14.00	   15.00	groen-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   15.00	   17.00	groen	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   17.00	   17.70	groen-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+   17.70	   18.00	donker-groen	klei	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+   18.00	   18.80	onbekend	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   18.80	   21.00	bruin-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   21.00	   22.00	bruin-grijs	zand	---	---	---	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   22.00	   24.00	bruin-grijs	zand	---	---	fijne categorie (O)	kleiig 	---	---	---	---	---	---	---	---	---	---	
+   24.00	   29.00	grijs	zand	---	---	fijne categorie (O)	---	---	---	---	---	---	---	---	---	---	---	
+   29.00	   32.00	grijs	zand	---	---	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   32.00	   33.00	bruin-grijs	zand	---	---	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   33.00	   35.00	grijs	zand	---	---	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   35.00	   43.00	grijs	zand	---	---	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   43.00	   50.00	grijs	zand	---	---	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   50.00	   54.00	grijs	zand	---	---	zeer fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+   54.00	   70.80	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   70.80	   71.10	groen-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

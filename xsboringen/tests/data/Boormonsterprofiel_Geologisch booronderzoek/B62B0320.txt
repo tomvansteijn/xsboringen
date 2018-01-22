@@ -1,0 +1,33 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0320
+X-coordinaat (m): 	193510
+Y-coordinaat (m): 	321880
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	86.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	19.80
+Datum boring: 	01-01-1919
+Eigenaar: 	NV Bergerode
+Uitvoerder: 	Bergerode N.V.
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	E
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    4.00	onbekend	klei	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	
+    4.00	    7.20	grijs	klei	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.20	    8.30	onbekend	zand	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    8.30	   19.40	geel	zand	---	---	---	---	---	---	---	---	---	grindig	---	---	---	---	
+   19.40	   19.80	onbekend	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

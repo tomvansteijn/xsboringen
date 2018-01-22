@@ -1,0 +1,36 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0242
+X-coordinaat (m): 	195970
+Y-coordinaat (m): 	322690
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	108.20
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	11.60
+Datum boring: 	01-01-1938
+Eigenaar: 	Onbekend
+Uitvoerder: 	Onbekend
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    1.00	onbekend	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.00	    1.75	onbekend	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.75	    6.20	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    6.20	    6.50	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    6.50	    7.90	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    7.90	    9.75	onbekend	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkloos	
+    9.75	   11.18	onbekend	leem	---	---	---	---	---	---	---	zandig	---	---	---	---	---	kalkloos	
+   11.18	   11.60	onbekend	grind	---	---	---	---	---	siltig	---	zandig	---	---	---	---	---	---	

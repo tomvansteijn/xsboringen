@@ -1,0 +1,36 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0689
+X-coordinaat (m): 	190455
+Y-coordinaat (m): 	321045
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Klimmen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	114.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	15.00
+Datum boring: 	26-05-1969
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	D
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.40	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.40	    2.80	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.80	    3.40	licht-bruin	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    3.40	    4.30	geel-bruin	grind	---	---	---	kleiig 	---	---	---	zandig	---	---	---	---	---	---	
+    4.30	    6.50	geel-grijs	zand	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	
+    6.50	    8.50	grijs-groen	zand	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	
+    8.50	   11.50	licht-grijs	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   11.50	   15.00	grijs	zand	---	---	---	---	---	siltig	---	---	---	---	---	---	---	---	

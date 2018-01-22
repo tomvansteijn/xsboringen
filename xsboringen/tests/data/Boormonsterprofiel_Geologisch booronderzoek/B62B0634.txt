@@ -1,0 +1,43 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0634
+X-coordinaat (m): 	197835
+Y-coordinaat (m): 	320260
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Heerlen
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	150.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Pulsboring
+Einddiepte (meter beneden maaiveld): 	9.30
+Datum boring: 	28-09-1966
+Eigenaar: 	RGD
+Uitvoerder: 	RGD
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.10	onbekend	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.10	    2.10	geel-bruin	leem	---	---	---	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    2.10	    3.30	bruin-geel	leem	---	---	---	---	---	---	---	sterk zandig	---	zwak grindig	---	---	---	---	
+    3.30	    3.60	onbekend	zand	---	130	zeer fijn (O)	---	---	zwak siltig	---	---	---	grindig	---	---	---	---	
+    3.60	    3.80	onbekend	zand	---	130	zeer fijn (O)	---	---	zwak siltig	---	---	---	---	---	---	---	---	
+    3.80	    4.20	geel-grijs	zand	---	120	zeer fijn (O)	---	---	---	---	---	---	zwak grindig	---	---	---	---	
+    4.20	    5.30	bruin-geel	zand	---	340	matig grof (O)	---	---	---	---	---	---	---	---	---	---	---	
+    5.30	    5.80	grijs-geel	zand	---	280	matig grof (O)	---	---	---	---	---	---	---	---	---	---	---	
+    5.80	    6.00	bruin-grijs	zand	---	200	matig fijn (O)	---	---	---	---	---	---	---	---	---	---	---	
+    6.00	    7.00	onbekend	zand	---	270	matig grof (O)	---	---	siltig	---	---	---	---	---	---	---	---	
+    7.00	    7.20	bruin-geel	zand	---	400	matig grof (O)	---	---	---	---	---	---	zwak grindig	---	---	---	---	
+    7.20	    7.40	bruin-geel	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    7.40	    8.20	grijs-bruin	grind	---	---	---	---	---	---	---	zandig	---	---	---	---	---	---	
+    8.20	    8.90	bruin-geel	zand	---	310	matig grof (O)	---	---	---	---	---	---	grindig	---	---	---	---	
+    8.90	    9.30	onbekend	zand	---	350	matig grof (O)	---	---	---	---	---	---	grindig	---	---	---	---	

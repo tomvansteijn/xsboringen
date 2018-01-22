@@ -1,0 +1,62 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0309
+X-coordinaat (m): 	191620
+Y-coordinaat (m): 	321150
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	90.90
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	71.50
+Datum boring: 	01-01-1934
+Eigenaar: 	Gem. Bedrijven te Heerlen
+Uitvoerder: 	Hennings, E., Berg aan de Maas
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	RGD - Geol. Bureau
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.70	onbekend	niet benoemd	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.70	    2.00	bruin-geel	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkloos	
+    2.00	    4.20	bruin-grijs	leem	---	---	---	---	---	---	---	---	---	---	---	---	---	kalkarm	
+    4.20	    8.00	grijs	zand	---	---	fijne categorie (O)	---	---	siltig	---	---	---	---	---	---	---	kalkarm	
+    8.00	    8.40	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.40	    9.00	grijs	zand	---	---	fijne categorie (O)	---	---	siltig	---	---	---	grindig	---	---	---	---	
+    9.00	   11.20	onbekend	grind	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   11.20	   13.60	onbekend	zand	---	---	fijne categorie (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   13.60	   40.70	groen-grijs	zand	---	---	fijne categorie (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   40.70	   42.40	grijs	zand	---	---	fijne categorie (O)	zwak kleiig	---	---	---	---	---	---	---	---	---	---	
+   42.40	   42.85	donker-grijs	zand	---	---	fijne categorie (O)	zwak kleiig	---	---	---	---	---	grindig	---	---	---	---	
+   42.85	   43.90	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   43.90	   45.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   45.00	   46.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   46.00	   48.60	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   48.60	   50.20	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   50.20	   51.80	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   51.80	   52.50	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   52.50	   54.60	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   54.60	   55.50	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   55.50	   56.20	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   56.20	   57.20	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   57.20	   58.70	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   58.70	   59.50	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   59.50	   60.50	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   60.50	   63.60	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   63.60	   64.40	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   64.40	   65.60	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   65.60	   66.40	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   66.40	   67.40	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   67.40	   68.50	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   68.50	   69.35	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   69.35	   70.00	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+   70.00	   71.50	grijs	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	

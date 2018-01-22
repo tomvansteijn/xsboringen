@@ -1,0 +1,35 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B4169
+X-coordinaat (m): 	192850
+Y-coordinaat (m): 	321880
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Onbekend
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	84.20
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	8.20
+Datum boring: 	01-01-1966
+Eigenaar: 	Geologisch Bureau
+Uitvoerder: 	Gruner R.
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	C
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    1.70	---	zand	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.70	    3.50	grijs-bruin	leem	---	---	---	---	---	---	---	sterk zandig	---	---	---	---	---	---	
+    3.50	    4.50	groen-grijs	klei	---	---	---	---	---	---	---	---	---	---	---	humeus	---	---	
+    4.50	    5.20	grijs	klei	---	---	---	---	---	---	---	---	---	---	---	zwak humeus	---	kalkhoudend	
+    5.20	    6.80	groen-grijs	klei	---	---	---	---	---	---	---	zwak zandig	---	---	---	zwak humeus	---	kalkhoudend	
+    6.80	    7.60	---	grind	---	---	grove  categorie (O)	---	---	---	---	zandig	---	---	---	---	---	---	
+    7.60	    8.20	licht-grijs	zand	---	150	matig fijn	---	---	---	---	---	---	zwak grindig	---	---	---	kalkhoudend	

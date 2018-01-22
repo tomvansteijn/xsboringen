@@ -1,0 +1,57 @@
+ALGEMENE GEGEVENS BORING
+NITG-nummer: 	B62B0392
+X-coordinaat (m): 	193490
+Y-coordinaat (m): 	320510
+Coordinatensysteem: 	RD2000
+Plaatsnaam: 	Voerendaal
+Provincie: 	Limburg
+Kaartblad: 	62B
+Bepaling locatie: 	Onbekend
+Maaiveldhoogte (meter t.o.v. NAP): 	119.00
+Bepaling maaiveldhoogte: 	Onbekend
+Boormethode: 	Onbekend
+Einddiepte (meter beneden maaiveld): 	9.46
+Datum boring: 	01-01-1920
+Eigenaar: 	Onbekend
+Uitvoerder: 	Hennings, E., Berg aan de Maas
+
+ALGEMENE GEGEVENS LITHOLOGIE
+Beschrijver lagen: 	Onbekend
+Organisatie beschrijver: 	Onbekend
+Beschrijvingsmethode: 	Onbekend
+Nat/Droog beschreven: 	Onbekend
+Datum laagbeschrijving: 	Onbekend
+Kwaliteitcode beschrijving lithologie: 	F
+
+
+LITHOLOGIE LAGEN											
+Bovenkant laag (m beneden maaiveld)	Onderkant laag (m beneden maaiveld)	Kleur	Hoofdgrondsoort	Sublaag	Zandmediaan M63	Zandmediaanklasse	Bijmenging klei	Lutum %	Bijmenging silt	Silt%	Bijmenging zand	Zand %	Bijmenging grind	Grind %	Bijmenging humus	Organische stof %	Kalkgehalte
+    0.00	    0.90	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    0.90	    1.00	blauw	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.00	    1.25	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.25	    1.65	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    1.65	    2.15	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.15	    2.35	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.35	    2.70	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    2.70	    3.00	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.00	    3.40	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.40	    3.60	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.60	    3.95	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    3.95	    4.30	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    4.30	    4.90	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    4.90	    5.25	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    5.25	    5.60	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    5.60	    5.75	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    5.75	    6.05	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    6.05	    7.10	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.10	    7.35	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.35	    7.36	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.36	    7.60	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.60	    7.80	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.80	    7.95	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    7.95	    8.20	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.20	    8.45	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.45	    8.60	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.60	    8.75	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    8.75	    9.45	geel	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
+    9.45	    9.46	onbekend	kalksteen	---	---	---	---	---	---	---	---	---	---	---	---	---	---	
