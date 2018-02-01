@@ -119,8 +119,9 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
             raise AttributeError('segments generator has no length')
 
     def __iter__(self):
-        for segment in self.segments:
-            yield segment
+        if self.segments is not None:
+            for segment in self.segments:
+                yield segment
 
     @property
     def geometry(self):
