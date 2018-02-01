@@ -6,229 +6,403 @@ from xsboringen.borehole import Borehole, Segment
 from xsboringen.cpt import CPT
 
 from collections import defaultdict, namedtuple
+from enum import Enum
+from pathlib import Path
 import logging
+import glob
 import os
 
 log = logging.getLogger(os.path.basename(__file__))
 
 
-GefFieldNames = namedtuple('FieldNames', ['columnsep', 'recordsep', 'code', 'depth', 'xy', 'z'])
+def boreholes_from_gef(folder, fieldnames=None):
+    geffiles = glob.glob(os.path.join(folder, '*.gef'))
+    for geffile in geffiles:
+        gef = GefBoreholeFile(geffile, fieldnames)
+        borehole = gef.to_borehole()
+        if borehole is not None:
+            yield borehole
 
 
-def read_headerline(lines):
-    line = next(lines)
-    var, value = line.split('=')
-    return  (
-            var.lstrip('#').strip().lower(),
-            value.strip().split(','),
+def cpts_from_gef(folder, column_names=None, fieldnames=None):
+    geffiles = glob.glob(os.path.join(folder, '*.gef'))
+    for geffile in geffiles:
+        gef = GefCPTFile(geffile, fieldnames)
+        cpt = gef.to_cpt(column_names)
+        if cpt is not None:
+            yield cpt
+
+
+class GefFile(object):
+    # GEF field names
+    FieldNames = namedtuple('FieldNames',
+    ['columnsep','recordsep', 'code', 'xy', 'z'])
+
+    # GEF default field names
+    _defaultfieldnames = {
+        'columnsep': 'COLUMNSEPARATOR',
+        'recordsep': 'RECORDSEPARATOR',
+        'code': 'TESTID',
+        'xy': 'XYID',
+        'z': 'ZID',
+        }
+
+    # format field
+    _format = None
+
+    # GEF header sections
+    ColumnInfo = namedtuple('ColumnInfo',
+        ['number', 'unit', 'name', 'quantity_number'])
+
+    ColumnVoid = namedtuple('ColumnVoid',
+        ['number', 'value'])
+
+    MeasurementText = namedtuple('MeasurementText',
+        ['number', 'value', 'name']
+        )
+
+    MeasurementVar = namedtuple('MeasurementVar',
+        ['number', 'value', 'unit', 'name']
+        )
+
+    SpecimenText = namedtuple('SpecimenText',
+        ['number', 'value', 'name']
+        )
+
+    SpecimenVar = namedtuple('SpecimenVar',
+        ['number', 'value', 'unit', 'name']
+        )
+
+    # GEF measurementvar codes
+    class _defaultmeasurementvars(Enum):
+        depth = 16
+
+    def __init__(self, geffile, fieldnames=None, measurementvars=None):
+        self.file = Path(geffile)
+        self.attrs = {
+            'source': str(self.file),
+            'format': self._format,
+            }
+
+        if fieldnames is not None:
+            self.fieldnames = self.FieldNames(**fieldnames)
+        else:
+            self.fieldnames = self.FieldNames(**self._defaultfieldnames)
+
+        if measurementvars is not None:
+            self.measurementvars = measurementvars
+        else:
+            self.measurementvars = self._defaultmeasurementvars
+
+    @staticmethod
+    def safe_int(s):
+        try:
+            return int(s)
+        except ValueError:
+            return None
+
+    @staticmethod
+    def safe_float(s):
+        try:
+            return float(s)
+        except:
+            return None
+
+    @staticmethod
+    def read_headerline(lines):
+        line = next(lines)
+        var, values = line.split('=')
+        return  (
+                var.lstrip('#').strip(),
+                values.strip(),
+                )
+
+    @classmethod
+    def read_header(cls, lines):
+        header = {}
+        var, values = cls.read_headerline(lines)
+        while var != 'EOH':
+            if var == 'COLUMNINFO':
+                if var not in header:
+                    header[var] = {}
+                number, unit, name, quantity_number = values.split(',', 3)
+                columninfo = cls.ColumnInfo(
+                    cls.safe_int(number),
+                    unit.strip(),
+                    name.strip(),
+                    cls.safe_int(quantity_number),
+                    )
+                header[var][columninfo.number] = columninfo
+            elif var == 'COLUMNVOID':
+                if var not in header:
+                    header[var] = {}
+                number, na_value = values.split(',', 1)
+                columnvoid = cls.ColumnVoid(
+                    cls.safe_int(number),
+                    cls.safe_float(na_value),
+                    )
+                header[var][columnvoid.number] = columnvoid
+            elif var == 'MEASUREMENTTEXT':
+                if var not in header:
+                    header[var] = {}
+                number, value, name = values.split(',', 2)
+                measurementtext = cls.MeasurementText(
+                    cls.safe_int(number),
+                    value.strip(),
+                    name.strip(),
+                    )
+                header[var][measurementtext.number] = measurementtext
+            elif var == 'MEASUREMENTVAR':
+                if var not in header:
+                    header[var] = {}
+                number, value, unit, *name = values.split(',', 3)
+                if not name:
+                    name = ''
+                else:
+                    name = name[0]
+                measurementvar = cls.MeasurementVar(
+                    cls.safe_int(number),
+                    cls.safe_float(value),
+                    unit.strip(),
+                    name.strip(),
+                    )
+                header[var][measurementvar.number] = measurementvar
+            elif var == 'SPECIMENTEXT':
+                if var not in header:
+                    header[var] = {}
+                number, value, name = values.split(',', 2)
+                specimentext = cls.SpecimenText(
+                    cls.safe_int(number),
+                    value.strip(),
+                    name.strip(),
+                    )
+                header[var][specimentext.number] = specimentext
+            elif var == 'SPECIMENVAR':
+                if var not in header:
+                    header[var] = {}
+                number, value, unit, name = values.split(',', 3)
+                specimenvar = cls.SpecimenVar(
+                    cls.safe_int(number),
+                    cls.safe_float(value),
+                    unit.strip(),
+                    name.strip(),
+                    )
+                header[var][specimenvar.number] = specimenvar
+            else:
+                header[var] = values.split(',')
+            var, values = cls.read_headerline(lines)
+        return header
+
+
+class GefBoreholeFile(GefFile):
+    _format = 'GEF Borehole'
+    @staticmethod
+    def read_segments(lines, columnsep, recordsep):
+        for line in lines:
+            line = line.rstrip(recordsep)
+            attrs = {}
+            top, base, *remainder = line.split(columnsep)
+            try:
+                lithologycolor = remainder[0].replace('\'', '')
+            except IndexError:
+                lithologycolor = None
+            try:
+                sandmedianclass = remainder[1].replace('\'', '')
+            except IndexError:
+                sandmedianclass = None
+            try:
+                comment = remainder[2].replace('\'', '')
+            except IndexError:
+                comment = None
+
+            top = float(top)
+            base = float(base)
+            if lithologycolor not in {'', None}:
+                lithology, *color = lithologycolor.split(maxsplit=1)
+                attrs['color'] = color
+            else:
+                lithology = None
+            if comment is not None:
+                attrs['comment'] = comment
+            yield Segment(top, base, lithology, sandmedianclass, **attrs)
+
+    @staticmethod
+    def depth_from_segments(segments):
+        log.debug('calculating depth from segments')
+        return max(s.base for s in segments)
+
+    def to_borehole(self):
+        log.debug('reading {file:}'.format(file=os.path.basename(self.file)))
+
+        with open(self.file) as f:
+            lines = (l.rstrip('\n') for l in f if len(l.strip()) > 0)
+            header = self.read_header(lines)
+
+            # column separator
+            if self.fieldnames.columnsep in header:
+                columnsep, *_ = header[self.fieldnames.columnsep]
+            else:
+                columnsep = None
+
+            # record separator
+            if self.fieldnames.recordsep in header:
+                recordsep, *_ = header[self.fieldnames.recordsep]
+            else:
+                recordsep = None
+
+            # segments
+            segments = [
+                s for s in self.read_segments(lines, columnsep, recordsep)
+                ]
+
+        # code
+        try:
+            code = header[self.fieldnames.code][0]
+        except KeyError:
+            log.warning(
+                (
+                    'no value for \'{s.fieldnames.code:}\' in {s.file.name:},\n'
+                    'skipping this file'
+                    ).format(s=self))
+            return
+
+        # depth
+        try:
+            depth = header['MEASUREMENTVAR'][self.measurementvars.depth].value
+        except KeyError:
+            depth = self.depth_from_segments(segments)
+
+        # x, y
+        _, x, y, *_ = header[self.fieldnames.xy]
+        x = float(x)
+        y = float(y)
+
+        # z
+        if self.fieldnames.z in header:
+            _, z, *_ = header[self.fieldnames.z]
+            z = float(z)
+        else:
+            z = None
+
+        return Borehole(code, depth,
+            x=x, y=y, z=z,
+            segments=segments,
+            **self.attrs,
             )
 
 
-def read_header(lines, repeatedset):
-    header = defaultdict(dict)
-    var, values = read_headerline(lines)
-    while var != 'eoh':
-        if var in repeatedset:
-            *values, identifier = values
-            identifier = identifier.strip()
-            if identifier not in header[var]:
-                header[var][identifier] = []
-            header[var][identifier].append(values)
+class GefCPTFile(GefFile):
+    _format = 'GEF CPT'
+    Columns = namedtuple('GefCPTColumns',
+        ['depth', 'cone_resistance', 'friction_ratio'])
+
+    _defaultcolumn_names = {
+        'depth': 'gecorrigeerde diepte',
+        'cone_resistance': 'conusweerstand',
+        'friction_ratio': 'wrijvingsgetal',
+        }
+
+    @classmethod
+    def read_verticals(cls, lines, selected_columns, na_values, columnsep, recordsep):
+        verticals = defaultdict(list)
+        for line in lines:
+            line = line.rstrip(recordsep)
+            if columnsep is None:
+                valuestrs = [v for v in line.split() if v.strip()]
+            else:
+                valuestrs = line.split(columnsep)
+            for i, valuestr in enumerate(valuestrs):
+                column = selected_columns.get(i + 1)
+                na_value = na_values.get(i + 1)
+                if column is not None:
+                    value = cls.safe_float(valuestr)
+                    if value == na_value:
+                        value = None
+                    verticals[column].append(value)
+        return verticals
+
+    @staticmethod
+    def depth_from_verticals(verticals):
+        log.debug('calculating depth from verticals')
+        try:
+            return verticals['depth'][-1]
+        except KeyError:
+            return None
+        except IndexError:
+            return None
+
+    def to_cpt(self, column_names=None):
+        log.debug('reading {file:}'.format(file=os.path.basename(self.file)))
+        column_names = column_names or self._defaultcolumn_names
+
+        with open(self.file) as f:
+            lines = (l.rstrip('\n') for l in f if len(l.strip()) > 0)
+            header = self.read_header(lines)
+
+            # selected columns
+            column_mapping = {v: k for k, v in column_names.items()}
+            selected_columns = {
+                i: column_mapping.get(ci.name)
+                for i, ci in header['COLUMNINFO'].items()
+                }
+
+            # column na values
+            na_values = {
+                i: cv.value
+                for i, cv in header['COLUMNVOID'].items()
+                }
+
+            # column separator
+            if self.fieldnames.columnsep in header:
+                columnsep, *_ = header[self.fieldnames.columnsep]
+            else:
+                columnsep = None
+
+            # record separator
+            if self.fieldnames.recordsep in header:
+                recordsep, *_ = header[self.fieldnames.recordsep]
+            else:
+                recordsep = None
+
+            # verticals
+            verticals = self.read_verticals(lines,
+                selected_columns,
+                na_values,
+                columnsep,
+                recordsep,
+                )
+
+        # code
+        try:
+            code = header[self.fieldnames.code][0]
+        except KeyError:
+            log.warning(
+                (
+                    'no value for \'{s.fieldnames.code:}\' in {s.file.name:},\n'
+                    'skipping this file'
+                    ).format(s=self))
+            return
+
+        # depth
+        try:
+            depth = header['MEASUREMENTVAR'][self.measurementvars.depth].value
+        except KeyError:
+            depth = self.depth_from_verticals(verticals)
+
+        # x, y
+        _, x, y, *_ = header[self.fieldnames.xy]
+        x = float(x)
+        y = float(y)
+
+        # z
+        if self.fieldnames.z in header:
+            _, z, *_ = header[self.fieldnames.z]
+            z = float(z)
         else:
-            header[var] = values
-        var, values = read_headerline(lines)
-    return header
+            z = None
 
-
-def segments_from_gef(lines, separator, recordsep):
-    for line in lines:
-        line = line.rstrip(recordsep)
-        attrs = {}
-        top, base, lithology, sandmedianclass, comment, *_ = line.split(separator)
-        top = float(top)
-        base = float(base)
-        lithology = lithology.replace('\'', '')
-        sandmedianclass = sandmedianclass.replace('\'', '')
-        attrs['comment'] = comment.replace('\'', '')
-        yield Segment(top, base, lithology, sandmedianclass, **attrs)
-
-
-def borehole_from_gef(geffile, fieldnames, repeatedset):
-    log.debug('reading {file:}'.format(file=os.path.basename(geffile)))
-    attrs = {}
-    attrs['source'] = geffile
-
-    with open(geffile) as f:
-        lines = (l.rstrip('\n') for l in f if len(l.strip()) > 0)
-        header = read_header(lines, repeatedset)
-
-        # column separator
-        columnsep, *_ = header[fieldnames.columnsep]
-
-        # record separator (ending)
-        recordsep, *_ = header[fieldnames.recordsep]
-
-        # segments
-        segments = segments_from_gef([l for l in lines], columnsep, recordsep)
-
-    # code
-    code = header[fieldnames.code]
-
-    # depth
-    depth, *_ = header['measurementvar'][fieldnames.depth]
-
-    # x, y
-    _, x, y, *_ = header[fieldnames.xy]
-    x = float(x)
-    y = float(y)
-
-    # z
-    if fieldnames.z in header:
-        _, z, *_ = header[fieldnames.z]
-        z = float(z)
-    else:
-        z = None
-
-    return Borehole(code, depth,
-        x=x, y=y, z=z,
-        segments=segments,
-        **attrs,
-        )
-
-
-# REPEATEDSET = {'columninfo', 'columnvoid', 'measurementtext', 'measurementvars'}
-# COLUMN_MAP = {
-#         'gecorrigeerde diepte': 'depth',
-#         'wrijvingsgetal rf': 'friction_ratio',
-#         'conusweerstand qc': 'cone_resistance'}
-
-# COLUMN_MAP = {
-#         'diepte': 'depth',
-#         'wrijvingsgetal': 'friction_ratio',
-#         'conusweerstand': 'cone_resistance'}
-
-
-# def cpts_from_gef(folder, mapping=None, delimiter=';', nodatavalue=-999):
-#     cptfiles = glob.glob(os.path.join(folder, '*.gef'))
-#     for cptfile in cptfiles:
-#         yield cpt_from_gef(geffile)
-
-
-# def readmetadataline(f):
-#     """read line of metadata from GEF"""
-#     line = f.readline().rstrip('\n')
-#     key, value = line.split('=', 1)
-#     key = key.strip().lower().lstrip('#')
-#     value = value.strip()
-#     return key, value
-
-
-# def safe_float(s):
-#     try:
-#         return float(s)
-#     except:
-#         return None
-
-
-# def readdata(f, delimiter=None):
-#     """read data lines from GEF"""
-#     data = []
-#     for line in f:
-#         if delimiter is None:
-#             data.append([safe_float(v)
-#             for v in line.rstrip('\n').split() if v.strip()])
-#         else:
-#             data.append([safe_float(v)
-#             for v in line.rstrip('\n').split(delimiter) if v.strip()])
-#     return zip(*data)
-
-
-# def clean_name(dirty_name):
-#     """clean string to column name"""
-#     unit, name, *_ = dirty_name.split(',')
-#     return name.strip().lower()
-
-
-# def map_column(name, column_map):
-#     """map columns to predefined column names"""
-#     try:
-#         return next(v for k, v in column_map.items() if k.startswith(name))
-#     except StopIteration:
-#         return None
-
-
-# def cpt_from_gef(geffile, nodatavalue=-999, delimiter=' ', column_map=None):
-#     """read cpt from GEF file and return as Cpt object"""
-#     logging.info('reading {}'.format(os.path.basename(geffile)))
-#     with open(geffile) as f:
-#         # source file name
-#         file = os.path.basename(geffile)
-
-#         # read until end of header and fill metadata dict
-#         meta = {}
-#         key, value = readmetadataline(f)
-#         while not key == 'eoh':
-#             if key in REPEATEDSET:
-#                 number, value = value.split(',', 1)
-#                 key = key + '_' + number
-#             meta[key] = value
-#             key, value = readmetadataline(f)
-
-#         # code
-#         if 'testid' in meta:
-#             code = meta['testid']
-#         elif 'gefid' in meta:
-#             code = meta['gefid']
-#         else:
-#             code = None
-
-#         # X,Y-coordinates
-#         _, x, y, *_ = meta['xyid'].split(',')
-#         x = float(x)
-#         y = float(y)
-
-#         # Z-value
-#         if 'zid' in meta:
-#             _, z, *_ = meta['zid'].split(',')
-#             z = float(z)
-#         else:
-#             z = nodatavalue
-
-#         # start date
-#         try:
-#             startdate = [int(v) for v in meta['startdate'].split(',')]
-#         except:
-#             startdate = None
-
-#         # start time
-#         try:
-#             starttime = [int(v) for v in meta['starttime'].split(',')]
-#         except:
-#             starttime = [0, 0, 0]
-
-#         # start date & time to datetime
-#         if startdate is not None:
-#             date = datetime.datetime(*startdate, *starttime)
-#         else:
-#             date = None
-
-#         # get column names
-#         column_map = column_map or {}
-#         colnum = lambda t: (int(t[0].split('_')[-1]), t[1])
-#         columns = [map_column(clean_name(v), column_map)
-#             for k, v in sorted(((k, v) for k, v in meta.items()
-#             if k.startswith('columninfo')), key=colnum)]
-
-#         # read data if present and return cpt as object
-#         logging.debug(
-#             'reading {count:d} columns of data from {file:}'.format(
-#             count=len(columns), file=geffile))
-#         data = readdata(f, delimiter=delimiter)
-#         data = {k: c for k, c in zip(columns, data) if k is not None} or None
-#     return Borehole(code, depth,
-#         x=x, y=y, z=z,
-#         segments=segments,
-#         **attrs,
-#         )
-
-
+        return CPT(code, depth,
+            x=x, y=y, z=z,
+            verticals=verticals,
+            **self.attrs,
+            )
