@@ -4,7 +4,12 @@
 
 from xsboringen.csvfiles import boreholes_from_csv
 from xsboringen.geffiles import boreholes_from_gef
+from xsboringen.geffiles import cpts_from_gef
 from xsboringen.xmlfiles import boreholes_from_xml
+
+from itertools import chain
+import logging
+import os
 
 log = logging.getLogger(os.path.basename(__file__))
 
@@ -24,13 +29,27 @@ def boreholes_from_sources(datasources):
                 delimiter=datasource.get('delimiter', ','),
                 decimal=datasource.get('decimal', '.'),
                 ))
-        elif datasource['format'] == 'Dinoloket GEF':
+        elif datasource['format'] == 'GEF boringen':
             folder = datasource['folder']
+            fieldnames = datasource.get('fieldnames')
             readers.append(boreholes_from_gef(
                 folder=folder,
-                delimiter=datasource.get('delimiter', ','),
+                fieldnames=fieldnames,
+                ))
+        elif datasource['format'] == 'GEF sonderingen':
+            folder = datasource['folder']
+            fieldnames = datasource.get('fieldnames')
+            readers.append(cpts_from_gef(
+                folder=folder,
+                fieldnames=fieldnames,
+                column_names=datasource['column_names'],
                 ))
         else:
+            log.warning((
+                'dataformat \'{fmt:}\' not supported, skipping').format(
+                    fmt=datasource['format'],
+                    )
+                )
             pass
     for result in chain(*readers):
         yield result
