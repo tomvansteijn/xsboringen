@@ -28,13 +28,17 @@ def boreholes_to_shape(boreholes, shapefile, driver=None, epsg=None):
     else:
         crs = None
 
+    # shapefile schema
+    schema = Borehole.schema.copy()
+    schema['properties'].extend([('format', 'str'), ('source', 'str')])
+
     # shapefile write arguments
     shape_kwargs = {
         'driver': driver,
-        'schema': Borehole.schema(),
+        'schema': schema,
         'crs': crs,
         }
-    properties = [k for k, _ in Borehole.schema['properties']]
+    properties = [k for k, _ in schema['properties']]
     log.info('writing to {f:}'.format(f=os.path.basename(shapefile)))
     with fiona.open(shapefile, 'w', **shape_kwargs) as dst:
         for borehole in boreholes:
