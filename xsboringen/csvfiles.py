@@ -6,13 +6,12 @@ from xsboringen.borehole import Borehole, Segment
 
 from collections import namedtuple
 from itertools import groupby
+import logging
 import glob
 import csv
 import os
 
 log = logging.getLogger(os.path.basename(__file__))
-
-FieldNames = namedtuple('FieldNames', ['code', 'x', 'y', 'z', 'base', 'lithology', 'sandmedianclass'])
 
 
 def segments_from_csv(rows, fieldnames, extra_fields=None):
@@ -57,14 +56,17 @@ def boreholes_from_csv(csvfile, fieldnames, extra_fields=None):
         reader = csv.DictReader(f)
         bycode = lambda r: r[fieldnames.code]
         for code, rows in groupby(reader, key=bycode):
-            if code is in {None, ''}:
+            if code in {None, ''}:
                 continue
             yield borehole_from_csv(csvfile, rows, fieldnames, extra_fields)
 
 
 def boreholes_to_csv(boreholes, csvfile, attrs=None):
     log.info('writing to {f:}'.format(f=os.path.basename(csvfile)))
-    fieldnames = Borehole.fieldnames + Segment.fieldnames + (attrs or [])
+    fieldnames = (
+        Borehole.fieldnames + Segment.fieldnames +
+        ('format', 'source') + (attrs or ())
+        )
     with open(csvfile, 'w') as f:
         writer = csv.DictWriter(f,
             fieldnames=fieldnames,
