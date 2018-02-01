@@ -78,6 +78,7 @@ def borehole_from_xml(xmlfile, extra_fields=None):
     '''read Dinoloket XML file and return Borehole'''
     log.debug('reading {file:}'.format(file=os.path.basename(xmlfile)))
     attrs = {}
+    attrs['format'] = 'XML borehole'
     attrs['source'] = xmlfile
 
     tree = ElementTree.parse(xmlfile)
