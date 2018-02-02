@@ -24,11 +24,11 @@ def boreholes_from_gef(folder, fieldnames=None):
             yield borehole
 
 
-def cpts_from_gef(folder, column_names=None, fieldnames=None):
+def cpts_from_gef(folder, datacolumns=None, fieldnames=None):
     geffiles = glob.glob(os.path.join(folder, '*.gef'))
     for geffile in geffiles:
         gef = GefCPTFile(geffile, fieldnames)
-        cpt = gef.to_cpt(column_names)
+        cpt = gef.to_cpt(datacolumns)
         if cpt is not None:
             yield cpt
 
@@ -36,13 +36,18 @@ def cpts_from_gef(folder, column_names=None, fieldnames=None):
 class GefFile(object):
     # GEF field names
     FieldNames = namedtuple('FieldNames',
-    ['columnsep','recordsep', 'code', 'xy', 'z'])
+    ['columnsep','recordsep', 'code', 'measurementcode', 'xy', 'z'])
+
+    # GEF measurement vars codes
+    MeasurementVars = namedtuple('MeasurementVars',
+    ['depth', ])
 
     # GEF default field names
     _defaultfieldnames = {
         'columnsep': 'COLUMNSEPARATOR',
         'recordsep': 'RECORDSEPARATOR',
         'code': 'TESTID',
+        'measurementcode': 'MEASUREMENTCODE',
         'xy': 'XYID',
         'z': 'ZID',
         }
@@ -74,8 +79,9 @@ class GefFile(object):
         )
 
     # GEF measurementvar codes
-    class _defaultmeasurementvars(Enum):
-        depth = 16
+    _defaultmeasurementvars = {
+        'depth': 16,
+        }
 
     def __init__(self, geffile, fieldnames=None, measurementvars=None):
         self.file = Path(geffile)
@@ -90,9 +96,11 @@ class GefFile(object):
             self.fieldnames = self.FieldNames(**self._defaultfieldnames)
 
         if measurementvars is not None:
-            self.measurementvars = measurementvars
+            self.measurementvars = self.MeasurementVars(**measurementvars)
         else:
-            self.measurementvars = self._defaultmeasurementvars
+            self.measurementvars = self.MeasurementVars(
+                **self._defaultmeasurementvars
+                )
 
     @staticmethod
     def safe_int(s):
@@ -196,32 +204,34 @@ class GefFile(object):
 
 class GefBoreholeFile(GefFile):
     _format = 'GEF Borehole'
-    @staticmethod
-    def read_segments(lines, columnsep, recordsep):
+    @classmethod
+    def read_segments(cls, lines, columnsep, recordsep):
         for line in lines:
             line = line.rstrip(recordsep)
             attrs = {}
             top, base, *remainder = line.split(columnsep)
             try:
-                lithologycolor = remainder[0].replace('\'', '')
+                lithologycolor = remainder[0].replace('\'', '').strip() or None
             except IndexError:
                 lithologycolor = None
             try:
-                sandmedianclass = remainder[1].replace('\'', '')
+                sandmedianclass = remainder[1].replace('\'', '').strip() or None
             except IndexError:
                 sandmedianclass = None
             try:
-                comment = remainder[2].replace('\'', '')
+                comment = remainder[2].replace('\'', '').strip() or None
             except IndexError:
                 comment = None
 
-            top = float(top)
-            base = float(base)
-            if lithologycolor not in {'', None}:
+            top = cls.safe_float(top)
+            base = cls.safe_float(base)
+            if lithologycolor is not None:
                 lithology, *color = lithologycolor.split(maxsplit=1)
                 attrs['color'] = color
             else:
                 lithology = None
+            if sandmedianclass is not None:
+                sandmedianclass, *_ = sandmedianclass.split(maxsplit=1)
             if comment is not None:
                 attrs['comment'] = comment
             yield Segment(top, base, lithology, sandmedianclass, **attrs)
@@ -257,7 +267,8 @@ class GefBoreholeFile(GefFile):
 
         # code
         try:
-            code = header[self.fieldnames.code][0]
+            code = header[self.fieldnames.code][0].strip()
+
         except KeyError:
             log.warning(
                 (
@@ -265,6 +276,15 @@ class GefBoreholeFile(GefFile):
                     'skipping this file'
                     ).format(s=self))
             return
+
+        # measurementcode
+        if self.fieldnames.measurementcode in header:
+            measurementcode = header[self.fieldnames.measurementcode][1].strip()
+            code = '{code:}-{measurementcode:}'.format(
+                code=code,
+                measurementcode=measurementcode,
+                )
+
 
         # depth
         try:
@@ -274,13 +294,13 @@ class GefBoreholeFile(GefFile):
 
         # x, y
         _, x, y, *_ = header[self.fieldnames.xy]
-        x = float(x)
-        y = float(y)
+        x = self.safe_float(x)
+        y = self.safe_float(y)
 
         # z
         if self.fieldnames.z in header:
             _, z, *_ = header[self.fieldnames.z]
-            z = float(z)
+            z = self.safe_float(z)
         else:
             z = None
 
@@ -296,7 +316,7 @@ class GefCPTFile(GefFile):
     Columns = namedtuple('GefCPTColumns',
         ['depth', 'cone_resistance', 'friction_ratio'])
 
-    _defaultcolumn_names = {
+    _defaultdatacolumns = {
         'depth': 'gecorrigeerde diepte',
         'cone_resistance': 'conusweerstand',
         'friction_ratio': 'wrijvingsgetal',
@@ -331,16 +351,16 @@ class GefCPTFile(GefFile):
         except IndexError:
             return None
 
-    def to_cpt(self, column_names=None):
+    def to_cpt(self, datacolumns=None):
         log.debug('reading {file:}'.format(file=os.path.basename(self.file)))
-        column_names = column_names or self._defaultcolumn_names
+        datacolumns = datacolumns or self._defaultdatacolumns
 
         with open(self.file) as f:
             lines = (l.rstrip('\n') for l in f if len(l.strip()) > 0)
             header = self.read_header(lines)
 
             # selected columns
-            column_mapping = {v: k for k, v in column_names.items()}
+            column_mapping = {v: k for k, v in datacolumns.items()}
             selected_columns = {
                 i: column_mapping.get(ci.name)
                 for i, ci in header['COLUMNINFO'].items()
@@ -391,13 +411,13 @@ class GefCPTFile(GefFile):
 
         # x, y
         _, x, y, *_ = header[self.fieldnames.xy]
-        x = float(x)
-        y = float(y)
+        x = self.safe_float(x)
+        y = self.safe_float(y)
 
         # z
         if self.fieldnames.z in header:
             _, z, *_ = header[self.fieldnames.z]
-            z = float(z)
+            z = self.safe_float(z)
         else:
             z = None
 
