@@ -10,7 +10,7 @@ class AsDictMixin(object):
     '''Mixin for mapping class attributes to dictionary'''
     def as_dict(self, keys=None):
         if keys:
-            return {k: getattr(self, k) for k in keys}
+            return {k: getattr(self, k, None) for k in keys}
         else:
             return {k: v for k, v in self.__dict__.items()
                 if not k.startswith('__')}
@@ -29,7 +29,7 @@ class Segment(AsDictMixin, CopyMixin):
     '''Class representing borehole segment'''
 
     # class attributes
-    fieldnames = ('top', 'base', 'lithology', 'sandmedianclass')
+    fieldnames = 'top', 'base', 'lithology', 'sandmedianclass'
 
     def __init__(self, top, base, lithology,
             sandmedianclass=None, **attrs):
@@ -148,32 +148,34 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
 
     def groupby(self, by=None):
         '''group segments using groupby function or attribute(s)'''
-        if by is not None:
-            if callable(by):
-                pass
-            elif isinstance(arg, str):
-                by = lambda s: {by: getattr(s, by)}
+        if self.segments is not None:
+            if by is not None:
+                if callable(by):
+                    pass
+                elif isinstance(arg, str):
+                    by = lambda s: {by: getattr(s, by)}
+                else:
+                    by = lambda s: {a: getattr(s, a) for a in by}
             else:
-                by = lambda s: {a: getattr(s, a) for a in by}
-        else:
-            by = lambda s: {
-                'lithology': s.lithology,
-                'sandmedianclass': s.sandmedianclass,
-                }
+                by = lambda s: {
+                    'lithology': s.lithology,
+                    'sandmedianclass': s.sandmedianclass,
+                    }
 
-        for key, grouped in groupby(self.segments, by):
-            yield key, grouped
+            for key, grouped in groupby(self.segments, by):
+                yield key, grouped
 
     def simplify(self, min_thickness=None, by=None):
         '''combine segments according to grouped attributes'''
-        simple_segments = []
-        for key, segments in self.groupby(by=by):
-            simple_segments.append(sum(s for s in segments))
-        self.segments = simple_segments
+        if self.segments is not None:
+            simple_segments = []
+            for key, segments in self.groupby(by=by):
+                simple_segments.append(sum(s for s in segments))
+            self.segments = simple_segments
 
-        if min_thickness is not None:
-            self.apply_min_thickness(min_thickness)
-            self.simplify(min_thickness=None)
+            if min_thickness is not None:
+                self.apply_min_thickness(min_thickness)
+                self.simplify(min_thickness=None)
 
     def _get_min_thickness(self):
         return min((s.thickness, i) for i, s in enumerate(self.segments))
@@ -206,3 +208,20 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
                 self.segments[idx + 1].top = self.segments[idx].top
                 del self.segments[idx]
             smallest_thickness, idx = self._get_min_thickness()
+
+    def update_sandmedianclass(self, classifier):
+        if self.segments is not None:
+            for segment in self.segments:
+                if (
+                    (segment.sandmedianclass is None) and
+                    (getattr(segment, 'sandmedian', None) is not None)
+                    ):
+                    try:
+                        sandmedian = float(segment.sandmedian)
+                    except ValueError:
+                        continue
+                    segment.sandmedianclass = classifier.classify(sandmedian)
+        return self
+
+    def to_lithology(self, *args, **kwargs):
+        return self
