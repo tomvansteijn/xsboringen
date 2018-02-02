@@ -20,7 +20,8 @@ def read(shapefile):
             yield row
 
 
-def boreholes_to_shape(boreholes, shapefile, driver=None, epsg=None):
+def boreholes_to_shape(boreholes, shapefile,
+        driver=None, epsg=None, extra_fields=None):
     '''write boreholes to shapefile as points'''
     # crs from epsg code
     if epsg is not None:
@@ -30,7 +31,8 @@ def boreholes_to_shape(boreholes, shapefile, driver=None, epsg=None):
 
     # shapefile schema
     schema = Borehole.schema.copy()
-    schema['properties'].extend([('format', 'str'), ('source', 'str')])
+    if extra_fields is not None:
+        schema['properties'].extend(extra_fields)
 
     # shapefile write arguments
     shape_kwargs = {
