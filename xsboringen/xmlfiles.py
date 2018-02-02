@@ -5,6 +5,7 @@ from xsboringen.borehole import Borehole, Segment
 
 from itertools import chain
 from xml.etree import ElementTree
+from pathlib import Path
 import datetime
 import logging
 import glob
@@ -14,126 +15,157 @@ import os
 log = logging.getLogger(os.path.basename(__file__))
 
 
-def boreholes_from_xml(folder, version):
+def boreholes_from_xml(folder, version, extra_fields):
     xmlfiles = glob.glob(os.path.join(folder, '*{:.1f}.xml'.format(version)))
     for xmlfile in xmlfiles:
-        yield borehole_from_xml(xmlfile)
+        xml = XMLBoreholeFile(xmlfile)
+        borehole = xml.to_borehole(extra_fields)
+        if borehole is not None:
+            yield borehole
 
 
-def safe_int(s):
-    try:
-        return int(s)
-    except TypeError:
-        return None
+class XMLFile(object):
+    # format field
+    _format = None
+
+    def __init__(self, xmlfile):
+        self.file = Path(xmlfile)
+        self.attrs = {
+            'source': str(self.file),
+            'format': self._format,
+            }
+
+        log.debug('reading {s.file.name:}'.format(s=self))
+        self.root = ElementTree.parse(xmlfile).getroot()
 
 
-def safe_float(s):
-    try:
-        return float(s)
-    except TypeError:
-        return None
+class XMLBoreholeFile(XMLFile):
+    _format = 'XML Borehole'
 
-
-def segments_from_xml(root, extra_fields=None):
-    '''read segments from XML and yield as Segment'''
-    intervals = root.findall('pointSurvey/borehole/lithoDescr/lithoInterval')
-    for interval in intervals:
-        # top and base
-        top = safe_float(interval.attrib.get('topDepth')) * 1e-2  # to m
-        base = safe_float(interval.attrib.get('baseDepth')) * 1e-2  # to m
-
-        # lithology
-        lithology = interval.find('lithology').attrib.get('code')
-
-        # sandmedianclass
+    @staticmethod
+    def safe_int(s):
         try:
-            sandmedianclass = interval.find(
-                'sandMedianClass').attrib.get('code')[:3]
-        except AttributeError:
-            sandmedianclass = None
-
-        # sand median
-        try:
-            sandmedian = safe_float(interval.find(
-                'sandMedian').attrib.get('median'))
-        except AttributeError:
-            sandmedian = None
-
-        # extra fields
-        attrs = {}
-        if extra_fields is not None:
-            for key, attr in fields:
-                element = interval.find(key)
-                if element is not None:
-                    attrs[key] = element.attrib.get(attr)
-
-        # yield segment
-        yield Segment(top, base, lithology,
-            sandmedianclass=sandmedianclass,
-            **attrs,
-            )
-
-
-def borehole_from_xml(xmlfile, extra_fields=None):
-    '''read Dinoloket XML file and return Borehole'''
-    log.debug('reading {file:}'.format(file=os.path.basename(xmlfile)))
-    attrs = {}
-    attrs['format'] = 'XML borehole'
-    attrs['source'] = xmlfile
-
-    tree = ElementTree.parse(xmlfile)
-    root = tree.getroot()
-
-    # code
-    survey = root.find('pointSurvey')
-    code = survey.find('identification').attrib.get('id')
-
-    # date of borehole
-    date = survey.find('borehole/date')
-    try:
-        year = safe_int(date.attrib.get('startYear'))
-        month = safe_int(date.attrib.get('startMonth'))
-        day = safe_int(date.attrib.get('startDay'))
-        if year and month and day:
-            attrs['date'] = datetime.datetime(year, month, day).isoformat()
-        elif year and month:
-            attrs['date'] = datetime.datetime(year, month, 1).isoformat()
-        elif year:
-            attrs['date'] = datetime.datetime(year, 1, 1).isoformat()
-        else:
-            attrs['date'] = None
-    except AttributeError:
-        attrs['date'] = None
-
-    # final depth of borehole in m
-    basedepth = survey.find('borehole').attrib.get('baseDepth')
-    depth = safe_float(basedepth)
-    try:
-        depth *= 1e-2  # to m
-    except TypeError:
-        depth = None
-
-    # x,y coordinates
-    coordinates = survey.find('surveyLocation/coordinates')
-    x = safe_float(coordinates.find('coordinateX').text)
-    y = safe_float(coordinates.find('coordinateY').text)
-
-    # elevation in m
-    elevation = survey.find('surfaceElevation/elevation')
-    if not elevation is None:
-        z = safe_float(elevation.attrib.get('levelValue'))
-        try:
-            z *= 1e-2  # to m
+            return int(s)
         except TypeError:
+            return None
+
+    @staticmethod
+    def safe_float(s):
+        try:
+            return float(s)
+        except TypeError:
+            return None
+
+    @classmethod
+    def cast(cls, s, dtype):
+        if dtype == 'float':
+            return cls.safe_float(s)
+        elif dtype == 'int':
+            return cls.safe_int(s)
+        else:
+            return s
+
+    @classmethod
+    def read_segments(cls, survey, fields=None):
+        '''read segments from XML and yield as Segment'''
+        fields = fields or {}
+        intervals = survey.findall('borehole/lithoDescr/lithoInterval')
+        for interval in intervals:
+            # top and base
+            top = cls.safe_float(interval.attrib.get('topDepth')) * 1e-2  # to m
+            base = cls.safe_float(interval.attrib.get('baseDepth')) * 1e-2  # to m
+
+            # attrs
+            attrs = {}
+
+            # lithology
+            lithology = interval.find('lithology').attrib.get('code')
+
+            # sandmedianclass
+            try:
+                sandmedianclass = interval.find(
+                    'sandMedianClass').attrib.get('code')[:3]
+            except AttributeError:
+                sandmedianclass = None
+
+            # sand median
+            try:
+                attrs['sandmedian'] = cls.safe_float(interval.find(
+                    'sandMedian').attrib.get('median'))
+            except AttributeError:
+                attrs['sandmedian'] = None
+
+            for field in fields:
+                path, attrib = field['match'].split('@')
+                element = interval.find(path.rstrip('/'))
+                if element is None:
+                    continue
+                value = element.attrib.get(attrib)
+                if value is None:
+                    continue
+                attrs[field['name']] = cls.cast(value, field['dtype'])
+
+            # yield segment
+            yield Segment(top, base, lithology, sandmedianclass, **attrs)
+
+    def to_borehole(self, extra_fields=None):
+        '''read Dinoloket XML file and return Borehole'''
+        # extra fields
+        extra_fields = extra_fields or {}
+        borehole_fields = extra_fields.get('borehole') or None
+        segment_fields = extra_fields.get('segments') or None
+
+        # code
+        survey = self.root.find('pointSurvey')
+        code = survey.find('identification').attrib.get('id')
+
+        # timestamp of borehole
+        date = survey.find('borehole/date')
+        try:
+            year = self.safe_int(date.attrib.get('startYear'))
+            month = self.safe_int(date.attrib.get('startMonth'))
+            day = self.safe_int(date.attrib.get('startDay'))
+            if year and month and day:
+                timestamp = datetime.datetime(year, month, day).isoformat()
+            elif year and month:
+                timestamp = datetime.datetime(year, month, 1).isoformat()
+            elif year:
+                timestamp = datetime.datetime(year, 1, 1).isoformat()
+            else:
+                timestamp = None
+        except AttributeError:
+            timestamp = None
+        self.attrs['timestamp'] = timestamp
+
+        # final depth of borehole in m
+        basedepth = survey.find('borehole').attrib.get('baseDepth')
+        depth = self.safe_float(basedepth)
+        try:
+            depth *= 1e-2  # to m
+        except TypeError:
+            depth = None
+
+        # x,y coordinates
+        coordinates = survey.find('surveyLocation/coordinates')
+        x = self.safe_float(coordinates.find('coordinateX').text)
+        y = self.safe_float(coordinates.find('coordinateY').text)
+
+        # elevation in m
+        elevation = survey.find('surfaceElevation/elevation')
+        if not elevation is None:
+            z = self.safe_float(elevation.attrib.get('levelValue'))
+            try:
+                z *= 1e-2  # to m
+            except TypeError:
+                z = None
+        else:
             z = None
-    else:
-        z = None
 
-    # segments as generator
-    segments = segments_from_xml(root, extra_fields)
+        # segments as list
+        segments = [s for s in self.read_segments(survey, segment_fields)]
 
-    return Borehole(code, depth,
-        x=x, y=y, z=z,
-        segments=segments,
-        **attrs,
-        )
+        return Borehole(code, depth,
+            x=x, y=y, z=z,
+            segments=segments,
+            **self.attrs,
+            )
