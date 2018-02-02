@@ -2,6 +2,7 @@
 # Tom van Steijn, Royal HaskoningDHV
 
 from xsboringen import cross_section
+from xsboringen.calc import SandmedianClassifier, LithologyClassifier
 from xsboringen.csvfiles import boreholes_to_csv
 from xsboringen.datasources import boreholes_from_sources
 from xsboringen import plot as xsplot
@@ -27,6 +28,22 @@ def write_csv(**kwargs):
     # read boreholes and CPT's from data folders
     boreholes = boreholes_from_sources(datasources)
 
+    # translate CPT to lithology if needed
+    if result.get('translate_cpt', False):
+        table = config['cpt_classification']
+        lithologyclassifier = LithologyClassifier(table)
+        boreholes = (
+            b.to_lithology(lithologyclassifier) for b in boreholes
+            )
+
+    # classify sandmedian if needed
+    if result.get('classify_sandmedian', False):
+        bins = config['sandmedianbins']
+        sandmedianclassifier = SandmedianClassifier(bins)
+        boreholes = (
+            b.update_sandmedianclass(sandmedianclassifier) for b in boreholes
+            )
+
     # simplify if needed
     if result.get('simplify', False):
         min_thickness = result.get('min_thickness')
@@ -34,12 +51,13 @@ def write_csv(**kwargs):
             b.simplified(min_thickness=min_thickness) for b in boreholes
             )
 
-    # classify sandmedian if needed
-
-    # translate CPT to lithology if needed
-
     # write output to csv
-    boreholes_to_csv(boreholes, result['csvfile'])
+    extra_fields = result.get('extra_fields')
+    if extra_fields is not None:
+        extra_fields = {k: tuple(v) for k, v in extra_fields.items()}
+    boreholes_to_csv(boreholes, result['csvfile'],
+        extra_fields=extra_fields,
+        )
 
 
 def write_shape(**kwargs):
@@ -50,13 +68,6 @@ def write_shape(**kwargs):
 
     # read boreholes and CPT's from data folders
     boreholes = boreholes_from_sources(datasources)
-
-    # simplify if needed
-    if result.get('simplify', False):
-        min_thickness = result.get('min_thickness')
-        boreholes = (
-            b.simplified(min_thickness=min_thickness) for b in boreholes
-            )
 
     # write output to shapefile
     driver = config.get('shapefile.driver')
