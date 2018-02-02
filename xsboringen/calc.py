@@ -3,63 +3,66 @@
 # Tom van Steijn, Royal HaskoningDHV
 
 from collections import namedtuple
+from math import exp
 
 
-def classify_sandmedian(median, bins):
-    '''get median class using bins'''
-    for (lower, upper), medianclass in bins:
-        if (median >= lower) and (median < upper):
-            return medianclass
+class LithologyRule(object):
+    def test(qc, rf):
+        raise NotImplementedError('not implemented in base class')
 
 
-class ClassificationSegment(object):
-    def __init__(self, left, right, lim_f):
-        self.left = left
-        self.right = right
-        self.lim_f = lim_f
+class ExpLithologyRule(LithologyRule):
+    _keys = 'left', 'right', 'a', 'b'
 
-    def __contains__(self, x):
-        return (x > self.left) and (x <= self.right)
+    Limit = namedtuple('Limit', _keys)
+    def __init__(self, lithology, limits):
+        self.lithology = lithology
+        self.limits = [self.Limit(**l) for l in limits]
 
-    def limit(self, value):
-        return self.lim_f(value)
+    def __repr__(self):
+        return ('{s.__class__.__name__:}(lithology={s.lithology:})').format(
+            s=self,
+            )
+
+    def test(self, rf, qc):
+        for limit in self.limits:
+            if (rf > limit.left) and (rf <= limit.right):
+                    return qc > limit.a*exp(limit.b*rf)
+        return False
 
 
-class ClassificationRule(object):
-    def __init__(self, limits, params, ):
-        self.segments = []
-        for rule in rules:
+class LithologyClassifier(object):
+    def __init__(self, table, ruletype='exponential'):
+        self.default = table['default']
+        self.ruletype = ruletype
 
+        if ruletype == 'exponential':
+            self.rules = [
+                ExpLithologyRule(**r) for r in reversed(table['rules'])
+                ]
+        else:
+            raise ValueError('ruletype \'{}\' not supported'.format(ruletype))
 
+    def __repr__(self):
+        return ('{s.__class__.__name__:}(ruletype={s.ruletype:})').format(
+            s=self,
+            )
 
-
-    def __iter__(self):
-        for segment in self.segments:
-            yield segment
-
-class Classifier(object):
-    def __init__(self, rules, default='O'):
-        self.default = default
-        self.rules = [ClassificationRule]
-
-    def classify(rf, qc):
+    def classify(self, rf, qc):
         lithology = self.default
-        for rule in rules:
-            for segment in rule:
-                if rf in segment and qc > segment.limit(rf):
+        if not ((rf is None) or (rf < 0.)):  # when rf is nodata
+            for rule in self.rules:
+                if rule.test(rf, qc):
                     lithology = rule.lithology
         return lithology
 
+class SandmedianClassifier(object):
+    Bin = namedtuple('Bin', ['lower', 'upper', 'medianclass'])
+    def __init__(self, bins):
+        self.bins = [Bin(**b) for b in bins]
 
-def lithology_from_cur(rf, qc, cur_rules, default_lithology='O'):
-    lithology = default_lithology
-    if rf < 0.:  # when rf is nodata
-        return lithology
-    else:
-        for rule in rules:
-            if (((rf > rule['l1']) and (rf <= rule['l2']) and
-                (qc > (rule['a1'] * exp(rule['b1'] * rf)))) or
-                ((rf > rule['l2']) and (rf <= rule['l3']) and
-                    (qc > (rule['a2'] * exp(rule['b2'] * rf))))):
-                lithology = rule['lithology']
-        return lithology
+    def classify(self, median):
+        '''get median class using bins'''
+        for bin_ in self.bins:
+            if (median >= bin_.lower) and (median < bin_.upper):
+                return bin_.medianclass
