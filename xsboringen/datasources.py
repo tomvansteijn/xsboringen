@@ -3,8 +3,7 @@
 # Tom van Steijn, Royal HaskoningDHV
 
 from xsboringen.csvfiles import boreholes_from_csv
-from xsboringen.geffiles import boreholes_from_gef
-from xsboringen.geffiles import cpts_from_gef
+from xsboringen.geffiles import boreholes_from_gef, cpts_from_gef
 from xsboringen.xmlfiles import boreholes_from_xml
 
 from itertools import chain
@@ -17,32 +16,29 @@ def boreholes_from_sources(datasources):
     readers = []
     for datasource in datasources:
         if datasource['format'] == 'Dinoloket XML 1.4':
-            folder = datasource['folder']
             readers.append(boreholes_from_xml(
-                folder=folder,
+                folder=datasource['folder'],
                 version=1.4,
+                extra_fields=datasource.get('extra_fields'),
                 ))
-        elif datasource['format'] == 'CSV':
-            folder = datasource['folder']
+        elif datasource['format'] == 'CSV boringen':
             readers.append(boreholes_from_csv(
-                folder=folder,
+                folder=datasource['folder'],
+                fieldnames=datasource['fieldnames'],
+                extra_fields=datasource.get('extra_fields'),
                 delimiter=datasource.get('delimiter', ','),
                 decimal=datasource.get('decimal', '.'),
                 ))
         elif datasource['format'] == 'GEF boringen':
-            folder = datasource['folder']
-            fieldnames = datasource.get('fieldnames')
             readers.append(boreholes_from_gef(
-                folder=folder,
-                fieldnames=fieldnames,
+                folder=datasource['folder'],
+                fieldnames=datasource.get('fieldnames'),
                 ))
         elif datasource['format'] == 'GEF sonderingen':
-            folder = datasource['folder']
-            fieldnames = datasource.get('fieldnames')
             readers.append(cpts_from_gef(
-                folder=folder,
-                fieldnames=fieldnames,
-                column_names=datasource['column_names'],
+                folder=datasource['folder'],
+                fieldnames=datasource.get('fieldnames'),
+                datacolumns=datasource['datacolumns'],
                 ))
         else:
             log.warning((
