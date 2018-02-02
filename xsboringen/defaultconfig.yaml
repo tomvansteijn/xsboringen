@@ -1,6 +1,47 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+# CPT lithology classification table
+cpt_classification: {
+  rules: [
+      {lithology: Zs1,  limits: [
+        {left: 0., right: 1.2, a: 2.908, b: 0.8115},
+        {left: 1.2, right: 3.41514, a: 1.9196, b: 1.1576},
+          ]},
+      {lithology: Zs3,  limits: [
+        {left: 0., right: 1.65, a: 0.961, b: 0.6711},
+        {left: 1.65, right: 4.8377676, a: 0.4659, b: 1.1098},
+          ]},
+      {lithology: L,    limits: [
+        {left: 0., right: 2.45, a: 0.184, b: 0.7294},
+        {left: 2.45, right: 6.21503307, a: 0.0584, b: 1.198},
+          ]},
+      {lithology: Kz1,  limits: [
+        {left: 0., right: 3.45, a: 0.0523, b: 0.6874},
+        {left: 3.45, right: 7.54894305, a: 0.0072, b: 1.2636}
+          ]},
+      {lithology: K,    limits: [
+        {left: 1.8, right: 5.95, a: 0.0028, b: 0.6885},
+        {left: 5.95, right: 11.0107341, a: 0.00009, b: 1.2643},
+          ]},
+      {lithology: V,    limits: [
+        {left: 6.3, right: 9., a: 0.0002, b: 0.6264},
+        {left: 9., right: 14.43944783, a: 0.0000003, b: 1.3591},
+          ]},
+    ],
+  default: 'O',
+}
+
+# sandmedian classification bins
+sandmedianbins: [
+    {lower: 63., upper: 105., medianclass: ZUF},
+    {lower: 105., upper: 150., medianclass: ZZF},
+    {lower: 150., upper: 210., medianclass: ZMF},
+    {lower: 210., upper: 300., medianclass: ZMG},
+    {lower: 300., upper: 420., medianclass: ZZG},
+    {lower: 420., upper: 2000., medianclass: ZUG},
+  ]
+
 # default labels
 defaultlabels: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
@@ -63,9 +104,9 @@ styles: {
       {key: cone_resistance, label: conusweerstand, color: blue},
       {key: friction_ratio, label: wrijvingsgetal, color: magenta},
       ],
-      }
+      },
     }
-  },
+
 
 
 
