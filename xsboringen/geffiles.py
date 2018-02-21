@@ -6,8 +6,8 @@ from xsboringen.borehole import Borehole, Segment
 from xsboringen.cpt import CPT
 
 from collections import defaultdict, namedtuple
-from enum import Enum
 from pathlib import Path
+import textwrap
 import logging
 import glob
 import os
@@ -204,6 +204,14 @@ class GefFile(object):
 
 class GefBoreholeFile(GefFile):
     _format = 'GEF Borehole'
+    @staticmethod
+    def read_lithologyadmix(lithologyadmix):
+        attrs = {}
+        lithology = ''.join([c for c in lithologyadmix if c.isupper()])
+        attrs['lithology'] = lithology
+        admixes = ''.join([c for c in lithologyadmix if c.islower()])
+        return attrs
+
     @classmethod
     def read_segments(cls, lines, columnsep, recordsep):
         for line in lines:
@@ -226,7 +234,8 @@ class GefBoreholeFile(GefFile):
             top = cls.safe_float(top)
             base = cls.safe_float(base)
             if lithologycolor is not None:
-                lithology, *color = lithologycolor.split(maxsplit=1)
+                lithologyadmix, *color = lithologycolor.split(maxsplit=1)
+                attrs.update(self.read_lithologyadmix)
                 attrs['color'] = color
             else:
                 lithology = None
