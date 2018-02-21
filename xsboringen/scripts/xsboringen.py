@@ -13,6 +13,7 @@ import click
 import yaml
 
 from collections import ChainMap
+from pathlib import Path
 import logging
 import os
 
@@ -70,8 +71,6 @@ def write_shape(**kwargs):
     boreholes = boreholes_from_sources(datasources)
 
     # write output to shapefile
-    driver = config.get('shapefile.driver')
-    epsg = config.get('shapefile.epsg')
     shapefiles.boreholes_to_shape(boreholes, result['shapefile'],
         **config['shapefile'],
         )
@@ -87,22 +86,44 @@ def plot(**kwargs):
     # optional args
     min_depth = kwargs.get('min_depth', 0.)
     buffer_distance = kwargs.get('buffer_distance', 0.)
+    xtickstep = kwargs.get('xtickstep')
     ylim = kwargs.get('ylim')
     xlabel = kwargs.get('xlabel')
     ylabel = kwargs.get('ylabel')
 
     # create image folder
-    if result.get('imagefolder') and not os.path.exists(result['imagefolder']):
-        os.mkdir(result['imagefolder'])
+    folder = Path(result['folder'])
+    folder.mkdir(exist_ok=True)
 
     # read boreholes and CPT's from data folders
     boreholes = boreholes_from_sources(datasources)
 
+    # segment styles lookup
+    segmentstyles = styles.ObjectStylesLookup(**config['styles']['segments'])
+
+    # translate CPT to lithology if needed
+    if result.get('translate_cpt', False):
+        table = config['cpt_classification']
+        lithologyclassifier = LithologyClassifier(table)
+        boreholes = (
+            b.to_lithology(lithologyclassifier) for b in boreholes
+            )
+
+    # classify sandmedian if needed
+    if result.get('classify_sandmedian', False):
+        bins = config['sandmedianbins']
+        sandmedianclassifier = SandmedianClassifier(bins)
+        boreholes = (
+            b.update_sandmedianclass(sandmedianclassifier) for b in boreholes
+            )
+
     # simplify if needed
     if result.get('simplify', False):
         min_thickness = result.get('min_thickness')
+        groupby = lambda s: {'record': segmentstyles.lookup(s)}
         boreholes = (
-            b.simplified(min_thickness=min_thickness) for b in boreholes
+            b.simplified(min_thickness=min_thickness, by=groupby)
+            for b in boreholes
             )
 
     # filter missing coordinates and less than minimal depth
@@ -112,15 +133,20 @@ def plot(**kwargs):
         (b.depth >= min_depth)
         ]
 
-    # definest yles lookup
+    # definest styles lookup
     plotting_styles = {
-        'segments': styles.ObjectStylesLookup(**config['styles']['segments']),
-        # 'points': xstyles.SimpleStylesLookup(**config['point.styles'])
+        'segments': segmentstyles,
         }
 
     # default labels
-    defaultlabels = iter(config['cross_section.labels'])
+    defaultlabels = iter(config['defaultlabels'])
 
+    # selected set
+    selected = lines.get('selected')
+    if selected is not None:
+        selected = set(selected)
+
+    css = []
     for row in shapefiles.read(lines['file']):
         line_geometry = row['geometry']
         line_properties = row['properties']
@@ -131,36 +157,54 @@ def plot(**kwargs):
         else:
             label = next(defaultlabels)
 
+        if (selected is not None) and (label not in selected):
+            log.warning('skipping {label:}'.format(label=label))
+            continue
+
         # log message
         log.info('cross-section {label:}'.format(label=label))
 
         # define cross-section
-        cs_kwargs = {
-            'geometry': line_geometry,
-            'label': label,
-            'buffer_distance': buffer_distance,
-            }
-        cs = cross_section.CrossSection(**cs_kwargs)
+        cs = cross_section.CrossSection(
+            geometry=line_geometry,
+            label=label,
+            buffer_distance=buffer_distance,
+            )
 
         # add boreholes to cross-section
         cs.add_boreholes(boreholes)
 
         # define plot
-        plot_kwargs = {
-            'cross_section': cs,
-            'config': config['plot.config'],
-            'styles': styles,
-            'ylim': ylim,
-            'xlabel': xlabel,
-            'ylabel': ylabel,
-            }
-        plt = xsplot.CrossSectionPlot(**plot_kwargs)
+        plt = xsplot.CrossSectionPlot(
+            cross_section=cs,
+            config=config['cross_section_plot'],
+            styles=plotting_styles,
+            xtickstep=xtickstep,
+            ylim=ylim,
+            xlabel=xlabel,
+            ylabel=ylabel,
+            )
 
         # plot and save to file
-        imagefile = os.path.join(result['imagefolder'],
-            config['image.filenameformat'].format(label=label))
-        log.info('saving {f:}'.format(f=os.path.basename(imagefile)))
-        plt.save(imagefile)
+        imagefilename = config['image_filename_format'].format(label=label)
+        imagefile = folder / imagefilename
+        log.info('saving {f.name:}'.format(f=imagefile))
+        plt.to_image(str(imagefile))
+
+        # collection cross-sections
+        css.append(cs)
+
+    # export endpoints
+    endpointsfile = folder / 'endpoints.shp'
+    shapefiles.export_endpoints(str(endpointsfile), css,
+        **config['shapefile'],
+        )
+
+    # export projection lines
+    projectionlinesfile = folder / 'projectionlines.shp'
+    shapefiles.export_projectionlines(str(projectionlinesfile), css,
+        **config['shapefile'],
+        )
 
 
 def get_logging(level):
