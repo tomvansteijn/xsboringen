@@ -3,7 +3,7 @@
 
 from xsboringen.rasterfiles import sample
 
-from shapely.geometry import asShape
+from shapely.geometry import asShape, Point
 
 
 class Line(object):
@@ -105,7 +105,14 @@ class CrossSection(object):
         for an_object in some_objects:
             if asShape(an_object.geometry).within(self.buffer):
                 the_distance = self.shape.project(asShape(an_object.geometry))
-                dst.append((the_distance, an_object))
+
+                # explanation: the buffer extends beyond the endpoints of the cross-section
+                # points beyond the endpoints but within the buffer are
+                # projected at 0. and length distance with a sharp angle
+                # these points are not added to the cross-section
+                # points exactly at 0. or length distance are also not added
+                if (the_distance > 0.) and (the_distance < self.length):
+                    dst.append((the_distance, an_object))
 
     def sort(self):
         self.boreholes = [b for b in sorted(self.boreholes)]
@@ -129,3 +136,4 @@ class CrossSection(object):
                 top=[t for t in sample(solid['topfile'], coords)],
                 base=[b for b in sample(solid['basefile'], coords)],
                 ))
+
