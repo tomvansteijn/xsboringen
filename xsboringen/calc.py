@@ -56,6 +56,7 @@ class LithologyClassifier(object):
                     lithology = rule.lithology
         return lithology
 
+
 class SandmedianClassifier(object):
     Bin = namedtuple('Bin', ['lower', 'upper', 'medianclass'])
     def __init__(self, bins):
@@ -66,3 +67,14 @@ class SandmedianClassifier(object):
         for bin_ in self.bins:
             if (median >= bin_.lower) and (median < bin_.upper):
                 return bin_.medianclass
+
+
+class SandmedianSimplifier(object):
+    def __init__(self, grouping):
+        self.mapping = {}
+        for value, group in grouping.items():
+            for key in group:
+                self.mapping[key] = value
+
+    def simplify(self, sandmedianclass):
+        return self.mapping.get(sandmedianclass, sandmedianclass)
