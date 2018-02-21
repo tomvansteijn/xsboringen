@@ -3,7 +3,7 @@
 
 from xsboringen.borehole import Borehole
 
-from shapely.geometry import mapping
+from shapely.geometry import asShape, mapping, Point, LineString
 from fiona.crs import from_epsg
 import fiona
 
@@ -40,12 +40,79 @@ def boreholes_to_shape(boreholes, shapefile,
         'schema': schema,
         'crs': crs,
         }
-    properties = [k for k, _ in schema['properties']]
+    keys = [k for k, _ in schema['properties']]
     log.info('writing to {f:}'.format(f=os.path.basename(shapefile)))
     with fiona.open(shapefile, 'w', **shape_kwargs) as dst:
         for borehole in boreholes:
             record = {
                     'geometry': borehole.geometry,
-                    'properties': borehole.as_dict(keys=properties),
+                    'properties': borehole.as_dict(keys=keys),
                 }
             dst.write(record)
+
+
+def export_endpoints(shapefile, cross_sections, driver=None, epsg=None):
+    # crs from epsg code
+    if epsg is not None:
+        crs = from_epsg(epsg)
+    else:
+        crs = None
+
+    # schema
+    schema = {'geometry': 'Point', 'properties': {'label': 'str'}}
+
+    # shapefile write arguments
+    shape_kwargs = {
+        'driver': driver,
+        'schema': schema,
+        'crs': crs,
+        }
+    log.info('writing to {f:}'.format(f=os.path.basename(shapefile)))
+    with fiona.open(shapefile, 'w', **shape_kwargs) as dst:
+        for cs in cross_sections:
+            startpoint = Point(cs.shape.coords[0])
+            endpoint = Point(cs.shape.coords[-1])
+            dst.write({
+                'geometry': mapping(startpoint),
+                'properties': {'label': cs.label}
+                })
+            dst.write({
+                'geometry': mapping(endpoint),
+                'properties': {'label': cs.label + '`'}
+                })
+
+
+def export_projectionlines(shapefile, cross_sections, driver=None, epsg=None):
+    # crs from epsg code
+    if epsg is not None:
+        crs = from_epsg(epsg)
+    else:
+        crs = None
+
+    # schema
+    schema = {'geometry': 'LineString', 'properties': {'label': 'str'}}
+    boreholeschema = Borehole.schema.copy()
+    schema['properties'].update(boreholeschema['properties'])
+    keys = [k for k, _ in boreholeschema['properties']]
+
+    # shapefile write arguments
+    shape_kwargs = {
+        'driver': driver,
+        'schema': schema,
+        'crs': crs,
+        }
+
+    log.info('writing to {f:}'.format(f=os.path.basename(shapefile)))
+    with fiona.open(shapefile, 'w', **shape_kwargs) as dst:
+        for cs in cross_sections:
+            for distance, borehole in cs.boreholes:
+                projectionline = LineString([
+                    asShape(borehole.geometry),
+                    cs.shape.interpolate(distance),
+                    ])
+                properties = {'label': cs.label}
+                properties.update(borehole.as_dict(keys=keys))
+                dst.write({
+                    'geometry': mapping(projectionline),
+                    'properties': properties,
+                    })
