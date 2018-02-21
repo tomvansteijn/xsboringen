@@ -3,23 +3,26 @@
 
 from matplotlib import pyplot as plt
 from matplotlib import transforms
+import numpy as np
 
+from collections import namedtuple
 import logging
 import os
 
 
 class CrossSectionPlot(object):
+    Extension = namedtuple('Extension', ['point', 'dx'])
     def __init__(self, cross_section, styles, config,
-        ylim=None, xlabel=None, ylabel=None,
+        xtickstep=None, ylim=None, xlabel=None, ylabel=None,
         ):
         self.cs = cross_section
         self.styles = styles
         self.cfg = config
 
+        self.xtickstep = xtickstep
         self.ylim = ylim
         self.xlabel = xlabel
         self.ylabel = ylabel
-
 
     def __repr__(self):
         return ('{s.__class__.__name__:}(length={s.length:.2f}, '
@@ -27,12 +30,12 @@ class CrossSectionPlot(object):
                 'label={s.label:})').format(s=self)
 
     @property
-    def label(self):
-        return self.cs.label
-
-    @property
     def length(self):
         return self.cs.length
+
+    @property
+    def label(self):
+        return self.cs.label
 
     def plot_borehole(self, ax, left, borehole, width):
         vtrans = transforms.blended_transform_factory(
@@ -47,19 +50,19 @@ class CrossSectionPlot(object):
                 align='center', zorder=2,
                 **segment_style)
 
-            # plot borehole code as text
-            codelabel_position = self.cfg.get('codelabel.position')
-            codelabel_fontsize = self.cfg.get('codelabel.fontsize')
-            codelabel_color = self.cfg.get('codelabel.color')
-            txt = ax.text(left, codelabel_position, borehole.code,
-                size=codelabel_fontsize,
-                color=codelabel_color,
-                rotation=90,
-                ha='center', va='bottom',
-                transform=vtrans,
-                )
+        # plot borehole code as text
+        codelabel_position = self.cfg.get('codelabel_position')
+        codelabel_fontsize = self.cfg.get('codelabel_fontsize')
+        codelabel_color = self.cfg.get('codelabel_color')
+        txt = ax.text(left, codelabel_position, borehole.code,
+            size=codelabel_fontsize,
+            color=codelabel_color,
+            rotation=90,
+            ha='center', va='bottom',
+            transform=vtrans,
+            )
 
-            yield txt
+        return txt
 
     def plot_vertical(self, ax, distance, vertical):
         style = self.styles['verticals'].lookup(vertical.name)
@@ -87,28 +90,36 @@ class CrossSectionPlot(object):
              transform=ax.transAxes)
         return lt, rt
 
-    def get_width(self, factor):
-        '''bar width from cross-section length'''
-        width = self.cs.length * factor
-        return width
-
-    def get_xlim(self):
-        return [0., self.cs.length]
+    @classmethod
+    def get_extensions(cls, distance, min_distance):
+        '''x-axis extensions'''
+        extensions = []
+        spacing = np.diff(distance)
+        too_close = spacing < min_distance
+        points = distance[1:][too_close]
+        dxs = np.maximum(spacing[too_close], min_distance) - spacing[too_close]
+        for point, dx in zip(points, dxs):
+            extensions.append(
+                cls.Extension(
+                    point=point,
+                    dx=dx,
+                    )
+                )
+        return extensions
 
     def get_legend(self, ax):
         handles_labels = []
         for label, style in self.styles['segments'].items():
             handles_labels.append((
                 plt.Rectangle((0, 0), 1, 1,
-                    facecolor=style.pop('color'),
                     **style,
                     ),
                 label
                 ))
         handles, labels = zip(*handles_labels)
 
-        legend_title = self.cfg.get('legend.title')
-        legend_fontsize = self.cfg.get('legend.fontsize')
+        legend_title = self.cfg.get('legend_title')
+        legend_fontsize = self.cfg.get('legend_fontsize')
         lgd = ax.legend(handles, labels,
             title=legend_title,
             fontsize=legend_fontsize,
@@ -117,49 +128,64 @@ class CrossSectionPlot(object):
             )
         return lgd
 
-    def plot_map(self, ax):
-        # bounding box extra artists (title, legend, labels, etc.)
-        bxa = []
-
-        # set aspect to equal
-        ax.set_aspect('equal')
-
-        # plot cross-section
-        x, y = zip(*self.cs.geometry['coordinates'])
-        ax.plot(x, y, linestyle='-', color='black')
-
-        # labels
-        lt = ax.text(x[0], y[0], self.label, weight='bold', size='large')
-        rt = ax.text(x[-1], y[-1], self.label + '`', weight='bold', size='large')
-
-
-
-        # grid lines |--|--|--|
-        ax.grid(linestyle='--', color='gray', zorder=0)
-
-        return bxa
-
-
     def plot(self, ax):
         # bounding box extra artists (title, legend, labels, etc.)
         bxa = []
 
+        # sort cross-section data by distance
+        self.cs.sort()
+
+        # calculate min distance
+        min_distance_factor = self.cfg.get('min_distance_factor', 2.e-2)
+        min_distance = min_distance_factor * self.length
+
+        # borehole distance vector
+        distance = np.array([d for d, b in self.cs.boreholes])
+
+        # x-axis limits
+        xmin, xmax = [0., self.length]
+
+        # adjust limits for first and last borehole
+        min_limit_factor = self.cfg.get('min_limit_factor', 4.e-2)
+        min_limit = min_limit_factor * self.length
+        if distance[0] < (min_limit):
+            xmin -= ((min_limit) - distance[0])
+        if (xmax - distance[-1]) < (min_limit):
+            xmax += ((min_limit) - (xmax - distance[-1]))
+
+        # get x-axis extensions
+        extensions = self.get_extensions(distance, min_distance)
+
+        # apply extensions to x-axis limits
+        for extension in extensions:
+            xmax += extension.dx
+
+        # bar & vertical width
+        barwidth_factor = self.cfg.get('barwidth_factor', 1.e-2)
+        verticalwidth_factor = self.cfg.get('verticalwidth_factor', 2.e-2)
+        barwidth = barwidth_factor * (xmax - xmin)
+        verticalwidth = verticalwidth_factor * (xmax - xmin)
+
         # plot boreholes
-        barwidth_factor = self.cfg.get('barwidth.factor') or 1.e-2
-        verticalwidth_factor = self.cfg.get('verticalwidth.factor') or 2.e-2
-        barwidth = self.get_width(barwidth_factor)
-        verticalwidth = self.get_width(verticalwidth_factor)
         for distance, borehole in self.cs.boreholes:
-            for txt in self.plot_borehole(ax,
-                    distance, borehole, barwidth,
+            # apply extensions
+            plot_distance = distance
+            for extension in extensions:
+                if (
+                    np.isclose(distance, extension.point) or
+                    (distance > extension.point)
                     ):
-                bxa.append(txt)
+                    plot_distance += extension.dx
+
+            # plot borehole
+            txt = self.plot_borehole(ax, plot_distance, borehole, barwidth)
+            bxa.append(txt)
 
             # plot verticals
             if borehole.verticals is not None:
                 for vertical in borehole.verticals:
                     self.plot_vertical(ax,
-                        distance, vertical)
+                        plot_distance, vertical)
 
         # plot points
         for distance, point in self.cs.points:
@@ -185,13 +211,26 @@ class CrossSectionPlot(object):
             bxa.append(lt)
             bxa.append(rt)
 
+        # axis ticks
+        if self.xtickstep is not None:
+            xticks = np.arange(0., self.length + self.xtickstep, self.xtickstep)
+        else:
+            xticks = ax.get_xticks().copy()
+
+        fmt = self.cfg.get('xticklabel_format', '{:3.0f}')
+        xticklabels = [fmt.format(x) for x in xticks]
+        for extension in extensions:
+            xticks[xticks > extension.point] += extension.dx
+        ax.set_xticks(xticks)
+        ax.set_xticklabels(xticklabels)
+
         # axis limits
-        ax.set_xlim(self.get_xlim())
+        ax.set_xlim([xmin, xmax])
         if self.ylim is not None:
             ax.set_ylim(self.ylim)
 
         # grid lines |--|--|--|
-        ax.grid(linestyle='--', color='gray', zorder=0)
+        ax.grid(linestyle='--', linewidth=0.5, color='black', zorder=0)
 
         # axis labels
         if self.xlabel is not None:
@@ -208,9 +247,9 @@ class CrossSectionPlot(object):
         # return list of extra artists
         return bxa
 
-    def save(self, imagefile, **save_kwargs):
+    def to_image(self, imagefile, **save_kwargs):
         # figure
-        figsize = self.cfg.get('figure.size')
+        figsize = self.cfg.get('figure_size')
         fig, ax = plt.subplots(figsize=figsize)
 
         # plot cross-section
@@ -222,3 +261,6 @@ class CrossSectionPlot(object):
             bbox_extra_artists=bxa,
             **save_kwargs,
             )
+
+        # clos figure
+        plt.close()
