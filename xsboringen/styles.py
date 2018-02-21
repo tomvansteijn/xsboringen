@@ -4,37 +4,55 @@
 class SimpleStylesLookup(object):
     def __init__(self, records, default):
         self.mapping = {}
-        self.items = []
+        self._items = []
         for record in records:
             key = record.pop('key')
             label = record.pop('label')
             self.mapping[key] = record
-            self.items.append((label, record))
+            self._items.append((label, record))
+        self.default_label = default.pop('label')
         self.default = default
 
     def __repr__(self):
         return ('{s.__class__.__name__:}(), '
             ).format(s=self)
 
+    def items(self):
+        for item in self._items:
+            yield item
+        yield self.default_label, self.default
+
     def lookup(self, key):
         return self.mapping.get(key, self.default)
 
 
 class ObjectStylesLookup(object):
-    def __init__(self, attrs, records, default):
-        self.attrs = attrs
+    def __init__(self, records, default):
+        self.attrs = set()
         self.mapping = {}
-        self.items = []
+        self._items = []
         for record in records:
-            key = tuple(record.pop('key'))
+            key = []
+            for attr, values in sorted(record.pop('key').items()):
+                self.attrs.add(attr)
+                if not isinstance(values, list):
+                    values = [values,]
+                for value in values:
+                    key.append(value)
             label = record.pop('label')
-            self.mapping[key] = record
-            self.items.append((label, record))
+            self.mapping[tuple(key)] = record
+            self._items.append((label, record))
+        self.default_label = default.pop('label')
         self.default = default
 
     def __repr__(self):
         return ('{s.__class__.__name__:}(attrs={s.attrs:}), '
             ).format(s=self)
+
+    def items(self):
+        for item in self._items:
+            yield item
+        yield self.default_label, self.default
 
     def lookup(self, obj):
         key = tuple(getattr(obj, a, None) for a in self.attrs)
