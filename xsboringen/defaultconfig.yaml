@@ -57,7 +57,13 @@ cross_section_plot: {
   figure_size: [21, 11.7],
 
   # bars width compared to figure width
-  barwidth_factor: 1.e-2,
+  barwidth_factor: 1.5e-2,
+
+  # minimum distance compared to figure width
+  min_distance_factor: 3.e-2,
+
+  # minimum distance to xmin, xmax compared to figure width
+  min_limit_factor: 4.e-2,
 
   # position of borehole code labels compared to axes (0=bottom, 1=top)
   codelabel_position: 1.01,
@@ -68,36 +74,34 @@ cross_section_plot: {
   # color of borehole code labels
   codelabel_color: gray,
 
+  # format of x-axis tick labels
+  xticklabel_format: '{:3.0f}',
+
   # fontsize for legend
   legend_fontsize: 10.,
 
   # legend title text
-  legend_title: lithologie+zandmediaan,
-
-  # csv filename format
-  csv_filename_format: 'cross_section_{label:}.csv',
-
-  # image filename format
-  image_filename_format: 'cross_section_{label:}.png',
+  legend_title: legenda,
   }
 
+# csv filename format
+csv_filename_format: 'cross_section_{label:}.csv'
+
+# image filename format
+image_filename_format: 'cross_section_{label:}.png'
+
 # plotting styles
+
 styles: {
   segments: {
-    attrs: [lithology, sandmedianclass],
     records: [
-        {key: [G, null], label: grind, color: coral, edgecolor: black},
-        {key: [K, null], label: klei, color: forestgreen, edgecolor: black},
-        {key: [L, null], label: leem, color: darkkhaki, edgecolor: black},
-        {key: [V, null], label: veen, color: sienna, edgecolor: black},
-        {key: [Z, null], label: zand geen mediaan, color: '#FFFF66', edgecolor: black},
-        {key: [Z, ZMO], label: zand onduidelijke mediaan, color: lightgray, hatch: '...', edgecolor: black},
-        {key: [Z, ZFC], label: zand fijne categorie, color: '#FFFF66', hatch: '...', edgecolor: black},
-        {key: [Z, ZMC], label: zand middencategorie, color: gold, hatch: '...', edgecolor: black},
-        {key: [Z, ZGC], label: zand grove categorie, color: orange, hatch: '...', edgecolor: black},
-        {key: [Z, GCZ], label: glauconietzand, color: mediumseagreen, hatch: '...', edgecolor: black},
+        {key: {lithology: G, }, label: grind, facecolor: coral, edgecolor: black},
+        {key: {lithology: K, }, label: klei, facecolor: forestgreen, edgecolor: black},
+        {key: {lithology: L, }, label: leem, facecolor: darkkhaki, edgecolor: black},
+        {key: {lithology: V, }, label: veen, facecolor: sienna, edgecolor: black},
+        {key: {lithology: Z, }, label: zand, facecolor: '#FFFF66', edgecolor: black},
       ],
-    default: {color: white, hatch: , label: onbekend, edgecolor: black},
+    default: {label: onbekend, facecolor: white, edgecolor: black},
     },
   verticals: {
     records: [
@@ -106,6 +110,31 @@ styles: {
       ],
       },
     }
+
+# styles: {
+#   segments: {
+#     attrs: [lithology, sandmedianclass],
+#     records: [
+#         {key: [G, null], label: grind, facecolor: coral, edgecolor: black},
+#         {key: [K, null], label: klei, facecolor: forestgreen, edgecolor: black},
+#         {key: [L, null], label: leem, facecolor: darkkhaki, edgecolor: black},
+#         {key: [V, null], label: veen, facecolor: sienna, edgecolor: black},
+#         {key: [Z, null], label: zand geen mediaan, facecolor: '#FFFF66', edgecolor: black},
+#         {key: [Z, ZMO], label: zand onduidelijke mediaan, facecolor: lightgray, hatch: '...', edgecolor: black},
+#         {key: [Z, ZFC], label: zand fijne categorie, facecolor: '#FFFF66', hatch: '...', edgecolor: black},
+#         {key: [Z, ZMC], label: zand middencategorie, facecolor: gold, hatch: '...', edgecolor: black},
+#         {key: [Z, ZGC], label: zand grove categorie, facecolor: orange, hatch: '...', edgecolor: black},
+#         {key: [Z, GCZ], label: glauconietzand, facecolor: mediumseagreen, hatch: '...', edgecolor: black},
+#       ],
+#     default: {color: white, hatch: , label: onbekend, edgecolor: black},
+#     },
+#   verticals: {
+#     records: [
+#       {key: cone_resistance, label: conusweerstand, color: blue},
+#       {key: friction_ratio, label: wrijvingsgetal, color: magenta},
+#       ],
+#       },
+#     }
 
 
 
