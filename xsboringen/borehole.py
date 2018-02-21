@@ -3,6 +3,7 @@
 
 from collections import Iterable
 from itertools import groupby
+from functools import total_ordering
 import copy
 
 
@@ -71,7 +72,7 @@ class Segment(AsDictMixin, CopyMixin):
         '''return top and base relative to z'''
         return z - self.top, z - self.base
 
-
+@total_ordering
 class Borehole(AsDictMixin, CopyMixin, Iterable):
     '''Borehole class with iterator method yielding segments'''
 
@@ -123,6 +124,12 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
             for segment in self.segments:
                 yield segment
 
+    def __eq__(self, other):
+        return self.depth == other.depth
+
+    def __lt__(self, other):
+        return self.depth < other.depth
+
     @property
     def geometry(self):
         '''borehole geometry interface'''
@@ -140,10 +147,10 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
             segments_in_list.append(segment)
         self.segments = segments_in_list
 
-    def simplified(self, min_thickness=None):
+    def simplified(self, min_thickness=None, by=None):
         '''simplify clone and return for generator chaining'''
         clone = self.copy()
-        clone.simplify(min_thickness=min_thickness)
+        clone.simplify(min_thickness=min_thickness, by=by)
         return clone
 
     def groupby(self, by=None):
@@ -152,7 +159,7 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
             if by is not None:
                 if callable(by):
                     pass
-                elif isinstance(arg, str):
+                elif isinstance(by, str):
                     by = lambda s: {by: getattr(s, by)}
                 else:
                     by = lambda s: {a: getattr(s, a) for a in by}
