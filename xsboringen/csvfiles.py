@@ -3,6 +3,7 @@
 # Tom van Steijn, Royal HaskoningDHV
 
 from xsboringen.borehole import Borehole, Segment
+from xsboringen.point import Point
 
 from collections import namedtuple
 from itertools import groupby
@@ -27,6 +28,21 @@ def boreholes_from_csv(folder,
         for borehole in csv_.to_boreholes(fieldnames, extra_fields):
             if borehole is not None:
                 yield borehole
+
+
+def points_from_csv(folder,
+    fieldnames=None, textfields=None,
+    delimiter=',', decimal='.'
+    ):
+    csvfiles = glob.glob(os.path.join(folder, '*.csv'))
+    for csvfile in csvfiles:
+        csv_ = CSVPointFile(csvfile,
+            delimiter=delimiter,
+            decimal=decimal,
+            )
+        for point in csv_.to_points(fieldnames, textfields):
+            if point is not None:
+                yield point
 
 
 class CSVFile(object):
@@ -162,6 +178,18 @@ class CSVBoreholeFile(CSVFile):
                     **self.attrs,
                     )
 
+
+class CSVPointFile(CSVFile):
+    def to_points(self, fieldnames, textfields=None):
+        fieldnames = self.FieldNames(**fieldnames)
+        textfields = textfields or {}
+
+        log.debug('reading {s.file.name:}'.format(s=self))
+        with open(self.file, 'r') as f:
+            reader = csv.DictReader(f, delimiter=self.delimiter)
+            bycode = lambda r: r[fieldnames.code]
+
+
 def boreholes_to_csv(boreholes, csvfile, extra_fields=None):
     log.info('writing to {f:}'.format(f=os.path.basename(csvfile)))
     extra_fields = extra_fields or {}
@@ -183,3 +211,29 @@ def boreholes_to_csv(boreholes, csvfile, extra_fields=None):
                 row = borehole.as_dict(borehole_fields)
                 row.update(segment.as_dict(segment_fields))
                 writer.writerow(row)
+
+
+def cross_section_to_csv(cs, csvfile, extra_fields=None):
+    log.info('writing to {f:}'.format(f=os.path.basename(csvfile)))
+    borehole_fields = (
+        Borehole.fieldnames + (extra_fields.get('borehole') or ())
+        )
+    segment_fields = (
+        Segment.fieldnames + (extra_fields.get('segments') or ())
+        )
+    fieldnames = ('label', 'distance') + borehole_fields + segment_fields
+    with open(csvfile, 'w') as f:
+        writer = csv.DictWriter(f,
+            fieldnames=fieldnames,
+            lineterminator='\n',
+            extrasaction='ignore',
+            )
+        writer.writeheader()
+        cs.sort()
+        for distance, borehole in cs.boreholes:
+            for segment in borehole:
+                row = {'label': cs.label, 'distance': distance}
+                row.update(borehole.as_dict(borehole_fields))
+                row.update(segment.as_dict(segment_fields))
+                writer.writerow(row)
+
