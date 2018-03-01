@@ -42,6 +42,15 @@ sandmedianbins: [
     {lower: 420., upper: 2000., medianclass: ZUG},
   ]
 
+# admix classification field names
+admix_fieldnames: {
+  g: graveladmix,
+  z: sandadmix,
+  s: siltadmix,
+  k: clayadmix,
+  h: humusadmix,
+}
+
 # default labels
 defaultlabels: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
@@ -59,6 +68,9 @@ cross_section_plot: {
   # bars width compared to figure width
   barwidth_factor: 1.5e-2,
 
+  # bars width compared to figure width
+  verticalwidth_factor: 1.5e-2,
+
   # minimum distance compared to figure width
   min_distance_factor: 3.e-2,
 
@@ -74,6 +86,9 @@ cross_section_plot: {
   # color of borehole code labels
   codelabel_color: gray,
 
+  # vertical edge style
+  verticaledge_style: {facecolor: None, edgecolor: gray},
+
   # format of x-axis tick labels
   xticklabel_format: '{:3.0f}',
 
@@ -82,6 +97,7 @@ cross_section_plot: {
 
   # legend title text
   legend_title: legenda,
+
   }
 
 # csv filename format
@@ -91,52 +107,23 @@ csv_filename_format: 'cross_section_{label:}.csv'
 image_filename_format: 'cross_section_{label:}.png'
 
 # plotting styles
-
 styles: {
   segments: {
     records: [
-        {key: {lithology: G, }, label: grind, facecolor: coral, edgecolor: black},
-        {key: {lithology: K, }, label: klei, facecolor: forestgreen, edgecolor: black},
-        {key: {lithology: L, }, label: leem, facecolor: darkkhaki, edgecolor: black},
-        {key: {lithology: V, }, label: veen, facecolor: sienna, edgecolor: black},
-        {key: {lithology: Z, }, label: zand, facecolor: '#FFFF66', edgecolor: black},
+      {key: {lithology: G, }, label: grind, facecolor: coral, edgecolor: black},
+      {key: {lithology: K, }, label: klei, facecolor: forestgreen, edgecolor: black},
+      {key: {lithology: L, }, label: leem, facecolor: darkkhaki, edgecolor: black},
+      {key: {lithology: V, }, label: veen, facecolor: sienna, edgecolor: black},
+      {key: {lithology: Z, }, label: zand, facecolor: '#FFFF66', edgecolor: black},
       ],
     default: {label: onbekend, facecolor: white, edgecolor: black},
     },
   verticals: {
     records: [
-      {key: cone_resistance, label: conusweerstand, color: blue},
-      {key: friction_ratio, label: wrijvingsgetal, color: magenta},
+      {key: cone_resistance, label: conusweerstand, linestyle: '-', linewidth: 0.5, color: blue},
+      {key: friction_ratio, label: wrijvingsgetal, linestyle: '-', linewidth: 0.5, color: magenta},
       ],
-      },
-    }
-
-# styles: {
-#   segments: {
-#     attrs: [lithology, sandmedianclass],
-#     records: [
-#         {key: [G, null], label: grind, facecolor: coral, edgecolor: black},
-#         {key: [K, null], label: klei, facecolor: forestgreen, edgecolor: black},
-#         {key: [L, null], label: leem, facecolor: darkkhaki, edgecolor: black},
-#         {key: [V, null], label: veen, facecolor: sienna, edgecolor: black},
-#         {key: [Z, null], label: zand geen mediaan, facecolor: '#FFFF66', edgecolor: black},
-#         {key: [Z, ZMO], label: zand onduidelijke mediaan, facecolor: lightgray, hatch: '...', edgecolor: black},
-#         {key: [Z, ZFC], label: zand fijne categorie, facecolor: '#FFFF66', hatch: '...', edgecolor: black},
-#         {key: [Z, ZMC], label: zand middencategorie, facecolor: gold, hatch: '...', edgecolor: black},
-#         {key: [Z, ZGC], label: zand grove categorie, facecolor: orange, hatch: '...', edgecolor: black},
-#         {key: [Z, GCZ], label: glauconietzand, facecolor: mediumseagreen, hatch: '...', edgecolor: black},
-#       ],
-#     default: {color: white, hatch: , label: onbekend, edgecolor: black},
-#     },
-#   verticals: {
-#     records: [
-#       {key: cone_resistance, label: conusweerstand, color: blue},
-#       {key: friction_ratio, label: wrijvingsgetal, color: magenta},
-#       ],
-#       },
-#     }
-
-
-
-
+    default: { label: onbekend, linestyle: '-', linewidth: 0.5, color: gray},
+    },
+  }
 
