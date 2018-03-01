@@ -8,8 +8,8 @@ from collections import namedtuple
 
 class CPT(Borehole):
     '''CPT class inherits from borehole'''
-    _keys = 'depth', 'cone_resistance', 'friction_ratio'
-    Row = namedtuple('Row', _keys)
+    _keys = 'cone_resistance', 'friction_ratio'
+    Row = namedtuple('Row', ('depth',) + _keys)
 
     @property
     def complete(self):
@@ -17,18 +17,16 @@ class CPT(Borehole):
 
     @property
     def rows(self):
-        if self.verticals is not None:
-            zipped = zip(
-                self.verticals['depth'],
-                self.verticals['cone_resistance'],
-                self.verticals['friction_ratio'],
-                )
-            for depth, qc, rf in zipped:
-                if depth is not None:
-                    yield self.Row(depth, qc, rf)
+        zipped = zip(
+            self.verticals['cone_resistance'],
+            self.verticals['friction_ratio'],
+            )
+        for (depth, qc), (depth, rf) in zipped:
+            if depth is not None:
+                yield self.Row(depth, qc, rf)
 
-    def classify_lithology(self, classifier):
-        if (self.verticals is not None) and self.complete:
+    def classify_lithology(self, classifier, admixclassifier=None):
+        if self.complete:
             self.segments = []
             top = 0.
             for row in self.rows:
@@ -38,11 +36,12 @@ class CPT(Borehole):
                     row.cone_resistance,
                     )
                 segment = Segment(top, base, lithology)
+                segment.update(admixclassifier.classify(segment.lithology))
                 self.segments.append(segment)
                 top = base
 
-    def to_lithology(self, classifier):
-        self.classify_lithology(classifier)
+    def to_lithology(self, classifier, admixclassifier):
+        self.classify_lithology(classifier, admixclassifier)
         return self
 
 
