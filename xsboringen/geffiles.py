@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsboringen.borehole import Borehole, Segment
+from xsboringen.borehole import Borehole, Segment, Vertical
 from xsboringen.cpt import CPT
 
 from collections import defaultdict, namedtuple
@@ -15,19 +15,19 @@ import os
 log = logging.getLogger(os.path.basename(__file__))
 
 
-def boreholes_from_gef(folder, fieldnames=None):
+def boreholes_from_gef(folder, classifier=None, fieldnames=None):
     geffiles = glob.glob(os.path.join(folder, '*.gef'))
     for geffile in geffiles:
-        gef = GefBoreholeFile(geffile, fieldnames)
+        gef = GefBoreholeFile(geffile, classifier, fieldnames)
         borehole = gef.to_borehole()
         if borehole is not None:
             yield borehole
 
 
-def cpts_from_gef(folder, datacolumns=None, fieldnames=None):
+def cpts_from_gef(folder, datacolumns=None, classifier=None, fieldnames=None):
     geffiles = glob.glob(os.path.join(folder, '*.gef'))
     for geffile in geffiles:
-        gef = GefCPTFile(geffile, fieldnames)
+        gef = GefCPTFile(geffile, classifier, fieldnames)
         cpt = gef.to_cpt(datacolumns)
         if cpt is not None:
             yield cpt
@@ -83,12 +83,17 @@ class GefFile(object):
         'depth': 16,
         }
 
-    def __init__(self, geffile, fieldnames=None, measurementvars=None):
+    def __init__(self, geffile,
+        classifier=None,
+        fieldnames=None,
+        measurementvars=None,
+        ):
         self.file = Path(geffile)
         self.attrs = {
             'source': str(self.file),
             'format': self._format,
             }
+        self.classifier = classifier
 
         if fieldnames is not None:
             self.fieldnames = self.FieldNames(**fieldnames)
@@ -204,13 +209,6 @@ class GefFile(object):
 
 class GefBoreholeFile(GefFile):
     _format = 'GEF Borehole'
-    @staticmethod
-    def read_lithologyadmix(lithologyadmix):
-        attrs = {}
-        lithology = ''.join([c for c in lithologyadmix if c.isupper()])
-        attrs['lithology'] = lithology
-        admixes = ''.join([c for c in lithologyadmix if c.islower()])
-        return attrs
 
     @classmethod
     def read_segments(cls, lines, columnsep, recordsep):
@@ -234,8 +232,7 @@ class GefBoreholeFile(GefFile):
             top = cls.safe_float(top)
             base = cls.safe_float(base)
             if lithologycolor is not None:
-                lithologyadmix, *color = lithologycolor.split(maxsplit=1)
-                attrs.update(self.read_lithologyadmix)
+                lithology, *color = lithologycolor.split(maxsplit=1)
                 attrs['color'] = color
             else:
                 lithology = None
@@ -273,7 +270,10 @@ class GefBoreholeFile(GefFile):
             segments = [
                 s for s in self.read_segments(lines, columnsep, recordsep)
                 ]
-
+            # classify lithology and admix
+            if self.classifier is not None:
+                for segment in segments:
+                    segment.update(self.classifier.classify(segment.lithology))
         # code
         try:
             code = header[self.fieldnames.code][0].strip()
@@ -333,7 +333,7 @@ class GefCPTFile(GefFile):
 
     @classmethod
     def read_verticals(cls, lines, selected_columns, na_values, columnsep, recordsep):
-        verticals = defaultdict(list)
+        items = defaultdict(list)
         for line in lines:
             line = line.rstrip(recordsep)
             if columnsep is None:
@@ -347,7 +347,14 @@ class GefCPTFile(GefFile):
                     value = cls.safe_float(valuestr)
                     if value == na_value:
                         value = None
-                    verticals[column].append(value)
+                    items[column].append(value)
+        try:
+            depth = items.pop('depth')
+        except KeyError:
+            depth = None
+        verticals = {}
+        for key, values in items.items():
+            verticals[key] = Vertical(name=key, depth=depth, values=values)
         return verticals
 
     @staticmethod
