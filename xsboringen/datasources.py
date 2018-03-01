@@ -12,7 +12,7 @@ import os
 
 log = logging.getLogger(os.path.basename(__file__))
 
-def boreholes_from_sources(datasources):
+def boreholes_from_sources(datasources, admixclassifier):
     readers = []
     for datasource in datasources:
         if datasource['format'] == 'Dinoloket XML 1.4':
@@ -32,6 +32,7 @@ def boreholes_from_sources(datasources):
         elif datasource['format'] == 'GEF boringen':
             readers.append(boreholes_from_gef(
                 folder=datasource['folder'],
+                classifier=admixclassifier,
                 fieldnames=datasource.get('fieldnames'),
                 ))
         elif datasource['format'] == 'GEF sonderingen':
