@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-import idfpy
+try:
+    import idfpy
+    idfpy_imported = True
+except ImportError:
+    idfpy_imported = False
 
 import rasterio
 import numpy as np
@@ -37,7 +41,7 @@ def sample_idf(idffile, coords, bounds_warning=True):
 
 def sample(gridfile, coords, bounds_warning=False):
     '''sample gridfile at coords'''
-    if gridfile.lower().endswith('.idf'):
+    if idfpy_imported and gridfile.lower().endswith('.idf'):
         sample = partial(sample_idf, bounds_warning=bounds_warning)
     else:
         sample = partial(sample_raster, bounds_warning=bounds_warning)
