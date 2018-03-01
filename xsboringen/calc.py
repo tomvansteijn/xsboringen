@@ -4,6 +4,7 @@
 
 from collections import namedtuple
 from math import exp
+import re
 
 
 class LithologyRule(object):
@@ -60,7 +61,7 @@ class LithologyClassifier(object):
 class SandmedianClassifier(object):
     Bin = namedtuple('Bin', ['lower', 'upper', 'medianclass'])
     def __init__(self, bins):
-        self.bins = [Bin(**b) for b in bins]
+        self.bins = [self.Bin(**b) for b in bins]
 
     def classify(self, median):
         '''get median class using bins'''
@@ -69,12 +70,23 @@ class SandmedianClassifier(object):
                 return bin_.medianclass
 
 
-class SandmedianSimplifier(object):
-    def __init__(self, grouping):
-        self.mapping = {}
-        for value, group in grouping.items():
-            for key in group:
-                self.mapping[key] = value
+class AdmixClassifier(object):
+    def __init__(self, fieldnames):
+        self.fieldnames = fieldnames
 
-    def simplify(self, sandmedianclass):
-        return self.mapping.get(sandmedianclass, sandmedianclass)
+    def classify(self, lithology_admix):
+        attrs = {}
+        if lithology_admix is None:
+            return attrs
+        match = re.match('[A-Z]+', lithology_admix)
+        if match is not None:
+            attrs['lithology'] = match.group(0)
+        admixes = re.findall('[a-z]+?\d?', lithology_admix)
+        for admix in admixes:
+            key = admix[0].lower()
+            admix = admix.upper()
+            if len(admix) == 1:
+                admix += 'X'
+            attrs[self.fieldnames.get(key, key)] = admix.upper()
+        return attrs
+
