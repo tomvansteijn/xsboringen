@@ -6,7 +6,6 @@ from xsboringen.mixins import AsDictMixin, CopyMixin
 from collections import Iterable
 from itertools import groupby
 from functools import total_ordering
-import copy
 
 
 class Segment(AsDictMixin, CopyMixin):
