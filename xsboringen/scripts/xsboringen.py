@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Tom van Steijn, Royal HaskoningDHV
+# Royal HaskoningDHV
 
 from xsboringen import cross_section
-from xsboringen.calc import SandmedianClassifier, LithologyClassifier
-from xsboringen.csvfiles import boreholes_to_csv
+from xsboringen.calc import SandmedianClassifier, AdmixClassifier, LithologyClassifier
+from xsboringen.csvfiles import boreholes_to_csv, cross_section_to_csv
 from xsboringen.datasources import boreholes_from_sources
 from xsboringen import plot as xsplot
 from xsboringen import shapefiles
@@ -27,14 +27,18 @@ def write_csv(**kwargs):
     config = kwargs['config']
 
     # read boreholes and CPT's from data folders
-    boreholes = boreholes_from_sources(datasources)
+    admixclassifier = AdmixClassifier(
+        config['admix_fieldnames']
+        )
+    boreholes = boreholes_from_sources(datasources, admixclassifier)
 
     # translate CPT to lithology if needed
     if result.get('translate_cpt', False):
         table = config['cpt_classification']
         lithologyclassifier = LithologyClassifier(table)
         boreholes = (
-            b.to_lithology(lithologyclassifier) for b in boreholes
+            b.to_lithology(lithologyclassifier, admixclassifier)
+            for b in boreholes
             )
 
     # classify sandmedian if needed
@@ -68,7 +72,10 @@ def write_shape(**kwargs):
     config = kwargs['config']
 
     # read boreholes and CPT's from data folders
-    boreholes = boreholes_from_sources(datasources)
+    admixclassifier = AdmixClassifier(
+        config['admix_fieldnames']
+        )
+    boreholes = boreholes_from_sources(datasources, admixclassifier)
 
     # write output to shapefile
     shapefiles.boreholes_to_shape(boreholes, result['shapefile'],
@@ -96,17 +103,24 @@ def plot(**kwargs):
     folder.mkdir(exist_ok=True)
 
     # read boreholes and CPT's from data folders
-    boreholes = boreholes_from_sources(datasources)
+    admixclassifier = AdmixClassifier(
+        config['admix_fieldnames']
+        )
+    boreholes = boreholes_from_sources(datasources, admixclassifier)
 
     # segment styles lookup
     segmentstyles = styles.ObjectStylesLookup(**config['styles']['segments'])
+
+    # vertical styles lookup
+    verticalstyles = styles.SimpleStylesLookup(**config['styles']['verticals'])
 
     # translate CPT to lithology if needed
     if result.get('translate_cpt', False):
         table = config['cpt_classification']
         lithologyclassifier = LithologyClassifier(table)
         boreholes = (
-            b.to_lithology(lithologyclassifier) for b in boreholes
+            b.to_lithology(lithologyclassifier, admixclassifier)
+            for b in boreholes
             )
 
     # classify sandmedian if needed
@@ -129,13 +143,18 @@ def plot(**kwargs):
     # filter missing coordinates and less than minimal depth
     boreholes = [
         b for b in boreholes
-        if (b.x is not None) and (b.y is not None) and (b.z is not None) and
+        if
+        (b.x is not None) and
+        (b.y is not None) and
+        (b.z is not None) and
+        (b.depth is not None) and
         (b.depth >= min_depth)
         ]
 
     # definest styles lookup
     plotting_styles = {
         'segments': segmentstyles,
+        'verticals': verticalstyles,
         }
 
     # default labels
@@ -174,6 +193,10 @@ def plot(**kwargs):
         # add boreholes to cross-section
         cs.add_boreholes(boreholes)
 
+        if len(cs.boreholes) == 0:
+            log.warning('no boreholes, skipping')
+            continue
+
         # define plot
         plt = xsplot.CrossSectionPlot(
             cross_section=cs,
@@ -185,13 +208,24 @@ def plot(**kwargs):
             ylabel=ylabel,
             )
 
-        # plot and save to file
+        # plot and save to PNG file
         imagefilename = config['image_filename_format'].format(label=label)
         imagefile = folder / imagefilename
         log.info('saving {f.name:}'.format(f=imagefile))
         plt.to_image(str(imagefile))
 
-        # collection cross-sections
+        # save to CSV file
+        csvfilename = config['csv_filename_format'].format(label=label)
+        csvfile = folder / csvfilename
+        log.info('saving {f.name:}'.format(f=csvfile))
+        extra_fields = result.get('extra_fields')
+        if extra_fields is not None:
+            extra_fields = {k: tuple(v) for k, v in extra_fields.items()}
+        cross_section_to_csv(cs, str(csvfile),
+            extra_fields=extra_fields,
+            )
+
+        # collect cross-sections
         css.append(cs)
 
     # export endpoints
