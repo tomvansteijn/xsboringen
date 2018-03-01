@@ -1,48 +1,50 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+from collections import OrderedDict
+
+
 class SimpleStylesLookup(object):
     def __init__(self, records, default):
-        self.mapping = {}
-        self._items = []
+        self.records = {}
+        self.itemsdict = OrderedDict()
         for record in records:
             key = record.pop('key')
+            self.records[key] = record
+
             label = record.pop('label')
-            self.mapping[key] = record
-            self._items.append((label, record))
-        self.default_label = default.pop('label')
+            self.itemsdict[label] = record
+
         self.default = default
 
     def __repr__(self):
-        return ('{s.__class__.__name__:}(), '
+        return ('{s.__class__.__name__:}()'
             ).format(s=self)
 
     def items(self):
-        for item in self._items:
-            yield item
-        yield self.default_label, self.default
+        for label, item in self.itemsdict.items():
+            yield label, item
 
     def lookup(self, key):
-        return self.mapping.get(key, self.default)
+        return self.records.get(key, self.default)
 
 
 class ObjectStylesLookup(object):
     def __init__(self, records, default):
         self.attrs = set()
-        self.mapping = {}
-        self._items = []
+        self.records = []
+        self.itemsdict = OrderedDict()
         for record in records:
-            key = []
-            for attr, values in sorted(record.pop('key').items()):
-                self.attrs.add(attr)
-                if not isinstance(values, list):
-                    values = [values,]
-                for value in values:
-                    key.append(value)
-            label = record.pop('label')
-            self.mapping[tuple(key)] = record
-            self._items.append((label, record))
-        self.default_label = default.pop('label')
+            keys = record.pop('key')
+            if not isinstance(keys, list):
+                keys = [keys,]
+            for key in keys:
+                for attr, values in key.items():
+                    self.attrs.add(attr)
+                    if not isinstance(values, list):
+                        key[attr] = [values,]
+                self.records.append((key, record))
+            self.itemsdict[record['label']] = record
         self.default = default
 
     def __repr__(self):
@@ -50,12 +52,17 @@ class ObjectStylesLookup(object):
             ).format(s=self)
 
     def items(self):
-        for item in self._items:
-            yield item
-        yield self.default_label, self.default
+        for label, item in self.itemsdict.items():
+            yield label, item
+        yield self.default['label'], self.default
+
+    @staticmethod
+    def sortkey(item):
+        key, record = item
+        return -len(key), record['label']
 
     def lookup(self, obj):
-        key = tuple(getattr(obj, a, None) for a in self.attrs)
-        while key not in self.mapping and len(key) > 0:
-            key = key[:-1]
-        return self.mapping.get(key, self.default)
+        for key, record in sorted(self.records, key=self.sortkey):
+            if all(getattr(obj, k, None) in v for k, v in key.items()):
+                return record
+        return self.default
