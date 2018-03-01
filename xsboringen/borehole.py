@@ -1,29 +1,12 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+from xsboringen.mixins import AsDictMixin, CopyMixin
+
 from collections import Iterable
 from itertools import groupby
 from functools import total_ordering
 import copy
-
-
-class AsDictMixin(object):
-    '''Mixin for mapping class attributes to dictionary'''
-    def as_dict(self, keys=None):
-        if keys:
-            return {k: getattr(self, k, None) for k in keys}
-        else:
-            return {k: v for k, v in self.__dict__.items()
-                if not k.startswith('__')}
-
-
-class CopyMixin(object):
-    '''Mixin for adding copy method to object'''
-    def copy(self, deep=False):
-        if deep:
-            return copy.deepcopy(self)
-        else:
-            return copy.copy(self)
 
 
 class Segment(AsDictMixin, CopyMixin):
@@ -70,7 +53,56 @@ class Segment(AsDictMixin, CopyMixin):
 
     def relative_to(self, z):
         '''return top and base relative to z'''
-        return z - self.top, z - self.base
+        clone = self.copy()
+        clone.top = z - self.top
+        clone.base = z - self.base
+        return clone
+
+    def update(self, attrs):
+        for key, value in attrs.items():
+            setattr(self, key, value)
+
+
+class Vertical(AsDictMixin, CopyMixin):
+    def __init__(self, name, depth, values):
+        self.name = name
+        self.depth = depth
+        self.values = values
+
+    def __repr__(self):
+        return ('{s.__class__.__name__:}(name={s.name:}, '
+            'count={s.count:})').format(s=self)
+
+    def __len__(self):
+        return len(self.depth)
+
+    def __iter__(self):
+        for depth, value in zip(self.depth, self.values):
+            yield depth, value
+
+    @property
+    def count(self):
+        return sum(v is not None for v in self.values)
+
+    def isempty(self):
+        return all(v is None for v in self.values)
+
+    def relative_to(self, z):
+        clone = self.copy()
+        clone.depth = [z - d if (d is not None) else None for d in self.depth]
+        return clone
+
+    def rescaled(self):
+        clone = self.copy()
+        vmin = min(v for v in self.values if (v is not None) and (v > 0))
+        vmax = max(v for v in self.values if (v is not None) and (v > 0))
+        clone.values = [
+            (v - vmin) / (vmax - vmin)
+            if (v is not None) and (v > 0) else None
+            for v in self.values
+            ]
+        return clone
+
 
 @total_ordering
 class Borehole(AsDictMixin, CopyMixin, Iterable):
@@ -100,8 +132,8 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
         self.y = y
         self.z = z
 
-        self.segments = segments
-        self.verticals = verticals
+        self.segments = segments or []
+        self.verticals = verticals or {}
 
         # set other properties
         for key, value in attrs.items():
@@ -129,6 +161,9 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
 
     def __lt__(self, other):
         return self.depth < other.depth
+
+    def isempty(self):
+        return len(self.segments) == 0
 
     @property
     def geometry(self):
@@ -180,7 +215,7 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
                 simple_segments.append(sum(s for s in segments))
             self.segments = simple_segments
 
-            if min_thickness is not None:
+            if (min_thickness is not None) and not self.isempty():
                 self.apply_min_thickness(min_thickness)
                 self.simplify(min_thickness=None)
 
