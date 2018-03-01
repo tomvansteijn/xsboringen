@@ -64,11 +64,20 @@ class CrossSectionPlot(object):
 
         return txt
 
-    def plot_vertical(self, ax, distance, vertical):
-        style = self.styles['verticals'].lookup(vertical.name)
-        vrt = ax.plot(ax, vertical.values, vertical.depth,
-            **style,
-            )
+    def plot_vertical(self, ax, distance, vertical, width, style):
+        depth = np.array(vertical.depth, dtype=np.float)
+        rescaled = np.array(vertical.rescaled().values, dtype=np.float)
+        transformed = distance + (rescaled - 0.5)*width
+        vert = ax.plot(transformed, depth, **style)
+        return vert
+
+    def plot_edge(self, ax, distance, vertical, width, style):
+        height = vertical.depth[0] - vertical.depth[-1]
+        bottom = vertical.depth[-1]
+        # plot edge as bar
+        rect = ax.bar(distance, height, width, bottom,
+            align='center', zorder=2,
+            **style)
 
     def plot_point(self, ax, distance, point):
         for field, value in point.items():
@@ -109,6 +118,13 @@ class CrossSectionPlot(object):
 
     def get_legend(self, ax):
         handles_labels = []
+        for label, style in self.styles['verticals'].items():
+            handles_labels.append((
+                plt.Line2D([0, 1], [0, 1],
+                    **style,
+                    ),
+                label
+                ))
         for label, style in self.styles['segments'].items():
             handles_labels.append((
                 plt.Rectangle((0, 0), 1, 1,
@@ -146,12 +162,13 @@ class CrossSectionPlot(object):
         xmin, xmax = [0., self.length]
 
         # adjust limits for first and last borehole
-        min_limit_factor = self.cfg.get('min_limit_factor', 4.e-2)
-        min_limit = min_limit_factor * self.length
-        if distance[0] < (min_limit):
-            xmin -= ((min_limit) - distance[0])
-        if (xmax - distance[-1]) < (min_limit):
-            xmax += ((min_limit) - (xmax - distance[-1]))
+        if len(distance) > 0:
+            min_limit_factor = self.cfg.get('min_limit_factor', 4.e-2)
+            min_limit = min_limit_factor * self.length
+            if distance[0] < (min_limit):
+                xmin -= ((min_limit) - distance[0])
+            if (xmax - distance[-1]) < (min_limit):
+                xmax += ((min_limit) - (xmax - distance[-1]))
 
         # get x-axis extensions
         extensions = self.get_extensions(distance, min_distance)
@@ -162,7 +179,7 @@ class CrossSectionPlot(object):
 
         # bar & vertical width
         barwidth_factor = self.cfg.get('barwidth_factor', 1.e-2)
-        verticalwidth_factor = self.cfg.get('verticalwidth_factor', 2.e-2)
+        verticalwidth_factor = self.cfg.get('verticalwidth_factor', 1.e-2)
         barwidth = barwidth_factor * (xmax - xmin)
         verticalwidth = verticalwidth_factor * (xmax - xmin)
 
@@ -182,10 +199,31 @@ class CrossSectionPlot(object):
             bxa.append(txt)
 
             # plot verticals
-            if borehole.verticals is not None:
-                for vertical in borehole.verticals:
-                    self.plot_vertical(ax,
-                        plot_distance, vertical)
+            for key in self.styles['verticals'].records:
+                if key not in borehole.verticals:
+                    continue
+                vertical = borehole.verticals[key].relative_to(borehole.z)
+                if vertical.isempty():
+                    continue
+                style = self.styles['verticals'].lookup(key)
+                self.plot_vertical(
+                    ax,
+                    distance=plot_distance,
+                    vertical=vertical,
+                    width=verticalwidth,
+                    style=style,
+                    )
+
+            if (len(borehole.segments) == 0) and (len(borehole.verticals) > 0):
+                key = next(iter(self.styles['verticals'].records.keys()))
+                vertical = borehole.verticals[key].relative_to(borehole.z)
+                self.plot_edge(
+                    ax,
+                    distance=plot_distance,
+                    vertical=vertical,
+                    width=verticalwidth,
+                    style=self.cfg.get('verticaledge_style') or {},
+                    )
 
         # plot points
         for distance, point in self.cs.points:
