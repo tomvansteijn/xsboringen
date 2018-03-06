@@ -65,6 +65,9 @@ cross_section_plot: {
   # default figure size (width, height) [inch]
   figure_size: [21, 11.7],
 
+  # default figure DPI
+  figure_dpi: 200,
+
   # bars width compared to figure width
   barwidth_factor: 1.5e-2,
 
@@ -88,6 +91,9 @@ cross_section_plot: {
 
   # vertical edge style
   verticaledge_style: {facecolor: None, edgecolor: gray},
+
+  # point label style
+  pointlabel_style: {fontsize: 3, color: black, horizontalalignment: center, verticalalignment: center, rotation: 0},
 
   # format of x-axis tick labels
   xticklabel_format: '{:3.0f}',
