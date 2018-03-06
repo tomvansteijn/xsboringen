@@ -6,7 +6,7 @@ from xsboringen.rasterfiles import sample
 from shapely.geometry import asShape, Point
 
 
-class Line(object):
+class Surface(object):
     def __init__(self, name, distance, values):
         self.name = name
 
@@ -26,7 +26,7 @@ class Line(object):
 
     @property
     def length(self):
-        return max(self.distance)
+        return max(self.distance) - min(self.distance)
 
 
 class Solid(object):
@@ -53,7 +53,7 @@ class Solid(object):
 
     @property
     def length(self):
-        return max(self.distance)
+        return max(self.distance) - min(self.distance)
 
 
 class CrossSection(object):
@@ -67,9 +67,8 @@ class CrossSection(object):
 
         # initialize data atttributes to empty lists
         self.boreholes = []
-        self.piezometers = []
         self.points = []
-        self.lines = []
+        self.surfaces = []
         self.solids = []
 
     def __repr__(self):
@@ -118,13 +117,13 @@ class CrossSection(object):
         self.boreholes = [b for b in sorted(self.boreholes)]
         self.points = [p for p in sorted(self.points)]
 
-    def add_lines(self, lines):
-        for line in lines:
-            distance, coords = zip(*self.discretize(line['res']))
-            self.lines.append(Line(
-                name=line['name'],
+    def add_surfaces(self, surfaces):
+        for surface in surfaces:
+            distance, coords = zip(*self.discretize(surface['res']))
+            self.surfaces.append(surface(
+                name=Surface['name'],
                 distance=[d for d in distance],
-                values=[v for v in sample(line['file'], coords)],
+                values=[v for v in sample(surface['file'], coords)],
                 ))
 
     def add_solids(self, solids):
