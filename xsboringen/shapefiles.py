@@ -21,7 +21,7 @@ def read(shapefile):
 
 
 def boreholes_to_shape(boreholes, shapefile,
-        driver=None, epsg=None, extra_fields=None):
+        driver=None, epsg=None, fields=None):
     '''write boreholes to shapefile as points'''
     # crs from epsg code
     if epsg is not None:
@@ -31,8 +31,8 @@ def boreholes_to_shape(boreholes, shapefile,
 
     # shapefile schema
     schema = Borehole.schema.copy()
-    if extra_fields is not None:
-        schema['properties'].extend(extra_fields)
+    if fields is not None:
+        schema['properties'].extend(fields)
 
     # shapefile write arguments
     shape_kwargs = {
