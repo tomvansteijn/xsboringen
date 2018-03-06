@@ -287,12 +287,12 @@ class GefBoreholeFile(GefFile):
             return
 
         # measurementcode
-        if self.fieldnames.measurementcode in header:
-            measurementcode = header[self.fieldnames.measurementcode][1].strip()
-            code = '{code:}-{measurementcode:}'.format(
-                code=code,
-                measurementcode=measurementcode,
-                )
+        # if self.fieldnames.measurementcode in header:
+        #     measurementcode = header[self.fieldnames.measurementcode][1].strip()
+        #     code = '{code:}-{measurementcode:}'.format(
+        #         code=code,
+        #         measurementcode=measurementcode,
+        #         )
 
 
         # depth
