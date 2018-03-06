@@ -30,19 +30,17 @@ def boreholes_from_csv(folder,
                 yield borehole
 
 
-def points_from_csv(folder,
-    fieldnames=None, textfields=None,
+def points_from_csv(csvfile,
+    fieldnames=None, valuefields=None,
     delimiter=',', decimal='.'
     ):
-    csvfiles = glob.glob(os.path.join(folder, '*.csv'))
-    for csvfile in csvfiles:
-        csv_ = CSVPointFile(csvfile,
-            delimiter=delimiter,
-            decimal=decimal,
-            )
-        for point in csv_.to_points(fieldnames, textfields):
-            if point is not None:
-                yield point
+    csv_ = CSVPointFile(csvfile,
+        delimiter=delimiter,
+        decimal=decimal,
+        )
+    for point in csv_.to_points(fieldnames, valuefields):
+        if point is not None:
+            yield point
 
 
 class CSVFile(object):
@@ -59,16 +57,6 @@ class CSVFile(object):
 
         self.delimiter = delimiter
         self.decimal = decimal
-
-
-class CSVBoreholeFile(CSVFile):
-    _format = 'CSV Borehole'
-    FieldNames = namedtuple('FieldNames',
-        (
-            'code', 'depth', 'x', 'y', 'z',
-            'top', 'base', 'lithology', 'sandmedianclass'
-            )
-        )
 
     @staticmethod
     def safe_int(s):
@@ -94,6 +82,15 @@ class CSVBoreholeFile(CSVFile):
             return cls.safe_int(s)
         else:
             return s
+
+class CSVBoreholeFile(CSVFile):
+    _format = 'CSV Borehole'
+    FieldNames = namedtuple('FieldNames',
+        (
+            'code', 'depth', 'x', 'y', 'z',
+            'top', 'base', 'lithology', 'sandmedianclass'
+            )
+        )
 
     @classmethod
     def read_segments(cls, rows, decimal, fieldnames, fields=None):
@@ -124,8 +121,8 @@ class CSVBoreholeFile(CSVFile):
     def to_boreholes(self, fieldnames, extra_fields=None):
         fieldnames = self.FieldNames(**fieldnames)
         extra_fields = extra_fields or {}
-        borehole_fields = extra_fields.get('borehole') or None
-        segment_fields = extra_fields.get('segments') or None
+        borehole_fields = extra_fields.get('borehole') or []
+        segment_fields = extra_fields.get('segments') or []
 
         log.debug('reading {s.file.name:}'.format(s=self))
         with open(self.file, 'r') as f:
@@ -139,7 +136,7 @@ class CSVBoreholeFile(CSVFile):
                 rows = [r for r in rows]
 
                 # code
-                code = str(rows[0][fieldnames.code])
+                code = str(code)
 
                 # segments as list
                 segments = [
@@ -163,14 +160,13 @@ class CSVBoreholeFile(CSVFile):
                 z = self.safe_float(rows[0][fieldnames.z], self.decimal)
 
                 # extra fields
-                if borehole_fields is not None:
-                    for field in borehole_fields.items():
-                        value = rows[0].get(field['fieldname'])
-                        if value is not None:
-                            self.attrs[field['name']] = self.cast(value,
-                                dtype=field['dtype'],
-                                decimal=self.decimal,
-                                )
+                for field in borehole_fields:
+                    value = rows[0].get(field['fieldname'])
+                    if value is not None:
+                        self.attrs[field['name']] = self.cast(value,
+                            dtype=field['dtype'],
+                            decimal=self.decimal,
+                            )
 
                 yield Borehole(code, depth,
                     x=x, y=y, z=z,
@@ -180,14 +176,55 @@ class CSVBoreholeFile(CSVFile):
 
 
 class CSVPointFile(CSVFile):
-    def to_points(self, fieldnames, textfields=None):
+    _format = 'CSV Point'
+    FieldNames = namedtuple('FieldNames',
+        (
+            'code', 'x', 'y', 'z', 'top', 'base',
+            )
+        )
+    def to_points(self, fieldnames, valuefields=None):
         fieldnames = self.FieldNames(**fieldnames)
-        textfields = textfields or {}
+        valuefields = valuefields or []
 
         log.debug('reading {s.file.name:}'.format(s=self))
         with open(self.file, 'r') as f:
             reader = csv.DictReader(f, delimiter=self.delimiter)
             bycode = lambda r: r[fieldnames.code]
+            for code, rows in groupby(reader, key=bycode):
+                if code in {None, ''}:
+                    continue
+
+                # code
+                code = str(code)
+
+                for row in rows:
+                    # x, y, z
+                    x = self.safe_float(row[fieldnames.x], self.decimal)
+                    y = self.safe_float(row[fieldnames.y], self.decimal)
+                    z = self.safe_float(row[fieldnames.z], self.decimal)
+
+                    top = self.safe_float(row[fieldnames.top], self.decimal)
+                    base = self.safe_float(row[fieldnames.base], self.decimal)
+
+                    values = []
+                    for field in valuefields:
+                        value = row.get(field['fieldname'])
+                        if value is not None:
+                            values.append({
+                                'name': field['name'],
+                                'value': self.cast(value,
+                                    dtype=field['dtype'],
+                                    decimal=self.decimal,
+                                    ),
+                                'dtype': field['dtype'],
+                                'format': field['format'],
+                                })
+
+                    yield Point(code,
+                        x=x, y=y, z=z,
+                        top=top, base=base,
+                        values=values,
+                        )
 
 
 def boreholes_to_csv(boreholes, csvfile, extra_fields=None):
