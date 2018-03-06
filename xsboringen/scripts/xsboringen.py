@@ -4,7 +4,7 @@
 from xsboringen import cross_section
 from xsboringen.calc import SandmedianClassifier, AdmixClassifier, LithologyClassifier
 from xsboringen.csvfiles import boreholes_to_csv, cross_section_to_csv
-from xsboringen.datasources import boreholes_from_sources
+from xsboringen.datasources import boreholes_from_sources, points_from_sources
 from xsboringen import plot as xsplot
 from xsboringen import shapefiles
 from xsboringen import styles
@@ -30,7 +30,8 @@ def write_csv(**kwargs):
     admixclassifier = AdmixClassifier(
         config['admix_fieldnames']
         )
-    boreholes = boreholes_from_sources(datasources, admixclassifier)
+    borehole_sources = datasources.get('boreholes') or []
+    boreholes = boreholes_from_sources(borehole_sources, admixclassifier)
 
     # translate CPT to lithology if needed
     if result.get('translate_cpt', False):
@@ -57,9 +58,8 @@ def write_csv(**kwargs):
             )
 
     # write output to csv
-    extra_fields = result.get('extra_fields')
-    if extra_fields is not None:
-        extra_fields = {k: tuple(v) for k, v in extra_fields.items()}
+    extra_fields = result.get('extra_fields') or {}
+    extra_fields = {k: tuple(v) for k, v in extra_fields.items()}
     boreholes_to_csv(boreholes, result['csvfile'],
         extra_fields=extra_fields,
         )
@@ -75,10 +75,13 @@ def write_shape(**kwargs):
     admixclassifier = AdmixClassifier(
         config['admix_fieldnames']
         )
-    boreholes = boreholes_from_sources(datasources, admixclassifier)
+    borehole_sources = datasources.get('boreholes') or []
+    boreholes = boreholes_from_sources(borehole_sources, admixclassifier)
 
     # write output to shapefile
+    shape_fields=result.get('shape_fields') or []
     shapefiles.boreholes_to_shape(boreholes, result['shapefile'],
+        fields=shape_fields,
         **config['shapefile'],
         )
 
@@ -86,7 +89,7 @@ def write_shape(**kwargs):
 def plot(**kwargs):
     # args
     datasources = kwargs['datasources']
-    lines = kwargs['lines']
+    cross_section_lines = kwargs['cross_section_lines']
     result = kwargs['result']
     config = kwargs['config']
 
@@ -106,7 +109,8 @@ def plot(**kwargs):
     admixclassifier = AdmixClassifier(
         config['admix_fieldnames']
         )
-    boreholes = boreholes_from_sources(datasources, admixclassifier)
+    borehole_sources = datasources.get('boreholes') or []
+    boreholes = boreholes_from_sources(borehole_sources, admixclassifier)
 
     # segment styles lookup
     segmentstyles = styles.ObjectStylesLookup(**config['styles']['segments'])
@@ -140,6 +144,10 @@ def plot(**kwargs):
             for b in boreholes
             )
 
+    # read points
+    point_sources = datasources.get('points') or []
+    points = points_from_sources(point_sources)
+
     # filter missing coordinates and less than minimal depth
     boreholes = [
         b for b in boreholes
@@ -149,6 +157,15 @@ def plot(**kwargs):
         (b.z is not None) and
         (b.depth is not None) and
         (b.depth >= min_depth)
+        ]
+
+    points = [
+        p for p in points
+        if
+        (p.x is not None) and
+        (p.y is not None) and
+        (p.z is not None) and
+        ((p.top is not None) or (p.base is not None))
         ]
 
     # definest styles lookup
@@ -161,18 +178,18 @@ def plot(**kwargs):
     defaultlabels = iter(config['defaultlabels'])
 
     # selected set
-    selected = lines.get('selected')
+    selected = cross_section_lines.get('selected')
     if selected is not None:
         selected = set(selected)
 
     css = []
-    for row in shapefiles.read(lines['file']):
+    for row in shapefiles.read(cross_section_lines['file']):
         line_geometry = row['geometry']
         line_properties = row['properties']
 
         # get label
-        if lines.get('labelfield') is not None:
-            label = line_properties[lines['labelfield']]
+        if cross_section_lines.get('labelfield') is not None:
+            label = line_properties[cross_section_lines['labelfield']]
         else:
             label = next(defaultlabels)
 
@@ -192,6 +209,9 @@ def plot(**kwargs):
 
         # add boreholes to cross-section
         cs.add_boreholes(boreholes)
+
+        # add points to cross_section
+        cs.add_points(points)
 
         if len(cs.boreholes) == 0:
             log.warning('no boreholes, skipping')
@@ -218,9 +238,8 @@ def plot(**kwargs):
         csvfilename = config['csv_filename_format'].format(label=label)
         csvfile = folder / csvfilename
         log.info('saving {f.name:}'.format(f=csvfile))
-        extra_fields = result.get('extra_fields')
-        if extra_fields is not None:
-            extra_fields = {k: tuple(v) for k, v in extra_fields.items()}
+        extra_fields = result.get('extra_fields') or {}
+        extra_fields = {k: tuple(v) for k, v in extra_fields.items()}
         cross_section_to_csv(cs, str(csvfile),
             extra_fields=extra_fields,
             )
