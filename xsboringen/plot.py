@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+import matplotlib.patheffects as PathEffects
 from matplotlib import pyplot as plt
 from matplotlib import transforms
 import numpy as np
@@ -23,6 +24,8 @@ class CrossSectionPlot(object):
         self.ylim = ylim
         self.xlabel = xlabel
         self.ylabel = ylabel
+
+        self.point_distance = 'bycode'
 
     def __repr__(self):
         return ('{s.__class__.__name__:}(length={s.length:.2f}, '
@@ -80,9 +83,27 @@ class CrossSectionPlot(object):
             **style)
 
     def plot_point(self, ax, distance, point):
-        for field, value in point.items():
-            style = self.styles['points'].lookup(point.name)
-            pnt = ax.plot(distance, value, **style[field])
+        style = self.cfg['pointlabel_style']
+        elements = []
+        for value in point.values:
+            if value.value is None:
+                continue
+            element = '{name:}: {value:}'.format(
+                name=value.name,
+                value=value.format.format(value.value),
+                )
+            elements.append(element)
+        if len(elements) > 0:
+            label = '\n'.join(elements)
+            path_effects = [
+                PathEffects.withStroke(linewidth=2, foreground='white'),
+                ]
+            txt = ax.text(distance, point.midlevel, label,
+                path_effects=path_effects,
+                **style)
+            return txt
+        else:
+            return None
 
     def plot_line(self, ax, line):
         style = self.styles['lines'].lookup(line.name)
@@ -105,16 +126,19 @@ class CrossSectionPlot(object):
         extensions = []
         spacing = np.diff(distance)
         too_close = spacing < min_distance
-        points = distance[1:][too_close]
-        dxs = np.maximum(spacing[too_close], min_distance) - spacing[too_close]
-        for point, dx in zip(points, dxs):
+        leftpoints = distance[1:][too_close]
+        dxs = min_distance - spacing[too_close]
+        for leftpoint, dx in zip(leftpoints, dxs):
             extensions.append(
                 cls.Extension(
-                    point=point,
+                    point=leftpoint,
                     dx=dx,
                     )
                 )
-        return extensions
+        plot_distance = np.cumsum(
+            np.concatenate([distance[:1], np.maximum(spacing, min_distance)])
+            )
+        return plot_distance, extensions
 
     def get_legend(self, ax):
         handles_labels = []
@@ -155,6 +179,9 @@ class CrossSectionPlot(object):
         min_distance_factor = self.cfg.get('min_distance_factor', 2.e-2)
         min_distance = min_distance_factor * self.length
 
+        # boreholes
+        boreholes = [b for d, b in self.cs.boreholes]
+
         # borehole distance vector
         distance = np.array([d for d, b in self.cs.boreholes])
 
@@ -170,8 +197,9 @@ class CrossSectionPlot(object):
             if (xmax - distance[-1]) < (min_limit):
                 xmax += ((min_limit) - (xmax - distance[-1]))
 
-        # get x-axis extensions
-        extensions = self.get_extensions(distance, min_distance)
+        # get plot_distance and x-axis extensions
+        plot_distances, extensions = self.get_extensions(distance, min_distance)
+        boreholes_plot_distances = zip(boreholes, plot_distances)
 
         # apply extensions to x-axis limits
         for extension in extensions:
@@ -184,15 +212,7 @@ class CrossSectionPlot(object):
         verticalwidth = verticalwidth_factor * (xmax - xmin)
 
         # plot boreholes
-        for distance, borehole in self.cs.boreholes:
-            # apply extensions
-            plot_distance = distance
-            for extension in extensions:
-                if (
-                    np.isclose(distance, extension.point) or
-                    (distance > extension.point)
-                    ):
-                    plot_distance += extension.dx
+        for borehole, plot_distance in boreholes_plot_distances:
 
             # plot borehole
             txt = self.plot_borehole(ax, plot_distance, borehole, barwidth)
@@ -226,9 +246,27 @@ class CrossSectionPlot(object):
                     )
 
         # plot points
+        plot_distance_by_code = {
+            b.code: d for b, d in zip(boreholes, plot_distances)
+            }
         for distance, point in self.cs.points:
+            if point.midlevel is None:
+                continue
+            if self.point_distance == 'bycode':
+                plot_distance = plot_distance_by_code.get(point.code)
+                if plot_distance is None:
+                    continue
+            else:
+                plot_distance = distance
+                for extension in extensions:
+                    if (
+                        np.isclose(distance, extension.point, atol=1e-3) or
+                        (distance > extension.point)
+                        ):
+                        plot_distance += extension.dx
             self.plot_point(ax,
-                distance, point,
+                distance=plot_distance,
+                point=point,
                 )
 
         # plot lines
@@ -257,9 +295,10 @@ class CrossSectionPlot(object):
 
         fmt = self.cfg.get('xticklabel_format', '{:3.0f}')
         xticklabels = [fmt.format(x) for x in xticks]
+        extended_xticks = xticks.copy()
         for extension in extensions:
-            xticks[xticks > extension.point] += extension.dx
-        ax.set_xticks(xticks)
+            extended_xticks[xticks > extension.point] += extension.dx
+        ax.set_xticks(extended_xticks)
         ax.set_xticklabels(xticklabels)
 
         # axis limits
@@ -297,6 +336,7 @@ class CrossSectionPlot(object):
         plt.savefig(imagefile,
             bbox_inches='tight',
             bbox_extra_artists=bxa,
+            dpi = self.cfg.get('figure_dpi', 200),
             **save_kwargs,
             )
 
