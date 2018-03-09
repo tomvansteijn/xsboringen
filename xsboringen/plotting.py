@@ -170,16 +170,16 @@ class CrossSectionPlot(object):
                     ),
                 label
                 ))
-        for label, style in self.styles['segments'].items():
+        for label, style in self.styles['surfaces'].items():
             handles_labels.append((
-                plt.Rectangle((0, 0), 1, 1,
+                plt.Line2D([0, 1], [0, 1],
                     **style,
                     ),
                 label
                 ))
-        for label, style in self.styles['surfaces'].items():
+        for label, style in self.styles['segments'].items():
             handles_labels.append((
-                plt.Line2D([0, 1], [0, 1],
+                plt.Rectangle((0, 0), 1, 1,
                     **style,
                     ),
                 label
@@ -364,7 +364,7 @@ class CrossSectionPlot(object):
         plt.savefig(imagefile,
             bbox_inches='tight',
             bbox_extra_artists=bxa,
-            dpi = self.cfg.get('figure_dpi', 200),
+            dpi=self.cfg.get('figure_dpi', 200),
             **save_kwargs,
             )
 
