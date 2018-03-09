@@ -8,7 +8,9 @@ from xsboringen.mixins import AsDictMixin, CopyMixin
 from collections import namedtuple
 from functools import total_ordering
 
-
+# ValuePoint
+# labelpoint
+# ClassifiedPoint
 @total_ordering
 class Point(AsDictMixin, CopyMixin):
     '''Point class'''
