@@ -4,19 +4,19 @@
 
 from xsboringen.borehole import Borehole, Segment, Vertical
 from xsboringen.cpt import CPT
+from xsboringen import utils
 
 from collections import defaultdict, namedtuple
 from pathlib import Path
 import textwrap
 import logging
-import glob
 import os
 
 log = logging.getLogger(os.path.basename(__file__))
 
 
 def boreholes_from_gef(folder, classifier=None, fieldnames=None):
-    geffiles = glob.glob(os.path.join(folder, '*.gef'))
+    geffiles = utils.careful_glob(folder, '*.gef')
     for geffile in geffiles:
         gef = GefBoreholeFile(geffile, classifier, fieldnames)
         borehole = gef.to_borehole()
@@ -25,7 +25,7 @@ def boreholes_from_gef(folder, classifier=None, fieldnames=None):
 
 
 def cpts_from_gef(folder, datacolumns=None, classifier=None, fieldnames=None):
-    geffiles = glob.glob(os.path.join(folder, '*.gef'))
+    geffiles = utils.careful_glob(folder, '*.gef')
     for geffile in geffiles:
         gef = GefCPTFile(geffile, classifier, fieldnames)
         cpt = gef.to_cpt(datacolumns)
@@ -285,15 +285,6 @@ class GefBoreholeFile(GefFile):
                     'skipping this file'
                     ).format(s=self))
             return
-
-        # measurementcode
-        # if self.fieldnames.measurementcode in header:
-        #     measurementcode = header[self.fieldnames.measurementcode][1].strip()
-        #     code = '{code:}-{measurementcode:}'.format(
-        #         code=code,
-        #         measurementcode=measurementcode,
-        #         )
-
 
         # depth
         try:

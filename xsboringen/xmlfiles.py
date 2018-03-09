@@ -2,6 +2,7 @@
 # Tom van Steijn, Royal HaskoningDHV
 
 from xsboringen.borehole import Borehole, Segment
+from xsboringen import utils
 
 from itertools import chain
 from xml.etree import ElementTree
@@ -16,7 +17,7 @@ log = logging.getLogger(os.path.basename(__file__))
 
 
 def boreholes_from_xml(folder, version, extra_fields):
-    xmlfiles = glob.glob(os.path.join(folder, '*{:.1f}.xml'.format(version)))
+    xmlfiles = utils.careful_glob(folder, '*{:.1f}.xml'.format(version))
     for xmlfile in xmlfiles:
         xml = XMLBoreholeFile(xmlfile)
         borehole = xml.to_borehole(extra_fields)

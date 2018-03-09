@@ -4,12 +4,12 @@
 
 from xsboringen.borehole import Borehole, Segment
 from xsboringen.point import Point
+from xsboringen import utils
 
 from collections import namedtuple
 from itertools import groupby
 from pathlib import Path
 import logging
-import glob
 import csv
 import os
 
@@ -19,7 +19,7 @@ def boreholes_from_csv(folder,
         fieldnames=None, extra_fields=None,
         delimiter=',', decimal='.'
         ):
-    csvfiles = glob.glob(os.path.join(folder, '*.csv'))
+    csvfiles = utils.careful_glob(folder, '*.csv')
     for csvfile in csvfiles:
         csv_ = CSVBoreholeFile(csvfile,
             delimiter=delimiter,
@@ -98,8 +98,8 @@ class CSVBoreholeFile(CSVFile):
         top = 0.
         for row in rows:
             base = cls.safe_float(row[fieldnames.base], decimal)
-            lithology = row[fieldnames.lithology]
-            sandmedianclass = row[fieldnames.sandmedianclass]
+            lithology = row.get(fieldnames.lithology)
+            sandmedianclass = row.get(fieldnames.sandmedianclass)
             attrs = {}
             for field in fields:
                 value = row.get(field['fieldname'])
@@ -236,7 +236,7 @@ def boreholes_to_csv(boreholes, csvfile, extra_fields=None):
     segment_fields = (
         Segment.fieldnames + (extra_fields.get('segments') or ())
         )
-    with open(csvfile, 'w') as f:
+    with utils.careful_open(csvfile, 'w') as f:
         writer = csv.DictWriter(f,
             fieldnames=borehole_fields + segment_fields,
             lineterminator='\n',
@@ -259,7 +259,7 @@ def cross_section_to_csv(cs, csvfile, extra_fields=None):
         Segment.fieldnames + (extra_fields.get('segments') or ())
         )
     fieldnames = ('label', 'distance') + borehole_fields + segment_fields
-    with open(csvfile, 'w') as f:
+    with utils.careful_open(csvfile, 'w') as f:
         writer = csv.DictWriter(f,
             fieldnames=fieldnames,
             lineterminator='\n',
