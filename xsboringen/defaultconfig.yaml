@@ -54,6 +54,9 @@ admix_fieldnames: {
 # default labels
 defaultlabels: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
+# simplify by segment attributes
+simplify_by: [lithology, sandmedianclass]
+
 # shapefile writing arguments
 shapefile: {
   driver: ESRI Shapefile,
