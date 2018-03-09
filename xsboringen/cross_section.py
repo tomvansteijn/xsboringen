@@ -1,59 +1,10 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsboringen.rasterfiles import sample
+from xsboringen.surface import Surface
+from xsboringen.solid import Solid
 
 from shapely.geometry import asShape, Point
-
-
-class Surface(object):
-    def __init__(self, name, distance, values):
-        self.name = name
-
-        assert len(distance) == len(values), \
-            'distance and values should have equal length'
-
-        self.distance = distance
-        self.values = values
-
-    def __repr__(self):
-        return ('{s.__class__.__name__:}(length={s.length:.2f}, '
-                'name={s.name:})').format(s=self)
-
-    def __iter__(self):
-        for d, v in zip(self.distance, self.values):
-            yield d, v
-
-    @property
-    def length(self):
-        return max(self.distance) - min(self.distance)
-
-
-class Solid(object):
-    def __init__(self, name, distance, top, base):
-        self.name = name
-
-        assert len(distance) == len(top) == len(distance), \
-            'distance, top and base should have equal length'
-
-        assert np.all(np.array(top) >= np.array(base)), \
-            'top should be above base'
-
-        self.distance = distance
-        self.top = top
-        self.base = base
-
-    def __repr__(self):
-        return ('{s.__class__.__name__:}(length={s.length:.2f}, '
-                'name={s.name:})').format(s=self)
-
-    def __iter__(self):
-        for d, t, b in zip(self.distance, self.top, self.base):
-            yield d, t, b
-
-    @property
-    def length(self):
-        return max(self.distance) - min(self.distance)
 
 
 class CrossSection(object):
@@ -117,22 +68,20 @@ class CrossSection(object):
         self.boreholes = [b for b in sorted(self.boreholes)]
         self.points = [p for p in sorted(self.points)]
 
-    def add_surfaces(self, surfaces):
-        for surface in surfaces:
-            distance, coords = zip(*self.discretize(surface['res']))
-            self.surfaces.append(surface(
-                name=Surface['name'],
-                distance=[d for d in distance],
-                values=[v for v in sample(surface['file'], coords)],
-                ))
+    def add_surface(self, surface):
+        self.surfaces.append(Surface(
+            name=surface['name'],
+            surfacefile=surface['file'],
+            res=surface['res'],
+            stylekey=surface['style'],
+            ))
 
-    def add_solids(self, solids):
-        for solid in solids:
-            distance, coords = zip(*self.discretize(solid['res']))
-            self.solids.append(Solid(
-                name=solid['name'],
-                distance=[d for d in distance],
-                top=[t for t in sample(solid['topfile'], coords)],
-                base=[b for b in sample(solid['basefile'], coords)],
-                ))
+    def add_solid(self, solid):
+        self.solids.append(Solid(
+            name=solid['name'],
+            topfile=solid['topfile'],
+            basefile=solid['basefile'],
+            res=solid['res'],
+            stylekey=solid['style'],
+            ))
 

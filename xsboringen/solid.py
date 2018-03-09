@@ -2,29 +2,26 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+from xsboringen.rasterfiles import sample
+
 
 class Solid(object):
-    def __init__(self, name, distance, top, base):
+    def __init__(self, name, topfile, basefile, res, stylekey=None):
         self.name = name
 
-        assert len(distance) == len(top) == len(distance), \
-            'distance, top and base should have equal length'
-
-        assert np.all(np.array(top) >= np.array(base)), \
-            'top should be above base'
-
-        self.distance = distance
-        self.top = top
-        self.base = base
+        self.topfile = topfile
+        self.basefile = basefile
+        self.res = res
+        self.stylekey = stylekey
 
     def __repr__(self):
-        return ('{s.__class__.__name__:}(length={s.length:.2f}, '
-                'name={s.name:})').format(s=self)
+        return ('{s.__class__.__name__:}(name={s.name:}, '
+            'res={s.res:.2f})').format(s=self)
 
-    def __iter__(self):
-        for d, t, b in zip(self.distance, self.top, self.base):
-            yield d, t, b
-
-    @property
-    def length(self):
-        return max(self.distance) - min(self.distance)
+    def sample(self, coords):
+        sample_top_base = zip(
+            sample(self.topfile, coords),
+            sample(self.basefile, coords),
+            )
+        for top, base in sample_top_base:
+            yield top, base
