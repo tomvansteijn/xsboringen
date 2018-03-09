@@ -214,7 +214,7 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
 
         if (min_thickness is not None) and not self.isempty():
             self.apply_min_thickness(min_thickness)
-            self.simplify(min_thickness=None)
+            self.simplify(min_thickness=None, by=by)
 
     def _get_min_thickness(self):
         return min((s.thickness, i) for i, s in enumerate(self.segments))
