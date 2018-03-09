@@ -113,10 +113,16 @@ def plot(**kwargs):
     boreholes = boreholes_from_sources(borehole_sources, admixclassifier)
 
     # segment styles lookup
-    segmentstyles = styles.ObjectStylesLookup(**config['styles']['segments'])
+    segmentstyles = styles.SegmentStylesLookup(**config['styles']['segments'])
 
     # vertical styles lookup
     verticalstyles = styles.SimpleStylesLookup(**config['styles']['verticals'])
+
+    # surface styles lookup
+    surfacestyles = styles.SimpleStylesLookup(**config['styles']['surfaces'])
+
+    # solid styles lookup
+    solidstyles = styles.SimpleStylesLookup(**config['styles']['solids'])
 
     # translate CPT to lithology if needed
     if result.get('translate_cpt', False):
@@ -148,6 +154,12 @@ def plot(**kwargs):
     point_sources = datasources.get('points') or []
     points = points_from_sources(point_sources)
 
+    # surfaces
+    surfaces = datasources.get('surfaces') or []
+
+    # solids
+    solids = datasources.get('solids') or []
+
     # filter missing coordinates and less than minimal depth
     boreholes = [
         b for b in boreholes
@@ -172,6 +184,8 @@ def plot(**kwargs):
     plotting_styles = {
         'segments': segmentstyles,
         'verticals': verticalstyles,
+        'surfaces': surfacestyles,
+        'solids': solidstyles,
         }
 
     # default labels
@@ -213,9 +227,13 @@ def plot(**kwargs):
         # add points to cross_section
         cs.add_points(points)
 
-        if len(cs.boreholes) == 0:
-            log.warning('no boreholes, skipping')
-            continue
+        # add surfaces to cross-section
+        for surface in surfaces:
+            cs.add_surface(surface)
+
+        # add solids to cross-section
+        for solid in solids:
+            cs.add_solid(solid)
 
         # define plot
         plt = xsplot.CrossSectionPlot(
