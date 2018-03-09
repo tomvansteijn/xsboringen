@@ -82,7 +82,16 @@ class CrossSectionPlot(object):
             align='center', zorder=2,
             **style)
 
-    def plot_point(self, ax, distance, point):
+    def plot_point(self, ax, point, extensions, plot_distance_by_code):
+        if self.point_distance == 'bycode':
+            plot_distance = plot_distance_by_code.get(point.code)
+            if plot_distance is None:
+                return None
+        else:
+            plot_distance = distance
+            for extension in extensions:
+                if distance >= extension.point:
+                    plot_distance += extension.dx
         style = self.cfg['pointlabel_style']
         elements = []
         for value in point.values:
@@ -98,20 +107,32 @@ class CrossSectionPlot(object):
             path_effects = [
                 PathEffects.withStroke(linewidth=2, foreground='white'),
                 ]
-            txt = ax.text(distance, point.midlevel, label,
+            txt = ax.text(plot_distance, point.midlevel, label,
                 path_effects=path_effects,
                 **style)
             return txt
         else:
             return None
 
-    def plot_line(self, ax, line):
-        style = self.styles['lines'].lookup(line.name)
-        ln = ax.plot(line.distance, line.values, **style)
+    def plot_surface(self, ax, surface, extensions):
+        distance, coords = zip(*self.cs.discretize(surface.res))
+        distance = np.array(distance)
+        plot_distance = distance.copy()
+        for extension in extensions:
+            plot_distance[distance > extension.point] += extension.dx
+        values = [v for v in surface.sample(coords)]
+        style = self.styles['surfaces'].lookup(surface.stylekey)
+        sf = ax.plot(plot_distance, values, **style)
 
-    def plot_solid(self, ax, solid):
-        style = self.styles['solids'].lookup(solid.name)
-        sld = ax.fill_between(solid.distance, solid.base, solid.top, **style)
+    def plot_solid(self, ax, solid, extensions):
+        distance, coords = zip(*self.cs.discretize(solid.res))
+        distance = np.array(distance)
+        plot_distance = distance.copy()
+        for extension in extensions:
+            plot_distance[distance > extension.point] += extension.dx
+        top, base = zip(*((t, b) for t, b in solid.sample(coords)))
+        style = self.styles['solids'].lookup(solid.stylekey)
+        sld = ax.fill_between(plot_distance, base, top, **style)
 
     def plot_label(self, ax):
         lt = ax.text(0, 1.01, self.label, weight='bold', size='large',
@@ -150,6 +171,20 @@ class CrossSectionPlot(object):
                 label
                 ))
         for label, style in self.styles['segments'].items():
+            handles_labels.append((
+                plt.Rectangle((0, 0), 1, 1,
+                    **style,
+                    ),
+                label
+                ))
+        for label, style in self.styles['surfaces'].items():
+            handles_labels.append((
+                plt.Line2D([0, 1], [0, 1],
+                    **style,
+                    ),
+                label
+                ))
+        for label, style in self.styles['solids'].items():
             handles_labels.append((
                 plt.Rectangle((0, 0), 1, 1,
                     **style,
@@ -252,33 +287,24 @@ class CrossSectionPlot(object):
         for distance, point in self.cs.points:
             if point.midlevel is None:
                 continue
-            if self.point_distance == 'bycode':
-                plot_distance = plot_distance_by_code.get(point.code)
-                if plot_distance is None:
-                    continue
-            else:
-                plot_distance = distance
-                for extension in extensions:
-                    if (
-                        np.isclose(distance, extension.point, atol=1e-3) or
-                        (distance > extension.point)
-                        ):
-                        plot_distance += extension.dx
             self.plot_point(ax,
-                distance=plot_distance,
                 point=point,
+                extensions=extensions,
+                plot_distance_by_code=plot_distance_by_code,
                 )
 
-        # plot lines
-        for line in self.cs.lines:
-            self.plot_line(ax,
-                line, **self.style['lines'].lookup(line)
+        # plot surfaces
+        for surface in self.cs.surfaces:
+            self.plot_surface(ax,
+                surface=surface,
+                extensions=extensions,
                 )
 
         # plot solids
         for solid in self.cs.solids:
             self.plot_solid(ax,
-                solid,
+                solid=solid,
+                extensions=extensions,
                 )
 
         # plot labels
@@ -305,6 +331,8 @@ class CrossSectionPlot(object):
         ax.set_xlim([xmin, xmax])
         if self.ylim is not None:
             ax.set_ylim(self.ylim)
+        else:
+            ax.autoscale(axis='y')
 
         # grid lines |--|--|--|
         ax.grid(linestyle='--', linewidth=0.5, color='black', zorder=0)
