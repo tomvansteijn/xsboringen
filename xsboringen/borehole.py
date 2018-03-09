@@ -33,22 +33,32 @@ class Segment(AsDictMixin, CopyMixin):
 
     def __add__(self, other):
         clone = self.copy()
-        clone.top = min(self.top, other.top)
-        clone.base = max(self.base, other.base)
+        clone.add(other)
         return clone
 
     def __radd__(self, other):
         return self
 
     def __iadd__(self, other):
-        self.top = min(self.top, other.top)
-        self.base = max(self.base, other.base)
+        self.add(other)
         return self
+
+    def add(self, other):
+        if self.rel_sl():
+            self.top = min(self.top, other.top)
+            self.base = max(self.base, other.base)
+        else:
+            self.top = max(self.top, other.top)
+            self.base = min(self.base, other.base)
 
     @property
     def thickness(self):
         '''thickness of segment'''
-        return self.base - self.top
+        return abs(self.base - self.top)
+
+    def rel_sl(self):
+        '''relative to surface level'''
+        return self.top < self.base
 
     def relative_to(self, z):
         '''return top and base relative to z'''
@@ -160,25 +170,13 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
     def __lt__(self, other):
         return self.depth < other.depth
 
-    def isempty(self):
-        return len(self.segments) == 0
-
     @property
     def geometry(self):
         '''borehole geometry interface'''
         return {'type': 'Point', 'coordinates': (self.x, self.y)}
 
-    @property
-    def materialized(self):
-        '''segments materialized? (generator = False, list = True)'''
-        return isinstance(self.segments, list)
-
-    def materialize(self):
-        '''read borehole segments and assign as list'''
-        segments_in_list = []
-        for segment in self.segments:
-            segments_in_list.append(segment)
-        self.segments = segments_in_list
+    def isempty(self):
+        return len(self.segments) == 0
 
     def simplified(self, min_thickness=None, by=None):
         '''simplify clone and return for generator chaining'''
@@ -187,21 +185,7 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
         return clone
 
     def groupby(self, by=None):
-        '''group segments using groupby function or attribute(s)'''
-        if by is not None:
-            if callable(by):
-                pass
-            elif isinstance(by, str):
-                by = lambda s: {by: getattr(s, by)}
-            else:
-                by = lambda s: {a: getattr(s, a) for a in by}
-        else:
-            # default: groupby lithology and sandmedianclass
-            by = lambda s: {
-                'lithology': s.lithology,
-                'sandmedianclass': s.sandmedianclass,
-                }
-
+        '''group segments using groupby function'''
         for key, grouped in groupby(self.segments, by):
             yield key, grouped
 
@@ -216,11 +200,11 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
             self.apply_min_thickness(min_thickness)
             self.simplify(min_thickness=None, by=by)
 
-    def _get_min_thickness(self):
+    def get_min_thickness(self):
         return min((s.thickness, i) for i, s in enumerate(self.segments))
 
     def apply_min_thickness(self, min_thickness):
-        smallest_thickness, idx = self._get_min_thickness()
+        smallest_thickness, idx = self.get_min_thickness()
         while smallest_thickness < min_thickness:
             if idx > 0:
                 segment_above = self.segments[idx - 1]
@@ -246,7 +230,7 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
             else:
                 self.segments[idx + 1].top = self.segments[idx].top
                 del self.segments[idx]
-            smallest_thickness, idx = self._get_min_thickness()
+            smallest_thickness, idx = self.get_min_thickness()
 
     def update_sandmedianclass(self, classifier):
         for segment in self.segments:
