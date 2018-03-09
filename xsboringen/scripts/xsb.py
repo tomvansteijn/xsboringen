@@ -56,6 +56,5 @@ def main(function, inputfile, level):
     elif function == 'plot':
         plot_cross_section(**kwargs)
 
-
 if __name__ == '__main__':
     main()

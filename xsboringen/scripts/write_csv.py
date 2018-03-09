@@ -45,8 +45,13 @@ def write_csv(**kwargs):
     # simplify if needed
     if result.get('simplify', False):
         min_thickness = result.get('min_thickness')
+        simplify_by = result.get('simplify_by') or config['simplify_by']
+        if not isinstance(simplify_by, list):
+            simplify_by = [simplify_by,]
+        by = lambda s: {a: getattr(s, a) for a in simplify_by}
         boreholes = (
-            b.simplified(min_thickness=min_thickness) for b in boreholes
+            b.simplified(min_thickness=min_thickness, by=by)
+            for b in boreholes
             )
 
     # write output to csv

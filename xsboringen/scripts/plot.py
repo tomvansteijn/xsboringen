@@ -79,9 +79,9 @@ def plot_cross_section(**kwargs):
     # simplify if needed
     if result.get('simplify', False):
         min_thickness = result.get('min_thickness')
-        groupby = lambda s: {'record': segmentstyles.lookup(s)}
+        by_legend = lambda s: {'record': segmentstyles.lookup(s)}
         boreholes = (
-            b.simplified(min_thickness=min_thickness, by=groupby)
+            b.simplified(min_thickness=min_thickness, by=by_legend)
             for b in boreholes
             )
 
@@ -133,12 +133,9 @@ def plot_cross_section(**kwargs):
 
     css = []
     for row in shapefiles.read(cross_section_lines['file']):
-        line_geometry = row['geometry']
-        line_properties = row['properties']
-
         # get label
         if cross_section_lines.get('labelfield') is not None:
-            label = line_properties[cross_section_lines['labelfield']]
+            label = row['properties'][cross_section_lines['labelfield']]
         else:
             label = next(defaultlabels)
 
@@ -151,7 +148,7 @@ def plot_cross_section(**kwargs):
 
         # define cross-section
         cs = cross_section.CrossSection(
-            geometry=line_geometry,
+            geometry=row['geometry'],
             label=label,
             buffer_distance=buffer_distance,
             )
