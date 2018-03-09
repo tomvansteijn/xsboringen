@@ -129,7 +129,13 @@ styles: {
       {key: cone_resistance, label: conusweerstand, linestyle: '-', linewidth: 0.5, color: blue},
       {key: friction_ratio, label: wrijvingsgetal, linestyle: '-', linewidth: 0.5, color: magenta},
       ],
-    default: { label: onbekend, linestyle: '-', linewidth: 0.5, color: gray},
+    default: {linestyle: '-', linewidth: 0.5, color: gray},
+    },
+  surfaces: {
+    default: {linestyle: '-', linewidth: 1., color: blue},
+    },
+  solids: {
+    default: {facecolor: gray, edgecolor: black},
     },
   }
 
