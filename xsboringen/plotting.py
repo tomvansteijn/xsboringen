@@ -41,8 +41,6 @@ class CrossSectionPlot(object):
         return self.cs.label
 
     def plot_borehole(self, ax, left, borehole, width):
-        vtrans = transforms.blended_transform_factory(
-            ax.transData, ax.transAxes)
         for segment in borehole:
             height = segment.thickness
             bottom = borehole.z - segment.base
@@ -57,6 +55,8 @@ class CrossSectionPlot(object):
         codelabel_position = self.cfg.get('codelabel_position')
         codelabel_fontsize = self.cfg.get('codelabel_fontsize')
         codelabel_color = self.cfg.get('codelabel_color')
+        vtrans = transforms.blended_transform_factory(
+            ax.transData, ax.transAxes)
         txt = ax.text(left, codelabel_position, borehole.code,
             size=codelabel_fontsize,
             color=codelabel_color,
