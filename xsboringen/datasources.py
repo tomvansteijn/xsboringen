@@ -12,7 +12,7 @@ import os
 
 log = logging.getLogger(os.path.basename(__file__))
 
-def boreholes_from_sources(datasources, admixclassifier):
+def boreholes_from_sources(datasources, admixclassifier=None):
     readers = []
     for datasource in datasources:
         if datasource['format'] == 'Dinoloket XML 1.4':
