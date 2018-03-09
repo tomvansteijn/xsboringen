@@ -5,17 +5,19 @@ from collections import OrderedDict
 
 
 class SimpleStylesLookup(object):
-    def __init__(self, records, default):
+    def __init__(self, records=None, default=None):
+        records = records or []
         self.records = {}
         self.itemsdict = OrderedDict()
-        for record in records:
+        for i, record in enumerate(records):
             key = record.pop('key')
+            label = record.get('label') or 'item_{i:d}'.format(i=i + 1)
             self.records[key] = record
-
-            label = record.pop('label')
             self.itemsdict[label] = record
 
-        self.default = default
+        self.default = default or {}
+        self.default['label'] = self.default.get('label') or 'item_default'
+
 
     def __repr__(self):
         return ('{s.__class__.__name__:}()'
@@ -29,13 +31,15 @@ class SimpleStylesLookup(object):
         return self.records.get(key, self.default)
 
 
-class ObjectStylesLookup(object):
-    def __init__(self, records, default):
+class SegmentStylesLookup(object):
+    def __init__(self, records=None, default=None):
+        records = records or []
         self.attrs = set()
         self.records = []
         self.itemsdict = OrderedDict()
-        for record in records:
+        for i, record in enumerate(records):
             keys = record.pop('key')
+            label = record.get('label') or 'item_{i:d}'.format(i=i + 1)
             if not isinstance(keys, list):
                 keys = [keys,]
             for key in keys:
@@ -44,8 +48,9 @@ class ObjectStylesLookup(object):
                     if not isinstance(values, list):
                         key[attr] = [values,]
                 self.records.append((key, record))
-            self.itemsdict[record['label']] = record
-        self.default = default
+            self.itemsdict[label] = record
+        self.default = default or {}
+        self.default['label'] = self.default.get('label') or 'item_default'
 
     def __repr__(self):
         return ('{s.__class__.__name__:}(attrs={s.attrs:}), '
@@ -59,10 +64,10 @@ class ObjectStylesLookup(object):
     @staticmethod
     def sortkey(item):
         key, record = item
-        return -len(key), record['label']
+        return -len(key)
 
-    def lookup(self, obj):
+    def lookup(self, segment):
         for key, record in sorted(self.records, key=self.sortkey):
-            if all(getattr(obj, k, None) in v for k, v in key.items()):
+            if all(getattr(segment, k, None) in v for k, v in key.items()):
                 return record
         return self.default
