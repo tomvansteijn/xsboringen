@@ -12,16 +12,18 @@ class SimpleStylesLookup(object):
         for i, record in enumerate(records):
             key = record.pop('key')
             label = record.get('label') or 'item_{i:d}'.format(i=i + 1)
-            self.records[key] = record
-            self.itemsdict[label] = record
+            self.add(key, label, record)
 
         self.default = default or {}
         self.default['label'] = self.default.get('label') or 'item_default'
 
-
     def __repr__(self):
         return ('{s.__class__.__name__:}()'
             ).format(s=self)
+
+    def add(self, key, label, record):
+        self.records[key] = record
+        self.itemsdict[label] = record
 
     def items(self):
         for label, item in self.itemsdict.items():
