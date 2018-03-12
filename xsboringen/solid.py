@@ -20,8 +20,8 @@ class Solid(object):
 
     def sample(self, coords):
         sample_top_base = zip(
-            sample(self.topfile, coords),
-            sample(self.basefile, coords),
+            sample(str(self.topfile), coords),
+            sample(str(self.basefile), coords),
             )
         for top, base in sample_top_base:
             yield top, base

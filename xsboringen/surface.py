@@ -18,5 +18,5 @@ class Surface(object):
             'res={s.res:.2f})').format(s=self)
 
     def sample(self, coords):
-        for value in sample(self.file, coords):
+        for value in sample(str(self.file), coords):
             yield value
