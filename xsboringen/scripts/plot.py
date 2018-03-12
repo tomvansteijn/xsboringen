@@ -6,6 +6,9 @@ from xsboringen import cross_section
 from xsboringen.calc import SandmedianClassifier, AdmixClassifier, LithologyClassifier
 from xsboringen.csvfiles import cross_section_to_csv
 from xsboringen.datasources import boreholes_from_sources, points_from_sources
+from xsboringen.surface import Surface
+from xsboringen.solid import Solid
+from xsboringen.groundlayermodel import GroundLayerModel
 from xsboringen import plotting
 from xsboringen import shapefiles
 from xsboringen import styles
@@ -16,6 +19,7 @@ import yaml
 from collections import ChainMap
 from pathlib import Path
 import logging
+import math
 import os
 
 log = logging.getLogger(os.path.basename(__file__))
@@ -95,6 +99,19 @@ def plot_cross_section(**kwargs):
     # solids
     solids = datasources.get('solids') or []
 
+    # regis
+    regismodel = datasources.get('regismodel')
+    if regismodel is not None:
+        regismodel = GroundLayerModel.from_folder(
+            folder=regismodel['folder'],
+            indexfile=regismodel['indexfile'],
+            fieldnames=regismodel['fieldnames'],
+            delimiter=regismodel.get('delimiter') or ',',
+            res=regismodel.get('res', 10.),
+            default=config['cross_section_plot']['regis_style'],
+            name='Regis',
+            )
+
     # filter missing coordinates and less than minimal depth
     boreholes = [
         b for b in boreholes
@@ -114,14 +131,6 @@ def plot_cross_section(**kwargs):
         (p.z is not None) and
         ((p.top is not None) or (p.base is not None))
         ]
-
-    # definest styles lookup
-    plotting_styles = {
-        'segments': segmentstyles,
-        'verticals': verticalstyles,
-        'surfaces': surfacestyles,
-        'solids': solidstyles,
-        }
 
     # default labels
     defaultlabels = iter(config['defaultlabels'])
@@ -161,11 +170,61 @@ def plot_cross_section(**kwargs):
 
         # add surfaces to cross-section
         for surface in surfaces:
-            cs.add_surface(surface)
+            cs.add_surface(Surface(
+                name=surface['name'],
+                surfacefile=surface['file'],
+                res=surface['res'],
+                stylekey=surface['style'],
+                ))
 
         # add solids to cross-section
         for solid in solids:
-            cs.add_solid(solid)
+            cs.add_solid(Solid(
+                name=solid['name'],
+                topfile=solid['topfile'],
+                basefile=solid['basefile'],
+                res=solid['res'],
+                stylekey=solid['style'],
+                ))
+
+        # add regis solids to cross-section
+        if regismodel is not None:
+            # get coordinates along cross-section line
+            _, coords = zip(*cs.discretize(regismodel.res))
+
+            # sort regis by layer number
+            regismodel.sort()
+
+            # add solids to cross-section
+            for number, solid in regismodel.solids:
+                top, base = zip(*((t, b) for t, b in solid.sample(coords)))
+                if (
+                    all(math.isnan(t) for t in top) or
+                    all(math.isnan(b) for b in base)
+                    ):
+                    continue
+                if ylim is not None:
+                    ymin, ymax = ylim
+                    if (
+                        (max(t for t in top if not math.isnan(t)) < ymin) or
+                        (min(b for b in base if not math.isnan(b)) > ymax)
+                        ):
+                        continue
+
+                cs.add_solid(solid)
+                solidstyles.add(
+                    key=solid.name,
+                    label=solid.name,
+                    record=regismodel.styles.get(solid.name) or {},
+                    )
+
+        # definest styles lookup
+        plotting_styles = {
+            'segments': segmentstyles,
+            'verticals': verticalstyles,
+            'surfaces': surfacestyles,
+            'solids': solidstyles,
+            }
 
         # define plot
         plt = plotting.CrossSectionPlot(

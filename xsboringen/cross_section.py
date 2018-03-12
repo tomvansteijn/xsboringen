@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsboringen.surface import Surface
-from xsboringen.solid import Solid
-
 from shapely.geometry import asShape, Point
 
 
@@ -69,19 +66,7 @@ class CrossSection(object):
         self.points = [p for p in sorted(self.points)]
 
     def add_surface(self, surface):
-        self.surfaces.append(Surface(
-            name=surface['name'],
-            surfacefile=surface['file'],
-            res=surface['res'],
-            stylekey=surface['style'],
-            ))
+        self.surfaces.append(surface)
 
     def add_solid(self, solid):
-        self.solids.append(Solid(
-            name=solid['name'],
-            topfile=solid['topfile'],
-            basefile=solid['basefile'],
-            res=solid['res'],
-            stylekey=solid['style'],
-            ))
-
+        self.solids.append(solid)
