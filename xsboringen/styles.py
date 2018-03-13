@@ -21,6 +21,9 @@ class SimpleStylesLookup(object):
         return ('{s.__class__.__name__:}()'
             ).format(s=self)
 
+    def __len__(self):
+        return len(self.itemsdict)
+
     def add(self, key, label, record):
         self.records[key] = record
         self.itemsdict[label] = record
@@ -57,6 +60,9 @@ class SegmentStylesLookup(object):
     def __repr__(self):
         return ('{s.__class__.__name__:}(attrs={s.attrs:}), '
             ).format(s=self)
+
+    def __len__(self):
+        return len(self.itemsdict)
 
     def items(self):
         for label, item in self.itemsdict.items():
