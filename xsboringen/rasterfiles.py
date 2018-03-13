@@ -28,21 +28,21 @@ def sample_raster(rasterfile, coords):
                 yield float(value[0])
 
 
-def sample_idf(idffile, coords, boundless=True):
+def sample_idf(idffile, coords):
     '''sample IDF file at coords'''
     log.debug('reading idf file {}'.format(os.path.basename(idffile)))
     with idfpy.open(idffile) as src:
-        for value in src.sample(coords, boundless=boundless):
-            if value[0] in src.nodatavals:
+        for value in src.sample(coords):
+            if value[0] == src.header['nodata']:
                 yield np.nan
             else:
                 yield float(value[0])
 
 
-def sample(gridfile, coords, boundless=True):
+def sample(gridfile, coords):
     '''sample gridfile at coords'''
     if idfpy_imported and gridfile.lower().endswith('.idf'):
-        sample = partial(sample_idf, boundless=True)
+        sample = partial(sample_idf)
     else:
         sample = partial(sample_raster)
     return sample(gridfile, coords)
