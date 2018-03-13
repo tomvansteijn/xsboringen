@@ -19,7 +19,6 @@ import yaml
 from collections import ChainMap
 from pathlib import Path
 import logging
-import math
 import os
 
 log = logging.getLogger(os.path.basename(__file__))
@@ -197,20 +196,8 @@ def plot_cross_section(**kwargs):
 
             # add solids to cross-section
             for number, solid in regismodel.solids:
-                top, base = zip(*((t, b) for t, b in solid.sample(coords)))
-                if (
-                    all(math.isnan(t) for t in top) or
-                    all(math.isnan(b) for b in base)
-                    ):
+                if not regismodel.solid_has_values(solid, coords, ylim):
                     continue
-                if ylim is not None:
-                    ymin, ymax = ylim
-                    if (
-                        (max(t for t in top if not math.isnan(t)) < ymin) or
-                        (min(b for b in base if not math.isnan(b)) > ymax)
-                        ):
-                        continue
-
                 cs.add_solid(solid)
                 solidstyles.add(
                     key=solid.name,
@@ -235,6 +222,7 @@ def plot_cross_section(**kwargs):
             ylim=ylim,
             xlabel=xlabel,
             ylabel=ylabel,
+            legend_ncol=1, #int(regismodel is not None) + 1,
             )
 
         # plot and save to PNG file
