@@ -14,7 +14,7 @@ import os
 class CrossSectionPlot(object):
     Extension = namedtuple('Extension', ['point', 'dx'])
     def __init__(self, cross_section, styles, config,
-        xtickstep=None, ylim=None, xlabel=None, ylabel=None,
+        xtickstep=None, ylim=None, xlabel=None, ylabel=None, legend_ncol=1,
         ):
         self.cs = cross_section
         self.styles = styles
@@ -24,6 +24,7 @@ class CrossSectionPlot(object):
         self.ylim = ylim
         self.xlabel = xlabel
         self.ylabel = ylabel
+        self.legend_ncol = legend_ncol
 
         self.point_distance = 'bycode'
 
@@ -184,6 +185,15 @@ class CrossSectionPlot(object):
                     ),
                 label
                 ))
+        # if len(handles_labels) < len(self.styles['solids']):
+        #     for i in range(len(self.styles['solids']) - len(handles_labels)):
+        #         handles_labels.append((
+        #             plt.Rectangle((0, 0), 1, 1,
+        #                 facecolor='none',
+        #                 edgecolor='none',
+        #                 ),
+        #             ''
+        #             ))
         for label, style in self.styles['solids'].items():
             handles_labels.append((
                 plt.Rectangle((0, 0), 1, 1,
@@ -200,6 +210,7 @@ class CrossSectionPlot(object):
             fontsize=legend_fontsize,
             loc='lower left',
             bbox_to_anchor=(1, 0),
+            ncol=self.legend_ncol,
             )
         return lgd
 
