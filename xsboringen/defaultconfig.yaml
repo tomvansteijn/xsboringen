@@ -99,7 +99,7 @@ cross_section_plot: {
   pointlabel_style: {fontsize: 3, color: black, horizontalalignment: center, verticalalignment: center, rotation: 0},
 
   # regis style
-  regis_style: {facecolor: gray, edgecolor: gray, alpha: 0.5},
+  regis_style: {facecolor: gray, edgecolor: None, alpha: 0.5},
 
   # format of x-axis tick labels
   xticklabel_format: '{:3.0f}',
@@ -109,7 +109,6 @@ cross_section_plot: {
 
   # legend title text
   legend_title: legenda,
-
   }
 
 # csv filename format
