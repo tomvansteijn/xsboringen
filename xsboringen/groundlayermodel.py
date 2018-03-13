@@ -4,6 +4,8 @@
 
 from xsboringen.solid import Solid
 
+import numpy as np
+
 from collections import namedtuple
 from pathlib import Path
 import logging
@@ -81,5 +83,32 @@ class GroundLayerModel(object):
             name=name,
             )
 
-    def sort(self):
-        self.solids = [s for s in sorted(self.solids)]
+    @staticmethod
+    def sortkey(item):
+        number, solid = item
+        return number, solid.name
+
+    def sort(self, key=None):
+        key = key or self.sortkey
+        self.solids = [(n, s) for n, s in sorted(self.solids, key=key)]
+
+    @staticmethod
+    def solid_has_values(solid, coords, ylim=None):
+        top, base = zip(*((t, b) for t, b in solid.sample(coords)))
+        top = np.array(top, dtype=np.float)
+        base = np.array(base, dtype=np.float)
+        # no values when top or base only NaN
+        no_values = (
+            np.isnan(top).all() or
+            np.isnan(base).all()
+            )
+        if ylim is not None:
+            ymin, ymax = ylim
+            # no values when solid completely above or below y limits
+            no_values = (
+                no_values or
+                (np.nanmax(top) < ymin) or
+                (np.nanmin(base) > ymax)
+                )
+        return not no_values
+
