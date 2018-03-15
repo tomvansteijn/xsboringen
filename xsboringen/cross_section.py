@@ -32,13 +32,16 @@ class CrossSection(object):
     def length(self):
         return self.shape.length
 
-    def discretize(self, res):
+    def discretize(self, res, start=None):
         '''discretize line to point coords with given distance'''
-        d = 0.
-        while d <= self.shape.length:
+        d = start or 0.
+        while d < self.shape.length:
             p = self.shape.interpolate(d)
             yield d, (p.x, p.y)
             d += res
+
+        p = self.shape.interpolate(self.shape.length)
+        yield self.shape.length, (p.x, p.y)
 
     def add_boreholes(self, boreholes):
         '''add boreholes within buffer distance and project to line'''
