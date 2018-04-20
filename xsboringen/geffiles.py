@@ -349,10 +349,10 @@ class GefCPTFile(GefFile):
         return verticals
 
     @staticmethod
-    def depth_from_verticals(verticals):
+    def depth_from_verticals(verticals, field='friction_ratio'):
         log.debug('calculating depth from verticals')
         try:
-            return verticals['depth'][-1]
+            return verticals[field].depth[-1]
         except KeyError:
             return None
         except IndexError:
