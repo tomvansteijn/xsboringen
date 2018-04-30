@@ -125,15 +125,20 @@ class CrossSectionPlot(object):
         style = self.styles['surfaces'].lookup(surface.stylekey)
         sf = ax.plot(plot_distance, values, **style)
 
-    def plot_solid(self, ax, solid, extensions):
+    def plot_solid(self, ax, solid, extensions, min_thickness=0.):
         distance, coords = zip(*self.cs.discretize(solid.res))
         distance = np.array(distance)
         plot_distance = distance.copy()
         for extension in extensions:
             plot_distance[distance > extension.point] += extension.dx
         top, base = zip(*((t, b) for t, b in solid.sample(coords)))
+        top = np.array(top)
+        base = np.array(base)
         style = self.styles['solids'].lookup(solid.stylekey)
-        sld = ax.fill_between(plot_distance, base, top, **style)
+        sld = ax.fill_between(plot_distance, base, top,
+            where=(top - base) > min_thickness,
+            **style,
+            )
 
     def plot_label(self, ax):
         lt = ax.text(0, 1.01, self.label, weight='bold', size='large',
@@ -164,13 +169,14 @@ class CrossSectionPlot(object):
 
     def get_legend(self, ax):
         handles_labels = []
-        for label, style in self.styles['verticals'].items():
-            handles_labels.append((
-                plt.Line2D([0, 1], [0, 1],
-                    **style,
-                    ),
-                label
-                ))
+        if len(self.cs.boreholes) > 0:
+            for label, style in self.styles['verticals'].items():
+                handles_labels.append((
+                    plt.Line2D([0, 1], [0, 1],
+                        **style,
+                        ),
+                    label
+                    ))
         for label, style in self.styles['surfaces'].items():
             handles_labels.append((
                 plt.Line2D([0, 1], [0, 1],
@@ -178,22 +184,14 @@ class CrossSectionPlot(object):
                     ),
                 label
                 ))
-        for label, style in self.styles['segments'].items():
-            handles_labels.append((
-                plt.Rectangle((0, 0), 1, 1,
-                    **style,
-                    ),
-                label
-                ))
-        # if len(handles_labels) < len(self.styles['solids']):
-        #     for i in range(len(self.styles['solids']) - len(handles_labels)):
-        #         handles_labels.append((
-        #             plt.Rectangle((0, 0), 1, 1,
-        #                 facecolor='none',
-        #                 edgecolor='none',
-        #                 ),
-        #             ''
-        #             ))
+        if len(self.cs.boreholes) > 0:
+            for label, style in self.styles['segments'].items():
+                handles_labels.append((
+                    plt.Rectangle((0, 0), 1, 1,
+                        **style,
+                        ),
+                    label
+                    ))
         for label, style in self.styles['solids'].items():
             handles_labels.append((
                 plt.Rectangle((0, 0), 1, 1,
@@ -209,7 +207,7 @@ class CrossSectionPlot(object):
             title=legend_title,
             fontsize=legend_fontsize,
             loc='lower left',
-            bbox_to_anchor=(1, 0),
+            bbox_to_anchor=(1.01, 0),
             ncol=self.legend_ncol,
             )
         return lgd
@@ -381,3 +379,7 @@ class CrossSectionPlot(object):
 
         # clos figure
         plt.close()
+
+
+def MapPlot(object):
+    pass
