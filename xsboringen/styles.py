@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
+from xsboringen.mixins import CopyMixin
+
 from collections import OrderedDict
 
 
-class SimpleStylesLookup(object):
+class SimpleStylesLookup(CopyMixin, object):
     def __init__(self, records=None, default=None):
         records = records or []
         self.records = {}
