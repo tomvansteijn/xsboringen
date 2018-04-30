@@ -114,7 +114,6 @@ def plot_cross_section(**kwargs):
         # sort regis by layer number
         regismodel.sort()
 
-
     # filter missing coordinates and less than minimal depth
     boreholes = [
         b for b in boreholes
@@ -191,6 +190,7 @@ def plot_cross_section(**kwargs):
                 ))
 
         # add regis solids to cross-section
+        solidstyles_with_regis = solidstyles.copy(deep=True)
         if regismodel is not None:
             # get coordinates along cross-section line
             _, coords = zip(*cs.discretize(regismodel.res))
@@ -200,19 +200,18 @@ def plot_cross_section(**kwargs):
                 if not regismodel.solid_has_values(solid, coords, ylim):
                     continue
                 cs.add_solid(solid)
-                if solid.name not in solidstyles.itemsdict:
-                    solidstyles.add(
-                        key=solid.name,
-                        label=solid.name,
-                        record=regismodel.styles.get(solid.name) or {},
-                        )
+                solidstyles_with_regis.add(
+                    key=solid.name,
+                    label=solid.name,
+                    record=regismodel.styles.get(solid.name) or {},
+                    )
 
         # definest styles lookup
         plotting_styles = {
             'segments': segmentstyles,
             'verticals': verticalstyles,
             'surfaces': surfacestyles,
-            'solids': solidstyles,
+            'solids': solidstyles_with_regis,
             }
 
         # define plot
