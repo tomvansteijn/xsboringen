@@ -32,7 +32,7 @@ cpt_classification: {
   default: 'O',
 }
 
-# sandmedian classification bins
+# sandmedian classification bins [µm]
 sandmedianbins: [
     {lower: 63., upper: 105., medianclass: ZUF},
     {lower: 105., upper: 150., medianclass: ZZF},
