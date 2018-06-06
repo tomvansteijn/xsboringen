@@ -83,11 +83,18 @@ class CrossSectionPlot(object):
             align='center', zorder=2,
             **style)
 
-    def plot_point(self, ax, point, extensions, plot_distance_by_code):
+    def plot_point(self, ax, point, extensions,
+        plot_distance_by_code=None,
+        borehole_z_by_code=None,
+        ):
+        plot_distance_by_code = plot_distance_by_code or {}
+        borehole_z_by_code = borehole_z_by_code or {}
         if self.point_distance == 'bycode':
-            plot_distance = plot_distance_by_code.get(point.code)
+            plot_distance = plot_distance_by_code.get(point.code)   
             if plot_distance is None:
                 return None
+            if point.z is None:
+                point.z = borehole_z_by_code.get(point.code)
         else:
             plot_distance = distance
             for extension in extensions:
@@ -293,6 +300,9 @@ class CrossSectionPlot(object):
         plot_distance_by_code = {
             b.code: d for b, d in zip(boreholes, plot_distances)
             }
+        borehole_z_by_code = {
+            b.code: b.z for b in boreholes
+            }
         for distance, point in self.cs.points:
             if point.midlevel is None:
                 continue
@@ -300,6 +310,7 @@ class CrossSectionPlot(object):
                 point=point,
                 extensions=extensions,
                 plot_distance_by_code=plot_distance_by_code,
+                borehole_z_by_code=borehole_z_by_code,
                 )
 
         # plot surfaces
