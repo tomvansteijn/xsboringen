@@ -28,8 +28,7 @@ log = logging.getLogger(os.path.basename(__file__))
     )
 def main(function, inputfile, level):
     '''plot geological cross-sections'''
-    logging_level = getattr(logging, level.upper(), logging.DEBUG)
-    logging.basicConfig(level=logging_level)
+    logging.basicConfig(level=level.upper())
 
     # function arguments from input file
     with open(inputfile) as y:

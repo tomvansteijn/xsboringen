@@ -44,7 +44,7 @@ class Segment(AsDictMixin, CopyMixin):
         return self
 
     def add(self, other):
-        if self.rel_sl():
+        if self.rel_sl:
             self.top = min(self.top, other.top)
             self.base = max(self.base, other.base)
         else:
@@ -56,6 +56,7 @@ class Segment(AsDictMixin, CopyMixin):
         '''thickness of segment'''
         return abs(self.base - self.top)
 
+    @property
     def rel_sl(self):
         '''relative to surface level'''
         return self.top < self.base

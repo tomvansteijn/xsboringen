@@ -128,9 +128,6 @@ def plot_cross_section(**kwargs):
     points = [
         p for p in points
         if
-        (p.x is not None) and
-        (p.y is not None) and
-        (p.z is not None) and
         ((p.top is not None) or (p.base is not None))
         ]
 
