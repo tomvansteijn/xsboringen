@@ -36,6 +36,7 @@ write_csv
 Read borehole and CPT datasources and export to CSV table.
 
 ::
+
     xsb write_csv write_csv.yaml
 
 write_csv.yaml file contains references to the input datasources and the output file. See the examples folder.
@@ -46,6 +47,7 @@ write_shape
 Read borehole and CPT datasources and export to shapefile.
 
 ::
+
     xsb write_shape write_shape.yaml
 
 write_shape.yaml file contains references to the input datasources and the output file. See the examples folder.
@@ -55,6 +57,7 @@ plot
 Read borehole and CPT datasources and plot to 2D cross-sections based on a polyline shapefile.
 
 ::
+
     xsb plot plot.yaml
 
 plot.yaml file contains references to the input datasources and the output folder. See the examples folder.
