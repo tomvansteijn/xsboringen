@@ -124,7 +124,7 @@ class GefFile(object):
     @staticmethod
     def read_headerline(lines):
         line = next(lines)
-        var, values = line.split('=')
+        var, values = line.split('=', maxsplit=1)
         return  (
                 var.lstrip('#').strip(),
                 values.strip(),
