@@ -65,6 +65,6 @@ plot.yaml file contains references to the input datasources and the output folde
 Example 2-D cross-sections
 --------------------------
 .. image:: https://raw.githubusercontent.com/tomvansteijn/xsboringen/dev/xsboringen/examples/example_solids/doorsnede/cross_section_A_small.png
-    :width: 15
-    :height: 5
+    :width: 2855
+    :height: 1045
 
