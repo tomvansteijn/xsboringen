@@ -1,0 +1,55 @@
+#GEFID = 1,1,0
+#COLUMNTEXT = 1, aan
+#COLUMNSEPARATOR = ;
+#RECORDSEPARATOR = !
+#FILEOWNER = DINO
+#COMPANYID = Onbekend
+#FILEDATE = 2018,3,5
+#PROJECTID = DINO-BOR
+#COLUMN = 9
+#COLUMNINFO = 1, m, Diepte bovenkant laag, 1
+#COLUMNINFO = 2, m, Diepte onderkant laag, 2
+#COLUMNINFO = 3, mm, Zandmediaan, 8
+#COLUMNINFO = 4, mm, Grindmediaan, 9
+#COLUMNINFO = 5, %, Lutum percentage, 3
+#COLUMNINFO = 6, %, Silt percentage, 4
+#COLUMNINFO = 7, %, Zand percentage, 5
+#COLUMNINFO = 8, %, Grind percentage, 6
+#COLUMNINFO = 9, %, Organische stof percentage, 7
+#COLUMNVOID = 1, -9999.99
+#COLUMNVOID = 2, -9999.99
+#COLUMNVOID = 3, -9999.99
+#COLUMNVOID = 4, -9999.99
+#COLUMNVOID = 5, -9999.99
+#COLUMNVOID = 6, -9999.99
+#COLUMNVOID = 7, -9999.99
+#COLUMNVOID = 8, -9999.99
+#COLUMNVOID = 9, -9999.99
+#LASTSCAN = 9
+#REPORTCODE = GEF-BORE-Report,1,0,0
+#MEASUREMENTCODE = Onbekend,-,-,-
+#TESTID = B33F0141
+#XYID = 31000,210540,462555
+#ZID = 31000,12.94
+#MEASUREMENTTEXT = 3, Zutphen, plaatsnaam
+#MEASUREMENTTEXT = 9, maaiveld, vast horizontaal niveau
+#MEASUREMENTTEXT = 13, Tongeren  van  Apeldoorn, boorbedrijf
+#MEASUREMENTTEXT = 16, 1993-02-03, datum boring
+#MEASUREMENTTEXT = 31, ZUI, boormethode
+#MEASUREMENTTEXT = 7, Rijksdriehoeksmeting, locaal coÃ¶rdinatensysteem
+#MEASUREMENTTEXT = 8, Normaal Amsterdams Peil, locaal referentiesysteem
+#MEASUREMENTVAR = 16, 40.00, m, einddiepte
+#MEASUREMENTTEXT = 14, Nee, openbaar
+#MEASUREMENTTEXT = 17, Onbekend, vochtigheidstoestand grond
+#MEASUREMENTTEXT = 18, Ja, peilbuis aanwezig
+#MEASUREMENTVAR = 19, 1, -, aantal peilbuizen
+#EOH = 
+0.00;1.40;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zh2';'ON';!
+1.40;7.50;200.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GE';'ZMFO';!
+7.50;13.40;320.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs1';'GE';'ZZGO';'FN1';!
+13.40;17.00;320.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zg';'ON';'ZZGO';'FN2';!
+17.00;19.20;300.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'GR';'ZZGO';'SZK';!
+19.20;24.00;300.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs1';'GR';'ZZGO';!
+24.00;28.30;320.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs1g1';'LI GR';'ZZGO';'FN2';!
+28.30;39.00;320.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Z';'LI GR';'ZZGO';'SZK';!
+39.00;40.00;360.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs1';'LI GR';'ZZGO';!

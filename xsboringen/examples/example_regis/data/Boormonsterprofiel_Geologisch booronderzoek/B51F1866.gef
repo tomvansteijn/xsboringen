@@ -1,0 +1,54 @@
+#GEFID = 1,1,0
+#COLUMNTEXT = 1, aan
+#COLUMNSEPARATOR = ;
+#RECORDSEPARATOR = !
+#FILEOWNER = DINO
+#COMPANYID = Onbekend
+#FILEDATE = 2018,3,13
+#PROJECTID = DINO-BOR
+#COLUMN = 9
+#COLUMNINFO = 1, m, Diepte bovenkant laag, 1
+#COLUMNINFO = 2, m, Diepte onderkant laag, 2
+#COLUMNINFO = 3, mm, Zandmediaan, 8
+#COLUMNINFO = 4, mm, Grindmediaan, 9
+#COLUMNINFO = 5, %, Lutum percentage, 3
+#COLUMNINFO = 6, %, Silt percentage, 4
+#COLUMNINFO = 7, %, Zand percentage, 5
+#COLUMNINFO = 8, %, Grind percentage, 6
+#COLUMNINFO = 9, %, Organische stof percentage, 7
+#COLUMNVOID = 1, -9999.99
+#COLUMNVOID = 2, -9999.99
+#COLUMNVOID = 3, -9999.99
+#COLUMNVOID = 4, -9999.99
+#COLUMNVOID = 5, -9999.99
+#COLUMNVOID = 6, -9999.99
+#COLUMNVOID = 7, -9999.99
+#COLUMNVOID = 8, -9999.99
+#COLUMNVOID = 9, -9999.99
+#LASTSCAN = 7
+#REPORTCODE = GEF-BORE-Report,1,0,0
+#MEASUREMENTCODE = Standaard Boor Beschrijvingsmethode, versie 5.2,-,-,-
+#TESTID = B51F1866
+#XYID = 31000,175338,396746
+#ZID = 31000,14.8
+#MEASUREMENTTEXT = 3, Gemert, plaatsnaam
+#MEASUREMENTTEXT = 5, 2015-08-18, datum boorbeschrijving
+#MEASUREMENTTEXT = 6, HermanHoogveld, beschrijver lagen
+#MEASUREMENTTEXT = 13, Thermoplus, boorbedrijf
+#MEASUREMENTTEXT = 16, 2015-06-24, datum boring
+#MEASUREMENTTEXT = 7, Rijksdriehoeksmeting, locaal coÃ¶rdinatensysteem
+#MEASUREMENTTEXT = 8, Normaal Amsterdams Peil, locaal referentiesysteem
+#MEASUREMENTTEXT = 19, 2015-07-02, einddatum boring
+#MEASUREMENTVAR = 16, 115.00, m, einddiepte
+#MEASUREMENTTEXT = 23, Lex, naam boormeester
+#MEASUREMENTTEXT = 14, Nee, openbaar
+#MEASUREMENTTEXT = 17, Nat sediment, vochtigheidstoestand grond
+#MEASUREMENTTEXT = 18, Nee, peilbuis afwezig
+#EOH = 
+0.00;16.00;300.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs1';'ON';'ZZG';!
+16.00;20.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Gz4';'ON';!
+20.00;56.00;300.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs1g2';'ON';'ZZG';!
+56.00;60.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Kz2';'ON';!
+60.00;84.00;300.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs1';'ON';'ZZG';!
+84.00;87.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Kz3';'ON';!
+87.00;115.00;300.00;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;-9999.99;'Zs1';'ON';'ZZG';!

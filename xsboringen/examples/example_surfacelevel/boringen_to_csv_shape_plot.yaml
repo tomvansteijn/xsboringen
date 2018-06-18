@@ -1,0 +1,110 @@
+# input data sources (boreholes, CPTs)
+datasources: {
+
+  # borehole and CPT data
+  boreholes: [
+    {
+      format: Dinoloket XML 1.4,
+      folder: data\Boormonsterprofiel_Geologisch booronderzoek,
+      extra_fields: {
+        borehole: [],
+        segments: [
+          {name: graveladmix, match: gravelAdmix/@code, dtype: str},
+          {name: sandadmix, match: sandAdmix/@code, dtype: str},
+          {name: siltadmix, match: siltAdmix/@code, dtype: str},
+          {name: clayadmix, match: clayAdmix/@code, dtype: str},
+          {name: humusadmix, match: humusAdmix/@code, dtype: str},
+          ],
+        },
+      },
+    ],
+
+  # surfaces
+  surfaces: [
+    {
+      name: surfacelevel,
+      file: rasters\ahn2_5_filled.tif,
+      res: 10.,
+      style: surfacelevel,
+      },
+    ],
+  }
+
+# input geometry
+# line shape for cross-sections
+cross_section_lines: {
+  file: shape\doorsnede.shp,
+}
+
+# result
+result: {
+  csvfile: csv\boringen.csv,
+  shapefile: shape\boringen.shp,
+  folder: doorsnede,
+  classify_sandmedian: True,
+  simplify: True,
+  min_thickness: 0.2,
+  shape_fields: [[format, str], [source, str]],
+  extra_fields: {
+    borehole: [format, source],
+    segments: [sandmedian, graveladmix, sandadmix, siltadmix, clayadmix, humusadmix],
+    }
+  }
+
+# options
+min_depth: 10.
+buffer_distance: 2000.
+xtickstep: 200.
+ylim: [0., 50.]
+xlabel: afstand [m]
+ylabel: niveau [m+NAP]
+
+# legend
+config: {
+  styles: {
+    segments: {
+      records: [
+          # hoofdgrondsoorten
+          {key: {lithology: G, }, label: grind, facecolor: coral, edgecolor: black},
+          {key: {lithology: K, }, label: klei, facecolor: forestgreen, edgecolor: black},
+          {key: {lithology: L, }, label: leem, facecolor: darkkhaki, edgecolor: black},
+          {key: {lithology: V, }, label: veen, facecolor: sienna, edgecolor: black},
+          {key: {lithology: Z, }, label: zand, facecolor: '#FFFF66', edgecolor: black},
+
+          # zand - fijn en grof
+          {key: {lithology: Z, sandmedianclass: [ZUF, ZZF, ZFC]}, label: fijn zand, hatch: '..', facecolor: '#CCFF66', edgecolor: black},
+          {key: {lithology: Z, sandmedianclass: [ZUG, ZZG, ZGC]}, label: grof zand, hatch: '..', facecolor: '#FFCC99', edgecolor: black},
+
+          # zandige klei, humeuze klei
+          {key: {lithology: K, sandadmix: [ZX, Z2, Z3]}, label: zandige klei, facecolor: yellowgreen, edgecolor: black},
+          {key: {lithology: K, humusadmix: [HX, H2, H3]}, label: humeuze klei, facecolor: darkgreen, edgecolor: black},
+
+          # bijzondere grondsoorten
+          {key: {lithology: GY, }, label: gyttja, facecolor: darkturquoise, edgecolor: black},
+          {key: {lithology: KAS, }, label: kalksteen, hatch: \\\\, facecolor: lightpink, edgecolor: black},
+          {key: {lithology: MER, }, label: mergel, hatch: \\\\, facecolor: orange, edgecolor: black},
+          {key: {lithology: STN, }, label: stenen, hatch: oo, facecolor: slategray, edgecolor: black},
+
+        ],
+      default: {label: onbekend, facecolor: white, edgecolor: black},
+      },
+
+  verticals: {
+    records: [
+      {key: cone_resistance, label: conusweerstand, linestyle: '-', linewidth: 0.5, color: blue},
+      {key: friction_ratio, label: wrijvingsgetal, linestyle: '-', linewidth: 0.5, color: magenta},
+      ],
+    default: { label: onbekend, linestyle: '-', linewidth: 0.5, color: gray},
+    },
+
+  surfaces: {
+    records: [
+      {key: surfacelevel, label: maaiveld, linestyle: '-', linewidth: 3., color: darkgray, zorder: 0},
+      ],
+    },
+
+  solids: {
+    default: {facecolor: gray, edgecolor: black},
+    },
+  },
+}
