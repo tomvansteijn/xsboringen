@@ -109,6 +109,11 @@ class XMLBoreholeFile(XMLFile):
             # yield segment
             yield Segment(top, base, lithology, sandmedianclass, **attrs)
 
+    @staticmethod
+    def depth_from_segments(segments):
+        log.debug('calculating depth from segments')
+        return max(s.base for s in segments)
+
     def to_borehole(self, extra_fields=None):
         '''read Dinoloket XML file and return Borehole'''
         # extra fields
@@ -138,13 +143,16 @@ class XMLBoreholeFile(XMLFile):
             timestamp = None
         self.attrs['timestamp'] = timestamp
 
+        # segments as list
+        segments = [s for s in self.read_segments(survey, segment_fields)]
+
         # final depth of borehole in m
         basedepth = survey.find('borehole').attrib.get('baseDepth')
         depth = self.safe_float(basedepth)
         try:
             depth *= 1e-2  # to m
         except TypeError:
-            depth = None
+            depth = self.depth_from_segments(segments)
 
         # x,y coordinates
         coordinates = survey.find('surveyLocation/coordinates')
@@ -161,9 +169,6 @@ class XMLBoreholeFile(XMLFile):
                 z = None
         else:
             z = None
-
-        # segments as list
-        segments = [s for s in self.read_segments(survey, segment_fields)]
 
         return Borehole(code, depth,
             x=x, y=y, z=z,
