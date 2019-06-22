@@ -132,9 +132,7 @@ class Borehole(AsDictMixin, CopyMixin, Iterable):
 
     def __init__(self, code, depth,
             x=None, y=None, z=None,
-            segments=None, verticals=None,
-            **attrs,
-            ):
+            segments=None, verticals=None, **attrs):
         self.code = code
         self.depth = depth
 
