@@ -101,4 +101,15 @@ ENV/
 .mypy_cache/
 
 # data
-.xml
+*.xml
+*.txt
+*.pdf
+*.tif
+*.cpg
+*.dbf
+*.prj
+*.shp
+*.shx
+*.jpg
+*.kml
+*.zip
