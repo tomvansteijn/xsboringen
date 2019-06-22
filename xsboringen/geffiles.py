@@ -88,9 +88,9 @@ class GefFile(object):
         fieldnames=None,
         measurementvars=None,
         ):
-        self.file = Path(geffile)
+        self.file = Path(geffile).resolve()
         self.attrs = {
-            'source': str(self.file),
+            'source': self.file.name,
             'format': self._format,
             }
         self.classifier = classifier

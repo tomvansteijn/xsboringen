@@ -30,9 +30,9 @@ class XMLFile(object):
     _format = None
 
     def __init__(self, xmlfile):
-        self.file = Path(xmlfile)
+        self.file = Path(xmlfile).resolve()
         self.attrs = {
-            'source': str(self.file),
+            'source': self.file.name,
             'format': self._format,
             }
 

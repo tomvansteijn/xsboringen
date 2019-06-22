@@ -15,6 +15,7 @@ import os
 
 log = logging.getLogger(os.path.basename(__file__))
 
+
 def boreholes_from_csv(folder,
         fieldnames=None, extra_fields=None,
         delimiter=',', decimal='.'
@@ -49,9 +50,9 @@ class CSVFile(object):
 
     def __init__(self, csvfile, delimiter=',', decimal='.',
             ):
-        self.file = Path(csvfile)
+        self.file = Path(csvfile).resolve()
         self.attrs = {
-            'source': str(self.file),
+            'source': self.file.name,
             'format': self._format,
             }
 
