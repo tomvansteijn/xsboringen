@@ -220,7 +220,7 @@ def plot_cross_section(**kwargs):
             ylim=ylim,
             xlabel=xlabel,
             ylabel=ylabel,
-            legend_ncol=1, #int(regismodel is not None) + 1,
+            legend_ncol=int(regismodel is not None) + 1,
             )
 
         # plot and save to PNG file
