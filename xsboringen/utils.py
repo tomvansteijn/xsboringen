@@ -8,30 +8,19 @@ import sys
 import os
 
 
-def splitall(path):
-    allparts = []
-    while True:
-        parts = os.path.split(path)
-        if parts[0] == path:  # sentinel for absolute paths
-            allparts.insert(0, parts[0])
-            break
-        elif parts[1] == path: # sentinel for relative paths
-            allparts.insert(0, parts[1])
-            break
-        else:
-            path = parts[0]
-            allparts.insert(0, parts[1])
-    return allparts
-
-
 def careful_glob(folder, pattern):
-    parts = splitall(folder)
-    basefolder = os.path.join(*[p for p in parts if not p == '*'])
-    if not os.path.exists(basefolder):
+    baseparts = []
+    for part in folder.parts:
+        if part == '*':
+            break
+        baseparts.append(part)
+
+    basefolder = Path(*baseparts)
+    if not basefolder.exists():
         raise ValueError('folder \'{f:}\' does not exist'.format(
             f=folder,
             ))
-    return glob.glob(os.path.join(folder, pattern))
+    return glob.glob(str(folder / pattern))
 
 
 def careful_open(filepath, mode):
