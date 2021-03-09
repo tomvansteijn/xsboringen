@@ -28,9 +28,14 @@ class CPT(Borehole):
     def classify_lithology(self, classifier, admixclassifier=None):
         if self.complete:
             self.segments = []
-            top = 0.
-            for row in self.rows:
+            for i, row in enumerate(self.rows):
                 base = row.depth
+                if i == 0:
+                    top = 0.
+                    blind_segment = Segment(top, base, "O")
+                    self.segments.append(blind_segment)
+                    top = base
+                    continue
                 lithology = classifier.classify(
                     row.friction_ratio,
                     row.cone_resistance,
