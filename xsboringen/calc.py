@@ -27,10 +27,9 @@ class ExpLithologyRule(LithologyRule):
 
     def test(self, rf, qc):
         for limit in self.limits:
-            if (rf > limit.left) and (rf <= limit.right):
+            if (rf > limit.left) and (rf <= limit.right) and qc!=None:
                     return qc > limit.a*exp(limit.b*rf)
         return False
-
 
 class LithologyClassifier(object):
     def __init__(self, table, ruletype='exponential'):
