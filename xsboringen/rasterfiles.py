@@ -23,10 +23,11 @@ def take_rio_sample(dataset, coords):
     it yields np.nan if you look outside of the raster's spatial extent'''
     for x,y in coords:
         ix, iy = dataset.index(x, y)
-        if ix < dataset.shape[0] and iy < dataset.shape[1]:
+        if ix < dataset.shape[0] and ix >= 0 and iy < dataset.shape[1] and iy >= 0:
             yield [dataset.read()[0, ix, iy]]
         else:
             yield [np.nan]
+
 
 def sample_raster(rasterfile, coords):
     '''sample raster file at coords'''
