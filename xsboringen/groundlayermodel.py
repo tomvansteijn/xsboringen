@@ -93,20 +93,18 @@ class GroundLayerModel(object):
         self.solids = [(n, s) for n, s in sorted(self.solids, key=key)]
 
     @staticmethod
-    def solid_has_values(solid, coords, ylim=None):
-        top, base = zip(*((t, b) for t, b in solid.sample(coords)))
-        top = np.array(top, dtype=np.float)
-        base = np.array(base, dtype=np.float)
+    def solid_has_values(solid, linestring, ylim=None): 
+        _, top = solid.sample_top(linestring)
+        if np.isnan(top).all():
+            return False
+        _, base = solid.sample_base(linestring)
+        if np.isnan(base).all():
+            return False
         # no values when top or base only NaN
-        no_values = (
-            np.isnan(top).all() or
-            np.isnan(base).all()
-            )
         if ylim is not None:
             ymin, ymax = ylim
             # no values when solid completely above or below y limits
             no_values = (
-                no_values or
                 (np.nanmax(top) < ymin) or
                 (np.nanmin(base) > ymax)
                 )

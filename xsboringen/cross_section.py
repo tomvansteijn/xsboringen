@@ -16,6 +16,7 @@ class CrossSection(object):
         # initialize data atttributes to empty lists
         self.boreholes = []
         self.points = []
+        self.wells = []
         self.surfaces = []
         self.solids = []
 
@@ -32,17 +33,6 @@ class CrossSection(object):
     def length(self):
         return self.shape.length
 
-    def discretize(self, res, start=None):
-        '''discretize line to point coords with given distance'''
-        d = start or 0.
-        while d < self.shape.length:
-            p = self.shape.interpolate(d)
-            yield d, (p.x, p.y)
-            d += res
-
-        p = self.shape.interpolate(self.shape.length)
-        yield self.shape.length, (p.x, p.y)
-
     def add_boreholes(self, boreholes):
         '''add boreholes within buffer distance and project to line'''
         self._add_some_objects(boreholes, self.boreholes)
@@ -50,6 +40,10 @@ class CrossSection(object):
     def add_points(self, points):
         '''add points within buffer distance and project to line'''
         self._add_some_objects(points, self.points)
+
+    def add_wells(self, wells):
+        '''add wells within buffer distance and project to line'''
+        self._add_some_objects(wells, self.wells)
 
     def _add_some_objects(self, some_objects, dst):
         for an_object in some_objects:
@@ -66,7 +60,8 @@ class CrossSection(object):
 
     def sort(self):
         self.boreholes = [b for b in sorted(self.boreholes)]
-        self.points = [p for p in sorted(self.points)]
+        self.wells = [w for w in sorted(self.wells)]
+        self.points = [p for p in sorted(self.points)]        
 
     def add_surface(self, surface):
         self.surfaces.append(surface)

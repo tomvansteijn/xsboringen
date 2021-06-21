@@ -13,7 +13,7 @@ class SimpleStylesLookup(CopyMixin, object):
         self.itemsdict = OrderedDict()
         for i, record in enumerate(records):
             key = record.pop('key')
-            label = record.get('label') or 'item_{i:d}'.format(i=i + 1)
+            label = record['label']
             self.add(key, label, record)
 
         self.default = default or {}
@@ -29,6 +29,11 @@ class SimpleStylesLookup(CopyMixin, object):
     def add(self, key, label, record):
         self.records[key] = record
         self.itemsdict[label] = record
+
+    def remove(self, key):
+        label = self.records[key]['label']
+        del self.records[key]
+        del self.itemsdict[label]
 
     def items(self):
         for label, item in self.itemsdict.items():

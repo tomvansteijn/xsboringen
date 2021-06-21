@@ -6,13 +6,12 @@ from matplotlib import pyplot as plt
 from matplotlib import transforms
 import numpy as np
 
-from collections import namedtuple
+from functools import partial
 import logging
 import os
 
 
 class CrossSectionPlot(object):
-    Extension = namedtuple('Extension', ['point', 'dx'])
     def __init__(self, cross_section, styles, config,
         xtickstep=None, ylim=None, xlabel=None, ylabel=None, legend_ncol=1,
         ):
@@ -41,14 +40,15 @@ class CrossSectionPlot(object):
     def label(self):
         return self.cs.label
 
-    def plot_borehole(self, ax, left, borehole, width):
+    def plot_borehole(self, ax, distance, borehole, extensions, width):
+        plot_distance = extensions(distance)
         for segment in borehole:
             height = segment.thickness
             bottom = borehole.z - segment.base
             segment_style = self.styles['segments'].lookup(segment)
 
             # plot segment as bar
-            rect = ax.bar(left, height, width, bottom,
+            rect = ax.bar(plot_distance, height, width, bottom,
                 align='center', zorder=2,
                 **segment_style)
 
@@ -58,7 +58,7 @@ class CrossSectionPlot(object):
         codelabel_color = self.cfg.get('codelabel_color')
         vtrans = transforms.blended_transform_factory(
             ax.transData, ax.transAxes)
-        txt = ax.text(left, codelabel_position, borehole.code,
+        txt = ax.text(plot_distance, codelabel_position, borehole.code,
             size=codelabel_fontsize,
             color=codelabel_color,
             rotation=90,
@@ -68,44 +68,54 @@ class CrossSectionPlot(object):
 
         return txt
 
-    def plot_vertical(self, ax, distance, vertical, width, style):
+    def plot_vertical(self, ax, distance, vertical, extensions, width, style):
+        plot_distance = extensions(distance)
         depth = np.array(vertical.depth, dtype=np.float)
         rescaled = np.array(vertical.rescaled().values, dtype=np.float)
-        transformed = distance + (rescaled - 0.5)*width
+        transformed = plot_distance + (rescaled - 0.5)*width
         vert = ax.plot(transformed, depth, **style)
         return vert
 
-    def plot_edge(self, ax, distance, vertical, width, style):
+    def plot_edge(self, ax, distance, vertical, extensions, width, style):
+        plot_distance = extensions(distance)
         height = vertical.depth[0] - vertical.depth[-1]
         bottom = vertical.depth[-1]
         # plot edge as bar
-        rect = ax.bar(distance, height, width, bottom,
+        rect = ax.bar(plot_distance, height, width, bottom,
             align='center', zorder=2,
             **style)
 
-    def plot_point(self, ax, point, extensions,
-        plot_distance_by_code=None,
-        borehole_by_code=None,
+    def plot_well(self, ax, distance, well, extensions, width):
+        plot_distance = extensions(distance)
+        wellfilter = ax.bar(plot_distance, well.filterlength, width, well.z - well.filterbottomlevel,
+                align='center', zorder=2,
+                facecolor="dodgerblue", edgecolor="darkblue")
+                
+        standpipe = ax.bar(plot_distance, well.filtertoplevel, width, well.z - well.filtertoplevel,
+                align='center', zorder=2,
+                facecolor="none", edgecolor="darkblue")
+
+        # plot well code as text
+        codelabel_position = self.cfg.get('codelabel_position')
+        codelabel_fontsize = self.cfg.get('codelabel_fontsize')
+        codelabel_color = self.cfg.get('codelabel_color')
+        vtrans = transforms.blended_transform_factory(
+            ax.transData, ax.transAxes)
+        txt = ax.text(plot_distance, codelabel_position, well.code,
+            size=codelabel_fontsize,
+            color=codelabel_color,
+            rotation=90,
+            ha='center', va='bottom',
+            transform=vtrans,
+            )
+
+        return txt
+
+
+
+    def plot_point(self, ax, distance, point, extensions,
         ):
-        plot_distance_by_code = plot_distance_by_code or {}
-        borehole_by_code = borehole_by_code or {}
-        if self.point_distance == 'bycode':
-            plot_distance = plot_distance_by_code.get(point.code)   
-            if plot_distance is None:
-                return None
-            borehole = borehole_by_code.get(point.code)
-            if borehole is not None:
-                if point.x is None:
-                    point.x = borehole.x
-                if point.y is None:
-                    point.y = borehole.y
-                if point.z is None:
-                    point.z = borehole.z
-        else:
-            plot_distance = distance
-            for extension in extensions:
-                if distance >= extension.point:
-                    plot_distance += extension.dx
+        plot_distance = extensions(distance)
         style = self.cfg['pointlabel_style']
         elements = []
         for value in point.values:
@@ -130,23 +140,22 @@ class CrossSectionPlot(object):
 
     def plot_surface(self, ax, surface, extensions):
         distance, coords = zip(*self.cs.discretize(surface.res))
-        distance = np.array(distance)
-        plot_distance = distance.copy()
-        for extension in extensions:
-            plot_distance[distance > extension.point] += extension.dx
+        distance = np.array(distance)      
+        plot_distance = extensions(distance)
         values = [v for v in surface.sample(coords)]
         style = self.styles['surfaces'].lookup(surface.stylekey)
         sf = ax.plot(plot_distance, values, **style)
 
     def plot_solid(self, ax, solid, extensions, min_thickness=0.):
-        distance, coords = zip(*self.cs.discretize(solid.res))
-        distance = np.array(distance)
-        plot_distance = distance.copy()
-        for extension in extensions:
-            plot_distance[distance > extension.point] += extension.dx
-        top, base = zip(*((t, b) for t, b in solid.sample(coords)))
-        top = np.array(top)
-        base = np.array(base)
+        distance, top, base = solid.sample(self.cs.shape)
+        if (
+            (np.isnan(top).all()) or
+            (np.nanmax(top) < self.ylim[0]) or
+            (np.nanmin(base) > self.ylim[1])
+            ):
+            self.styles['solids'].remove(solid.stylekey)
+            return
+        plot_distance = extensions(distance)
         style = self.styles['solids'].lookup(solid.stylekey)
         sld = ax.fill_between(plot_distance, base, top,
             where=(top - base) > min_thickness,
@@ -160,25 +169,14 @@ class CrossSectionPlot(object):
              transform=ax.transAxes)
         return lt, rt
 
-    @classmethod
-    def get_extensions(cls, distance, min_distance):
+    def get_extensions(self, distance, min_distance):
         '''x-axis extensions'''
-        extensions = []
-        spacing = np.diff(distance)
-        too_close = spacing < min_distance
-        leftpoints = distance[1:][too_close]
-        dxs = min_distance - spacing[too_close]
-        for leftpoint, dx in zip(leftpoints, dxs):
-            extensions.append(
-                cls.Extension(
-                    point=leftpoint,
-                    dx=dx,
-                    )
-                )
-        plot_distance = np.cumsum(
-            np.concatenate([distance[:1], np.maximum(spacing, min_distance)])
+        xp = np.concatenate([[0., ], distance, [self.length,]])
+        fp= np.cumsum(
+            np.concatenate([xp[:1], np.maximum(np.diff(xp), min_distance)])
             )
-        return plot_distance, extensions
+        extensions = partial(np.interp, xp=xp, fp=fp)
+        return extensions
 
     def get_legend(self, ax):
         handles_labels = []
@@ -236,31 +234,26 @@ class CrossSectionPlot(object):
         min_distance_factor = self.cfg.get('min_distance_factor', 2.e-2)
         min_distance = min_distance_factor * self.length
 
-        # boreholes
-        boreholes = [b for d, b in self.cs.boreholes]
-
         # borehole distance vector
-        distance = np.array([d for d, b in self.cs.boreholes])
+        borehole_distance = np.array([d for d, b in self.cs.boreholes])
 
         # x-axis limits
         xmin, xmax = [0., self.length]
 
         # adjust limits for first and last borehole
-        if len(distance) > 0:
+        if len(borehole_distance) > 0:
             min_limit_factor = self.cfg.get('min_limit_factor', 4.e-2)
             min_limit = min_limit_factor * self.length
-            if distance[0] < (min_limit):
-                xmin -= ((min_limit) - distance[0])
-            if (xmax - distance[-1]) < (min_limit):
-                xmax += ((min_limit) - (xmax - distance[-1]))
+            if borehole_distance[0] < (min_limit):
+                xmin -= ((min_limit) - borehole_distance[0])
+            if (xmax - borehole_distance[-1]) < (min_limit):
+                xmax += ((min_limit) - (xmax - borehole_distance[-1]))
 
         # get plot_distance and x-axis extensions
-        plot_distances, extensions = self.get_extensions(distance, min_distance)
-        boreholes_plot_distances = zip(boreholes, plot_distances)
+        extensions = self.get_extensions(borehole_distance, min_distance)
 
         # apply extensions to x-axis limits
-        for extension in extensions:
-            xmax += extension.dx
+        # xmax = extensions(xmax)
 
         # bar & vertical width
         barwidth_factor = self.cfg.get('barwidth_factor', 1.e-2)
@@ -269,10 +262,10 @@ class CrossSectionPlot(object):
         verticalwidth = verticalwidth_factor * (xmax - xmin)
 
         # plot boreholes
-        for borehole, plot_distance in boreholes_plot_distances:
+        for distance, borehole in self.cs.boreholes:
 
             # plot borehole
-            txt = self.plot_borehole(ax, plot_distance, borehole, barwidth)
+            txt = self.plot_borehole(ax, distance, borehole, extensions, barwidth)
             bxa.append(txt)
 
             # plot verticals
@@ -285,8 +278,9 @@ class CrossSectionPlot(object):
                 style = self.styles['verticals'].lookup(key)
                 self.plot_vertical(
                     ax,
-                    distance=plot_distance,
+                    distance=distance,
                     vertical=vertical,
+                    extensions=extensions,
                     width=verticalwidth,
                     style=style,
                     )
@@ -296,28 +290,49 @@ class CrossSectionPlot(object):
                 vertical = borehole.verticals[key].relative_to(borehole.z)
                 self.plot_edge(
                     ax,
-                    distance=plot_distance,
+                    distance=distance,
                     vertical=vertical,
+                    extensions=extensions,
                     width=verticalwidth,
                     style=self.cfg.get('verticaledge_style') or {},
                     )
 
         # plot points
-        plot_distance_by_code = {
-            b.code: d for b, d in zip(boreholes, plot_distances)
-            }
-        borehole_by_code = {
-            b.code: b for b in boreholes
-            }
         for distance, point in self.cs.points:
             if point.midlevel is None:
                 continue
             self.plot_point(ax,
+                distance=distance,
                 point=point,
                 extensions=extensions,
-                plot_distance_by_code=plot_distance_by_code,
-                borehole_by_code=borehole_by_code,
                 )
+
+        # well distance vector
+        well_distance = np.array([d for d, w in self.cs.wells])
+
+        # get plot_distance and x-axis extensions
+        extensions = lambda x: extensions(self.get_extensions(well_distance, min_distance)(x))
+
+        # adjust limits for first and last well
+        if len(well_distance) > 0:
+            min_limit_factor = self.cfg.get('min_limit_factor', 4.e-2)
+            min_limit = min_limit_factor * self.length
+            if well_distance[0] < (min_limit):
+                xmin -= ((min_limit) - well_distance[0])
+            if (xmax - well_distance[-1]) < (min_limit):
+                xmax += ((min_limit) - (xmax - well_distance[-1]))
+
+        # apply extensions to x-axis limits
+        xmax = extensions(xmax)
+
+        for distance, well in self.cs.wells:
+            txt = self.plot_well(ax,
+                distance=distance,
+                well=well,
+                extensions=extensions,
+                width=barwidth,
+                )
+            bxa.append(txt)
 
         # plot surfaces
         for surface in self.cs.surfaces:
@@ -347,9 +362,7 @@ class CrossSectionPlot(object):
 
         fmt = self.cfg.get('xticklabel_format', '{:3.0f}')
         xticklabels = [fmt.format(x) for x in xticks]
-        extended_xticks = xticks.copy()
-        for extension in extensions:
-            extended_xticks[xticks > extension.point] += extension.dx
+        extended_xticks = extensions(xticks)
         ax.set_xticks(extended_xticks)
         ax.set_xticklabels(xticklabels)
 
