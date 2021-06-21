@@ -4,6 +4,7 @@
 
 from xsboringen.borehole import Borehole, Segment
 from xsboringen.point import Point
+from xsboringen.well import Well
 from xsboringen import utils
 
 from collections import namedtuple
@@ -42,6 +43,19 @@ def points_from_csv(csvfile,
     for point in csv_.to_points(fieldnames, valuefields):
         if point is not None:
             yield point
+
+
+def wells_from_csv(csvfile,
+    fieldnames=None, valuefields=None,
+    delimiter=',', decimal='.'
+    ):
+    csv_ = CSVWellFile(csvfile,
+        delimiter=delimiter,
+        decimal=decimal,
+        )
+    for well in csv_.to_wells(fieldnames):
+        if well is not None:
+            yield well
 
 
 class CSVFile(object):
@@ -226,6 +240,39 @@ class CSVPointFile(CSVFile):
                         top=top, base=base,
                         values=values,
                         )
+
+
+class CSVWellFile(CSVFile):
+    _format = 'CSV Well'
+    FieldNames = namedtuple('FieldNames',
+        (
+            'code', 'x', 'y', 'z', 'filtertoplevel', 'filterbottomlevel',
+            )
+        )
+    def to_wells(self, fieldnames):
+        fieldnames = self.FieldNames(**fieldnames)
+
+        log.debug('reading {s.file.name:}'.format(s=self))
+        with open(self.file, 'r') as f:
+            reader = csv.DictReader(f, delimiter=self.delimiter)
+
+            for row in reader:
+
+                # code
+                code = str(row[fieldnames.code])
+
+                # x, y, z
+                x = self.safe_float(row[fieldnames.x], self.decimal)
+                y = self.safe_float(row[fieldnames.y], self.decimal)
+                z = self.safe_float(row[fieldnames.z], self.decimal)
+
+                filtertoplevel = self.safe_float(row[fieldnames.filtertoplevel], self.decimal)
+                filterbottomlevel = self.safe_float(row[fieldnames.filterbottomlevel], self.decimal)
+
+                yield Well(code,
+                    x=x, y=y, z=z,
+                    filtertoplevel=filtertoplevel, filterbottomlevel=filterbottomlevel,
+                    )
 
 
 def boreholes_to_csv(boreholes, csvfile, extra_fields=None):

@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-try:
-    import idfpy
-    idfpy_imported = True
-except ImportError:
-    idfpy_imported = False
+from shapely.geometry import Point
+from rasterio import features
 
 import rasterio
 import numpy as np
@@ -42,23 +39,41 @@ def sample_raster(rasterfile, coords):
                 yield float(value[0])
 
 
-def sample_idf(idffile, coords):
-    '''sample IDF file at coords'''
-    log.debug('reading idf file {}'.format(os.path.basename(idffile)))
-    with idfpy.open(idffile) as src:
-        for value in src.sample(coords):
-            if value[0] == src.header['nodata']:
-                yield np.nan
-            elif np.isnan(value[0]) and any(np.isnan(src.header['nodata'])):
-                yield np.nan
-            else:
-                yield float(value[0])
+def sample_linestring(rasterfile, linestring):
+    '''sample raster file at coords'''
+    log.info('reading rasterfile {}'.format(os.path.basename(rasterfile)))        
+    with rasterio.open(rasterfile) as src:
+        shapes = [(linestring, 1),]
+        values = src.read(1, masked=True)
+        is_line = rasterio.features.rasterize(shapes,
+            out_shape=src.shape,
+            transform=src.transform,
+            all_touched=True,
+            dtype=np.int16,
+            ).astype(np.bool)
+        res = src.res[0]
+    
+    # get array values along line
+    array_values = values.filled(np.nan)[is_line]
 
+    # get midpoint x, y coordinates
+    rows, cols = np.where(is_line)
+    xs, ys = rasterio.transform.xy(src.transform, rows, cols)
+    midpoints = [Point(x, y) for x, y in zip(xs, ys)]
 
-def sample(gridfile, coords):
-    '''sample gridfile at coords'''
-    if idfpy_imported and gridfile.lower().endswith('.idf'):
-        sample = partial(sample_idf)
-    else:
-        sample = partial(sample_raster)
-    return sample(gridfile, coords)
+    # sort by distance of midpoint along line    
+    by_midpoint_distance = lambda pv: linestring.project(pv[0])
+    midpoints_values = sorted(zip(midpoints, array_values), key=by_midpoint_distance)
+
+    distance = []
+    values = []
+    for midpoint, value in midpoints_values:
+        square = midpoint.buffer(res / 2).envelope
+        itc_line = linestring.intersection(square)      
+        itc_pnts = [Point(x, y) for x, y in itc_line.coords]
+        itc_distance = [linestring.project(p) for p in itc_pnts]
+        distance.extend(itc_distance)
+        values.extend([value for d in itc_distance])        
+    distance = np.array(distance)
+    values = np.array(values)
+    return distance, values

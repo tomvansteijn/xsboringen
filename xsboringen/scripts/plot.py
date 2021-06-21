@@ -5,7 +5,7 @@
 from xsboringen import cross_section
 from xsboringen.calc import SandmedianClassifier, AdmixClassifier, LithologyClassifier
 from xsboringen.csvfiles import cross_section_to_csv
-from xsboringen.datasources import boreholes_from_sources, points_from_sources
+from xsboringen.datasources import boreholes_from_sources, points_from_sources, wells_from_sources
 from xsboringen.surface import Surface
 from xsboringen.solid import Solid
 from xsboringen.groundlayermodel import GroundLayerModel
@@ -63,7 +63,7 @@ def plot_cross_section(**kwargs):
     solidstyles = styles.SimpleStylesLookup(**config['styles']['solids'])
 
     # translate CPT to lithology if needed
-    if result.get('translate_cpt', False):
+    if result.get('translate_cpt', True):
         table = config['cpt_classification']
         lithologyclassifier = LithologyClassifier(table)
         boreholes = (
@@ -72,7 +72,7 @@ def plot_cross_section(**kwargs):
             )
 
     # classify sandmedian if needed
-    if result.get('classify_sandmedian', False):
+    if result.get('classify_sandmedian', True):
         bins = config['sandmedianbins']
         sandmedianclassifier = SandmedianClassifier(bins)
         boreholes = (
@@ -80,7 +80,7 @@ def plot_cross_section(**kwargs):
             )
 
     # simplify if needed
-    if result.get('simplify', False):
+    if result.get('simplify', True):
         min_thickness = result.get('min_thickness')
         by_legend = lambda s: {'record': segmentstyles.lookup(s)}
         boreholes = (
@@ -91,6 +91,10 @@ def plot_cross_section(**kwargs):
     # read points
     point_sources = datasources.get('points') or []
     points = points_from_sources(point_sources)
+
+    # read wells
+    wells_sources = datasources.get('wells') or []
+    wells = wells_from_sources(wells_sources)
 
     # surfaces
     surfaces = datasources.get('surfaces') or []
@@ -106,7 +110,6 @@ def plot_cross_section(**kwargs):
             indexfile=regismodel['indexfile'],
             fieldnames=regismodel['fieldnames'],
             delimiter=regismodel.get('delimiter') or ',',
-            res=regismodel.get('res', 10.),
             default=config['cross_section_plot']['regis_style'],
             name='Regis',
             )
@@ -131,6 +134,16 @@ def plot_cross_section(**kwargs):
         ((p.top is not None) or (p.base is not None))
         ]
 
+    wells = [
+        w for w in wells
+        if
+        (w.x is not None) and
+        (w.y is not None) and
+        (w.z is not None) and
+        (w.filtertoplevel is not None) and
+        (w.filterbottomlevel is not None)
+        ]
+
     # default labels
     defaultlabels = iter(config['defaultlabels'])
 
@@ -146,6 +159,11 @@ def plot_cross_section(**kwargs):
             label = row['properties'][cross_section_lines['labelfield']]
         else:
             label = next(defaultlabels)
+
+        if ('yminfield' in cross_section_lines) and ('ymaxfield' in cross_section_lines):
+            ymin = row['properties'][cross_section_lines['yminfield']]
+            ymax = row['properties'][cross_section_lines['ymaxfield']]
+            ylim = [ymin, ymax]
 
         if (selected is not None) and (label not in selected):
             log.warning('skipping {label:}'.format(label=label))
@@ -167,12 +185,14 @@ def plot_cross_section(**kwargs):
         # add points to cross_section
         cs.add_points(points)
 
+        # add wells to cross-section
+        cs.add_wells(wells)
+
         # add surfaces to cross-section
         for surface in surfaces:
             cs.add_surface(Surface(
                 name=surface['name'],
                 surfacefile=surface['file'],
-                res=surface['res'],
                 stylekey=surface['style'],
                 ))
 
@@ -182,20 +202,13 @@ def plot_cross_section(**kwargs):
                 name=solid['name'],
                 topfile=solid['topfile'],
                 basefile=solid['basefile'],
-                res=solid['res'],
                 stylekey=solid['style'],
                 ))
 
         # add regis solids to cross-section
         solidstyles_with_regis = solidstyles.copy(deep=True)
         if regismodel is not None:
-            # get coordinates along cross-section line
-            _, coords = zip(*cs.discretize(regismodel.res))
-
-            # add solids to cross-section
             for number, solid in regismodel.solids:
-                if not regismodel.solid_has_values(solid, coords, ylim):
-                    continue
                 cs.add_solid(solid)
                 solidstyles_with_regis.add(
                     key=solid.name,

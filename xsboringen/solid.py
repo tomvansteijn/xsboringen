@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsboringen.rasterfiles import sample
+from xsboringen.rasterfiles import sample_linestring
 
 
 class Solid(object):
@@ -11,17 +11,19 @@ class Solid(object):
 
         self.topfile = topfile
         self.basefile = basefile
-        self.res = res
         self.stylekey = stylekey
 
     def __repr__(self):
-        return ('{s.__class__.__name__:}(name={s.name:}, '
-            'res={s.res:.2f})').format(s=self)
+        return ('{s.__class__.__name__:}(name={s.name:})').format(s=self)
 
-    def sample(self, coords):
-        sample_top_base = zip(
-            sample(str(self.topfile), coords),
-            sample(str(self.basefile), coords),
-            )
-        for top, base in sample_top_base:
-            yield top, base
+    def sample(self, linestring):
+        dist, top = sample_linestring(self.topfile, linestring)
+        dist, base = sample_linestring(self.basefile, linestring)
+        return dist, top, base
+
+    def sample_top(self, linestring):
+        return sample_linestring(self.topfile, linestring)
+    
+    def sample_base(self, linestring):
+        return sample_linestring(self.basefile, linestring)
+

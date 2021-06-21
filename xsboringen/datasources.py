@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from xsboringen.csvfiles import boreholes_from_csv, points_from_csv
+from xsboringen.csvfiles import boreholes_from_csv, points_from_csv, wells_from_csv
 from xsboringen.geffiles import boreholes_from_gef, cpts_from_gef
 from xsboringen.xmlfiles import boreholes_from_xml
 
@@ -74,3 +74,22 @@ def points_from_sources(datasources):
     for result in chain(*readers):
         yield result
 
+def wells_from_sources(datasources):
+    readers = []
+    for datasource in datasources:
+        if datasource['format'] == 'CSV putten':
+            readers.append(wells_from_csv(
+                csvfile=datasource['file'],
+                fieldnames=datasource['fieldnames'],
+                delimiter=datasource.get('delimiter', ','),
+                decimal=datasource.get('decimal', '.'),
+                ))
+        else:
+            log.warning((
+                'dataformat \'{fmt:}\' not supported, skipping').format(
+                    fmt=datasource['format'],
+                    )
+                )
+            pass
+    for result in chain(*readers):
+        yield result
