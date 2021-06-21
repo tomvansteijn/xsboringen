@@ -78,7 +78,7 @@ cross_section_plot: {
   verticalwidth_factor: 1.5e-2,
 
   # minimum distance compared to figure width
-  min_distance_factor: 3.e-2,
+  min_distance_factor: 2.e-2,
 
   # minimum distance to xmin, xmax compared to figure width
   min_limit_factor: 4.e-2,
@@ -135,6 +135,13 @@ styles: {
       {key: friction_ratio, label: wrijvingsgetal, linestyle: '-', linewidth: 0.5, color: magenta},
       ],
     default: {linestyle: '-', linewidth: 0.5, color: gray},
+    },
+  wells: {
+    records: [
+      {key: wellscreen, facecolor: dodgerblue, edgecolor: darkblue},
+      {key: standpipe, facecolor: none, edgecolor: darkblue},
+    ],
+    default: {facecolor: None, edgecolor: black},
     },
   surfaces: {
     default: {linestyle: '-', linewidth: 1., color: blue},
