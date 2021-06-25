@@ -19,14 +19,12 @@ class GroundLayerModel(object):
         )
     def __init__(self,
             solids=None,
-            res=10.,
             styles=None,
             default=None,
             name=None,
             ):
         self.solids = solids or []
         self.styles = styles or {}
-        self.res = res
         self.default = default
         self.name = name
 
@@ -41,7 +39,6 @@ class GroundLayerModel(object):
     @classmethod
     def from_folder(cls, folder, indexfile, fieldnames,
         delimiter=',',
-        res=10.,
         default=None,
         name=None,
         ):
@@ -63,7 +60,6 @@ class GroundLayerModel(object):
                     name=solid_name,
                     topfile=folder / row[fieldnames.topfile],
                     basefile=folder / row[fieldnames.basefile],
-                    res=res,
                     stylekey=solid_name,
                     )))
 
@@ -77,7 +73,6 @@ class GroundLayerModel(object):
 
         return cls(
             solids=solids,
-            res=res,
             styles=styles,
             default=default,
             name=name,
