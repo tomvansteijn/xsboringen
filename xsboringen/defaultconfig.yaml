@@ -77,6 +77,9 @@ cross_section_plot: {
   # bars width compared to figure width
   verticalwidth_factor: 1.5e-2,
 
+# well filter width compared to figure width
+  wellfilterwidth_factor: 1.e-2,
+
   # minimum distance compared to figure width
   min_distance_factor: 2.e-2,
 
@@ -95,6 +98,9 @@ cross_section_plot: {
   # vertical edge style
   verticaledge_style: {facecolor: None, edgecolor: gray},
 
+  # well standpipe style
+  standpipe_style: {color: darkblue},
+
   # point label style
   pointlabel_style: {fontsize: 3, color: black, horizontalalignment: center, verticalalignment: center, rotation: 0},
 
@@ -109,6 +115,9 @@ cross_section_plot: {
 
   # legend title text
   legend_title: legenda,
+
+  # number of jobs for parallel processing
+  n_jobs: 35,
   }
 
 # csv filename format
@@ -129,19 +138,18 @@ styles: {
       ],
     default: {label: onbekend, facecolor: white, edgecolor: black},
     },
+  wells: {
+    records: [
+      {key: wellfilter, label: putfilter, facecolor: dodgerblue, edgecolor: darkblue},
+      {key: blind_filtersegment, label: putfilter (blind), facecolor: lightblue, edgecolor: darkblue, hatch: ////},
+      ],
+    },
   verticals: {
     records: [
       {key: cone_resistance, label: conusweerstand, linestyle: '-', linewidth: 0.5, color: blue},
       {key: friction_ratio, label: wrijvingsgetal, linestyle: '-', linewidth: 0.5, color: magenta},
       ],
     default: {linestyle: '-', linewidth: 0.5, color: gray},
-    },
-  wells: {
-    records: [
-      {key: wellscreen, facecolor: dodgerblue, edgecolor: darkblue},
-      {key: standpipe, facecolor: none, edgecolor: darkblue},
-    ],
-    default: {facecolor: None, edgecolor: black},
     },
   surfaces: {
     default: {linestyle: '-', linewidth: 1., color: blue},
