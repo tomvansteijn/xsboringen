@@ -4,7 +4,7 @@
 
 from xsboringen.borehole import Borehole, Segment
 from xsboringen.point import Point
-from xsboringen.well import Well
+from xsboringen.well import Well, FilterSegment
 from xsboringen import utils
 
 from collections import namedtuple
@@ -46,14 +46,14 @@ def points_from_csv(csvfile,
 
 
 def wells_from_csv(csvfile,
-    fieldnames=None, valuefields=None,
+    fieldnames=None, nsegments=0,
     delimiter=',', decimal='.'
     ):
     csv_ = CSVWellFile(csvfile,
         delimiter=delimiter,
         decimal=decimal,
         )
-    for well in csv_.to_wells(fieldnames):
+    for well in csv_.to_wells(fieldnames, nsegments):
         if well is not None:
             yield well
 
@@ -246,10 +246,10 @@ class CSVWellFile(CSVFile):
     _format = 'CSV Well'
     FieldNames = namedtuple('FieldNames',
         (
-            'code', 'x', 'y', 'z', 'filtertoplevel', 'filterbottomlevel',
+            'code', 'x', 'y', 'z', 'filtertoplevel', 'filterbottomlevel', 'filtersegment_toplevel', 'filtersegment_bottomlevel', 'location'
             )
         )
-    def to_wells(self, fieldnames):
+    def to_wells(self, fieldnames, nsegments=0):
         fieldnames = self.FieldNames(**fieldnames)
 
         log.debug('reading {s.file.name:}'.format(s=self))
@@ -269,9 +269,21 @@ class CSVWellFile(CSVFile):
                 filtertoplevel = self.safe_float(row[fieldnames.filtertoplevel], self.decimal)
                 filterbottomlevel = self.safe_float(row[fieldnames.filterbottomlevel], self.decimal)
 
+                # filter segments
+                filtersegments = []
+                for i in range(nsegments):
+                    toplevel = self.safe_float(row[fieldnames.filtersegment_toplevel.format(i=i + 1)], self.decimal)
+                    bottomlevel = self.safe_float(row[fieldnames.filtersegment_bottomlevel.format(i=i + 1)], self.decimal)
+                    filtersegments.append(FilterSegment(toplevel=toplevel, bottomlevel=bottomlevel))
+
+                # location
+                location = str(row[fieldnames.location])
+
                 yield Well(code,
                     x=x, y=y, z=z,
                     filtertoplevel=filtertoplevel, filterbottomlevel=filterbottomlevel,
+                    filtersegments=filtersegments,
+                    location=location,
                     )
 
 
