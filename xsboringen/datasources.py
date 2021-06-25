@@ -81,6 +81,7 @@ def wells_from_sources(datasources):
             readers.append(wells_from_csv(
                 csvfile=datasource['file'],
                 fieldnames=datasource['fieldnames'],
+                nsegments=datasource.get('nsegments', 0),
                 delimiter=datasource.get('delimiter', ','),
                 decimal=datasource.get('decimal', '.'),
                 ))
