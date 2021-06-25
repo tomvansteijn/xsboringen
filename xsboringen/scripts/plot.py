@@ -53,6 +53,9 @@ def plot_cross_section(**kwargs):
     # segment styles lookup
     segmentstyles = styles.SegmentStylesLookup(**config['styles']['segments'])
 
+    # well styles lookup
+    wellstyles = styles.SimpleStylesLookup(**config['styles']['wells'])
+
     # vertical styles lookup
     verticalstyles = styles.SimpleStylesLookup(**config['styles']['verticals'])
 
@@ -186,7 +189,11 @@ def plot_cross_section(**kwargs):
         cs.add_points(points)
 
         # add wells to cross-section
-        cs.add_wells(wells)
+        if cross_section_lines.get('locationfield') is not None:
+            wells_selector = lambda w: w.location == row['properties'][cross_section_lines['locationfield']]
+            cs.add_wells(wells, wells_selector)
+        else:
+            cs.add_wells(wells)
 
         # add surfaces to cross-section
         for surface in surfaces:
@@ -219,6 +226,7 @@ def plot_cross_section(**kwargs):
         # definest styles lookup
         plotting_styles = {
             'segments': segmentstyles,
+            'wells': wellstyles,
             'verticals': verticalstyles,
             'surfaces': surfacestyles,
             'solids': solidstyles_with_regis,
