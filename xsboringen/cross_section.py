@@ -21,7 +21,7 @@ class CrossSection(object):
         self.solids = []
 
     def __repr__(self):
-        return ('{s.__class__.__name__:}(length={s.length:.2f}, '
+        return ('{s.__class__.__name__:}(length={s.shape.length:.2f}, '
                 'buffer_distance={s.buffer_distance:.2f}, '
                 'label={s.label:})').format(s=self)
 
@@ -29,24 +29,22 @@ class CrossSection(object):
     def shape(self):
         return asShape(self.geometry)
 
-    @property
-    def length(self):
-        return self.shape.length
-
-    def add_boreholes(self, boreholes):
+    def add_boreholes(self, boreholes, selector=None):
         '''add boreholes within buffer distance and project to line'''
-        self._add_some_objects(boreholes, self.boreholes)
+        self._add_some_objects(boreholes, self.boreholes, selector)
 
-    def add_points(self, points):
+    def add_points(self, points, selector=None):
         '''add points within buffer distance and project to line'''
-        self._add_some_objects(points, self.points)
+        self._add_some_objects(points, self.points, selector)
 
-    def add_wells(self, wells):
+    def add_wells(self, wells, selector=None):
         '''add wells within buffer distance and project to line'''
-        self._add_some_objects(wells, self.wells)
+        self._add_some_objects(wells, self.wells, selector)
 
-    def _add_some_objects(self, some_objects, dst):
+    def _add_some_objects(self, some_objects, dst, selector=None):
         for an_object in some_objects:
+            if (selector is not None) and (not selector(an_object)):
+                continue
             if asShape(an_object.geometry).within(self.buffer):
                 the_distance = self.shape.project(asShape(an_object.geometry))
 
@@ -55,7 +53,7 @@ class CrossSection(object):
                 # projected at 0. and length distance with a sharp angle
                 # these points are not added to the cross-section
                 # points exactly at 0. or length distance are also not added
-                if (the_distance > 0.) and (the_distance < self.length):
+                if (the_distance > 0.) and (the_distance < self.shape.length):
                     dst.append((the_distance, an_object))
 
     def sort(self):
