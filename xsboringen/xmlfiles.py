@@ -125,6 +125,16 @@ class XMLBoreholeFile(XMLFile):
         survey = self.root.find('pointSurvey')
         code = survey.find('identification').attrib.get('id')
 
+        for field in (borehole_fields or []):
+            path, attrib = field['match'].split('@')
+            element = survey.find("borehole").find(path.rstrip('/'))
+            if element is None:
+                continue
+            value = element.attrib.get(attrib)
+            if value is None:
+                continue
+            self.attrs[field['name']] = self.cast(value, field['dtype'])
+
         # timestamp of borehole
         date = survey.find('borehole/date')
         try:

@@ -69,6 +69,7 @@ class GroundLayerModel(object):
                     'label': solid_name,
                     'facecolor': row[fieldnames.color],
                     })
+                
                 styles[solid_name] = solid_style
 
         return cls(

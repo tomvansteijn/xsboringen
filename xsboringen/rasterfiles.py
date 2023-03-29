@@ -69,8 +69,8 @@ def sample_linestring(rasterfile, linestring):
     values = []
     for midpoint, value in midpoints_values:
         square = midpoint.buffer(res / 2).envelope
-        itc_line = linestring.intersection(square)      
-        itc_pnts = [Point(x, y) for x, y in itc_line.coords]
+        itc_line = linestring.intersection(square)
+        itc_pnts = [Point(x[0], x[1]) for x in itc_line.coords]
         itc_distance = [linestring.project(p) for p in itc_pnts]
         distance.extend(itc_distance)
         values.extend([value for d in itc_distance])        

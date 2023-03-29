@@ -1,1 +1,0 @@
-xsb write_shape boringen_to_csv_shape_plot.yaml 

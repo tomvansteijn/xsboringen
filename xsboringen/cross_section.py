@@ -59,7 +59,22 @@ class CrossSection(object):
     def sort(self):
         self.boreholes = [b for b in sorted(self.boreholes)]
         self.wells = [w for w in sorted(self.wells)]
-        self.points = [p for p in sorted(self.points)]        
+        self.points = [p for p in sorted(self.points)]
+
+    @staticmethod
+    def filter_unique_distance(objects):
+        filtered = []
+        unique_distances = set()
+        for distance, object in objects:
+            if distance not in unique_distances:
+                filtered.append((distance, object))
+            unique_distances.add(distance)
+        return filtered
+
+    def drop_duplicates(self):
+        self.boreholes = self.filter_unique_distance(self.boreholes)
+        self.wells = self.filter_unique_distance(self.wells)
+        self.points = self.filter_unique_distance(self.points)
 
     def add_surface(self, surface):
         self.surfaces.append(surface)

@@ -117,7 +117,7 @@ class CrossSectionPlot(object):
 
     def get_legend(self, ax):
         handles_labels = []
-        if len(self.cs.boreholes) > 0:
+        if any(len(b.verticals) > 0 for d, b in self.cs.boreholes):
             for label, style in self.styles['verticals'].items():
                 handles_labels.append((
                     plt.Line2D([0, 1], [0, 1],
@@ -125,13 +125,14 @@ class CrossSectionPlot(object):
                         ),
                     label
                     ))
-        for label, style in self.styles['surfaces'].items():
-            handles_labels.append((
-                plt.Line2D([0, 1], [0, 1],
-                    **style,
-                    ),
-                label
-                ))
+        if len(self.cs.surfaces) > 0:
+            for label, style in self.styles['surfaces'].items():
+                handles_labels.append((
+                    plt.Line2D([0, 1], [0, 1],
+                        **style,
+                        ),
+                    label
+                    ))
         if len(self.cs.wells) > 0:
             for label, style in self.styles['wells'].items():
                 handles_labels.append((
@@ -274,6 +275,17 @@ class CrossSectionPlot(object):
             **style,
             )
 
+        # if solid.name[-1].isdigit():
+        #     lit = solid.name[-2]
+        # else:
+        #     lit = solid.name[-1]
+        # if lit in "ckbvq":
+        #     ax.fill_between(plot_distance, base, top,
+        #         where=(top - base) > min_thickness,
+        #         edgecolor=style["facecolor"],
+        #         **self.cfg["aquitard_style"],
+        #         )
+
         # top_clip = np.clip(top, self.ylim[0], self.ylim[1])
         # base_clip = np.clip(base, self.ylim[0], self.ylim[1])
         # thickness = (top_clip - base_clip)
@@ -301,6 +313,9 @@ class CrossSectionPlot(object):
 
         # sort cross-section data by distance
         self.cs.sort()
+
+        # filter duplicate distance
+        self.cs.drop_duplicates()
 
         # borehole distance vector
         borehole_distance = np.array([d for d, b in self.cs.boreholes])

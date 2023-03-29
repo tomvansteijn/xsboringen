@@ -33,6 +33,7 @@ def plot_cross_section(**kwargs):
 
     # optional args
     min_depth = kwargs.get('min_depth', 0.)
+    min_quality = kwargs.get('min_quality')
     buffer_distance = kwargs.get('buffer_distance', 0.)
     xtickstep = kwargs.get('xtickstep')
     ylim = kwargs.get('ylim')
@@ -106,8 +107,9 @@ def plot_cross_section(**kwargs):
     solids = datasources.get('solids') or []
 
     # regis
-    regismodel = datasources.get('regismodel')
-    if regismodel is not None:
+    regismodel = datasources.get('regismodel', {'plot_regis': False})
+
+    if regismodel.get('plot_regis', True):
         regismodel = GroundLayerModel.from_folder(
             folder=regismodel['folder'],
             indexfile=regismodel['indexfile'],
@@ -119,6 +121,9 @@ def plot_cross_section(**kwargs):
 
         # sort regis by layer number
         regismodel.sort()
+        
+    else:
+        regismodel = None
 
     # filter missing coordinates and less than minimal depth
     boreholes = [
@@ -128,7 +133,8 @@ def plot_cross_section(**kwargs):
         (b.y is not None) and
         (b.z is not None) and
         (b.depth is not None) and
-        (b.depth >= min_depth)
+        (b.depth >= min_depth) and
+        ((min_quality is None) or (not hasattr(b, "quality")) or (b.quality in min_quality))
         ]
 
     points = [
@@ -214,7 +220,7 @@ def plot_cross_section(**kwargs):
 
         # add regis solids to cross-section
         solidstyles_with_regis = solidstyles.copy(deep=True)
-        if regismodel is not None:
+        if (regismodel is not None):
             for number, solid in regismodel.solids:
                 cs.add_solid(solid)
                 solidstyles_with_regis.add(

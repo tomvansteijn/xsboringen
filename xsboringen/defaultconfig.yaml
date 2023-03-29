@@ -86,6 +86,9 @@ cross_section_plot: {
   # minimum distance to xmin, xmax compared to figure width
   min_limit_factor: 4.e-2,
 
+  plot_borehole_code: True,
+  plot_well_code: False,
+
   # position of borehole code labels compared to axes (0=bottom, 1=top)
   codelabel_position: 1.01,
 
@@ -106,6 +109,9 @@ cross_section_plot: {
 
   # regis style
   regis_style: {facecolor: gray, edgecolor: None, alpha: 0.5},
+
+  # aquitards style
+  aquitard_style: {facecolor: None, hatch: \\\\},
 
   # format of x-axis tick labels
   xticklabel_format: '{:3.0f}',

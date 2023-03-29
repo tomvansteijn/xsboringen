@@ -32,14 +32,14 @@ def main(function, inputfile, level):
 
     # function arguments from input file
     with open(inputfile) as y:
-        kwargs = yaml.load(y)
+        kwargs = yaml.load(y, Loader=yaml.SafeLoader)
 
     # read default config
     scripts_folder = os.path.dirname(os.path.realpath(__file__))
     defaultconfigfile = os.path.join(os.path.dirname(scripts_folder),
         'defaultconfig.yaml')
     with open(defaultconfigfile) as y:
-        defaultconfig = yaml.load(y)
+        defaultconfig = yaml.load(y, Loader=yaml.SafeLoader)
 
     # get user config from input file
     userconfig = kwargs.get('config') or {}
