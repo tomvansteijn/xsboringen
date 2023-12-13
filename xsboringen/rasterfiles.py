@@ -50,7 +50,7 @@ def sample_linestring(rasterfile, linestring):
             transform=src.transform,
             all_touched=True,
             dtype=np.int16,
-            ).astype(np.bool)
+            ).astype(bool)
         res = src.res[0]
     
     # get array values along line

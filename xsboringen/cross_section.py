@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Tom van Steijn, Royal HaskoningDHV
 
-from shapely.geometry import asShape, Point
+from shapely.geometry import shape, Point
 
 
 class CrossSection(object):
@@ -27,7 +27,7 @@ class CrossSection(object):
 
     @property
     def shape(self):
-        return asShape(self.geometry)
+        return shape(self.geometry)
 
     def add_boreholes(self, boreholes, selector=None):
         '''add boreholes within buffer distance and project to line'''
@@ -45,8 +45,8 @@ class CrossSection(object):
         for an_object in some_objects:
             if (selector is not None) and (not selector(an_object)):
                 continue
-            if asShape(an_object.geometry).within(self.buffer):
-                the_distance = self.shape.project(asShape(an_object.geometry))
+            if shape(an_object.geometry).within(self.buffer):
+                the_distance = self.shape.project(shape(an_object.geometry))
 
                 # explanation: the buffer extends beyond the endpoints of the cross-section
                 # points beyond the endpoints but within the buffer are

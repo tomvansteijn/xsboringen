@@ -3,7 +3,7 @@
 
 from xsboringen.mixins import AsDictMixin, CopyMixin
 
-from collections import Iterable
+from collections.abc import Iterable
 from itertools import groupby
 from functools import total_ordering
 

@@ -394,6 +394,8 @@ class CrossSectionPlot(object):
             parallel = joblib.Parallel(n_jobs=self.cfg["n_jobs"])
             get_data = joblib.delayed(get_surface_data)
             self.cs.surfaces = parallel(get_data(s, self.cs.geometry) for s in self.cs.surfaces)
+        else:
+            self.cs.surfaces = [get_surface_data(s, self.cs.geometry) for s in self.cs.surfaces]
         for surface in self.cs.surfaces:
             self.plot_surface(ax,
                 surface=surface,
@@ -405,6 +407,8 @@ class CrossSectionPlot(object):
             parallel = joblib.Parallel(n_jobs=self.cfg["n_jobs"])
             get_data = joblib.delayed(get_solid_data)
             self.cs.solids = parallel(get_data(s, self.cs.geometry) for s in self.cs.solids)
+        else:
+            self.cs.solids = [get_solid_data(s, self.cs.geometry) for s in self.cs.solids]
         for solid in self.cs.solids:
             self.plot_solid(ax,
                 solid=solid,

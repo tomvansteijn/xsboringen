@@ -4,11 +4,11 @@
 
 from xsboringen.rasterfiles import sample_linestring
 
-from shapely.geometry import asShape
+from shapely.geometry import shape
 
 
 def get_solid_data(solid, linestring):
-    linestring = asShape(linestring)
+    linestring = shape(linestring)
     solid.data = solid.sample(linestring)
     return solid
 

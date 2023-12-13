@@ -3,7 +3,7 @@
 
 from xsboringen.borehole import Borehole
 
-from shapely.geometry import asShape, mapping, Point, LineString
+from shapely.geometry import shape, mapping, Point, LineString
 from fiona.crs import from_epsg
 import fiona
 
@@ -107,7 +107,7 @@ def export_projectionlines(shapefile, cross_sections, driver=None, epsg=None):
         for cs in cross_sections:
             for distance, borehole in cs.boreholes:
                 projectionline = LineString([
-                    asShape(borehole.geometry),
+                    shape(borehole.geometry),
                     cs.shape.interpolate(distance),
                     ])
                 properties = {'label': cs.label}

@@ -4,11 +4,11 @@
 
 from xsboringen.rasterfiles import sample_linestring
 
-from shapely.geometry import asShape
+from shapely.geometry import shape
 
 
 def get_surface_data(surface, linestring):
-    linestring = asShape(linestring)
+    linestring = shape(linestring)
     surface.data = surface.sample(linestring)
     return surface
 
