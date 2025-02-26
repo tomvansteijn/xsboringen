@@ -15,10 +15,13 @@ import os
 log = logging.getLogger(os.path.basename(__file__))
 
 
-def boreholes_from_gef(folder, classifier=None, fieldnames=None):
+def boreholes_from_gef(folder, classifier=None, fieldnames=None, gef_format=None):
     geffiles = utils.careful_glob(folder, '*.gef')
     for geffile in geffiles:
-        gef = GefBoreholeFile(geffile, classifier, fieldnames)
+        if gef_format == "tno":
+            gef = GefBoreholeTNOFile(geffile, classifier, fieldnames)
+        else:
+            gef = GefBoreholeFile(geffile, classifier, fieldnames)
         borehole = gef.to_borehole()
         if borehole is not None:
             yield borehole
@@ -309,6 +312,27 @@ class GefBoreholeFile(GefFile):
             segments=segments,
             **self.attrs,
             )
+
+
+class GefBoreholeTNOFile(GefBoreholeFile):
+    _format = 'GEF Borehole TNO'
+    @classmethod
+    def read_segments(cls, lines, columnsep, recordsep):
+        for line in lines:
+            line = line.rstrip(recordsep)
+            attrs = {}
+            top, base, *remainder = line.split(columnsep)
+            top = cls.safe_float(top)
+            base = cls.safe_float(base)
+            try:
+                lithology = remainder[7].replace('\'', '').strip() or None
+            except IndexError:
+                lithology = None
+            try:
+                sandmedianclass = remainder[9].replace('\'', '').strip() or None
+            except IndexError:
+                sandmedianclass = None
+            yield Segment(top, base, lithology, sandmedianclass, **attrs)
 
 
 class GefCPTFile(GefFile):

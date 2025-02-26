@@ -36,6 +36,13 @@ def boreholes_from_sources(datasources, admixclassifier=None):
                 classifier=admixclassifier,
                 fieldnames=datasource.get('fieldnames'),
                 ))
+        elif datasource['format'] == 'GEF boringen TNO':
+            readers.append(boreholes_from_gef(
+                folder=Path(datasource['folder']),
+                classifier=admixclassifier,
+                fieldnames=datasource.get('fieldnames'),
+                gef_format="tno",
+                ))
         elif datasource['format'] == 'GEF sonderingen':
             readers.append(cpts_from_gef(
                 folder=Path(datasource['folder']),
